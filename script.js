@@ -53,3 +53,34 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '1rem 2rem';
     }
 });
+
+// Preloader functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const preloader = document.querySelector('.preloader');
+    const mainContent = document.querySelector('.main-content');
+    const enterButton = document.querySelector('.preloader-enter');
+    const body = document.querySelector('body');
+    
+    // Auto-hide preloader after 5 seconds (fallback)
+    const autoHideTimer = setTimeout(() => {
+        showMainContent();
+    }, 5000);
+    
+    // Enter button click handler
+    enterButton.addEventListener('click', () => {
+        clearTimeout(autoHideTimer);
+        showMainContent();
+    });
+    
+    function showMainContent() {
+        if (preloader) {
+            preloader.classList.add('hide-preloader');
+        }
+        if (mainContent) {
+            mainContent.classList.add('show-content');
+        }
+        if (body) {
+            body.style.overflowY = 'auto'; // Re-enable scrolling
+        }
+    }
+});
