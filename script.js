@@ -54,7 +54,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Preloader functionality
+
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.querySelector('.preloader');
     const mainContent = document.querySelector('.main-content');
@@ -68,32 +68,32 @@ document.addEventListener('DOMContentLoaded', function() {
         once: true,
         mirror: false
     });
-    
-    // Auto-hide preloader after 5 seconds (fallback)
+
+    // Auto-hide preloader after a delay (e.g., 5 seconds)
     const autoHideTimer = setTimeout(() => {
         showMainContent();
-    }, 5000);
-    
+    }, 5000); // Adjust time as needed
+
     // Enter button click handler
     enterButton.addEventListener('click', () => {
         clearTimeout(autoHideTimer);
         showMainContent();
     });
-    
+
     function showMainContent() {
         if (preloader) {
             preloader.classList.add('hide-preloader');
         }
-        if (mainContent) {
-            mainContent.classList.add('show-content');
-        }
         if (body) {
-            body.style.overflowY = 'auto'; // Re-enable scrolling
+            // Add a 'loaded' class to the body to trigger content fade-in
+            body.classList.add('loaded');
         }
-        initializeTimeline();
+        // Optional: Re-initialize timeline after preloader is gone
+        if (typeof initializeTimeline === 'function') {
+            initializeTimeline();
+        }
     }
 });
-
 // Timeline functionality
 function initializeTimeline() {
     const timelineYears = document.querySelectorAll('.timeline-year');
