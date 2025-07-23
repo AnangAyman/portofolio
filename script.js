@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-hide preloader after a delay (e.g., 5 seconds)
     const autoHideTimer = setTimeout(() => {
         showMainContent();
-    }, 8000); // Adjust time as needed
+    }, 5000); // Adjust time as needed
 
     // Enter button click handler
     enterButton.addEventListener('click', () => {

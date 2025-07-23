@@ -781,25 +781,17 @@ footer a:hover {
 .code-line:nth-child(2) {
     /* Sets the animation for the second line and its delay */
     animation:
-        typing 1.2s steps(38, end) forwards,
+        typing 0.9s steps(38, end) forwards,
         blink-caret .75s step-end 2 forwards;
-    animation-delay: 2.8s; /* Starts after the first line finishes */
+    animation-delay: 2s; /* Starts after the first line finishes */
 }
 
 .code-line:nth-child(3) {
     /* Sets the animation for the third line and its delay */
     animation:
-        typing 1.4s steps(28, end) forwards,
+        typing 0.5s steps(28, end) forwards,
         blink-caret .75s step-end 2 forwards;
-    animation-delay: 5.0s; /* Starts after the second line finishes */
-}
-
-.code-line:nth-child(4) {
-    /* Sets the animation for the fourth line and its delay */
-    animation:
-        typing 0.4s steps(18, end) forwards,
-        blink-caret .75s step-end 2 forwards;
-    animation-delay: 6.8s; /* Starts after the third line finishes */
+    animation-delay: 3.3s; /* Starts after the second line finishes */
 }
 
 .code-line .keyword { color: #4fc3f7; }
@@ -819,7 +811,7 @@ footer a:hover {
     height: 100%;
     background: linear-gradient(90deg, var(--gold-accent), var(--copper-accent));
     width: 0%;
-    animation: progressFill 1s ease-out forwards 6.8s;
+    animation: progressFill 1s ease-out forwards 4s;
     position: relative;
 }
 
