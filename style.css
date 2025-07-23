@@ -968,6 +968,10 @@ body.loaded .main-content {
     .timeline-years::before {
         display: none;
     }
+
+    .social-links {
+        padding-bottom: 5%;
+    }
 }
 
 /* For Mobile Devices */
