@@ -60,6 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.querySelector('.main-content');
     const enterButton = document.querySelector('.preloader-enter');
     const body = document.querySelector('body');
+
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
     
     // Auto-hide preloader after 5 seconds (fallback)
     const autoHideTimer = setTimeout(() => {
@@ -82,5 +90,85 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body) {
             body.style.overflowY = 'auto'; // Re-enable scrolling
         }
+        initializeTimeline();
     }
 });
+
+// Timeline functionality
+function initializeTimeline() {
+    const timelineYears = document.querySelectorAll('.timeline-year');
+    const timelineSlides = document.querySelectorAll('.timeline-slide');
+    const nextButton = document.querySelector('.next-button');
+    const prevButton = document.querySelector('.prev-button');
+    const timelineDots = document.querySelectorAll('.timeline-dot');
+    
+    let currentIndex = 0;
+    const slideCount = timelineSlides.length;
+    
+    // Year click handler
+    timelineYears.forEach(year => {
+        year.addEventListener('click', () => {
+            const yearValue = year.getAttribute('data-year');
+            
+            // Find the index of the slide with matching year
+            timelineSlides.forEach((slide, index) => {
+                if (slide.getAttribute('data-year') === yearValue) {
+                    showSlide(index);
+                }
+            });
+        });
+    });
+    
+    // Next button handler
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slideCount - 1) {
+            showSlide(currentIndex + 1);
+        }
+    });
+    
+    // Previous button handler
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            showSlide(currentIndex - 1);
+        }
+    });
+    
+    // Dot click handler
+    timelineDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+    
+    function showSlide(index) {
+        // Update slide visibility
+        timelineSlides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        timelineSlides[index].classList.add('active');
+        
+        // Update years selection
+        timelineYears.forEach(year => {
+            year.classList.remove('active');
+        });
+        const yearValue = timelineSlides[index].getAttribute('data-year');
+        document.querySelector(`.timeline-year[data-year="${yearValue}"]`).classList.add('active');
+        
+        // Update dots
+        timelineDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        timelineDots[index].classList.add('active');
+        
+        // Update navigation buttons
+        prevButton.disabled = index === 0;
+        nextButton.disabled = index === slideCount - 1;
+        
+        // Update current index
+        currentIndex = index;
+        
+        // Update slides position
+        const slidesContainer = document.querySelector('.timeline-slides');
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+}
