@@ -1,3 +1,8 @@
+// Disable automatic scroll restoration
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -85,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function showMainContent() {
+        window.scrollTo(0, 0);
         if (preloader) {
             preloader.classList.add('hide-preloader');
         }
