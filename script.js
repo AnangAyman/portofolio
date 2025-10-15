@@ -31,11 +31,15 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         button.classList.add('active');
-        
+
         const filterValue = button.getAttribute('data-filter');
-        
+
         workItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            // Get the data-category string and split it into an array of categories
+            const categories = item.getAttribute('data-category').split(' ');
+
+            // Check if the filter is 'all' or if the categories array includes the filterValue
+            if (filterValue === 'all' || categories.includes(filterValue)) {
                 item.style.display = 'block';
             } else {
                 item.style.display = 'none';
