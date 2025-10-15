@@ -1014,6 +1014,11 @@ body.loaded .main-content {
         min-height: auto;
     }
 
+    /* Add this to create a custom gap in the hero section */
+    .hero .col-lg-6:first-child {
+        padding-right: 0rem; /* Adjust this value to increase or decrease the gap */
+    }
+
     .hero::before {
         width: 100%;
         height: 30%;
