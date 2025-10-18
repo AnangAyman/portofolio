@@ -52,6 +52,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+#calendar_date{
+    padding-right: 6px;
+}
+
 .display-heading {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
