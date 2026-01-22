@@ -126,3 +126,27 @@ function initializeTimeline() {
         });
     });
 }
+
+// --- TIMELINE PROGRESS BAR LOGIC ---
+window.addEventListener('scroll', () => {
+    const timeline = document.querySelector('.timeline-spine');
+    const progressBar = document.querySelector('.scroll-progress');
+    
+    if (timeline && progressBar) {
+        const timelineRect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Start filling when timeline enters the middle of the screen
+        const start = timelineRect.top;
+        const totalHeight = timelineRect.height;
+        
+        let percentage = 0;
+        if (start < windowHeight / 2) {
+            const scrolled = (windowHeight / 2) - start;
+            percentage = (scrolled / totalHeight) * 100;
+        }
+        
+        percentage = Math.min(Math.max(percentage, 0), 100);
+        progressBar.style.height = `${percentage}%`;
+    }
+});

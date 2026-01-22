@@ -556,210 +556,255 @@ footer a { color: var(--text-primary); text-decoration: none;}
     }
 }
 
-/* --- ARTSY SCRAPBOOK TIMELINE --- */
+/* --- 3D UNIFIED TIMELINE --- */
 
-.scrapbook-section {
+.timeline-section {
     padding: 6rem 0;
-    /* Subtle dot grid background for that "notebook" feel */
-    background-color: #fafafa;
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-color: #ffffff;
+    position: relative;
     overflow: hidden;
 }
 
-.scrapbook-container {
+.timeline-container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* 1. The Central Spine */
+/* 1. THE SPINE (Dead Center) */
 .timeline-spine {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    background: #e5e7eb; /* Light grey spine */
+    top: 0; bottom: 0; left: 50%;
+    width: 6px;
+    background: #e5e7eb;
     transform: translateX(-50%);
     z-index: 0;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
-/* 2. Eras & Sticky Headers */
+.scroll-progress {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: 0%;
+    background: #2c5530; /* Dark Green */
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(44, 85, 48, 0.4);
+    transition: height 0.1s linear;
+}
+
+/* 2. YEAR BADGE (Solid & Visible) */
 .era-block {
     position: relative;
-    padding-bottom: 6rem; /* Space between years */
+    padding-bottom: 8rem;
 }
 
-.era-sticky-header {
-    position: sticky;
-    top: 100px; /* Sticks 100px from top */
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-    pointer-events: none; /* Let clicks pass through */
-}
-
-.era-year {
-    background: var(--primary-color);
-    color: white;
+.era-badge {
+    position: sticky; 
+    top: 120px; 
+    z-index: 50; 
+    width: fit-content;
+    margin: 0 auto 5rem auto;
+    
+    /* VISIBILITY FIX */
+    background-color: #2c5530 !important;
+    color: white !important;
+    
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
-    font-weight: 800;
-    padding: 0.5rem 2rem;
-    border-radius: 99px;
-    box-shadow: 0 4px 15px rgba(53, 94, 59, 0.3);
-    border: 4px solid #fff; /* White ring */
-}
-
-/* 3. Event Rows */
-.event-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 4rem;
-    z-index: 1;
-}
-
-/* Left Alignment */
-.event-row.left {
-    justify-content: flex-end;
-    padding-right: 50%; /* Pushes content to left half */
-}
-.event-row.left .artsy-card { margin-right: 2rem; text-align: right; }
-.event-row.left .connector-line { right: 0; }
-.event-row.left .date-stamp { position: absolute; left: 50%; transform: translate(-50%, -50%); top: 50%; }
-
-/* Right Alignment */
-.event-row.right {
-    justify-content: flex-start;
-    padding-left: 50%; /* Pushes content to right half */
-}
-.event-row.right .artsy-card { margin-left: 2rem; text-align: left; }
-.event-row.right .connector-line { left: 0; }
-.event-row.right .date-stamp { position: absolute; left: 50%; transform: translate(-50%, -50%); top: 50%; }
-
-/* Center Alignment */
-.event-row.center {
-    flex-direction: column;
-}
-
-/* 4. The Artsy Components */
-
-/* Connector Dot */
-.date-stamp {
-    background: #fff;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
     font-weight: 700;
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 0.6rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 4px solid #ffffff;
+}
+
+/* 3. EVENT ROWS */
+.event-row {
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    margin-bottom: 6rem; 
     z-index: 2;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+/* 4. CONNECTORS (Forced Center) */
+.connector-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px; height: 20px;
+    background: white;
+    border: 5px solid #2c5530;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 4px #ffffff;
 }
 
 .connector-line {
     position: absolute;
     top: 50%;
-    width: 2rem; /* Length of connection to spine */
     height: 2px;
     background: #e5e7eb;
+    z-index: 1;
+    width: 4rem;
 }
 
-/* Base Card */
+/* Left Side Layout */
+.event-row.left { justify-content: flex-end; }
+.event-row.left .artsy-card { margin-right: calc(50% + 4rem); }
+.event-row.left .connector-line { right: 50%; margin-right: 6px; }
+
+/* Right Side Layout */
+.event-row.right { justify-content: flex-start; }
+.event-row.right .artsy-card { margin-left: calc(50% + 4rem); }
+.event-row.right .connector-line { left: 50%; margin-left: 6px; }
+
+.event-row.center { justify-content: center; margin-bottom: 3rem; }
+
+/* 5. THE UNIFIED 3D CARD */
 .artsy-card {
-    width: 320px;
-    transition: transform 0.3s ease;
-}
-.artsy-card:hover {
-    transform: scale(1.02) !important; /* Override tilts on hover */
-    z-index: 10;
+    width: 360px !important;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+    transform-style: preserve-3d;
 }
 
-/* Polaroid Style */
-.polaroid-card .polaroid-frame {
+/* This is the white container for BOTH image and text */
+.polaroid-frame {
     background: white;
-    padding: 12px 12px 30px 12px; /* Thick bottom for caption */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transform: rotate(-1deg);
-    border-radius: 2px;
+    padding: 15px; /* Unified padding */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Deep shadow for pop */
+    border-radius: 4px;
+    border: 1px solid #eee;
+    /* No rotation here - the parent rotates */
 }
-.polaroid-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+
+/* Image Container */
+.image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
     border: 1px solid #eee;
 }
+
+.image-container img {
+    width: 100%; 
+    height: 220px !important;
+    object-fit: cover;
+    display: block;
+}
+
+/* Caption on the image area */
 .polaroid-caption {
-    font-family: 'Inter', cursive; /* Or a handwriting font if available */
-    color: #555;
-    font-size: 0.9rem;
-    margin-top: 10px;
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 0;
     text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #333;
+    border-top: 1px solid #eee;
 }
+
+/* Description Area (Now inside the frame) */
 .card-desc {
-    margin-top: 1rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    text-align: left;
 }
-.card-desc h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
-.card-desc p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4; }
 
-/* Sticky Note Style */
+.card-desc h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1a365d; /* Navy Blue Title */
+}
+
+.card-desc p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 6. ROTATION CLASSES (Applied to the whole card) */
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
+
+/* Hover Effect: Straighten Up */
+.artsy-card:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-5px);
+    z-index: 50;
+    cursor: pointer;
+}
+
+/* 7. STICKY NOTE (Already unified) */
 .note-card {
-    background: #fef3c7; /* Post-it Yellow */
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transform: rotate(2deg);
+    width: 320px !important;
+    background: #fef08a;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     position: relative;
+    color: var(--text-primary);
+    transform: rotate(2deg); /* Default tilt */
+    transition: transform 0.3s ease;
 }
-.note-card.sticky-yellow { background: #fffbeb; border: 1px solid #fcd34d;}
-.note-card h4 { font-size: 1.1rem; color: #92400e; margin-bottom: 0.5rem; }
-.note-card p { font-size: 0.9rem; color: #78350f; font-family: 'Inter', sans-serif; }
+
+.note-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.note-card h4 { font-weight: 800; font-size: 1.25rem; margin-bottom: 0.5rem; color: #854d0e; }
+.note-card p { font-size: 1rem; line-height: 1.6; color: #3f3f46; }
+
 .tape-strip {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 25px;
-    background: rgba(255,255,255,0.4);
-    border: 1px solid rgba(0,0,0,0.05);
-    backdrop-filter: blur(2px);
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 30px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Milestone Marker */
-.milestone-marker {
+/* Center Highlight */
+.highlight-badge {
     background: white;
-    border: 2px solid var(--border-light);
-    padding: 0.75rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 2rem;
     border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex; gap: 0.75rem; align-items: center;
+    z-index: 10;
 }
-.marker-icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
-.milestone-marker h4 { font-size: 1rem; margin: 0; }
-.milestone-marker p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+.highlight-badge i { color: #2c5530; }
+.highlight-badge span { font-weight: 700; color: #1e293b; }
 
-/* Dynamic Tilts */
-.tilt-left { transform: rotate(-2deg); }
-.tilt-right { transform: rotate(2deg); }
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .timeline-spine { left: 20px; } /* Move spine to left edge */
-    .era-year { font-size: 1.2rem; }
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+    .timeline-spine { left: 30px; }
+    .connector-dot { left: 30px; transform: translate(-50%, -50%); }
     
-    .event-row { flex-direction: column; align-items: flex-start; margin-left: 40px; }
-    .event-row.left, .event-row.right { padding: 0; justify-content: flex-start; }
+    .event-row.left, .event-row.right { 
+        justify-content: flex-start; 
+        margin-left: 60px;
+    }
     
-    .artsy-card { width: 100%; margin: 0 !important; text-align: left !important; }
-    .connector-line { width: 20px; left: -20px !important; }
-    .date-stamp { left: -20px !important; top: 0 !important; transform: none !important; }
+    .event-row.left .artsy-card, 
+    .event-row.right .artsy-card { 
+        margin-left: 0; 
+        margin-right: 0; 
+        width: 100% !important; 
+        max-width: 400px !important;
+    }
     
-    .milestone-marker { margin-left: 0; width: 100%; align-items: flex-start; text-align: left; }
+    .connector-line {
+        left: 30px !important;
+        width: 30px !important;
+    }
+    
+    .artsy-card, .note-card { transform: rotate(0deg) !important; }
 }
