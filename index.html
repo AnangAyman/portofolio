@@ -10,22 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="preloader">
-        <div class="preloader-content">
-            <div class="code-loading-container">
-                <div class="code-lines">
-                    <div class="code-line"><span class="keyword">const</span> name = <span class="string">'Anang Ayman'</span>;</div>
-                    <div class="code-line"><span class="keyword">const</span> desc = <span class="string"> Aspiring Software Engineer</span>;</div>
-                    <div class="code-line"><span class="comment">// Compiling modules...</span></div>
-                    <!-- <div class="code-line"><span class="keyword">status</span>: <span class="string">'Ready'</span>;</div> -->
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
-            <div class="loading-text">INITIALIZING...</div>
-        </div>
-    </div>
 
     <div class="main-content">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -63,217 +47,184 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h1>Software Engineer, Back-end Developer.</h1>
-                        <p>Turning caffeine and logic into functional apps — occasionally even on the first try.</p>
-                        <a href="#contact" class="btn btn-primary me-3">Contact Me</a>
-                        <a href="#work" class="btn btn-outline-dark">View My Work</a>
+                        <span class="badge-pill">Available for work</span>
+                        <h1>Building scalable backends & <br>intelligent systems.</h1>
+                        <p class="hero-sub">Computer Science undergraduate specializing in Python ecosystems, cloud infrastructure, and applied machine learning.</p>
+                        <div class="hero-actions">
+                            <a href="#work" class="btn btn-primary me-3">View Projects</a>
+                            <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <img src="static/profile_pic.png" alt="Hero Image" class="img-fluid profile-picture-circle"> 
+                    <div class="col-lg-6 d-none d-lg-block text-center">
+                        <div class="image-wrapper">
+                             <img src="static/profile_pic.png" alt="Anang Ayman" class="img-fluid profile-picture-circle">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-    
+        
         <section id="expertise" class="py-5">
             <div class="container py-5">
-                <h2 class="section-title">My Expertise</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card">
-                            <i class="fas fa-layer-group expertise-icon"></i>
-                            <h3>Full-Stack Python Developer</h3>
-                            <p>Expert in building web applications with <strong>Python</strong>, <strong>Django</strong>, and <strong>Flask</strong>. Skilled in managing <strong>MySQL</strong> & <strong>SQLite</strong> databases, while exploring Machine Learning with <strong>TensorFlow</strong> & <strong>PyTorch</strong>.</p>
-                        </div>
+                <div class="section-header mb-5">
+                    <h2 class="section-title">Technical Expertise</h2>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <i class="fas fa-layer-group expertise-icon"></i>
+                        <h3>Full-Stack Python</h3>
+                        <p>Building robust architectures with Django & Flask. Proficient in ORM design and integrating ML pipelines.</p>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card">
-                            <i class="fas fa-cogs expertise-icon"></i>
-                            <h3>DevOps & Software Engineer</h3>
-                            <p>Adept at modern development operations. Experienced with <strong>Docker</strong> for containerization, <strong>Git</strong> for version control, and collaborative platforms like <strong>Github</strong> to streamline workflows.</p>
-                        </div>
+                    
+                    <div class="bento-card">
+                        <i class="fas fa-server expertise-icon"></i>
+                        <h3>DevOps</h3>
+                        <p>Containerization with Docker, CI/CD pipelines via GitHub Actions, and version control mastery.</p>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card">
-                            <i class="fas fa-users-cog expertise-icon"></i>
-                            <h3>Agile Project Lead</h3>
-                            <p>Experienced in team leadership within an <strong>Agile</strong> framework. Successfully guided university projects using <strong>Scrum</strong> methodologies to ensure effective collaboration and timely project delivery.</p>
-                        </div>
+                    
+                    <div class="bento-card">
+                        <i class="fas fa-users-cog expertise-icon"></i>
+                        <h3>Agile Leadership</h3>
+                        <p>Scrum Master experience guiding development teams through sprints to successful product delivery.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="timeline" class="timeline-section">
+        <section id="timeline" class="scrapbook-section">
             <div class="container">
-                <div class="timeline-intro">
-                    <h2 class="section-title" data-aos="fade-up">My Journey</h2>
-                    <p data-aos="fade-up" data-aos-delay="100">A chronological showcase of my key milestones, achievements and projects over the years. Each step represents growth and development in my professional journey.</p>
+                <div class="timeline-intro text-center mb-5">
+                    <h2 class="section-title">My Journey</h2>
+                    <p class="text-secondary">A collection of milestones, memories, and code.</p>
                 </div>
-                
-                <div class="timeline-carousel-container">
-                    <div class="timeline-years" data-aos="fade-up" data-aos-delay="200">
-                        <div class="timeline-year active" data-year="2023">2023</div>
-                        <div class="timeline-year" data-year="2024">2024</div>
-                        <div class="timeline-year" data-year="2025">2025</div>
-                    </div>
-                    
-                    <div class="timeline-carousel" data-aos="fade-up" data-aos-delay="300">
-                        <div class="timeline-slides">
-                            <div class="timeline-slide active" data-year="2023">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/Graduation.jpeg " alt="High School Graduation" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> May 2023
-                                                </div>
-                                                <h3 class="timeline-card-title">High School Graduation</h3>
-                                                <p class="timeline-card-description">Successfully completed high school with honors, focusing on computer science and mathematics. Received the Excellence in Technology award for creating an innovative school management system.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Education</span>
-                                                    <span class="timeline-tag">Achievement</span>
-                                                    <span class="timeline-tag">Technology</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
+        
+                <div class="scrapbook-container">
+                    <div class="timeline-spine"></div>
+        
+                    <div class="era-block">
+                        <div class="era-sticky-header">
+                            <div class="era-year">2025</div>
+                        </div>
+                        
+                        <div class="era-events">
+                            <div class="event-row left">
+                                <div class="artsy-card polaroid-card tilt-left">
+                                    <div class="polaroid-frame">
+                                        <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
+                                        <div class="polaroid-caption">Signlingo Launch 🚀</div>
                                     </div>
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/teachforindonesia.jpeg " alt="First Web App" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> October 2023
-                                                </div>
-                                                <h3 class="timeline-card-title">Teach For Indonesia Educator</h3>
-                                                <p class="timeline-card-description">Fostered a nurturing and safe environment for orphaned children through direct community engagement and socialization. Provided essential supplies to address their basic needs while also leading interactive sessions to raise awareness about social issues like corruption.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Community Outreach</span>
-                                                    <span class="timeline-tag">Education</span>
-                                                    <span class="timeline-tag">Social Impact</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">View Project <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
+                                    <div class="card-desc">
+                                        <h4>Lead Developer</h4>
+                                        <p>Led a 10-person team to ship an AI Sign Language app using Hybrid CNN-LSTM.</p>
                                     </div>
                                 </div>
+                                <div class="connector-line"></div>
+                                <div class="date-stamp">JAN</div>
                             </div>
-                            
-                            <div class="timeline-slide" data-year="2024">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/Webinar_Himti.jpeg " alt="College Acceptance" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> March 2024
-                                                </div>
-                                                <h3 class="timeline-card-title">Event Chairman: Webinar HIMTI x BCA</h3>
-                                                <p class="timeline-card-description">As Event Chairman, I managed a key partnership event between HIMTI and Bank Central Asia (BCA). My role involved defining the event strategy, delegating tasks across the organizing committee to ensure seamless execution, and managing all critical communications with our corporate partner, BCA.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Leadership</span>
-                                                    <span class="timeline-tag">Company Outreach</span>
-                                                    <span class="timeline-tag">Event-planning</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/OpenID_Connect.png " alt="Fitness App" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> June 2024
-                                                </div>
-                                                <h3 class="timeline-card-title">Software Engineer Intern : Backend Developer</h3>
-                                                <p class="timeline-card-description">Developed and deployed a secure OpenID Provider application using Flask and Authlib for user authentication. Designed backend logic and performed thorough testing to validate authentication flows and ensure server performance within an agile Scrum team.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Flask</span>
-                                                    <span class="timeline-tag">Back-end Development</span>
-                                                    <span class="timeline-tag">OAuth2</span>
-                                                    <span class="timeline-tag">OpenIDConnect</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">View Project <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+        
+                            <div class="event-row center">
+                                <div class="milestone-marker">
+                                    <span class="marker-icon">🎓</span>
+                                    <h4>Entered 5th Semester</h4>
+                                    <p>Specializing in AI & Intelligent Systems</p>
                                 </div>
                             </div>
-                            
-                            <div class="timeline-slide" data-year="2025">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/Signlingo_thumbnail.png " alt="Internship" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> January 2025
-                                                </div>
-                                                <h3 class="timeline-card-title">Signlingo: Sign Language Learning App</h3>
-                                                <p class="timeline-card-description">Led a 10-member team as Lead Developer and Scrum Master, overseeing the end-to-end lifecycle of a sign language learning web app. 
-                                                    Key contributions include deploying the Flask-based application and building a custom Hybrid CNN-LSTM model for real-time gesture recognition.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Flask</span>
-                                                    <span class="timeline-tag">Web Development</span>
-                                                    <span class="timeline-tag">AI/ML</span>
-                                                    <span class="timeline-tag">CNN</span>
-                                                    <span class="timeline-tag">LSTM</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
+        
+                            <div class="event-row right">
+                                <div class="date-stamp">MAY</div>
+                                <div class="connector-line"></div>
+                                <div class="artsy-card polaroid-card tilt-right">
+                                    <div class="polaroid-frame">
+                                        <img src="static/Himti_ITB.jpeg" alt="HIMTI Manager">
+                                        <div class="polaroid-caption">Manager of Events</div>
                                     </div>
-                                    <div class="col-lg-6 mb-4">
-                                        <div class="timeline-card">
-                                            <div class="timeline-card-header">
-                                                <img src="static/Himti_ITB.jpeg " alt="AI Project" class="timeline-card-image">
-                                            </div>
-                                            <div class="timeline-card-content">
-                                                <div class="timeline-date">
-                                                    <i class="fas fa-calendar-alt" id="calendar_date"></i> May 2025
-                                                </div>
-                                                <h3 class="timeline-card-title">Manager of Academic Events, Greater Jakarta</h3>
-                                                <p class="timeline-card-description">In this role, my key function is to orchestrate academic events by delegating responsibilities to a capable team. I manage the overall strategy and monitor the progress of each event, from workshops to seminars, ensuring all milestones are met. While I oversee high-level functions, my core focus is empowering the team through clear delegation and consistent monitoring to guarantee high-quality outcomes.</p>
-                                                <div class="timeline-tags">
-                                                    <span class="timeline-tag">Leadership</span>
-                                                    <span class="timeline-tag">Public speaking</span>
-                                                    <span class="timeline-tag">Event-planning</span>
-                                                </div>
-                                                <a href="#" class="timeline-card-link">View Project <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
+                                    <div class="card-desc">
+                                        <p>Orchestrating academic events to connect students with industry leaders.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    
-                    <div class="timeline-nav" style="display: none;">
-                        <button class="timeline-nav-button prev-button" disabled>
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="timeline-nav-button next-button">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
                     </div>
-                    
-                    <div class="timeline-indicator">
-                        <div class="timeline-dot active" data-index="0"></div>
-                        <div class="timeline-dot" data-index="1"></div>
-                        <div class="timeline-dot" data-index="2"></div>
+        
+                    <div class="era-block">
+                        <div class="era-sticky-header">
+                            <div class="era-year">2024</div>
+                        </div>
+        
+                        <div class="era-events">
+                            <div class="event-row right">
+                                <div class="date-stamp">MAR</div>
+                                <div class="connector-line"></div>
+                                <div class="artsy-card note-card sticky-yellow">
+                                    <div class="tape-strip"></div>
+                                    <h4>Event Chairman!</h4>
+                                    <p>Handled the massive HIMTI x BCA collaboration. Learned a ton about stakeholder management.</p>
+                                    <div class="hand-signature">- Ayman</div>
+                                </div>
+                            </div>
+        
+                            <div class="event-row left">
+                                <div class="artsy-card polaroid-card tilt-left">
+                                    <div class="polaroid-frame">
+                                        <img src="static/OpenID_Connect.png" alt="Internship">
+                                    </div>
+                                    <div class="card-desc">
+                                        <h4>Backend Intern</h4>
+                                        <p>Built a secure OpenID Provider using Flask. My first deep dive into Auth protocols.</p>
+                                    </div>
+                                </div>
+                                <div class="connector-line"></div>
+                                <div class="date-stamp">JUN</div>
+                            </div>
+                        </div>
                     </div>
+        
+                    <div class="era-block">
+                        <div class="era-sticky-header">
+                            <div class="era-year">2023</div>
+                        </div>
+        
+                        <div class="era-events">
+                            <div class="event-row left">
+                                <div class="artsy-card polaroid-card">
+                                    <div class="polaroid-frame">
+                                        <img src="static/Graduation.jpeg" alt="Graduation">
+                                        <div class="polaroid-caption">We made it! 🎓</div>
+                                    </div>
+                                    <div class="card-desc">
+                                        <h4>High School Grad</h4>
+                                        <p>DSC Class of '23. Won the Tech Excellence Award.</p>
+                                    </div>
+                                </div>
+                                <div class="connector-line"></div>
+                                <div class="date-stamp">MAY</div>
+                            </div>
+        
+                            <div class="event-row center">
+                                <div class="milestone-marker">
+                                    <span class="marker-icon">🏛️</span>
+                                    <h4>Joined BINUS University</h4>
+                                    <p>Computer Science Major</p>
+                                </div>
+                            </div>
+        
+                            <div class="event-row right">
+                                <div class="date-stamp">OCT</div>
+                                <div class="connector-line"></div>
+                                <div class="artsy-card polaroid-card tilt-right">
+                                    <div class="polaroid-frame">
+                                        <img src="static/teachforindonesia.jpeg" alt="TFI">
+                                        <div class="polaroid-caption">Teach For Indonesia</div>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p>Volunteering to teach underprivileged kids. A humbling experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
                 </div>
             </div>
         </section>
@@ -343,67 +294,149 @@
             </div>
         </section>
     
-        <section id="experience" class="py-5 bg-light">
+        <section id="experience" class="py-5">
             <div class="container py-5">
-                <h2 class="section-title">Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <h3>Back-end Engineer Intern</h3>
-                    <div class="company">Digital Agri Solutions</div>
-                    <div class="period">2024 - Present | Melbourne, Australia (Remote)</div>
-                    <p>Instrumental in the end-to-end development of a secure OpenID Provider using Flask and Authlib. Key contributions included designing the core backend logic and executing comprehensive performance and flow testing. Delivered key features as an integral part of a Scrum team, operating under an Agile methodology.</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">OpenID Connect</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
-    
-                <div class="experience-item">
-                    <h3>Manager of Academic Events Greater Jakarta</h3>
-                    <div class="company">HIMTI Binus University</div>
-                    <div class="period">2025 - 2026 | Jakarta, Indonesia</div>
-                    <p>As Manager of Academic Events, I led initiatives that connected academia with industry through high-impact events. I successfully guided cross-functional teams through the planning and execution of workshops, seminars, and more, consistently delivering high-quality outcomes. My role centered on effective leadership, including budget oversight, stakeholder engagement, and a commitment to refining future events through post-event analysis.</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Strategic Planning</span>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Computer Teacher</h3>
-                    <div class="company">Dompet Dhuafa Hong Kong</div>
-                    <div class="period">2022 | Hong Kong SAR, China</div>
-                    <p>As a volunteer instructor with humanitarian organization Dompet Dhuafa, I spearheaded a program to uplift Indonesian domestic helpers through technology education. I fostered an inclusive and empowering learning space, demystifying technology for adult learners. The curriculum was built around high-impact digital skills designed to unlock new professional pathways and foster greater self-sufficiency for participants.</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Community Engagement & Outreach</span>
-                        <span class="skill-tag">Social Impact & Advocacy</span>
-                        <span class="skill-tag">Initiative & Social Responsibility</span>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="section-title mb-5">Professional Experience</h2>
+                        
+                        <div class="experience-feed">
+                            
+                            <div class="feed-item">
+                                <div class="feed-marker"></div>
+                                <div class="feed-content">
+                                    <div class="feed-header">
+                                        <div>
+                                            <h3>Back-end Engineer Intern</h3>
+                                            <div class="company">Digital Agri Solutions <span class="location">• Melbourne (Remote)</span></div>
+                                        </div>
+                                        <div class="period-badge">2024 - Present</div>
+                                    </div>
+                                    <p>Instrumental in the end-to-end development of a secure OpenID Provider using Flask and Authlib. Designed core backend logic and executed comprehensive performance testing within an Agile Scrum team.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Flask</span>
+                                        <span class="skill-tag">MySQL</span>
+                                        <span class="skill-tag">Docker</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="feed-item">
+                                <div class="feed-marker"></div>
+                                <div class="feed-content">
+                                    <div class="feed-header">
+                                        <div>
+                                            <h3>Manager of Academic Events</h3>
+                                            <div class="company">HIMTI Binus University <span class="location">• Jakarta, ID</span></div>
+                                        </div>
+                                        <div class="period-badge">2025 - 2026</div>
+                                    </div>
+                                    <p>Led initiatives connecting academia with industry through high-impact events. Guided cross-functional teams in planning workshops and seminars, managing budgets, and overseeing stakeholder engagement.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Leadership</span>
+                                        <span class="skill-tag">Project Management</span>
+                                        <span class="skill-tag">Strategic Planning</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feed-item">
+                                <div class="feed-marker"></div>
+                                <div class="feed-content">
+                                    <div class="feed-header">
+                                        <div>
+                                            <h3>Computer Teacher (Volunteer)</h3>
+                                            <div class="company">Dompet Dhuafa <span class="location">• Hong Kong</span></div>
+                                        </div>
+                                        <div class="period-badge">2022</div>
+                                    </div>
+                                    <p>Spearheaded a program to uplift Indonesian domestic helpers through technology education. Fostered an inclusive learning space and developed a curriculum focused on high-impact digital skills.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Education</span>
+                                        <span class="skill-tag">Social Impact</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     
-        <section class="py-5">
+        <section id="education" class="py-5">
             <div class="container py-5">
-                <h2 class="section-title">Educational Background</h2>
+                <h2 class="section-title mb-5">Educational Background</h2>
                 
-                <div class="row">
-                    <div class="experience-item">
-                        <h3>BINUS University</h3>
-                        <div class="company">Bachelor of Computer Science</div>
-                        <div class="period">2023-Present (Expected  Grad. 2027) | Jakarta, Indonesia</div>
-                        <p>A high-achieving student with a 3.88 GPA and a strong foundation in web development and AI/ML</p>
+                <div class="row g-4">
+                    
+                    <div class="col-lg-6">
+                        <div class="education-card">
+                            <div class="edu-header">
+                                <div class="edu-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="edu-title-group">
+                                    <h3>BINUS University</h3>
+                                    <span class="edu-degree">Bachelor of Computer Science</span>
+                                </div>
+                            </div>
+                            
+                            <div class="edu-body">
+                                <p class="mb-4 text-secondary">Specializing in Artificial Intelligence & Web Development. Developing a strong foundation in algorithms, data structures, and software engineering principles.</p>
+                                
+                                <div class="edu-meta-grid">
+                                    <div class="edu-meta-item">
+                                        <span class="meta-label">Period</span>
+                                        <span class="meta-value">2023 - 2027</span>
+                                    </div>
+                                    <div class="edu-meta-item">
+                                        <span class="meta-label">Location</span>
+                                        <span class="meta-value">Jakarta, ID</span>
+                                    </div>
+                                    <div class="edu-meta-item highlight">
+                                        <span class="meta-label">GPA</span>
+                                        <span class="meta-value">3.88 <small>/ 4.00</small></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experience-item">
-                        <h3>Delia School of Canada (DSC)</h3>
-                        <div class="company">High School Diploma</div>
-                        <div class="period">2020-2023 | Hong Kong SAR, China</div>
-                        <p>Completed the rigorous ontario curriculum with distinction (86/100), establishing a strong foundation in analytical and computational skills through advanced courses in Calculus and Computer Science.</p>
+        
+                    <div class="col-lg-6">
+                        <div class="education-card">
+                            <div class="edu-header">
+                                <div class="edu-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="edu-title-group">
+                                    <h3>Delia School of Canada</h3>
+                                    <span class="edu-degree">High School Diploma</span>
+                                </div>
+                            </div>
+                            
+                            <div class="edu-body">
+                                <p class="mb-4 text-secondary">Completed the rigorous Ontario curriculum with distinction. Established strong analytical skills through advanced coursework in Calculus and Computer Science.</p>
+                                
+                                <div class="edu-meta-grid">
+                                    <div class="edu-meta-item">
+                                        <span class="meta-label">Period</span>
+                                        <span class="meta-value">2020 - 2023</span>
+                                    </div>
+                                    <div class="edu-meta-item">
+                                        <span class="meta-label">Location</span>
+                                        <span class="meta-value">Hong Kong</span>
+                                    </div>
+                                    <div class="edu-meta-item highlight">
+                                        <span class="meta-label">Score</span>
+                                        <span class="meta-value">86 <small>/ 100</small></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+        
                 </div>
             </div>
         </section>

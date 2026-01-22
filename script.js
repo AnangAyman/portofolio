@@ -3,27 +3,51 @@ if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    }
+
+    // Initialize the Cinematic Timeline
+    initializeTimeline();
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 70,
+                top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
             });
-        }
-        
-        // Close mobile menu when a link is clicked
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: true});
+                bsCollapse.hide();
+            }
         }
     });
+});
+
+// Navbar shadow on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 10) {
+        navbar.classList.add('shadow-sm');
+    } else {
+        navbar.classList.remove('shadow-sm');
+    }
 });
 
 // Work filter functionality
@@ -32,95 +56,61 @@ const workItems = document.querySelectorAll('.work-item');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
-
         const filterValue = button.getAttribute('data-filter');
 
         workItems.forEach(item => {
-            // Get the data-category string and split it into an array of categories
             const categories = item.getAttribute('data-category').split(' ');
-
-            // Check if the filter is 'all' or if the categories array includes the filterValue
             if (filterValue === 'all' || categories.includes(filterValue)) {
-                item.style.display = 'block';
+                item.style.display = 'block';     // Reset display first
+                setTimeout(() => item.style.opacity = '1', 10); // Fade in
             } else {
-                item.style.display = 'none';
+                item.style.opacity = '0';
+                setTimeout(() => item.style.display = 'none', 300); // Wait for fade out
             }
         });
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.padding = '0.5rem 2rem';
-    } else {
-        navbar.style.padding = '1rem 2rem';
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const preloader = document.querySelector('.preloader');
-    const mainContent = document.querySelector('.main-content');
-    const enterButton = document.querySelector('.preloader-enter');
-    const body = document.querySelector('body');
-
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-    });
-
-    // Auto-hide preloader after a delay (e.g., 5 seconds)
-    const autoHideTimer = setTimeout(() => {
-        showMainContent();
-    }, 5000); // Adjust time as needed
-
-    // Enter button click handler
-    enterButton.addEventListener('click', () => {
-        clearTimeout(autoHideTimer);
-        showMainContent();
-    });
-
-    function showMainContent() {
-        window.scrollTo(0, 0);
-        if (preloader) {
-            preloader.classList.add('hide-preloader');
-        }
-        if (body) {
-            // Add a 'loaded' class to the body to trigger content fade-in
-            body.classList.add('loaded');
-        }
-        // Optional: Re-initialize timeline after preloader is gone
-        if (typeof initializeTimeline === 'function') {
-            initializeTimeline();
-        }
-    }
-});
-// Timeline functionality
+// --- UPDATED TIMELINE FUNCTION ---
 function initializeTimeline() {
     const timelineYears = document.querySelectorAll('.timeline-year');
     const timelineSlides = document.querySelectorAll('.timeline-slide');
-    const nextButton = document.querySelector('.next-button');
-    const prevButton = document.querySelector('.prev-button');
     const timelineDots = document.querySelectorAll('.timeline-dot');
     
-    let currentIndex = 0;
-    const slideCount = timelineSlides.length;
-    
-    // Year click handler
+    if(!timelineSlides.length) return;
+
+    function showSlide(index) {
+        // 1. Activate Slide
+        timelineSlides.forEach(slide => slide.classList.remove('active'));
+        timelineSlides[index].classList.add('active');
+        
+        // 2. Activate Year Pill
+        // We get the year from the slide we just switched to
+        const yearValue = timelineSlides[index].getAttribute('data-year');
+        timelineYears.forEach(year => year.classList.remove('active'));
+        
+        // Find the specific year button that matches the slide's year
+        const activeYear = document.querySelector(`.timeline-year[data-year="${yearValue}"]`);
+        if(activeYear) activeYear.classList.add('active');
+        
+        // 3. Activate Dot
+        timelineDots.forEach(dot => dot.classList.remove('active'));
+        if(timelineDots[index]) timelineDots[index].classList.add('active');
+        
+        // 4. Move Carousel
+        const slidesContainer = document.querySelector('.timeline-slides');
+        if(slidesContainer) {
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        }
+    }
+
+    // Event Listener: Click on Year
     timelineYears.forEach(year => {
         year.addEventListener('click', () => {
             const yearValue = year.getAttribute('data-year');
-            
-            // Find the index of the slide with matching year
+            // Find the index of the slide that has this year
             timelineSlides.forEach((slide, index) => {
                 if (slide.getAttribute('data-year') === yearValue) {
                     showSlide(index);
@@ -128,57 +118,11 @@ function initializeTimeline() {
             });
         });
     });
-    
-    // Next button handler
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < slideCount - 1) {
-            showSlide(currentIndex + 1);
-        }
-    });
-    
-    // Previous button handler
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            showSlide(currentIndex - 1);
-        }
-    });
-    
-    // Dot click handler
+
+    // Event Listener: Click on Dots (NEW)
     timelineDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showSlide(index);
         });
     });
-    
-    function showSlide(index) {
-        // Update slide visibility
-        timelineSlides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-        timelineSlides[index].classList.add('active');
-        
-        // Update years selection
-        timelineYears.forEach(year => {
-            year.classList.remove('active');
-        });
-        const yearValue = timelineSlides[index].getAttribute('data-year');
-        document.querySelector(`.timeline-year[data-year="${yearValue}"]`).classList.add('active');
-        
-        // Update dots
-        timelineDots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        timelineDots[index].classList.add('active');
-        
-        // Update navigation buttons
-        prevButton.disabled = index === 0;
-        nextButton.disabled = index === slideCount - 1;
-        
-        // Update current index
-        currentIndex = index;
-        
-        // Update slides position
-        const slidesContainer = document.querySelector('.timeline-slides');
-        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-    }
 }
