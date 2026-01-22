@@ -596,7 +596,7 @@ footer a { color: var(--text-primary); text-decoration: none;}
 /* 2. YEAR BADGE (Solid & Visible) */
 .era-block {
     position: relative;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
 }
 
 .era-badge {
@@ -624,7 +624,7 @@ footer a { color: var(--text-primary); text-decoration: none;}
     display: flex; 
     align-items: center; 
     position: relative; 
-    margin-bottom: 6rem; 
+    margin-bottom: 4rem; 
     z-index: 2;
     width: 100%;
 }
