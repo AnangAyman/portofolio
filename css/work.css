@@ -1,0 +1,80 @@
+.feature-section {
+    padding: 8rem 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.project-row {
+    display: flex; align-items: center; gap: 4rem;
+    margin-bottom: 8rem; position: relative; z-index: 1;
+}
+.project-row:nth-child(even) { flex-direction: row-reverse; }
+
+/* 1. Browser Window */
+.project-visual { flex: 1; position: relative; z-index: 10; transition: transform 0.4s ease; }
+.project-row:hover .project-visual { transform: translateY(-10px); }
+
+.browser-mockup {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    overflow: hidden; background: white;
+    border: 1px solid #e4e4e7;
+}
+.browser-header {
+    height: 36px; background: #f4f4f5;
+    border-bottom: 1px solid #e4e4e7;
+    display: flex; align-items: center;
+    padding-left: 1rem; gap: 6px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #f59e0b; }
+.dot.green { background: #22c55e; }
+.browser-mockup img { display: block; width: 100%; height: auto; object-fit: cover; }
+
+/* 2. Content */
+.project-content { flex: 0.9; position: relative; z-index: 10; }
+.project-label {
+    text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em;
+    font-weight: 700; color: var(--primary-color); margin-bottom: 0.75rem; display: block;
+}
+.project-title {
+    font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;
+    line-height: 1.1; color: var(--text-primary);
+}
+.project-desc {
+    font-size: 1.05rem; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 1.5rem;
+}
+.tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+.tech-pill {
+    background: var(--bg-surface); border: 1px solid var(--border-light);
+    padding: 6px 14px; border-radius: 6px; font-size: 0.8rem;
+    font-weight: 600; color: var(--text-secondary);
+}
+
+/* 3. The Blob */
+.project-row::before {
+    content: ''; position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(61, 247, 89, 0.15) 0%, transparent 70%);
+    border-radius: 50%; z-index: 0;
+    opacity: 0.8; transform: scale(0.9); transition: all 0.5s ease;
+}
+.project-row:nth-child(odd)::before { left: -150px; top: 50%; transform: translateY(-50%) scale(0.9); }
+.project-row:nth-child(even)::before { right: -150px; top: 50%; transform: translateY(-50%) scale(0.9); left: auto; }
+.project-row:hover::before { 
+    opacity: 1; transform: translateY(-50%) scale(1); 
+    animation: blobPulse 4s infinite ease-in-out;
+}
+@keyframes blobPulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.05); } 
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+@media (max-width: 992px) {
+    .project-row, .project-row:nth-child(even) { flex-direction: column; gap: 2rem; }
+    .project-visual { width: 100%; }
+    .project-content { width: 100%; text-align: left; }
+    .project-title { font-size: 1.75rem; }
+}
