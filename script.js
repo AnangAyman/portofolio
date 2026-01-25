@@ -127,7 +127,7 @@ function initializeTimeline() {
     });
 }
 
-// --- TIMELINE PROGRESS BAR LOGIC ---
+// --- UPDATED PROGRESS LOGIC (Optional) ---
 window.addEventListener('scroll', () => {
     const timeline = document.querySelector('.timeline-spine');
     const progressBar = document.querySelector('.scroll-progress');
@@ -136,17 +136,20 @@ window.addEventListener('scroll', () => {
         const timelineRect = timeline.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
-        // Start filling when timeline enters the middle of the screen
+        // "start" is the distance from the top of viewport to top of timeline
         const start = timelineRect.top;
         const totalHeight = timelineRect.height;
         
-        let percentage = 0;
-        if (start < windowHeight / 2) {
-            const scrolled = (windowHeight / 2) - start;
-            percentage = (scrolled / totalHeight) * 100;
-        }
+        // Calculate how much has been scrolled past the center of the screen
+        // Changing 'windowHeight / 2' to 'windowHeight * 0.8' makes the line draw 
+        // further down the screen (filling up faster).
+        let scrolled = (windowHeight * 0.6) - start; 
+
+        let percentage = (scrolled / totalHeight) * 100;
         
+        // Clamp between 0 and 100
         percentage = Math.min(Math.max(percentage, 0), 100);
+        
         progressBar.style.height = `${percentage}%`;
     }
 });
