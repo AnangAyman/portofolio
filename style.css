@@ -992,3 +992,84 @@ footer a { color: var(--text-primary); text-decoration: none;}
     .project-content { width: 100%; text-align: left; }
     .project-title { font-size: 1.75rem; }
 }
+
+/* --- DUAL LANE TIMELINE (Compact Mode) --- */
+.timeline-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Keeps them aligned horizontally */
+    width: 100%;
+    margin-bottom: 5rem; /* Space between rows */
+    position: relative;
+    z-index: 2;
+}
+
+/* The two columns */
+.timeline-pair .left-col, 
+.timeline-pair .right-col {
+    width: 44%; /* Leaves 12% space in the middle */
+    position: relative;
+}
+
+.timeline-pair .left-col {
+    display: flex;
+    justify-content: flex-end; /* Push card towards center */
+}
+
+.timeline-pair .right-col {
+    display: flex;
+    justify-content: flex-start; /* Push card towards center */
+}
+
+/* Shared Center Dot */
+.timeline-pair .center-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: #355E3B; /* Your Forest Green */
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 4px rgba(53, 94, 59, 0.2);
+}
+
+/* Connector Arms (Lines) */
+.timeline-pair .left-col::after,
+.timeline-pair .right-col::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    background: #e4e4e7; /* Light grey connector */
+    width: 15%; /* Reach to the center */
+    z-index: -1;
+}
+
+.timeline-pair .left-col::after {
+    right: -15%;
+}
+
+.timeline-pair .right-col::after {
+    left: -15%;
+}
+
+/* Mobile Responsive: Stack them back to single column on phones */
+@media (max-width: 768px) {
+    .timeline-pair {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .timeline-pair .left-col, 
+    .timeline-pair .right-col {
+        width: 100%;
+        justify-content: center;
+    }
+    .timeline-pair .center-dot,
+    .timeline-pair .left-col::after,
+    .timeline-pair .right-col::after {
+        display: none; /* Hide complex connectors on mobile */
+    }
+}
