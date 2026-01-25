@@ -949,17 +949,31 @@ footer a { color: var(--text-primary); text-decoration: none;}
     color: var(--text-secondary);
 }
 
-/* 3. The Sage Blob (Background) */
+/* Update the Blob CSS to include animation */
 .project-row::before {
     content: '';
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #ecfdf5 0%, transparent 70%); /* Faint Sage Glow */
+    background: radial-gradient(circle, #ecfdf5 0%, transparent 70%);
     z-index: 0;
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transform: scale(0.8); /* Start smaller */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Add Keyframes for the pulse */
+@keyframes blobPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Grow slightly */
+    100% { transform: scale(1); }
+}
+
+/* Trigger animation on Hover */
+.project-row:hover::before { 
+    opacity: 1; 
+    animation: blobPulse 4s infinite ease-in-out; /* Continuous slow breathing */
 }
 
 /* Blob positioning matches alternating rows */
