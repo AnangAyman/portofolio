@@ -949,39 +949,71 @@ footer a { color: var(--text-primary); text-decoration: none;}
     color: var(--text-secondary);
 }
 
-/* Update the Blob CSS to include animation */
+/* --- UPDATED BLOB CSS (Fixed Position & Layering) --- */
+
+.project-row {
+    position: relative;
+    /* Ensure the row handles depth correctly */
+    z-index: 1; 
+}
+
+/* 1. Make sure Content & Visuals are ALWAYS on top of the blob */
+.project-content, 
+.project-visual {
+    position: relative;
+    z-index: 10; /* Higher than the blob */
+}
+
+/* 2. The Blob Itself */
 .project-row::before {
     content: '';
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #ecfdf5 0%, transparent 70%);
-    z-index: 0;
+    width: 600px;
+    height: 600px;
+    
+    /* Your desired Sage Green Glow */
+    background: radial-gradient(circle, rgba(61, 247, 89, 0.15) 0%, transparent 70%);
+    
     border-radius: 50%;
-    opacity: 0;
-    transform: scale(0.8); /* Start smaller */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 0; /* Strictly behind content */
+    
+    /* Animation */
+    opacity: 0.8;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
 }
 
-/* Add Keyframes for the pulse */
-@keyframes blobPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); } /* Grow slightly */
-    100% { transform: scale(1); }
+/* 3. POSITIONING: Move Blob behind the IMAGES, not the text */
+
+/* ODD ROWS (Image Left, Text Right) -> Put Blob on LEFT */
+.project-row:nth-child(odd)::before { 
+    left: -150px; 
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
 }
 
-/* Trigger animation on Hover */
+/* EVEN ROWS (Image Right, Text Left) -> Put Blob on RIGHT */
+.project-row:nth-child(even)::before { 
+    right: -150px; 
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    left: auto; /* Reset left property */
+}
+
+/* Hover Effect: Pulse */
 .project-row:hover::before { 
-    opacity: 1; 
-    animation: blobPulse 4s infinite ease-in-out; /* Continuous slow breathing */
+    opacity: 1;
+    /* Keep the vertical centering while pulsing */
+    transform: translateY(-50%) scale(1); 
+    animation: blobPulse 4s infinite ease-in-out;
 }
 
-/* Blob positioning matches alternating rows */
-.project-row:nth-child(odd)::before { right: -150px; top: -100px; }
-.project-row:nth-child(even)::before { left: -150px; bottom: -100px; }
-
-.project-row:hover::before { opacity: 1; } /* Glow appears on hover */
-
+/* The Pulse Animation */
+@keyframes blobPulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.05); } 
+    100% { transform: translateY(-50%) scale(1); }
+}
 /* Mobile Responsive */
 @media (max-width: 992px) {
     .project-row, .project-row:nth-child(even) {
