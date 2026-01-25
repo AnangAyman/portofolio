@@ -1,5 +1,5 @@
 .experience-section {
-    padding: 8rem 0; background-color: #ffffff; position: relative;
+    padding: 5rem 0; background-color: #ffffff; position: relative;
 }
 .experience-feed {
     position: relative; padding-left: 3rem;
@@ -20,7 +20,7 @@
 .job-card {
     position: relative; background: #ffffff;
     border: 1px solid var(--border-light); border-radius: 16px;
-    padding: 2.5rem; margin-bottom: 4rem;
+    padding: 2.5rem; margin-bottom: 2.5rem;
     box-shadow: var(--shadow-sm); transition: all 0.3s ease; z-index: 2;
 }
 .job-card:hover {

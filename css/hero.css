@@ -1,7 +1,9 @@
 .hero {
-    padding: 8rem 0 6rem;
+    /* Reduced from 8rem top / 6rem bottom */
+    padding: 6rem 0 4rem; 
     background: radial-gradient(circle at top right, #f2f7f4 0%, transparent 40%);
 }
+/* ... rest of hero.css ... */
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
