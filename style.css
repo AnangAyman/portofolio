@@ -572,25 +572,50 @@ footer a { color: var(--text-primary); text-decoration: none;}
     margin: 0 auto;
 }
 
-/* 1. THE SPINE (Dead Center) */
+/* --- 1. THE SPINE (Track) --- */
 .timeline-spine {
     position: absolute;
-    top: 0; bottom: 0; left: 50%;
-    width: 6px;
-    background: #e5e7eb;
+    top: 0; 
+    bottom: 0; 
+    left: 50%;
+    width: 4px; /* Slightly thinner for elegance */
+    background: rgba(0, 0, 0, 0.05); /* Very faint grey track */
     transform: translateX(-50%);
     z-index: 0;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
+/* --- 2. THE LASER BEAM (Forest Theme) --- */
 .scroll-progress {
     position: absolute;
-    top: 0; left: 0; width: 100%;
-    height: 0%;
-    background: #2c5530; /* Dark Green */
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(44, 85, 48, 0.4);
+    top: 0; left: 0; width: 100%; height: 0%;
+    
+    /* Gradient from Darker Green to your Primary Sage */
+    background: linear-gradient(180deg, #244229 0%, #355E3B 100%);
+    
+    border-radius: 4px;
+    
+    /* Much softer, deeper glow */
+    box-shadow: 0 0 8px rgba(53, 94, 59, 0.4); 
+    
     transition: height 0.1s linear;
+}
+
+/* --- 3. THE SPARK TIP (Soft Pearl) --- */
+.scroll-progress::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; left: 50%;
+    transform: translateX(-50%);
+    
+    width: 10px; height: 10px; /* Slightly smaller */
+    background: #ecfdf5; /* Very pale mint/white */
+    border-radius: 50%;
+    border: 2px solid #355E3B; /* Ring outline for definition */
+    
+    /* Subtle halo instead of neon flare */
+    box-shadow: 0 0 10px rgba(53, 94, 59, 0.5);
+    z-index: 2;
 }
 
 /* 2. YEAR BADGE (Solid & Visible) */
@@ -808,4 +833,148 @@ footer a { color: var(--text-primary); text-decoration: none;}
     }
     
     .artsy-card, .note-card { transform: rotate(0deg) !important; }
+}
+
+/* --- FEATURE STREAM (New Work Section) --- */
+.feature-section {
+    padding: 8rem 0;
+    overflow: hidden; /* Keeps blobs contained */
+    background: #ffffff;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 8rem; /* Space between stories */
+    position: relative;
+}
+
+/* Alternating Layout */
+.project-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* 1. The Browser Window (Visual) */
+.project-visual {
+    flex: 1;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+.browser-mockup {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* Deep shadow for pop */
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e4e4e7;
+}
+
+/* The Grey Bar at the top */
+.browser-header {
+    height: 36px;
+    background: #f4f4f5; /* Light Grey */
+    border-bottom: 1px solid #e4e4e7;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 6px;
+}
+
+/* The 3 Dots (Red, Yellow, Green) */
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #f59e0b; }
+.dot.green { background: #22c55e; }
+
+.browser-mockup img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Hover Effect: Lift the browser */
+.project-row:hover .project-visual {
+    transform: translateY(-10px);
+}
+
+/* 2. The Content (Story) */
+.project-content {
+    flex: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.project-label {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary-color); /* Your Brand Green */
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.project-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.project-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Tech Stack Pills */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tech-pill {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* 3. The Sage Blob (Background) */
+.project-row::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #ecfdf5 0%, transparent 70%); /* Faint Sage Glow */
+    z-index: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Blob positioning matches alternating rows */
+.project-row:nth-child(odd)::before { right: -150px; top: -100px; }
+.project-row:nth-child(even)::before { left: -150px; bottom: -100px; }
+
+.project-row:hover::before { opacity: 1; } /* Glow appears on hover */
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .project-row, .project-row:nth-child(even) {
+        flex-direction: column; /* Stack vertically on phones */
+        gap: 2rem;
+    }
+    .project-visual { width: 100%; }
+    .project-content { width: 100%; text-align: left; }
+    .project-title { font-size: 1.75rem; }
 }

@@ -303,68 +303,114 @@
             </div>
         </section>
 
-        <section id="work" class="py-5">
-            <div class="container py-5">
-                <h2 class="section-title">My Work</h2>
-                <div class="work-filters text-center">
-                    <button class="work-filter active" data-filter="all">All</button>
-                    <button class="work-filter" data-filter="web">Web-development</button>
-                    <button class="work-filter" data-filter="ml">AI/ML</button>
-                    <button class="work-filter" data-filter="research">Research</button>
+        <section id="work" class="feature-section">
+            <div class="container">
+                <div class="section-header mb-5 text-center">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="text-secondary">Selected works in AI, Engineering & Research.</p>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4 work-item" data-category="web ml">
-                        <div class="work-card">
-                            <img src="static/Signlingo_thumbnail.png" alt="Project 1">
-                            <div class="work-overlay">
-                                <h4>Signlingo</h4>
-                                <p>Web Development</p>
-                                <a href="#" class="btn btn-primary btn-sm">Show Project</a>
+        
+                <div class="project-row" data-aos="fade-up">
+                    <div class="project-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                             </div>
+                            <img src="static/Signlingo_thumbnail.png" alt="SignLingo App Interface">
                         </div>
                     </div>
-                    <div class="col-md-4 work-item" data-category="web ml">
-                        <div class="work-card">
-                            <img src="static/cv_improver_thumbnail.png" alt="Project 2">
-                            <div class="work-overlay">
-                                <h4>AI CV Improver</h4>
-                                <p>Web Development</p>
-                                <a href="#" class="btn btn-primary btn-sm">Show Project</a>
-                            </div>
+                    <div class="project-content">
+                        <span class="project-label">Flagship Project</span>
+                        <h3 class="project-title">SignLingo AI</h3>
+                        <p class="project-desc">
+                            An interactive sign language learning platform powered by computer vision. 
+                            I led a 10-person team to build a hybrid CNN-LSTM model that recognizes hand gestures in real-time through the browser, making accessibility education scalable.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">TensorFlow</span>
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">FastAPI</span>
                         </div>
-                    </div>
-                    <div class="col-md-4 work-item" data-category="web">
-                        <div class="work-card">
-                            <img src="static/OpenID_Connect.png" alt="Project 3">
-                            <div class="work-overlay">
-                                <h4>OpenIDConnect</h4>
-                                <p>Web Development</p>
-                                <a href="#" class="btn btn-primary btn-sm">Show Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 work-item" data-category="web">
-                        <div class="work-card">
-                            <img src="static/Nusacrop_thumbnail.png" alt="Project 4">
-                            <div class="work-overlay">
-                                <h4>NusaCrop</h4>
-                                <p>Web Development</p>
-                                <a href="#" class="btn btn-primary btn-sm">Show Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 work-item" data-category="research">
-                        <div class="work-card">
-                            <img src="static/research_thumbnail.png" alt="Project 5">
-                            <div class="work-overlay">
-                                <h4>Hybrid CNN+LSTM</h4>
-                                <p>Research Paper</p>
-                                <a href="#" class="btn btn-primary btn-sm">Show Project</a>
-                            </div>
-                        </div>
+                        <a href="#" class="btn btn-primary">View Case Study</a>
                     </div>
                 </div>
+        
+                <div class="project-row" data-aos="fade-up">
+                    <div class="project-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            </div>
+                            <img src="static/research_thumbnail.png" alt="Research Paper Header">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-label">Research & Publication</span>
+                        <h3 class="project-title">Hybrid CNN-LSTM for Low-Resource SLR</h3>
+                        <p class="project-desc">
+                            Published research addressing the digital divide in disability tech. We developed a lightweight architecture optimized for low-end devices, achieving 96% accuracy on BISINDO datasets while minimizing computational load.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Academic Writing</span>
+                            <span class="tech-pill">Deep Learning</span>
+                            <span class="tech-pill">Model Optimization</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Read Paper</a>
+                    </div>
+                </div>
+        
+                <div class="project-row" data-aos="fade-up">
+                    <div class="project-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            </div>
+                            <img src="static/OpenID_Connect.png" alt="OIDC Diagram">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-label">Backend Engineering</span>
+                        <h3 class="project-title">Secure OIDC Provider</h3>
+                        <p class="project-desc">
+                            Built a custom OpenID Connect Identity Provider from scratch during my internship. 
+                            Implemented strict security protocols, token management, and user authentication flows using Flask and Authlib.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Flask</span>
+                            <span class="tech-pill">OAuth 2.0</span>
+                            <span class="tech-pill">Security</span>
+                            <span class="tech-pill">Docker</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Repository</a>
+                    </div>
+                </div>
+        
+                <div class="project-row" data-aos="fade-up">
+                    <div class="project-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            </div>
+                            <img src="static/cv_improver_thumbnail.png" alt="CV Improver">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-label">Generative AI</span>
+                        <h3 class="project-title">AI Resume Enhancer</h3>
+                        <p class="project-desc">
+                            A smart tool that parses resumes and suggests improvements based on ATS (Applicant Tracking System) logic. 
+                            Uses NLP to identify weak keywords and suggests stronger action verbs.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">OpenAI API</span>
+                            <span class="tech-pill">NLP</span>
+                            <span class="tech-pill">Prompt Engineering</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Try It Out</a>
+                    </div>
+                </div>
+        
             </div>
         </section>
     
