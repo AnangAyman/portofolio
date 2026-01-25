@@ -1,0 +1,47 @@
+.education-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px; padding: 2rem;
+    height: 100%; transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+}
+.education-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md); transform: translateY(-4px);
+}
+.edu-header {
+    display: flex; align-items: center; gap: 1.25rem;
+    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+.edu-icon {
+    width: 56px; height: 56px; background: #ecfdf5;
+    color: var(--primary-color); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+}
+.edu-title-group h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+.edu-degree { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; }
+
+.edu-meta-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-top: auto;
+}
+.edu-meta-item {
+    display: flex; flex-direction: column;
+    background: var(--bg-surface); padding: 0.75rem;
+    border-radius: 8px; border: 1px solid transparent;
+}
+.edu-meta-item.highlight { background: #ecfdf5; border-color: #d1fae5; }
+.edu-meta-item.highlight .meta-label, .edu-meta-item.highlight .meta-value { color: var(--primary-color); }
+
+.meta-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--text-tertiary); font-weight: 600; margin-bottom: 4px;
+}
+.meta-value { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+@media (max-width: 576px) {
+    .edu-meta-grid { grid-template-columns: 1fr; }
+    .edu-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

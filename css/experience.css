@@ -1,0 +1,65 @@
+.experience-section {
+    padding: 5rem 0; background-color: #ffffff; position: relative;
+}
+.experience-feed {
+    position: relative; padding-left: 3rem;
+    max-width: 800px; margin: 0 auto;
+}
+/* Laser Spine & Glow */
+.experience-feed::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px; background: rgba(0, 0, 0, 0.05); border-radius: 4px;
+}
+.experience-feed::after {
+    content: ''; position: absolute; left: 0; top: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #355E3B 0%, rgba(53, 94, 59, 0) 100%);
+    border-radius: 4px; box-shadow: 0 0 15px rgba(53, 94, 59, 0.4);
+}
+
+.job-card {
+    position: relative; background: #ffffff;
+    border: 1px solid var(--border-light); border-radius: 16px;
+    padding: 2.5rem; margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm); transition: all 0.3s ease; z-index: 2;
+}
+.job-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); transform: translateY(-5px);
+}
+.job-marker {
+    position: absolute; left: -3rem; top: 2.5rem;
+    width: 20px; height: 20px; background: #ffffff;
+    border: 4px solid #355E3B; border-radius: 50%; z-index: 5;
+    box-shadow: 0 0 0 4px #ffffff; transition: all 0.3s ease;
+}
+.job-card:hover .job-marker {
+    background: #355E3B; box-shadow: 0 0 0 4px #ffffff, 0 0 15px #355E3B;
+    transform: scale(1.2);
+}
+
+.job-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.job-role { font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; }
+.job-company {
+    font-size: 1rem; font-weight: 600; color: var(--primary-color);
+    display: flex; align-items: center; gap: 0.5rem;
+}
+.job-date {
+    background: var(--bg-surface); border: 1px solid var(--border-light);
+    color: var(--text-secondary); padding: 6px 14px; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600;
+}
+.job-card p {
+    font-size: 1.05rem; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .experience-feed { padding-left: 2rem; }
+    .job-marker { left: -2rem; width: 16px; height: 16px; }
+    .job-header { flex-direction: column; gap: 0.5rem; }
+    .job-date { margin-top: 0.5rem; }
+}
