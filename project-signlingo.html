@@ -27,7 +27,7 @@
             <span class="badge rounded-pill bg-success bg-opacity-10 text-success mb-3 px-3 py-2">Flagship Project</span>
             <h1 data-aos="fade-up">SignLingo AI</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
-                Bridging the communication gap with a real-time, browser-based sign language translator powered by Computer Vision.
+                Democratizing sign language education with a lightweight, accessible AI tutor that runs on any device.
             </p>
             
             <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
@@ -45,7 +45,7 @@
             </div>
             <div class="meta-item">
                 <h5>Timeline</h5>
-                <p>4 Months (2025)</p>
+                <p>1 year (ongoing)</p>
             </div>
             <div class="meta-item">
                 <h5>Team Size</h5>
@@ -53,7 +53,7 @@
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>Python, TF.js, React</p>
+                <p>CNN-LSTM, Docker, Flask</p>
             </div>
         </div>
 
@@ -61,18 +61,19 @@
             
             <h2 data-aos="fade-up">The Challenge</h2>
             <p data-aos="fade-up">
-                Learning sign language is difficult without real-time feedback. Traditional learning methods (books/videos) are passive—you never know if you are performing the gesture correctly. 
-                Existing AI solutions often require high-end GPUs or heavy app downloads, making them inaccessible to users in low-resource environments.
+                Learning sign language in Indonesia is prohibitively expensive due to the high cost of private tutors. The only free alternatives are passive methods like static videos, where learners receive no feedback on whether they are signing correctly.
+                <br><br>
+                Humans are social creatures, and I believe communication is a fundamental right—being disabled should not mean being disconnected from society. However, while modern Computer Vision is accurate, it typically requires high computational power that the average Indonesian, often relying on budget devices, simply does not possess.
             </p>
 
             <h2 data-aos="fade-up">The Solution</h2>
             <p data-aos="fade-up">
-                We built <strong>SignLingo</strong>, a lightweight web application that runs entirely in the browser. By optimizing a hybrid CNN-LSTM model, we achieved real-time hand tracking and gesture classification on standard laptops without needing a dedicated graphics card.
+                We built <strong>SignLingo</strong> to make learning accessible to everyone, everywhere. Since it is web-based, anyone can access it easily. To solve the hardware constraint, I researched and implemented a specialized lightweight Hybrid CNN-LSTM architecture. This ensures high accuracy without the need for expensive GPUs, allowing the AI to act as a personal tutor that gives instant feedback directly in the browser.
             </p>
 
             <div class="showcase-block" data-aos="fade-up">
-                <img src="static/Signlingo_thumbnail.png" alt="Real-time Detection">
-                <div class="caption">Real-time hand landmark detection using MediaPipe and TensorFlow.js</div>
+                <img src="static/game_and_ai.jpg" alt="Gamified Dashboard">
+                <div class="caption">Real-time hand landmark detection using MobileNetV2 and LSTM.</div>
             </div>
 
             <h3>Key Technical Implementation</h3>
@@ -80,30 +81,30 @@
                 <li class="mb-3 d-flex align-items-start">
                     <i class="fas fa-check-circle text-success mt-1 me-3"></i>
                     <div>
-                        <strong>Hybrid Model Architecture:</strong> We combined Convolutional Neural Networks (CNN) for spatial feature extraction with Long Short-Term Memory (LSTM) units to understand the <em>temporal</em> sequence of hand movements.
+                        <strong>Hybrid Model Architecture:</strong> We utilized MobileNetV2 for efficient spatial feature extraction combined with LSTM to capture the temporal dynamics of hand gestures.
                     </div>
                 </li>
                 <li class="mb-3 d-flex align-items-start">
                     <i class="fas fa-check-circle text-success mt-1 me-3"></i>
                     <div>
-                        <strong>Client-Side Inference:</strong> To reduce server costs and latency, we converted our Python models to TensorFlow.js, allowing the AI to run directly in the user's Chrome browser.
+                        <strong>Optimized for Low-Resource:</strong> By applying L2 regularization and post-training quantization, we compressed the model to under 25MB, enabling offline operation on devices with as little as 4GB RAM.
                     </div>
                 </li>
             </ul>
 
             <h2 data-aos="fade-up">Gamified Learning</h2>
             <p>
-                To keep users engaged, we implemented a "Duolingo-style" progression system. Users earn points for correct signs, maintain daily streaks, and unlock new vocabulary modules.
+                To move away from boring, passive learning, we designed SignLingo to be entertaining. We added "Duolingo-style" gamification elements—such as points, daily streaks, and vocabulary unlocks—to keep users engaged while the AI provides the real-time feedback of a private tutor.
             </p>
             
             <div class="showcase-block" data-aos="fade-up">
-                <img src="static/Signlingo_thumbnail.png" alt="Gamified Dashboard">
+                <img src="static/gamified_dashboard.png" alt="Gamified Dashboard">
                 <div class="caption">User dashboard showing progression path and daily streak.</div>
             </div>
 
             <h2 data-aos="fade-up">The Outcome</h2>
             <p>
-                The final prototype achieved <strong>94% accuracy</strong> on the test set for the BISINDO (Indonesian Sign Language) alphabet. The project was selected as the winner of the University Innovation Challenge.
+                The optimized model achieved <strong>95.30% validation accuracy</strong> on the BISINDO alphabet. With an inference time of just 40–50 milliseconds, the project successfully proved that inclusive communication technology can be made accessible to low-resource communities.
             </p>
 
         </article>
