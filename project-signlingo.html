@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignLingo - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <a href="https://github.com/yourusername/signlingo" target="_blank" class="btn btn-sm btn-outline-dark">
+                <i class="fab fa-github me-2"></i>View Code
+            </a>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill bg-success bg-opacity-10 text-success mb-3 px-3 py-2">Flagship Project</span>
+            <h1 data-aos="fade-up">SignLingo AI</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                Bridging the communication gap with a real-time, browser-based sign language translator powered by Computer Vision.
+            </p>
+            
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <img src="static/Signlingo_thumbnail.png" alt="SignLingo Dashboard" class="img-fluid rounded-3 shadow-lg border" style="max-height: 500px; width: auto;">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Team Lead & AI Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>4 Months (2025)</p>
+            </div>
+            <div class="meta-item">
+                <h5>Team Size</h5>
+                <p>10 Developers</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Python, TF.js, React</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+            
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                Learning sign language is difficult without real-time feedback. Traditional learning methods (books/videos) are passive—you never know if you are performing the gesture correctly. 
+                Existing AI solutions often require high-end GPUs or heavy app downloads, making them inaccessible to users in low-resource environments.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                We built <strong>SignLingo</strong>, a lightweight web application that runs entirely in the browser. By optimizing a hybrid CNN-LSTM model, we achieved real-time hand tracking and gesture classification on standard laptops without needing a dedicated graphics card.
+            </p>
+
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/Signlingo_thumbnail.png" alt="Real-time Detection">
+                <div class="caption">Real-time hand landmark detection using MediaPipe and TensorFlow.js</div>
+            </div>
+
+            <h3>Key Technical Implementation</h3>
+            <ul class="list-unstyled mt-4 mb-5">
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success mt-1 me-3"></i>
+                    <div>
+                        <strong>Hybrid Model Architecture:</strong> We combined Convolutional Neural Networks (CNN) for spatial feature extraction with Long Short-Term Memory (LSTM) units to understand the <em>temporal</em> sequence of hand movements.
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success mt-1 me-3"></i>
+                    <div>
+                        <strong>Client-Side Inference:</strong> To reduce server costs and latency, we converted our Python models to TensorFlow.js, allowing the AI to run directly in the user's Chrome browser.
+                    </div>
+                </li>
+            </ul>
+
+            <h2 data-aos="fade-up">Gamified Learning</h2>
+            <p>
+                To keep users engaged, we implemented a "Duolingo-style" progression system. Users earn points for correct signs, maintain daily streaks, and unlock new vocabulary modules.
+            </p>
+            
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/Signlingo_thumbnail.png" alt="Gamified Dashboard">
+                <div class="caption">User dashboard showing progression path and daily streak.</div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p>
+                The final prototype achieved <strong>94% accuracy</strong> on the test set for the BISINDO (Indonesian Sign Language) alphabet. The project was selected as the winner of the University Innovation Challenge.
+            </p>
+
+        </article>
+        
+        <div class="text-center py-5 mt-5 border-top">
+            <p class="text-secondary mb-2">Next Project</p>
+            <a href="project-research.html" class="h3 text-decoration-none text-dark fw-bold">
+                Hybrid CNN-LSTM Research Paper <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

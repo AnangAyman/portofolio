@@ -1,0 +1,102 @@
+/* --- PROJECT DETAIL PAGES --- */
+
+/* 1. Hero Section */
+.project-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.project-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.project-tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+/* 2. The Metadata Bar (Role, Stack, Date) */
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 4rem;
+}
+
+.meta-item h5 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.meta-item p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* 3. Main Content */
+.project-body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-body h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.project-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* 4. Feature Showcase (Zig-Zag within the article) */
+.showcase-block {
+    margin: 4rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.showcase-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    padding: 1rem;
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+}
+
+/* 5. Mobile */
+@media (max-width: 768px) {
+    .project-hero h1 { font-size: 2.5rem; }
+    .meta-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}

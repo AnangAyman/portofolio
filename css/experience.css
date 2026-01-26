@@ -1,65 +1,137 @@
+/* --- EXPERIENCE SECTION (Compact & Left Aligned) --- */
+
 .experience-section {
-    padding: 5rem 0; background-color: #ffffff; position: relative;
-}
-.experience-feed {
-    position: relative; padding-left: 3rem;
-    max-width: 800px; margin: 0 auto;
-}
-/* Laser Spine & Glow */
-.experience-feed::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 4px; background: rgba(0, 0, 0, 0.05); border-radius: 4px;
-}
-.experience-feed::after {
-    content: ''; position: absolute; left: 0; top: 0;
-    width: 4px; height: 100%;
-    background: linear-gradient(180deg, #355E3B 0%, rgba(53, 94, 59, 0) 100%);
-    border-radius: 4px; box-shadow: 0 0 15px rgba(53, 94, 59, 0.4);
+    padding: 4rem 0; /* Reduced top/bottom padding */
+    background-color: #ffffff;
+    position: relative;
 }
 
-.job-card {
-    position: relative; background: #ffffff;
-    border: 1px solid var(--border-light); border-radius: 16px;
-    padding: 2.5rem; margin-bottom: 2.5rem;
-    box-shadow: var(--shadow-sm); transition: all 0.3s ease; z-index: 2;
+/* 1. The Container (Left Aligned, No Margin Auto) */
+.experience-feed {
+    position: relative;
+    padding-left: 2.5rem; /* Reduced gap for the spine */
+    max-width: 900px; /* Allow it to be wider */
+    margin: 0; /* Aligns to the left */
 }
+
+/* 2. The Spine (Left Track) */
+.experience-feed::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px; /* Slightly thinner */
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.experience-feed::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px;
+    height: 100%; 
+    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(53, 94, 59, 0) 100%);
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+/* 3. The Job Card (Compact) */
+.job-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 12px; /* Slightly tighter radius */
+    padding: 1.5rem; /* REDUCED from 2.5rem */
+    margin-bottom: 2rem; /* REDUCED from 4rem */
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
 .job-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08); transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px); /* Slide right instead of lifting up */
 }
+
+/* 4. The Connector Dot */
 .job-marker {
-    position: absolute; left: -3rem; top: 2.5rem;
-    width: 20px; height: 20px; background: #ffffff;
-    border: 4px solid #355E3B; border-radius: 50%; z-index: 5;
-    box-shadow: 0 0 0 4px #ffffff; transition: all 0.3s ease;
+    position: absolute;
+    left: -2.9rem; /* Aligns with the spine */
+    top: 2rem; /* Aligns with the title */
+    width: 14px; /* Smaller dot */
+    height: 14px;
+    background: #ffffff;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 0 4px #ffffff; 
+    transition: all 0.3s ease;
 }
+
 .job-card:hover .job-marker {
-    background: #355E3B; box-shadow: 0 0 0 4px #ffffff, 0 0 15px #355E3B;
+    background: var(--primary-color);
     transform: scale(1.2);
+    box-shadow: 0 0 0 4px #ffffff, 0 0 10px var(--primary-color);
 }
 
+/* 5. Typography & Layout */
 .job-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
-}
-.job-role { font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; }
-.job-company {
-    font-size: 1rem; font-weight: 600; color: var(--primary-color);
-    display: flex; align-items: center; gap: 0.5rem;
-}
-.job-date {
-    background: var(--bg-surface); border: 1px solid var(--border-light);
-    color: var(--text-secondary); padding: 6px 14px; border-radius: 8px;
-    font-size: 0.85rem; font-weight: 600;
-}
-.job-card p {
-    font-size: 1.05rem; color: var(--text-secondary);
-    line-height: 1.7; margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem; /* Reduced gap */
+    flex-wrap: nowrap; /* Force side-by-side if possible */
+    gap: 1rem;
 }
 
+.job-role {
+    font-size: 1.15rem; /* Slightly smaller */
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+    line-height: 1.2;
+}
+
+.job-company {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* The Date Badge */
+.job-date {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Description */
+.job-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem; /* Reduced gap */
+}
+
+/* Tech Stack Pills - Smaller */
+.tech-pill {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+}
+
+/* Mobile Tweaks */
 @media (max-width: 768px) {
-    .experience-feed { padding-left: 2rem; }
-    .job-marker { left: -2rem; width: 16px; height: 16px; }
-    .job-header { flex-direction: column; gap: 0.5rem; }
-    .job-date { margin-top: 0.5rem; }
+    .experience-feed { padding-left: 1.5rem; }
+    .job-marker { left: -1.9rem; width: 12px; height: 12px; border-width: 2px; }
+    .job-header { flex-direction: column; gap: 0.25rem; }
+    .job-date { align-self: flex-start; margin-top: 0.25rem; border: none; padding-left: 0; background: none; }
 }
