@@ -116,3 +116,67 @@ footer {
     text-align: center;
 }
 footer a { color: var(--text-primary); text-decoration: none;}
+
+
+/* --- SPECIAL NAVBAR ITEM: MY JOURNEY (Ghost Pill Style) --- */
+
+/* 1. The Container: Vertical Separator */
+.nav-item-separator {
+    border-left: 1px solid var(--border-light);
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    height: 24px; /* Fix height to center separator visually */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* 2. The Link: Clean "Ghost" Button */
+.nav-link-artsy {
+    font-family: 'Inter', sans-serif !important; /* Back to your main font */
+    font-weight: 500;
+    font-size: 0.85rem !important; /* Slightly smaller for a "tag" feel */
+    color: var(--text-secondary) !important;
+    
+    /* The "Ghost" Structure */
+    border: 1px solid var(--border-light);
+    border-radius: 50px; /* Pill shape */
+    padding: 6px 16px !important; /* Comfortable tap target */
+    background: transparent;
+    transition: all 0.2s ease;
+    
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Space between text and icon */
+}
+
+/* 3. Hover Effect: Subtle Lift & Color */
+.nav-link-artsy:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+    background: rgba(53, 94, 59, 0.05); /* Very faint green tint */
+    transform: translateY(-1px);
+}
+
+/* 4. Active State (On the Journey page) */
+.nav-link-artsy.active-page {
+    background: var(--primary-color);
+    color: white !important;
+    border-color: var(--primary-color);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 991px) {
+    .nav-item-separator {
+        border-left: none;
+        border-top: 1px solid var(--border-light);
+        margin: 0.5rem 0;
+        padding: 1rem 0 0 0;
+        height: auto;
+        display: block;
+    }
+    .nav-link-artsy {
+        display: inline-flex; /* Keep pill shape on mobile */
+    }
+}

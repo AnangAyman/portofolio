@@ -135,3 +135,71 @@
     .job-header { flex-direction: column; gap: 0.25rem; }
     .job-date { align-self: flex-start; margin-top: 0.25rem; border: none; padding-left: 0; background: none; }
 }
+
+/* --- PROFESSIONAL / FEATURED CARD (Subtle Tech Style) --- */
+
+/* 1. The Card: Subtle Tint & Technical Border */
+.job-card.professional {
+    background-color: var(--bg-surface); /* Uses your existing off-white (#fafafa) */
+    border: 1px solid #d4d4d8; /* Slightly darker zinc border than normal cards */
+    border-left: 3px solid var(--primary-color); /* The specific "Engineer" mark */
+    padding-top: 1.25rem; /* Slight adjustment for the label */
+}
+
+/* 2. The Overline Label */
+.job-type-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+/* 3. Refined Typography for the Role */
+.job-card.professional .job-role {
+    color: var(--text-primary);
+    font-size: 1.2rem; /* Slightly larger */
+}
+
+/* 4. The Bullet Points (Clean & Readable) */
+.job-details {
+    padding-left: 1rem;
+    margin: 1rem 0 1.5rem 0;
+}
+.job-details li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    list-style-type: disc; /* Standard bullets feel more academic/pro */
+}
+.job-details li::marker {
+    color: var(--primary-color); /* Sage green bullets */
+}
+
+/* 5. The Marker (The Dot) */
+/* This centers the briefcase icon we added in HTML */
+.job-card.professional .job-marker {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    width: 24px; /* Slightly larger than the standard 14px */
+    height: 24px;
+    left: -3.2rem; /* Re-align based on new size */
+    top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px #ffffff; /* Clean whitespace ring */
+}
+
+/* Mobile Alignment Fixes */
+@media (max-width: 768px) {
+    .job-card.professional .job-marker {
+        width: 20px;
+        height: 20px;
+        left: -2.15rem;
+        top: 1.5rem;
+    }
+}
