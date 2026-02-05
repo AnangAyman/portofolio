@@ -110,6 +110,165 @@
     text-align: center;
 }
 
+/* === Avatar Output (Photo inside terminal) === */
+.avatar-output {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-avatar-frame {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    /* Animated glow border */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
+    animation: glowShift 3s ease-in-out infinite, floatAvatar 4s ease-in-out infinite;
+    padding: 3px;
+    box-shadow:
+        0 0 20px rgba(74, 222, 128, 0.3),
+        0 0 40px rgba(74, 222, 128, 0.1);
+}
+
+@keyframes glowShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes floatAvatar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.terminal-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    position: relative;
+}
+
+/* Scanline overlay effect */
+.terminal-avatar-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px);
+    pointer-events: none;
+    z-index: 2;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+/* Glowing scan beam */
+.terminal-avatar-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom,
+            rgba(74, 222, 128, 0.15),
+            transparent);
+    animation: scanBeam 2s ease-in-out infinite;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@keyframes scanBeam {
+
+    0%,
+    100% {
+        top: -30%;
+        opacity: 0;
+    }
+
+    50% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+/* Hover: zoom + glow burst */
+.terminal-avatar-frame:hover {
+    animation-play-state: paused;
+    box-shadow:
+        0 0 30px rgba(74, 222, 128, 0.5),
+        0 0 60px rgba(74, 222, 128, 0.3),
+        0 0 90px rgba(74, 222, 128, 0.1);
+}
+
+.terminal-avatar-frame:hover .terminal-avatar {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.avatar-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.meta-role {
+    font-size: 1rem;
+    color: #8b949e;
+}
+
+.meta-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.meta-stats .stat {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.meta-stats .stat strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 .terminal-body {
     padding: 1.5rem;
     font-size: 0.9rem;
@@ -247,66 +406,248 @@
     }
 }
 
-/* === Sidebar === */
-.terminal-sidebar {
+/* ========================================
+   ORBIT PHOTO SYSTEM - ENHANCED
+   ======================================== */
+.orbit-system {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center photo - BIG */
+.orbit-center {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    z-index: 10;
+    /* Animated gradient border */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #22d3ee, var(--primary-color));
+    background-size: 300% 300%;
+    animation: floatCenter 5s ease-in-out infinite, gradientShift 8s ease infinite;
+    padding: 5px;
+    box-shadow:
+        0 0 60px rgba(74, 222, 128, 0.35),
+        0 0 120px rgba(74, 222, 128, 0.15),
+        inset 0 0 30px rgba(74, 222, 128, 0.1);
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.orbit-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    border: 5px solid #0d1117;
+    transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+.orbit-center:hover {
+    animation-play-state: paused;
+}
+
+.orbit-center:hover .orbit-photo {
+    transform: scale(1.08);
+    box-shadow: 0 0 80px rgba(74, 222, 128, 0.6);
+}
+
+@keyframes floatCenter {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.02);
+    }
+}
+
+/* Inner glow ring */
+.orbit-center::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 2px solid rgba(74, 222, 128, 0.2);
+    animation: pulseInner 3s ease-in-out infinite;
+}
+
+@keyframes pulseInner {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.6;
+    }
+}
+
+/* Orbit ring - SPINS and carries items */
+.orbit-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(74, 222, 128, 0.25);
+    border-radius: 50%;
+    animation: spinOrbit 25s linear infinite;
+}
+
+/* Second decorative ring */
+.orbit-ring::before {
+    content: '';
+    position: absolute;
+    inset: 30px;
+    border: 1px dotted rgba(74, 222, 128, 0.1);
+    border-radius: 50%;
+    animation: spinReverse 40s linear infinite;
+}
+
+@keyframes spinOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Individual orbit items */
+.orbit-item {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background: rgba(13, 17, 23, 0.95);
+    border: 2px solid rgba(74, 222, 128, 0.4);
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.ascii-frame {
-    background: #0d1117;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1rem;
-    overflow: hidden;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
-}
-
-.terminal-profile-pic {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.ascii-frame:hover .terminal-profile-pic {
-    transform: scale(1.03);
-}
-
-.sidebar-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.stat-item {
-    background: #0d1117;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.25rem;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    box-shadow:
+        0 0 20px rgba(74, 222, 128, 0.2),
+        inset 0 0 10px rgba(74, 222, 128, 0.05);
     transition: all 0.3s ease;
+    /* Counter-rotate + pulse animation */
+    animation: counterSpin 25s linear infinite, skillPulse 3s ease-in-out infinite;
 }
 
-.stat-item:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.15);
+/* Position each item around the circle */
+.orbit-item:nth-child(1) {
+    top: -29px;
+    left: 50%;
+    margin-left: -29px;
+    animation-delay: 0s, 0s;
 }
 
-.stat-value {
-    display: block;
-    font-size: 1.75rem;
-    font-weight: 800;
+.orbit-item:nth-child(2) {
+    top: 12%;
+    right: -29px;
+    animation-delay: 0s, 0.5s;
+}
+
+.orbit-item:nth-child(3) {
+    bottom: 12%;
+    right: -29px;
+    animation-delay: 0s, 1s;
+}
+
+.orbit-item:nth-child(4) {
+    bottom: -29px;
+    left: 50%;
+    margin-left: -29px;
+    animation-delay: 0s, 1.5s;
+}
+
+.orbit-item:nth-child(5) {
+    bottom: 12%;
+    left: -29px;
+    animation-delay: 0s, 2s;
+}
+
+.orbit-item:nth-child(6) {
+    top: 12%;
+    left: -29px;
+    animation-delay: 0s, 2.5s;
+}
+
+@keyframes counterSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes skillPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(74, 222, 128, 0.2), inset 0 0 10px rgba(74, 222, 128, 0.05);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(74, 222, 128, 0.4), inset 0 0 15px rgba(74, 222, 128, 0.1);
+    }
+}
+
+.orbit-item i {
+    font-size: 1.2rem;
     color: var(--primary-color);
-    font-family: 'Outfit', sans-serif;
+    transition: transform 0.3s ease;
 }
 
-.stat-label {
-    font-size: 0.75rem;
+.orbit-item span {
+    font-size: 0.55rem;
+    color: var(--text-secondary);
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #8b949e;
+    letter-spacing: 0.03em;
+}
+
+.orbit-item:hover {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
+    z-index: 20;
+}
+
+.orbit-item:hover i {
+    transform: scale(1.2);
 }
 
 /* ========================================

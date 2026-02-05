@@ -93,19 +93,36 @@
                         </div>
                     </div>
 
-                    <!-- Photo Sidebar -->
-                    <div class="terminal-sidebar">
-                        <div class="ascii-frame">
-                            <img src="static/profile_pic.png" alt="Anang Ayman" class="terminal-profile-pic">
+                    <!-- Orbit Photo System -->
+                    <div class="orbit-system">
+                        <div class="orbit-center">
+                            <img src="static/profile_pic.png" alt="Anang Ayman" class="orbit-photo">
                         </div>
-                        <div class="sidebar-stats">
-                            <div class="stat-item">
-                                <span class="stat-value">3.88</span>
-                                <span class="stat-label">GPA</span>
+                        <!-- Orbiting skills -->
+                        <div class="orbit-ring">
+                            <div class="orbit-item" style="--i: 0;">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-value">10+</span>
-                                <span class="stat-label">Projects</span>
+                            <div class="orbit-item" style="--i: 1;">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="orbit-item" style="--i: 2;">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="orbit-item" style="--i: 3;">
+                                <i class="fas fa-brain"></i>
+                                <span>ML</span>
+                            </div>
+                            <div class="orbit-item" style="--i: 4;">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="orbit-item" style="--i: 5;">
+                                <i class="fas fa-server"></i>
+                                <span>API</span>
                             </div>
                         </div>
                     </div>
@@ -148,151 +165,136 @@
             <div class="container">
                 <div class="section-header mb-5 text-start">
                     <h2 class="section-title" data-aos="fade-down">Experience</h2>
-                    <p class="text-secondary" data-aos="fade-up" data-aos-delay="100">Real-world impact through
-                        technology and leadership.</p>
+                    <p class="text-secondary" data-aos="fade-up" data-aos-delay="100">
+                        <span class="git-prompt">~/career $</span> <span class="git-command">git log --oneline</span>
+                    </p>
                 </div>
 
-                <div class="experience-timeline">
+                <div class="git-log-container" data-aos="fade-up">
+                    <!-- Commit 1: Backend Intern - FEATURED -->
+                    <div class="git-commit featured-commit">
+                        <div class="featured-banner">
+                            <span class="featured-icon">📌</span>
+                            <span class="featured-text">FEATURED EXPERIENCE</span>
+                        </div>
+                        <div class="commit-header">
+                            <span class="commit-hash">a3f8c21</span>
+                            <span class="commit-branch">(HEAD -> career)</span>
+                            <span class="commit-tag completed">✅ merged</span>
+                        </div>
+                        <div class="commit-meta">
+                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
+                            <span class="commit-date">Date: Nov 2024 – Oct 2025</span>
+                        </div>
+                        <div class="commit-message">
+                            <p class="commit-title">Back-end Engineer Intern @ Digital Agri Solutions</p>
+                            <p class="commit-location">📍 Melbourne, Australia (Remote)</p>
 
-                    <div class="exp-item featured" data-aos="fade-up" data-aos-delay="100">
-                        <div class="exp-dot completed"></div>
-                        <div class="exp-content">
-                            <div class="exp-header-row">
-                                <div>
-                                    <span class="exp-badge completed-badge">Completed</span>
-                                    <h3 class="exp-title">Back-end Engineer Intern</h3>
-                                    <p class="exp-company">Digital Agri Solutions</p>
+                            <!-- Impact Stats -->
+                            <div class="impact-stats">
+                                <div class="impact-stat">
+                                    <span class="impact-value">12</span>
+                                    <span class="impact-label">months</span>
                                 </div>
-                                <div class="exp-meta">
-                                    <span class="exp-date">Nov 2024 – Oct 2025</span>
-                                    <span class="exp-location">Melbourne, Remote</span>
+                                <div class="impact-stat">
+                                    <span class="impact-value">3</span>
+                                    <span class="impact-label">systems shipped</span>
+                                </div>
+                                <div class="impact-stat">
+                                    <span class="impact-value">🌍</span>
+                                    <span class="impact-label">remote from ID</span>
                                 </div>
                             </div>
 
-                            <p class="exp-summary">
-                                Shipped production-grade authentication systems. Built secure OAuth 2.0 infrastructure
-                                from the ground up and deployed containerized microservices in a real Scrum environment.
-                            </p>
-
-                            <div class="exp-achievements">
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Developed secure OIDC provider using Flask & Authlib for internal SSO</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Implemented OAuth 2.0 flows (Authorization Code, PKCE) following security best
-                                        practices</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Containerized and deployed microservices using Docker in production</span>
-                                </div>
+                            <div class="commit-body">
+                                <p>Shipped production-grade authentication systems. Built secure OAuth 2.0
+                                    infrastructure from the ground up and deployed containerized microservices.</p>
+                                <ul class="commit-changes">
+                                    <li><span class="diff-add">+</span> Developed secure OIDC provider using Flask &
+                                        Authlib</li>
+                                    <li><span class="diff-add">+</span> Implemented OAuth 2.0 flows (Authorization Code,
+                                        PKCE)</li>
+                                    <li><span class="diff-add">+</span> Containerized and deployed microservices using
+                                        Docker</li>
+                                </ul>
                             </div>
-
-                            <div class="exp-tech">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Flask</span>
-                                <span class="tech-badge">OAuth 2.0</span>
-                                <span class="tech-badge">Docker</span>
-                                <span class="tech-badge">MySQL</span>
+                            <div class="commit-files">
+                                <span class="file-badge">Python</span>
+                                <span class="file-badge">Flask</span>
+                                <span class="file-badge">OAuth 2.0</span>
+                                <span class="file-badge">Docker</span>
+                                <span class="file-badge">MySQL</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="exp-item" data-aos="fade-up" data-aos-delay="150">
-                        <div class="exp-dot"></div>
-                        <div class="exp-content">
-                            <div class="exp-header-row">
-                                <div>
-                                    <span class="exp-badge current-badge">Current</span>
-                                    <h3 class="exp-title">Manager of Academic Events</h3>
-                                    <p class="exp-company">HIMTI Binus University</p>
-                                </div>
-                                <div class="exp-meta">
-                                    <span class="exp-date">Mar 2025 – Present</span>
-                                    <span class="exp-location">Jakarta, Indonesia</span>
-                                </div>
+                    <!-- Commit 2: Manager of Academic Events -->
+                    <div class="git-commit">
+                        <div class="commit-header">
+                            <span class="commit-hash">b7e2d94</span>
+                            <span class="commit-branch">(origin/leadership)</span>
+                            <span class="commit-tag current">in-progress</span>
+                        </div>
+                        <div class="commit-meta">
+                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
+                            <span class="commit-date">Date: Mar 2025 – Present</span>
+                        </div>
+                        <div class="commit-message">
+                            <p class="commit-title">Manager of Academic Events @ HIMTI Binus</p>
+                            <p class="commit-location">📍 Jakarta, Indonesia</p>
+                            <div class="commit-body">
+                                <p>Leading strategic initiatives that bridge academia and industry. Managing 60+ team
+                                    members for tech events and workshops.</p>
+                                <ul class="commit-changes">
+                                    <li><span class="diff-add">+</span> Organized high-impact tech talks with industry
+                                        professionals</li>
+                                    <li><span class="diff-add">+</span> Built strategic university-industry partnerships
+                                    </li>
+                                    <li><span class="diff-add">+</span> Led cross-functional team of 60+ coordinators
+                                    </li>
+                                </ul>
                             </div>
-
-                            <p class="exp-summary">
-                                Leading strategic initiatives that bridge academia and industry. Managing 60+ team
-                                members to create tech events, seminars, and workshops that connect students with
-                                real-world opportunities.
-                            </p>
-
-                            <div class="exp-achievements">
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Organized high-impact tech talks and workshops featuring industry
-                                        professionals</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Built strategic partnerships between university and tech companies</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Led cross-functional team managing 60+ event coordinators and
-                                        volunteers</span>
-                                </div>
-                            </div>
-
-                            <div class="exp-tech">
-                                <span class="tech-badge">Leadership</span>
-                                <span class="tech-badge">Event Strategy</span>
-                                <span class="tech-badge">Team Management</span>
-                                <span class="tech-badge">Public Speaking</span>
+                            <div class="commit-files">
+                                <span class="file-badge">Leadership</span>
+                                <span class="file-badge">Event Strategy</span>
+                                <span class="file-badge">Team Management</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="exp-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="exp-dot"></div>
-                        <div class="exp-content">
-                            <div class="exp-header-row">
-                                <div>
-                                    <span class="exp-badge impact-badge">Impact</span>
-                                    <h3 class="exp-title">Computer Teacher</h3>
-                                    <p class="exp-company">Dompet Dhuafa</p>
-                                </div>
-                                <div class="exp-meta">
-                                    <span class="exp-date">Jun 2022 – Oct 2022</span>
-                                    <span class="exp-location">Hong Kong</span>
-                                </div>
+                    <!-- Commit 3: Computer Teacher -->
+                    <div class="git-commit">
+                        <div class="commit-header">
+                            <span class="commit-hash">c4a1b08</span>
+                            <span class="commit-branch">(origin/impact)</span>
+                            <span class="commit-tag completed">merged</span>
+                        </div>
+                        <div class="commit-meta">
+                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
+                            <span class="commit-date">Date: Jun 2022 – Oct 2022</span>
+                        </div>
+                        <div class="commit-message">
+                            <p class="commit-title">Computer Teacher @ Dompet Dhuafa</p>
+                            <p class="commit-location">📍 Hong Kong</p>
+                            <div class="commit-body">
+                                <p>Built digital literacy programs for Indonesian migrant workers. Taught 50+ people
+                                    essential computing skills.</p>
+                                <ul class="commit-changes">
+                                    <li><span class="diff-add">+</span> Created curriculum covering computing
+                                        fundamentals</li>
+                                    <li><span class="diff-add">+</span> Taught 50+ individuals with measurable skill
+                                        improvements</li>
+                                    <li><span class="diff-add">+</span> Fostered digital independence for communities
+                                    </li>
+                                </ul>
                             </div>
-
-                            <p class="exp-summary">
-                                Built digital literacy programs for Indonesian migrant workers. Designed and taught
-                                custom curriculum that equipped 50+ people with essential computing skills and internet
-                                safety knowledge.
-                            </p>
-
-                            <div class="exp-achievements">
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Created comprehensive curriculum covering computing fundamentals and online
-                                        safety</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Taught 50+ individuals and measured real skill improvements and confidence
-                                        gains</span>
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">✓</span>
-                                    <span>Fostered digital independence for underrepresented communities</span>
-                                </div>
-                            </div>
-
-                            <div class="exp-tech">
-                                <span class="tech-badge">Education</span>
-                                <span class="tech-badge">Curriculum Design</span>
-                                <span class="tech-badge">Community Impact</span>
+                            <div class="commit-files">
+                                <span class="file-badge">Education</span>
+                                <span class="file-badge">Curriculum Design</span>
+                                <span class="file-badge">Community Impact</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
