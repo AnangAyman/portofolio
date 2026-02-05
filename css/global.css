@@ -1,111 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Import Google Fonts: Outfit (Headings), Inter (Body), JetBrains Mono (Terminal) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     background-color: var(--bg-body);
+    /* Subtle noise texture overlay for premium feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
-/* UPDATED: Typography */
-h1, h2, h3, h4, h5 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700; /* Made bolder */
-    letter-spacing: -0.03em; /* Tighter tracking for modern look */
+
+/* Typography Overhaul */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Outfit', sans-serif;
+    /* Switch to Geometric Sans */
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* Gradient Text Utility */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Massive Section Headers */
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
     color: var(--text-primary);
 }
 
-/* NEW: Massive Section Headers */
-.section-title {
-    font-size: clamp(2.5rem, 5vw, 2.75rem); /* Responsive: Big on mobile, Massive on desktop */
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-}
-
-/* Optional: Add a subtle accent dash under headers to guide the eye */
+/* Decorative Dash under titles */
 .section-title::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 6px;
-    background: var(--primary-color);
-    margin-top: 10px;
-    border-radius: 4px;
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin-top: 0.5rem;
+    border-radius: 2px;
 }
 
-/* Center text utility if needed */
 .text-center .section-title::after {
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Navbar - Glassmorphism */
+/* Navbar - Glassmorphism 2.0 */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
+    background-color: rgba(3, 7, 18, 0.6);
+    /* High transparency dark */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-light);
     padding: 1rem 0;
+    transition: all 0.3s ease;
 }
+
+.navbar.scrolled {
+    background-color: rgba(10, 15, 10, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+    /* Subtle sage tint on scroll */
+}
+
 .navbar-brand {
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    color: var(--text-primary);
-    font-size: 1.25rem;
+    color: var(--text-primary) !important;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
+
+.navbar-profile-pic {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Natural look: Gradient border + soft shadow */
+    border: 2px solid transparent;
+    /* Prepare for gradient border */
+    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+        var(--gradient-primary) border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
 .nav-link {
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
     font-weight: 500;
     font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
-.nav-link:hover { color: var(--primary-color); }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary) !important;
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+    /* Glowing text */
+}
 
 /* Buttons */
 .btn {
-    padding: 0.875rem 1.75rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.2s;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
 }
+
 .btn-primary {
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    color: white;
+    background: var(--gradient-primary);
+    border: none;
+    color: #0a0f0a;
+    /* Dark text for contrast on bright green */
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Softened gradient: Removed the very light #86efac to reduce eye-strain */
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
 .btn-primary:hover {
-    background-color: var(--primary-hover);
-    border-color: var(--primary-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    /* Reduced shadow opacity from 0.5 to 0.35 for softer glow */
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.35);
 }
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
 .btn-outline {
     background: transparent;
     border: 1px solid var(--border-light);
     color: var(--text-primary);
-    text-decoration: none;
-    display: inline-block;
-}
-.btn-outline:hover {
-    background: var(--bg-surface);
-    border-color: var(--text-secondary);
 }
 
-/* Utilities */
+.btn-outline:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--primary-color);
+}
+
+/* Badge Pill */
 .badge-pill {
     display: inline-block;
     padding: 6px 16px;
-    background: #ecfdf5;
-    color: var(--primary-color);
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--secondary-color);
+    /* Light Sage */
     border-radius: 9999px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1.5rem;
-    border: 1px solid #d1fae5;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    backdrop-filter: blur(4px);
 }
-
-.section-title { margin-bottom: 1rem; }
 
 /* Footer */
 footer {
@@ -115,58 +206,42 @@ footer {
     padding: 3rem 0;
     text-align: center;
 }
-footer a { color: var(--text-primary); text-decoration: none;}
 
+footer a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
 
-/* --- SPECIAL NAVBAR ITEM: MY JOURNEY (Ghost Pill Style) --- */
-
-/* 1. The Container: Vertical Separator */
+/* "My Journey" Ghost Button in Nav */
 .nav-item-separator {
     border-left: 1px solid var(--border-light);
     margin-left: 1rem;
     padding-left: 1rem;
     display: flex;
     align-items: center;
-    height: 24px; /* Fix height to center separator visually */
-    margin-top: auto;
-    margin-bottom: auto;
+    height: 24px;
 }
 
-/* 2. The Link: Clean "Ghost" Button */
 .nav-link-artsy {
-    font-family: 'Inter', sans-serif !important; /* Back to your main font */
-    font-weight: 500;
-    font-size: 0.85rem !important; /* Slightly smaller for a "tag" feel */
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 0.85rem !important;
     color: var(--text-secondary) !important;
-    
-    /* The "Ghost" Structure */
     border: 1px solid var(--border-light);
-    border-radius: 50px; /* Pill shape */
-    padding: 6px 16px !important; /* Comfortable tap target */
-    background: transparent;
-    transition: all 0.2s ease;
-    
+    border-radius: 50px;
+    padding: 6px 16px !important;
+    background: rgba(255, 255, 255, 0.03);
     display: flex;
     align-items: center;
-    gap: 6px; /* Space between text and icon */
+    gap: 6px;
 }
 
-/* 3. Hover Effect: Subtle Lift & Color */
 .nav-link-artsy:hover {
     border-color: var(--primary-color);
     color: var(--primary-color) !important;
-    background: rgba(53, 94, 59, 0.05); /* Very faint green tint */
-    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
+    text-shadow: none;
 }
 
-/* 4. Active State (On the Journey page) */
-.nav-link-artsy.active-page {
-    background: var(--primary-color);
-    color: white !important;
-    border-color: var(--primary-color);
-}
-
-/* Mobile Tweaks */
 @media (max-width: 991px) {
     .nav-item-separator {
         border-left: none;
@@ -176,7 +251,27 @@ footer a { color: var(--text-primary); text-decoration: none;}
         height: auto;
         display: block;
     }
-    .nav-link-artsy {
-        display: inline-flex; /* Keep pill shape on mobile */
+}
+
+/* ========================================
+   MOBILE SPACING POLISH
+   ======================================== */
+@media (max-width: 768px) {
+
+    /* More breathing room on sides */
+    .container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    /* Vertical spacing */
+    section {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+    }
+
+    /* Navbar specific spacing */
+    .navbar {
+        padding: 1rem 0.5rem;
     }
 }

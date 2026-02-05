@@ -1,19 +1,50 @@
 :root {
-    /* Modern "Zinc & Sage" Palette */
-    --bg-body: #ffffff;
-    --bg-surface: #fafafa;
-    --bg-card: #ffffff;
-    
-    --text-primary: #18181b; /* Zinc 900 */
-    --text-secondary: #52525b; /* Zinc 600 */
-    --text-tertiary: #a1a1aa; /* Zinc 400 */
-    
-    /* Dark Sage / Forest Green Theme */
-    --primary-color: #355E3B; /* Deep Sage Green */
-    --primary-hover: #244229; /* Darker Forest Green */
-    
-    --border-light: #e4e4e7; /* Zinc 200 */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* --- Midnight Sage Palette --- */
+
+    /* Backgrounds (Keep Dark Mode) */
+    --bg-body: #0a0f0a;
+    /* Very Dark, slightly warm black */
+    --bg-surface: #141a14;
+    /* Dark Sage-tinted Surface */
+    --bg-card: rgba(20, 26, 20, 0.7);
+    /* Translucent card base */
+
+    /* Text (Zinc Family) */
+    --text-primary: #f4f4f5;
+    /* Zinc 100 */
+    --text-secondary: #a1a1aa;
+    /* Zinc 400 */
+    --text-tertiary: #52525b;
+    /* Zinc 600 */
+
+    /* Accents: Vibrant Sage Greens */
+    --primary-color: #4ade80;
+    /* Emerald 400 - The "Pop" Green */
+    --primary-hover: #22c55e;
+    /* Green 500 */
+    --primary-dark: #166534;
+    /* Green 800 - For deep accents */
+    --secondary-color: #86efac;
+    /* Emerald 300 - Lighter accent */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+    --gradient-glow: radial-gradient(circle, rgba(74, 222, 128, 0.3) 0%, transparent 70%);
+
+    /* Borders & Glass */
+    --border-light: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(74, 222, 128, 0.1);
+    /* Sage-tinted glass */
+
+    /* Shadows & Glows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 25px rgba(74, 222, 128, 0.3);
+    /* Sage glow */
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

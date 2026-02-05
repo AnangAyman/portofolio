@@ -1,205 +1,327 @@
-/* --- EXPERIENCE SECTION (Compact & Left Aligned) --- */
+/* --- GIT LOG EXPERIENCE SECTION --- */
 
 .experience-section {
-    padding: 4rem 0; /* Reduced top/bottom padding */
-    background-color: #ffffff;
+    padding: 6rem 0;
     position: relative;
+    overflow: hidden;
+    background: transparent;
 }
 
-/* 1. The Container (Left Aligned, No Margin Auto) */
-.experience-feed {
-    position: relative;
-    padding-left: 2.5rem; /* Reduced gap for the spine */
-    max-width: 900px; /* Allow it to be wider */
-    margin: 0; /* Aligns to the left */
-}
-
-/* 2. The Spine (Left Track) */
-.experience-feed::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px; /* Slightly thinner */
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-}
-
-.experience-feed::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0;
-    width: 3px;
-    height: 100%; 
-    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(53, 94, 59, 0) 100%);
-    border-radius: 4px;
-    opacity: 0.6;
-}
-
-/* 3. The Job Card (Compact) */
-.job-card {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid var(--border-light);
-    border-radius: 12px; /* Slightly tighter radius */
-    padding: 1.5rem; /* REDUCED from 2.5rem */
-    margin-bottom: 2rem; /* REDUCED from 4rem */
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.job-card:hover {
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-md);
-    transform: translateX(5px); /* Slide right instead of lifting up */
-}
-
-/* 4. The Connector Dot */
-.job-marker {
-    position: absolute;
-    left: -2.9rem; /* Aligns with the spine */
-    top: 2rem; /* Aligns with the title */
-    width: 14px; /* Smaller dot */
-    height: 14px;
-    background: #ffffff;
-    border: 3px solid var(--primary-color);
-    border-radius: 50%;
-    z-index: 5;
-    box-shadow: 0 0 0 4px #ffffff; 
-    transition: all 0.3s ease;
-}
-
-.job-card:hover .job-marker {
-    background: var(--primary-color);
-    transform: scale(1.2);
-    box-shadow: 0 0 0 4px #ffffff, 0 0 10px var(--primary-color);
-}
-
-/* 5. Typography & Layout */
-.job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem; /* Reduced gap */
-    flex-wrap: nowrap; /* Force side-by-side if possible */
-    gap: 1rem;
-}
-
-.job-role {
-    font-size: 1.15rem; /* Slightly smaller */
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.15rem;
-    line-height: 1.2;
-}
-
-.job-company {
-    font-size: 0.9rem;
-    font-weight: 600;
+/* Header styling */
+.git-prompt {
     color: var(--primary-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+.git-command {
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Git Log Container */
+.git-log-container {
+    max-width: 900px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Individual Commit */
+.git-commit {
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Staggered fade-in animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+.git-commit:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.git-commit:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.git-commit:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.git-commit:hover {
+    border-color: rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.12);
+    transform: translateY(-4px);
+}
+
+/* ========== FEATURED COMMIT ========== */
+.featured-commit {
+    border: 2px solid #f0883e;
+    background: linear-gradient(135deg, rgba(240, 136, 62, 0.05) 0%, #0d1117 100%);
+    box-shadow:
+        0 0 25px rgba(240, 136, 62, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeSlideIn 0.6s ease-out forwards, featuredPulse 3s ease-in-out infinite 1s;
+}
+
+@keyframes featuredPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 25px rgba(240, 136, 62, 0.15), 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(240, 136, 62, 0.25), 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.featured-commit:hover {
+    border-color: #f0883e;
+    box-shadow:
+        0 0 40px rgba(240, 136, 62, 0.3),
+        0 15px 50px rgba(0, 0, 0, 0.4);
+    animation-play-state: paused;
+}
+
+.featured-banner {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    background: linear-gradient(90deg, rgba(240, 136, 62, 0.2) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(240, 136, 62, 0.3);
 }
 
-/* The Date Badge */
-.job-date {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-light);
-    color: var(--text-secondary);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
+.featured-icon {
+    font-size: 1rem;
+    animation: pinBounce 2s ease-in-out infinite;
 }
 
-/* Description */
-.job-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.25rem; /* Reduced gap */
+@keyframes pinBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
-/* Tech Stack Pills - Smaller */
-.tech-pill {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-}
-
-/* Mobile Tweaks */
-@media (max-width: 768px) {
-    .experience-feed { padding-left: 1.5rem; }
-    .job-marker { left: -1.9rem; width: 12px; height: 12px; border-width: 2px; }
-    .job-header { flex-direction: column; gap: 0.25rem; }
-    .job-date { align-self: flex-start; margin-top: 0.25rem; border: none; padding-left: 0; background: none; }
-}
-
-/* --- PROFESSIONAL / FEATURED CARD (Subtle Tech Style) --- */
-
-/* 1. The Card: Subtle Tint & Technical Border */
-.job-card.professional {
-    background-color: var(--bg-surface); /* Uses your existing off-white (#fafafa) */
-    border: 1px solid #d4d4d8; /* Slightly darker zinc border than normal cards */
-    border-left: 3px solid var(--primary-color); /* The specific "Engineer" mark */
-    padding-top: 1.25rem; /* Slight adjustment for the label */
-}
-
-/* 2. The Overline Label */
-.job-type-label {
+.featured-text {
     font-size: 0.7rem;
+    font-weight: 700;
+    color: #f0883e;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+}
+
+/* Impact Stats */
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.impact-stat {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.impact-value {
+    display: block;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 0.35rem;
-    display: block;
+    font-family: 'Outfit', sans-serif;
 }
 
-/* 3. Refined Typography for the Role */
-.job-card.professional .job-role {
-    color: var(--text-primary);
-    font-size: 1.2rem; /* Slightly larger */
+.impact-label {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* 4. The Bullet Points (Clean & Readable) */
-.job-details {
-    padding-left: 1rem;
-    margin: 1rem 0 1.5rem 0;
-}
-.job-details li {
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    list-style-type: disc; /* Standard bullets feel more academic/pro */
-}
-.job-details li::marker {
-    color: var(--primary-color); /* Sage green bullets */
-}
-
-/* 5. The Marker (The Dot) */
-/* This centers the briefcase icon we added in HTML */
-.job-card.professional .job-marker {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    width: 24px; /* Slightly larger than the standard 14px */
-    height: 24px;
-    left: -3.2rem; /* Re-align based on new size */
-    top: 1.5rem;
+/* Commit Header */
+.commit-header {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 0 4px #ffffff; /* Clean whitespace ring */
+    margin-bottom: 0.75rem;
 }
 
-/* Mobile Alignment Fixes */
+.commit-hash {
+    color: #f0883e;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.commit-hash:hover {
+    color: #ffa657;
+    text-shadow: 0 0 8px rgba(240, 136, 62, 0.4);
+}
+
+.commit-branch {
+    color: #58a6ff;
+    transition: color 0.2s ease;
+}
+
+.commit-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.commit-tag.completed {
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--primary-color);
+}
+
+.commit-tag.current {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+/* Commit Meta */
+.commit-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.commit-author {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.commit-date {
+    color: var(--text-tertiary);
+    font-size: 0.8rem;
+}
+
+/* Commit Message */
+.commit-message {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.commit-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.commit-location {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin: 0 0 1rem 0;
+}
+
+.commit-body p {
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Diff-style changes */
+.commit-changes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.commit-changes li {
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.diff-add {
+    color: #7ee787;
+    /* Green for additions */
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+/* File badges (tech stack) */
+.commit-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.file-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--secondary-color);
+    border-radius: 4px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.file-badge:hover {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
 @media (max-width: 768px) {
-    .job-card.professional .job-marker {
-        width: 20px;
-        height: 20px;
-        left: -2.15rem;
-        top: 1.5rem;
+    .git-log-container {
+        font-size: 0.8rem;
+    }
+
+    .git-commit {
+        padding: 1rem;
+    }
+
+    .commit-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .commit-title {
+        font-size: 1rem;
     }
 }
