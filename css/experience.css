@@ -1,205 +1,322 @@
-/* --- EXPERIENCE SECTION (Compact & Left Aligned) --- */
+/* --- EXPERIENCE SECTION (Midnight Premium) --- */
 
 .experience-section {
-    padding: 4rem 0; /* Reduced top/bottom padding */
-    background-color: #ffffff;
+    padding: 8rem 0;
     position: relative;
+    overflow: hidden;
+    /* Transparent to let body noise/gradient show */
+    background: transparent;
 }
 
-/* 1. The Container (Left Aligned, No Margin Auto) */
-.experience-feed {
-    position: relative;
-    padding-left: 2.5rem; /* Reduced gap for the spine */
-    max-width: 900px; /* Allow it to be wider */
-    margin: 0; /* Aligns to the left */
-}
-
-/* 2. The Spine (Left Track) */
-.experience-feed::before {
+/* Decorative background elements */
+.experience-section::before {
     content: '';
     position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px; /* Slightly thinner */
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-}
-
-.experience-feed::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0;
-    width: 3px;
-    height: 100%; 
-    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(53, 94, 59, 0) 100%);
-    border-radius: 4px;
-    opacity: 0.6;
-}
-
-/* 3. The Job Card (Compact) */
-.job-card {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid var(--border-light);
-    border-radius: 12px; /* Slightly tighter radius */
-    padding: 1.5rem; /* REDUCED from 2.5rem */
-    margin-bottom: 2rem; /* REDUCED from 4rem */
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.job-card:hover {
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-md);
-    transform: translateX(5px); /* Slide right instead of lifting up */
-}
-
-/* 4. The Connector Dot */
-.job-marker {
-    position: absolute;
-    left: -2.9rem; /* Aligns with the spine */
-    top: 2rem; /* Aligns with the title */
-    width: 14px; /* Smaller dot */
-    height: 14px;
-    background: #ffffff;
-    border: 3px solid var(--primary-color);
+    top: -10%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
     border-radius: 50%;
-    z-index: 5;
-    box-shadow: 0 0 0 4px #ffffff; 
-    transition: all 0.3s ease;
+    animation: floatBubble 10s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.1;
+    filter: blur(80px);
 }
 
-.job-card:hover .job-marker {
-    background: var(--primary-color);
-    transform: scale(1.2);
-    box-shadow: 0 0 0 4px #ffffff, 0 0 10px var(--primary-color);
+/* Timeline Container */
+.experience-timeline {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
 }
 
-/* 5. Typography & Layout */
-.job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem; /* Reduced gap */
-    flex-wrap: nowrap; /* Force side-by-side if possible */
-    gap: 1rem;
+/* Timeline vertical line */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(74, 222, 128, 0.1) 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
 }
 
-.job-role {
-    font-size: 1.15rem; /* Slightly smaller */
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.15rem;
-    line-height: 1.2;
+/* Experience Items */
+.exp-item {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
 }
 
-.job-company {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.exp-item:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-/* The Date Badge */
-.job-date {
+.exp-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.exp-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Timeline Dot */
+.exp-dot {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 48px;
+    height: 48px;
     background: var(--bg-surface);
-    border: 1px solid var(--border-light);
-    color: var(--text-secondary);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-/* Description */
-.job-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.25rem; /* Reduced gap */
-}
-
-/* Tech Stack Pills - Smaller */
-.tech-pill {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-}
-
-/* Mobile Tweaks */
-@media (max-width: 768px) {
-    .experience-feed { padding-left: 1.5rem; }
-    .job-marker { left: -1.9rem; width: 12px; height: 12px; border-width: 2px; }
-    .job-header { flex-direction: column; gap: 0.25rem; }
-    .job-date { align-self: flex-start; margin-top: 0.25rem; border: none; padding-left: 0; background: none; }
-}
-
-/* --- PROFESSIONAL / FEATURED CARD (Subtle Tech Style) --- */
-
-/* 1. The Card: Subtle Tint & Technical Border */
-.job-card.professional {
-    background-color: var(--bg-surface); /* Uses your existing off-white (#fafafa) */
-    border: 1px solid #d4d4d8; /* Slightly darker zinc border than normal cards */
-    border-left: 3px solid var(--primary-color); /* The specific "Engineer" mark */
-    padding-top: 1.25rem; /* Slight adjustment for the label */
-}
-
-/* 2. The Overline Label */
-.job-type-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.35rem;
-    display: block;
-}
-
-/* 3. Refined Typography for the Role */
-.job-card.professional .job-role {
-    color: var(--text-primary);
-    font-size: 1.2rem; /* Slightly larger */
-}
-
-/* 4. The Bullet Points (Clean & Readable) */
-.job-details {
-    padding-left: 1rem;
-    margin: 1rem 0 1.5rem 0;
-}
-.job-details li {
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    list-style-type: disc; /* Standard bullets feel more academic/pro */
-}
-.job-details li::marker {
-    color: var(--primary-color); /* Sage green bullets */
-}
-
-/* 5. The Marker (The Dot) */
-/* This centers the briefcase icon we added in HTML */
-.job-card.professional .job-marker {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    width: 24px; /* Slightly larger than the standard 14px */
-    height: 24px;
-    left: -3.2rem; /* Re-align based on new size */
-    top: 1.5rem;
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 0 4px #ffffff; /* Clean whitespace ring */
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Alignment Fixes */
+.exp-dot.completed {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+    color: white;
+}
+
+.exp-dot.completed::after {
+    content: '✓';
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.exp-item:hover .exp-dot:not(.completed) {
+    border-color: var(--primary-color);
+    background: rgba(74, 222, 128, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
+/* Content Container - Glass Card */
+.exp-content {
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+/* Progress bar effect on hover */
+.exp-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    /* Vertical strip on left */
+    background: var(--gradient-primary);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+}
+
+.exp-item:hover .exp-content::before {
+    transform: scaleY(1);
+}
+
+.exp-item:hover .exp-content {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(74, 222, 128, 0.15);
+    transform: translateX(10px);
+}
+
+/* Featured Item Highlight */
+.exp-item.featured .exp-content {
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    background: rgba(17, 24, 39, 0.8);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.1);
+}
+
+/* Header Row */
+.exp-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Badges */
+.exp-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 0.75rem;
+    backdrop-filter: blur(4px);
+}
+
+.completed-badge {
+    background: rgba(16, 185, 129, 0.15);
+    /* Green tint */
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.current-badge {
+    background: rgba(245, 158, 11, 0.15);
+    /* Amber tint */
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.impact-badge {
+    background: rgba(139, 92, 246, 0.15);
+    /* Violet tint */
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Title and Company */
+.exp-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+}
+
+.exp-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+/* Meta */
+.exp-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.exp-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exp-location {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+/* Description */
+.exp-summary {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* Achievements */
+.exp-achievements {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.achievement {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.achievement-icon {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Tech Badges */
+.exp-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.exp-item:hover .tech-badge {
+    background: rgba(74, 222, 128, 0.2);
+    color: #a5b4fc;
+    border-color: var(--primary-color);
+}
+
 @media (max-width: 768px) {
-    .job-card.professional .job-marker {
-        width: 20px;
-        height: 20px;
-        left: -2.15rem;
-        top: 1.5rem;
+    .experience-timeline::before {
+        left: 15px;
+    }
+
+    .exp-item {
+        padding-left: 50px;
+    }
+
+    .exp-dot {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .exp-header-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .exp-meta {
+        align-items: flex-start;
+        margin-top: 0.5rem;
     }
 }
