@@ -35,30 +35,20 @@
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Staggered fade-in animation */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideIn 0.6s ease-out forwards;
+    /* Staggered fade-in animation handled by AOS */
+    /* opacity: 0; */
+    /* transform: translateY(20px); */
+    /* animation: fadeSlideIn 0.6s ease-out forwards; */
 }
 
-.git-commit:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.git-commit:nth-child(2) {
-    animation-delay: 0.25s;
-}
-
-.git-commit:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
+/* 
 @keyframes fadeSlideIn {
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} 
+*/
 
 .git-commit:hover {
     border-color: rgba(74, 222, 128, 0.3);
@@ -75,7 +65,7 @@
         0 10px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
-    animation: fadeSlideIn 0.6s ease-out forwards, featuredPulse 3s ease-in-out infinite 1s;
+    animation: featuredPulse 3s ease-in-out infinite 1s;
 }
 
 @keyframes featuredPulse {
