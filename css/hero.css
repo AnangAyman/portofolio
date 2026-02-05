@@ -53,11 +53,11 @@
    ======================================== */
 .terminal-hero {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     max-width: 1100px;
     margin: 0 auto;
-    align-items: start;
+    align-items: center;
 }
 
 /* === Terminal Window === */
@@ -407,247 +407,95 @@
 }
 
 /* ========================================
-   ORBIT PHOTO SYSTEM - ENHANCED
+   PROFILE PICTURE - ORGANIC 3D DEPTH
    ======================================== */
-.orbit-system {
+.image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem;
+    perspective: 1000px;
+    /* Enable 3D space */
 }
 
-/* Center photo - BIG */
-.orbit-center {
+/* Organic background glow - moves smoothly */
+.image-wrapper::before {
+    content: '';
     position: absolute;
-    width: 320px;
-    height: 320px;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.4), rgba(56, 189, 248, 0.4));
+    filter: blur(50px);
     border-radius: 50%;
+    z-index: 0;
+    animation: morphGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes morphGlow {
+    0% {
+        transform: scale(0.9) translate(-10px, -10px);
+    }
+
+    100% {
+        transform: scale(1.1) translate(10px, 10px);
+    }
+}
+
+.terminal-hero {
+    display: grid;
+    /* Gave terminal more space (1.3fr) vs photo (1fr) */
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* ... existing code ... */
+
+.profile-picture-container {
+    position: relative;
     z-index: 10;
-    /* Animated gradient border */
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #22d3ee, var(--primary-color));
-    background-size: 300% 300%;
-    animation: floatCenter 5s ease-in-out infinite, gradientShift 8s ease infinite;
-    padding: 5px;
-    box-shadow:
-        0 0 60px rgba(74, 222, 128, 0.35),
-        0 0 120px rgba(74, 222, 128, 0.15),
-        inset 0 0 30px rgba(74, 222, 128, 0.1);
+    /* Reduced tilt - subtler 3D effect */
+    transform: rotateY(-6deg) rotateX(3deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@keyframes gradientShift {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-.orbit-photo {
+.profile-picture {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    border: 5px solid #0d1117;
-    transition: transform 0.5s ease, box-shadow 0.4s ease;
-}
+    max-width: 360px;
+    height: auto;
+    /* Much softer, organic corners - NOT SQUARE */
+    border-radius: 40px;
 
-.orbit-center:hover {
-    animation-play-state: paused;
-}
-
-.orbit-center:hover .orbit-photo {
-    transform: scale(1.08);
-    box-shadow: 0 0 80px rgba(74, 222, 128, 0.6);
-}
-
-@keyframes floatCenter {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateY(-15px) scale(1.02);
-    }
-}
-
-/* Inner glow ring */
-.orbit-center::before {
-    content: '';
-    position: absolute;
-    inset: -15px;
-    border-radius: 50%;
-    border: 2px solid rgba(74, 222, 128, 0.2);
-    animation: pulseInner 3s ease-in-out infinite;
-}
-
-@keyframes pulseInner {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-
-    50% {
-        transform: scale(1.05);
-        opacity: 0.6;
-    }
-}
-
-/* Orbit ring - SPINS and carries items */
-.orbit-ring {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1px dashed rgba(74, 222, 128, 0.25);
-    border-radius: 50%;
-    animation: spinOrbit 25s linear infinite;
-}
-
-/* Second decorative ring */
-.orbit-ring::before {
-    content: '';
-    position: absolute;
-    inset: 30px;
-    border: 1px dotted rgba(74, 222, 128, 0.1);
-    border-radius: 50%;
-    animation: spinReverse 40s linear infinite;
-}
-
-@keyframes spinOrbit {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes spinReverse {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-/* Individual orbit items */
-.orbit-item {
-    position: absolute;
-    width: 58px;
-    height: 58px;
-    background: rgba(13, 17, 23, 0.95);
-    border: 2px solid rgba(74, 222, 128, 0.4);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
+    /* 3D Volume Shadows - Layered for depth */
     box-shadow:
-        0 0 20px rgba(74, 222, 128, 0.2),
-        inset 0 0 10px rgba(74, 222, 128, 0.05);
-    transition: all 0.3s ease;
-    /* Counter-rotate + pulse animation */
-    animation: counterSpin 25s linear infinite, skillPulse 3s ease-in-out infinite;
+        /* Top highlight for "rim light" */
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        /* Deep shadow underneath */
+        20px 20px 60px rgba(0, 0, 0, 0.5),
+        /* Colored glow reflection */
+        -5px -5px 30px rgba(74, 222, 128, 0.15);
+
+    /* Subtle glass overlay effect */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: all 0.4s ease;
 }
 
-/* Position each item around the circle */
-.orbit-item:nth-child(1) {
-    top: -29px;
-    left: 50%;
-    margin-left: -29px;
-    animation-delay: 0s, 0s;
+/* Interactive Hover - Levels out and lifts up */
+.profile-picture-container:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05) translateY(-10px);
 }
 
-.orbit-item:nth-child(2) {
-    top: 12%;
-    right: -29px;
-    animation-delay: 0s, 0.5s;
-}
-
-.orbit-item:nth-child(3) {
-    bottom: 12%;
-    right: -29px;
-    animation-delay: 0s, 1s;
-}
-
-.orbit-item:nth-child(4) {
-    bottom: -29px;
-    left: 50%;
-    margin-left: -29px;
-    animation-delay: 0s, 1.5s;
-}
-
-.orbit-item:nth-child(5) {
-    bottom: 12%;
-    left: -29px;
-    animation-delay: 0s, 2s;
-}
-
-.orbit-item:nth-child(6) {
-    top: 12%;
-    left: -29px;
-    animation-delay: 0s, 2.5s;
-}
-
-@keyframes counterSpin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-@keyframes skillPulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(74, 222, 128, 0.2), inset 0 0 10px rgba(74, 222, 128, 0.05);
-    }
-
-    50% {
-        box-shadow: 0 0 30px rgba(74, 222, 128, 0.4), inset 0 0 15px rgba(74, 222, 128, 0.1);
-    }
-}
-
-.orbit-item i {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.orbit-item span {
-    font-size: 0.55rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-
-.orbit-item:hover {
-    background: rgba(74, 222, 128, 0.2);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
-    z-index: 20;
-}
-
-.orbit-item:hover i {
-    transform: scale(1.2);
+.profile-picture-container:hover .profile-picture {
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.5),
+        30px 40px 80px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(74, 222, 128, 0.3);
 }
 
 /* ========================================
@@ -664,19 +512,9 @@
         gap: 1.5rem;
     }
 
-    /* Photo moves to top on mobile */
-    .terminal-sidebar {
-        order: -1;
-    }
-
-    .ascii-frame {
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-    .sidebar-stats {
-        max-width: 280px;
-        margin: 0 auto;
+    /* Hide main photo styling on mobile */
+    .image-wrapper {
+        display: none;
     }
 
     .terminal-body {
