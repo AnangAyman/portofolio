@@ -156,3 +156,62 @@
 .tech-badge i {
     color: var(--primary-color);
 }
+
+/* --- Project Navigation --- */
+.project-navigation {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-light);
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    /* Pushes Prev to left, Next to right */
+    align-items: center;
+}
+
+/* Modifier for single "Next" link (aligns to right) */
+.project-navigation.next-only {
+    justify-content: flex-end;
+}
+
+/* Modifier for single "Prev" link (aligns to left - default but explicit) */
+.project-navigation.prev-only {
+    justify-content: flex-start;
+}
+
+.nav-link-soft {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--secondary-color);
+    /* Soft Sage */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-link-soft:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.nav-link-soft i {
+    transition: transform 0.3s ease;
+}
+
+.nav-link-soft:hover i {
+    transform: translateX(3px);
+}
+
+/* If previous link exists */
+.nav-link-soft.prev {
+    flex-direction: row-reverse;
+}
+
+.nav-link-soft.prev:hover {
+    transform: translateX(-5px);
+}
+
+.nav-link-soft.prev:hover i {
+    transform: translateX(-3px);
+}
