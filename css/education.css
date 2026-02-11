@@ -1,47 +1,131 @@
 .education-card {
-    background: var(--bg-card);
+    background: rgba(17, 24, 39, 0.4);
     border: 1px solid var(--border-light);
-    border-radius: 16px; padding: 2rem;
-    height: 100%; transition: all 0.3s ease;
-    display: flex; flex-direction: column;
+    border-radius: 24px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
 }
+
 .education-card:hover {
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-md); transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 222, 128, 0.1);
 }
+
+/* Gradient background wash on hover */
+.education-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(74, 222, 128, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.education-card:hover::before {
+    opacity: 1;
+}
+
 .edu-header {
-    display: flex; align-items: center; gap: 1.25rem;
-    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-light);
+    position: relative;
+    z-index: 1;
 }
+
 .edu-icon {
-    width: 56px; height: 56px; background: #ecfdf5;
-    color: var(--primary-color); border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--primary-color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(74, 222, 128, 0.2);
 }
-.edu-title-group h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
-.edu-degree { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; }
+
+.edu-title-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.edu-degree {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.edu-body {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-body p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
 
 .edu-meta-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1rem; margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: auto;
 }
+
 .edu-meta-item {
-    display: flex; flex-direction: column;
-    background: var(--bg-surface); padding: 0.75rem;
-    border-radius: 8px; border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
 }
-.edu-meta-item.highlight { background: #ecfdf5; border-color: #d1fae5; }
-.edu-meta-item.highlight .meta-label, .edu-meta-item.highlight .meta-value { color: var(--primary-color); }
+
+.edu-meta-item.highlight {
+    background: rgba(74, 222, 128, 0.15);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.edu-meta-item.highlight .meta-value {
+    color: #a5b4fc;
+}
 
 .meta-label {
-    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px;
-    color: var(--text-tertiary); font-weight: 600; margin-bottom: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    margin-bottom: 6px;
 }
-.meta-value { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+.meta-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
 @media (max-width: 576px) {
-    .edu-meta-grid { grid-template-columns: 1fr; }
-    .edu-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .edu-meta-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -37,12 +37,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar shadow on scroll
+// Navbar scroll effect with glassmorphism enhancement
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
         navbar.classList.add('shadow-sm');
     } else {
+        navbar.classList.remove('scrolled');
         navbar.classList.remove('shadow-sm');
     }
 });
