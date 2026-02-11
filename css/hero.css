@@ -379,9 +379,19 @@
     font-family: 'JetBrains Mono', monospace;
 }
 
+/* Download Icon Animation */
+.btn-terminal-outline i {
+    transition: transform 0.3s ease;
+}
+
+.btn-terminal-outline:hover i {
+    transform: translateY(2px);
+}
+
 .btn-terminal-outline:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
 }
 
 /* Blinking Cursor */
