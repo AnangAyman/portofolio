@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIDC Identity Provider - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(217, 119, 6, 0.1); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.2);">Legacy
+                Infrastructure Project</span>
+            <h1 data-aos="fade-up">OIDC Identity Provider</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A centralized, containerized authentication system engineered for security and scalability.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <img src="static/OpenID_Connect.png" alt="OIDC Architecture"
+                    class="img-fluid rounded-3 shadow-lg border-opacity-10 border-white"
+                    style="border: 1px solid rgba(255,255,255,0.1); max-height: 400px; object-fit: cover;">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Backend Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Internship</p>
+            </div>
+            <div class="meta-item">
+                <h5>Focus</h5>
+                <p>Security & Auth</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Python, Flask, Docker, OAuth2</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <div class="alert alert-warning d-flex align-items-center mb-5" role="alert"
+                style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); color: #eab308;">
+                <i class="fas fa-lock me-3" style="font-size: 1.5rem;"></i>
+                <div>
+                    <strong>Proprietary Project:</strong> Due to a Non-Disclosure Agreement (NDA), the source code,
+                    specific metrics, and internal documentation for this project cannot be publicly shared. The details
+                    below provide a high-level architectural overview.
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                The organization faced a critical security bottleneck: an aging user authentication system that relied
+                on outdated password hashing and lacked standardized authorization protocols. This legacy infrastructure
+                made integrating modern mobile and web applications risky and difficult.
+                <br><br>
+                The request was ambitious: <strong>replace the plane engine while flying.</strong> We needed to
+                transition to a centralized OpenID Connect (OIDC) provider without forcing a massive password reset for
+                thousands of users, all while ensuring zero downtime and compatibility with legacy database schemas.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I engineered a robust, containerized <strong>OIDC Identity Provider</strong> that serves as the
+                organization's single source of truth for authentication. This wasn't just a wrapper; it was a complete
+                architectural overhaul.
+                <br><br>
+                To solve the migration nightmare, I designed a <strong>"Just-In-Time" Migration Strategy</strong>. A
+                custom login interceptor detects legacy accounts during sign-in, verifies credentials against the old
+                schema, and seamlessly upgrades them to modern cryptographic hashes (PBKDF2) on the fly. This
+                achieved a massive security upgrade without disrupting the user experience.
+            </p>
+
+            <div class="showcase-block" data-aos="fade-up">
+                <!-- Placeholder or relevant image if available, reusing OpenID image for now or remove if no other image -->
+                <img src="static/OpenID_Connect.png" alt="OIDC Flow Diagram">
+                <div class="caption">Example of OAuth 2.0 Authorization Code Flow with PKCE enforcement.</div>
+            </div>
+
+            <h3>Key Technical Highlights</h3>
+            <ul class="list-unstyled mt-4 mb-5">
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-shield-alt text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Comprehensive OAuth 2.0/OIDC with PKCE:</strong> Configured an
+                        authorization server supporting multiple grants (Authorization Code, Implicit, Hybrid, and
+                        Refresh Token). Crucially, I enforced <strong class="text-highlight"
+                            style="color: var(--text-secondary);">PKCE (Proof Key for Code
+                            Exchange)</strong> to secure authorization flows against interception attacks.
+                    </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-key text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Advanced Token Management:</strong> Built a complete token
+                        lifecycle management system, including custom token expiration configurations and a dedicated
+                        token revocation endpoint allowing clients to safely invalidate sessions.
+                    </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-lock text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Auto-Upgrading Security & Brute-Force Protection:</strong>
+                        Designed a custom login route that intercepts legacy authentication attempts, safely upgrading
+                        successful logins to modern cryptographic hashes dynamically. I also engineered a strict,
+                        time-based account lockout mechanism to mitigate brute-force attacks.
+                    </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-user-shield text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Scope-Based Resource Protection:</strong> Implemented strict
+                        access controls on API endpoints, ensuring client applications can only access user data for
+                        which they have explicitly been granted scope.
+                    </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-random text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Optimized Internal Client Flow:</strong> Created specialized
+                        internal client logic that allows trusted first-party applications to safely bypass manual
+                        user-consent screens, streamlining the user experience.
+                    </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                    <i class="fas fa-database text-primary mt-1 me-3"></i>
+                    <div>
+                        <strong class="text-highlight">Automated ETL Scripting:</strong> Built a custom data migration
+                        script using SQLAlchemy that safely processed legacy user data in memory-efficient batches,
+                        ensuring high performance and proper error rollback during the database transition.
+                    </div>
+                </li>
+            </ul>
+
+            <h2 data-aos="fade-up">Tech Stack</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Backend & Security</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-flask"></i> Flask</span>
+                        <span class="tech-badge"><i class="fas fa-shield-alt"></i> Authlib</span>
+                        <span class="tech-badge"><i class="fas fa-key"></i> Werkzeug</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Infrastructure & Data</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-badge"><i class="fas fa-server"></i> Gunicorn</span>
+                        <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="tech-badge"><i class="fas fa-code-branch"></i> SQLAlchemy</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="text-center py-5 mt-5 border-top">
+            <p class="text-secondary mb-2">Back to Portfolio</p>
+            <a href="index.html#work" class="h3 text-decoration-none text-dark fw-bold">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
