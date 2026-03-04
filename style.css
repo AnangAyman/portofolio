@@ -7,9 +7,11 @@
 
 /* Import Sections */
 @import url('css/hero.css');
-@import url('css/expertise.css'); /* Added for Bento Grid */
+@import url('css/expertise.css');
+/* Added for Bento Grid */
 @import url('css/timeline.css');
 @import url('css/work.css');
+@import url('css/certifications.css');
 @import url('css/experience.css');
 @import url('css/education.css');
 @import url('css/contact.css');
