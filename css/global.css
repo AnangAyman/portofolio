@@ -1,10 +1,15 @@
 /* Import Google Fonts: Outfit (Headings), Inter (Body), JetBrains Mono (Terminal) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -16,6 +21,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* Typography Overhaul */
@@ -73,6 +79,8 @@ h5 {
     border-bottom: 1px solid var(--border-light);
     padding: 1rem 0;
     transition: all 0.3s ease;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .navbar.scrolled {
@@ -276,6 +284,34 @@ footer a {
     .navbar {
         padding: 1rem 0.5rem;
     }
+}
+
+/* ========================================
+   NAVBAR TOGGLER (Mobile Hamburger)
+   ======================================== */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.06);
+    transition: all 0.2s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(74, 222, 128, 0.5);
+}
+
+/* Override Bootstrap's dark SVG icon with a bright white one */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 22px;
+    height: 22px;
 }
 
 /* ========================================
