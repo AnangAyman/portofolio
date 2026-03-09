@@ -1,0 +1,268 @@
+/* leadership.css */
+
+.leadership-section {
+    padding: 6rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.split-view-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 992px) {
+    .split-view-container {
+        flex-direction: row;
+        gap: 3rem;
+        min-height: 500px;
+    }
+}
+
+/* --- Left Side: Tab List --- */
+.leadership-tabs {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    /* Hide scrollbar for clean look */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.leadership-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .leadership-tabs {
+        flex: 0 0 35%;
+        flex-direction: column;
+        overflow-y: visible;
+        padding-bottom: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding-right: 1rem;
+    }
+}
+
+.leadership-tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    border-left: 2px solid transparent;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+    .leadership-tab-btn {
+        white-space: normal;
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+.leadership-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.leadership-tab-btn.active {
+    color: var(--primary-color);
+    background: rgba(16, 185, 129, 0.1);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Right Side: Content Pane --- */
+.leadership-content-pane {
+    flex: 1;
+    position: relative;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.leadership-panel {
+    display: none;
+    animation: fadeInSlideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.leadership-panel.active {
+    display: block;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.panel-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.panel-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.panel-body p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.panel-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.panel-tags {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.panel-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Panel Image Gallery --- */
+.panel-gallery {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .panel-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Cascading Drop animation for gallery items */
+.leadership-panel.active .gallery-item {
+    opacity: 0;
+    animation: fadeInSlideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.leadership-panel.active .gallery-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.leadership-panel.active .gallery-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.leadership-panel.active .gallery-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.leadership-panel.active .gallery-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Optional Overlay on hover */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}

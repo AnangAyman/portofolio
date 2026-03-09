@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100" tabindex="0">
 
     <div class="main-content">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -26,10 +26,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#work">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#leadership">Volunteering</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu glass-dropdown-menu" aria-labelledby="projectsDropdown">
+                                <li><a class="dropdown-item" href="#work">Featured Projects</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="projects.html"><i
+                                            class="fas fa-archive me-2 text-secondary"></i> Project Archive</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#credentials">Credentials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
                         <li class="nav-item nav-item-separator">
                             <a class="nav-link nav-link-artsy" href="journey.html">
@@ -70,10 +85,10 @@
                             </div>
                             <div class="terminal-output code-output">
                                 <pre>{
-"languages": ["Python", "SQL", "JavaScript"],
-"frameworks": ["Flask", "Django", "FastAPI"],
+"languages": ["Python", "PHP", "SQL"],
+"frameworks": ["Flask", "Django", "Laravel"],
+"AI": ["Tensorflow", "PyTorch", "Keras", "Scikit-learn"],
 "tools": ["Docker", "Git", "CI/CD"],
-"focus": "Applied Machine Learning"
 }</pre>
                             </div>
 
@@ -85,7 +100,7 @@
                                 <span class="status-badge">✓ Available for work</span>
                                 <div class="terminal-actions">
                                     <a href="#work" class="btn btn-terminal">View Projects</a>
-                                    <a href="static/CV_Resume.pdf" download="CV_Resume.pdf"
+                                    <a href="static/Ayman CV Resume Final.pdf" download="Ayman CV Resume Final.pdf"
                                         class="btn btn-terminal-outline">
                                         <i class="fas fa-file-download me-2"></i>Download Resume
                                     </a>
@@ -109,10 +124,70 @@
             </div>
         </section>
 
+        <!-- <section id="skills" class="skills-section py-5">
+            <div class="container">
+                <div class="section-header mb-4 text-start">
+                    <h2 class="section-title">Technical Skills</h2>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <h3>Frontend Development</h3>
+                        <div class="tech-stack mb-4">
+                            <span class="tech-pill pill-frontend">React.js</span>
+                            <span class="tech-pill pill-frontend">Next.js</span>
+                            <span class="tech-pill pill-frontend">Tailwind CSS</span>
+                            <span class="tech-pill pill-frontend">Bootstrap</span>
+                            <span class="tech-pill pill-frontend">jQuery</span>
+                            <span class="tech-pill pill-frontend">HTML5</span>
+                            <span class="tech-pill pill-frontend">CSS3</span>
+                        </div>
+                        <p>Specializing in building modern, responsive web interfaces and high-performance landing
+                            pages. Focus on creating seamless user experiences using the latest frontend frameworks.</p>
+                    </div>
+
+                    <div class="bento-card">
+                        <h3>Backend Development</h3>
+                        <div class="tech-stack mb-4">
+                            <span class="tech-pill pill-backend">ASP.NET</span>
+                            <span class="tech-pill pill-backend">Laravel</span>
+                            <span class="tech-pill pill-backend">Flask</span>
+                            <span class="tech-pill pill-backend">Node.js</span>
+                            <span class="tech-pill pill-backend">C#</span>
+                            <span class="tech-pill pill-backend">PHP</span>
+                            <span class="tech-pill pill-backend">SQL Server</span>
+                            <span class="tech-pill pill-backend">REST APIs</span>
+                        </div>
+                        <p>Specializing in robust API architectures using C#. Experienced in architecting complex
+                            Warehouse Management Systems (WMS), inventory, and tracking systems. Have also built
+                            scalable API services using Flask and Laravel.</p>
+                    </div>
+
+                    <div class="bento-card">
+                        <h3>Artificial Intelligence</h3>
+                        <div class="tech-stack mb-4">
+                            <span class="tech-pill pill-ai">TensorFlow</span>
+                            <span class="tech-pill pill-ai">Keras</span>
+                            <span class="tech-pill pill-ai">OpenCV</span>
+                            <span class="tech-pill pill-ai">Scikit-learn</span>
+                            <span class="tech-pill pill-ai">LangChain</span>
+                            <span class="tech-pill pill-ai">FAISS</span>
+                            <span class="tech-pill pill-ai">HuggingFace</span>
+                            <span class="tech-pill pill-ai">SHAP</span>
+                        </div>
+                        <p>Engineering intelligent systems including RAG pipelines for document retrieval, real-time
+                            Computer Vision for sign language recognition, and predictive modeling for sports analytics.
+                            Published researcher in Explainable AI, applying predictive modeling to healthcare
+                            diagnostics with a focus on model interpretability.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
         <section id="experience" class="experience-section">
             <div class="container">
                 <div class="section-header mb-5 text-start">
-                    <h2 class="section-title" data-aos="fade-down">Experience</h2>
+                    <h2 class="section-title" data-aos="fade-down">Professional Experience</h2>
                     <p class="text-secondary" data-aos="fade-up" data-aos-delay="100">
                         <span class="git-prompt">~/career $</span> <span class="git-command">git log --oneline</span>
                     </p>
@@ -188,7 +263,7 @@
                     </div>
 
                     <!-- Commit 2: Manager of Academic Events -->
-                    <div class="git-commit" data-aos="fade-up" data-aos-delay="200">
+                    <!-- <div class="git-commit" data-aos="fade-up" data-aos-delay="200">
                         <div class="commit-header">
                             <span class="commit-hash">b7e2d94</span>
                             <span class="commit-branch">(origin/leadership)</span>
@@ -231,10 +306,10 @@
                                 <span class="file-badge">Leadership</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Commit 3: Computer Teacher -->
-                    <div class="git-commit" data-aos="fade-up" data-aos-delay="400">
+                    <!-- <div class="git-commit" data-aos="fade-up" data-aos-delay="400">
                         <div class="commit-header">
                             <span class="commit-hash">c4a1b08</span>
                             <span class="commit-branch">(origin/impact)</span>
@@ -277,6 +352,172 @@
                                 <span class="file-badge">Bahasa Indonesia</span>
                             </div>
                         </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Volunteering Split View -->
+        <section id="leadership" class="leadership-section">
+            <div class="container">
+                <div class="section-header mb-5 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Leadership & Volunteering</h2>
+                    <p class="text-secondary">Community impact, organizational leadership, and extracurricular
+                        engagements.</p>
+                </div>
+
+                <div class="split-view-container">
+                    <!-- Left: Tab List -->
+                    <div class="leadership-tabs" data-aos="fade-right" data-aos-delay="100">
+                        <button class="leadership-tab-btn active" data-target="panel-himti">Manager of Academic
+                            Events</button>
+                        <button class="leadership-tab-btn" data-target="panel-dompet">Computer Teacher</button>
+                        <button class="leadership-tab-btn" data-target="panel-binus">Teaching Scholarship</button>
+                        <button class="leadership-tab-btn" data-target="panel-orphanage">Volunteer Educator</button>
+                    </div>
+
+                    <!-- Right: Content Panes -->
+                    <div class="leadership-content-pane" data-aos="fade-left" data-aos-delay="200">
+
+                        <!-- Panel 1: HIMTI -->
+                        <div id="panel-himti" class="leadership-panel active">
+                            <div class="panel-header">
+                                <h3 class="panel-title">Manager of Academic Events <span
+                                        style="color: var(--primary-color);">@ HIMTI Binus</span></h3>
+                                <div class="panel-subtitle"><span>📍 Greater Jakarta, Indonesia</span></div>
+                                <div class="panel-date">Mar 2025 – Dec 2025</div>
+                            </div>
+                            <div class="panel-body">
+                                <p>Spearheaded cross-campus operations and strategic corporate partnerships for Greater
+                                    Jakarta's premier academic tech initiatives. Directed a distributed <strong>60+
+                                        person</strong> cross-functional team across <strong>3 university
+                                        campuses</strong> to bridge the gap between student talent and Tier-1 enterprise
+                                    sectors.</p>
+                                <ul class="panel-list">
+                                    <li><strong>Executive Leadership:</strong> Appointed Project Leads for 5 major
+                                        events, providing high-level strategic guidance and serving as the final
+                                        authority on critical project decisions.</li>
+                                    <li><strong>Corporate Engagements:</strong> Coordinated industry partnerships and
+                                        student webinars with <strong>NVIDIA, Deloitte, BCA, CIMB Niaga, and Bank
+                                            Mandiri</strong>.</li>
+                                    <li><strong>Industry Representation:</strong> Acted as an organizational
+                                        representative to bridge the gap between the university organization and
+                                        corporate stakeholders.</li>
+                                </ul>
+                                <div class="panel-tags">
+                                    <span class="panel-tag">Project Management</span>
+                                    <span class="panel-tag">B2B Relations</span>
+                                    <span class="panel-tag">Logistics</span>
+                                    <span class="panel-tag">Leadership</span>
+                                </div>
+
+                                <div class="panel-gallery">
+                                    <div class="gallery-item">
+                                        <img src="static/talkshow_himti_light.jpg" alt="HIMTI Talkshow">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="static/talkshow_himti.JPG" alt="HIMTI Talkshow">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="static/Himti_ITB.jpeg" alt="HIMTI Stuban">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Dompet Dhuafa -->
+                        <div id="panel-dompet" class="leadership-panel">
+                            <div class="panel-header">
+                                <h3 class="panel-title">Computer Teacher <span style="color: var(--primary-color);">@
+                                        Dompet Dhuafa</span></h3>
+                                <div class="panel-subtitle"><span>📍 Hong Kong</span></div>
+                                <div class="panel-date">Jun 2022 – Oct 2022</div>
+                            </div>
+                            <div class="panel-body">
+                                <p>Guided <strong>15 Indonesian domestic helpers</strong> through a <strong>4-month
+                                        intensive digital literacy program</strong> in Hong Kong. Developed a custom
+                                    curriculum to bridge the digital divide, moving students from basic computer
+                                    operation to entrepreneurial tool proficiency.</p>
+                                <ul class="panel-list">
+                                    <li><strong>Certification Success:</strong> Delivered training in <strong>MS Office,
+                                            Email, and Internet Safety</strong>, leading to 100% of the cohort earning
+                                        official Certificates of Completion.</li>
+                                    <li><strong>Entrepreneurial Output:</strong> Taught Canva for marketing and design;
+                                        directly enabled a graduate to create a custom banner for her new business.</li>
+                                    <li><strong>Practical Translation:</strong> Conducted all lectures in Bahasa
+                                        Indonesia, using simplified analogies to make technical jargon accessible for
+                                        adult learners.</li>
+                                </ul>
+                                <div class="panel-tags">
+                                    <span class="panel-tag">Digital Literacy</span>
+                                    <span class="panel-tag">Community Teaching</span>
+                                    <span class="panel-tag">MS Office</span>
+                                    <span class="panel-tag">Canva</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: BINUS Scholarship -->
+                        <div id="panel-binus" class="leadership-panel">
+                            <div class="panel-header">
+                                <h3 class="panel-title">Teaching Scholarship <span
+                                        style="color: var(--primary-color);">@ BINUS University</span></h3>
+                                <div class="panel-subtitle"><span>📍 Jakarta, Indonesia</span></div>
+                                <div class="panel-date">Academic Year</div>
+                            </div>
+                            <div class="panel-body">
+                                <p>Awarded an exclusive teaching scholarship based on high academic merit to mentor and
+                                    tutor peers in core Computer Science curriculum.</p>
+                                <ul class="panel-list">
+                                    <li><strong>Peer Mentorship:</strong> Broke down complex algorithmic and programming
+                                        concepts into digestible explanations for fellow undergraduate students.</li>
+                                    <li><strong>Academic Improvement:</strong> Fostered collaborative study environments
+                                        aiming to raise collective academic performance and exam readiness.</li>
+                                </ul>
+                                <div class="panel-tags">
+                                    <span class="panel-tag">Education</span>
+                                    <span class="panel-tag">Mentorship</span>
+                                    <span class="panel-tag">Computer Science</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 4: Orphanage -->
+                        <div id="panel-orphanage" class="leadership-panel">
+                            <div class="panel-header">
+                                <h3 class="panel-title">Volunteer Educator <span style="color: var(--primary-color);">@
+                                        Orphanage Initiatives</span></h3>
+                                <div class="panel-subtitle"><span>📍 Indonesia</span></div>
+                                <div class="panel-date">Community Service</div>
+                            </div>
+                            <div class="panel-body">
+                                <p>Organized educational activities and provided entertainment and mentorship for
+                                    orphans (anak yatim), fostering a supportive and engaging learning environment.</p>
+                                <ul class="panel-list">
+                                    <li><strong>Activity Coordination:</strong> Structured and executed engaging
+                                        day-events tailored for children's educational and emotional growth.</li>
+                                    <li><strong>Youth Mentorship:</strong> Acted as a role model, dedicating time to
+                                        listen, teach fundamental life skills, and encourage academic curiosity.</li>
+                                </ul>
+                                <div class="panel-tags">
+                                    <span class="panel-tag">Community Service</span>
+                                    <span class="panel-tag">Event Planning</span>
+                                    <span class="panel-tag">Youth Mentorship</span>
+                                </div>
+                                <div class="panel-gallery">
+                                    <div class="gallery-item">
+                                        <img src="static/teachforindonesia.jpeg" alt="Teach for Indonesia">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="static/TFI_sem1_1.jpeg" alt="Teach for Indonesia">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="static/TFI_sem1_2.jpeg" alt="Teach for Indonesia">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -399,7 +640,7 @@
                 </div>
 
                 <div class="text-center mt-5" data-aos="zoom-in">
-                    <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                    <a href="projects.html" class="btn btn-ghost-glow btn-lg" style="padding: 1rem 3rem;">
                         View All Projects <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -409,79 +650,205 @@
 
 
 
-        <section id="education" class="py-5">
+        <!-- Academic & Credentials Section (Bento Box) -->
+        <section id="credentials" class="credentials-section py-5">
             <div class="container py-5">
-                <h2 class="section-title mb-5">Educational Background</h2>
+                <div class="section-header mb-5 text-start" data-aos="fade-up">
+                    <h2 class="section-title">Academic & Credentials</h2>
+                    <p class="text-secondary">Formal education and industry-standard technical certifications.</p>
+                </div>
 
-                <div class="row g-4">
+                <div class="credentials-bento">
 
-                    <div class="col-lg-6">
-                        <div class="education-card">
-                            <div class="edu-header">
-                                <div class="edu-icon">
-                                    <i class="fas fa-university"></i>
-                                </div>
-                                <div class="edu-title-group">
-                                    <h3>BINUS University</h3>
-                                    <span class="edu-degree">Bachelor of Computer Science</span>
-                                </div>
-                            </div>
+                    <!-- Left Side: Formal Education Timeline -->
+                    <div class="bento-column-education" data-aos="fade-right" data-aos-delay="100">
+                        <div class="bento-glass-card education-dashboard">
+                            <h3 class="dashboard-title"><i class="fas fa-university me-2"></i> Education</h3>
 
-                            <div class="edu-body">
-                                <p class="mb-4 text-secondary">Specializing in Artificial Intelligence & Web
-                                    Development. Developing a strong foundation in algorithms, data structures, and
-                                    software engineering principles.</p>
-
-                                <div class="edu-meta-grid">
-                                    <div class="edu-meta-item">
-                                        <span class="meta-label">Period</span>
-                                        <span class="meta-value">2023 - 2027</span>
+                            <div class="edu-timeline">
+                                <div class="edu-timeline-item">
+                                    <div class="edu-timeline-dot"></div>
+                                    <div class="edu-timeline-content">
+                                        <h4>BINUS University</h4>
+                                        <span class="edu-degree">Bachelor of Computer Science</span>
+                                        <p class="text-secondary mt-2 mb-3">Specializing in AI & Web Development with a
+                                            strong foundation in scalable software engineering principles.</p>
+                                        <div class="edu-meta-grid">
+                                            <div class="edu-meta-item">
+                                                <span class="meta-label">Period</span>
+                                                <span class="meta-value">2023 - 2027</span>
+                                            </div>
+                                            <div class="edu-meta-item highlight">
+                                                <span class="meta-label">GPA</span>
+                                                <span class="meta-value">3.88<small>/4.00</small></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="edu-meta-item">
-                                        <span class="meta-label">Location</span>
-                                        <span class="meta-value">Jakarta, ID</span>
+                                </div>
+
+                                <div class="edu-timeline-item">
+                                    <div class="edu-timeline-dot"></div>
+                                    <div class="edu-timeline-content">
+                                        <h4>Sungkyunkwan University</h4>
+                                        <span class="edu-degree">Exchange Student Program</span>
+                                        <p class="text-secondary mt-2 mb-3">Immersive academic exchange focusing on
+                                            advanced computing electives including Mobile App Programming, Computer
+                                            Security, and a comprehensive Capstone Design Project.</p>
+                                        <div class="edu-meta-grid">
+                                            <div class="edu-meta-item">
+                                                <span class="meta-label">Period</span>
+                                                <span class="meta-value">2025</span>
+                                            </div>
+                                            <div class="edu-meta-item">
+                                                <span class="meta-label">Location</span>
+                                                <span class="meta-value">Seoul, KR</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="edu-meta-item highlight">
-                                        <span class="meta-label">GPA</span>
-                                        <span class="meta-value">3.88 <small>/ 4.00</small></span>
+                                </div>
+
+                                <div class="edu-timeline-item">
+                                    <div class="edu-timeline-dot"></div>
+                                    <div class="edu-timeline-content">
+                                        <h4>Delia School of Canada</h4>
+                                        <span class="edu-degree">High School Diploma</span>
+                                        <p class="text-secondary mt-2 mb-3">Ontario curriculum with distinction,
+                                            focusing on Calculus and Computer Science.</p>
+                                        <div class="edu-meta-grid">
+                                            <div class="edu-meta-item">
+                                                <span class="meta-label">Period</span>
+                                                <span class="meta-value">2020 - 2023</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <div class="education-card">
-                            <div class="edu-header">
-                                <div class="edu-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                    <!-- Right Side: Certifications Grid -->
+                    <div class="bento-column-certs" data-aos="fade-left" data-aos-delay="200">
+                        <div class="certifications-masonry">
+                            <!-- Alibaba Cloud -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon alibaba"><img src="static/alibaba_logo.jpg"
+                                            alt="Alibaba Cloud Logo"></div>
+                                    <div class="cert-title-group">
+                                        <h3>Alibaba Cloud Associate</h3>
+                                        <p>Cloud Engineer • <span class="text-white-50">May 2025</span></p>
+                                    </div>
                                 </div>
-                                <div class="edu-title-group">
-                                    <h3>Delia School of Canada</h3>
-                                    <span class="edu-degree">High School Diploma</span>
+                                <div class="cert-id mb-3"
+                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
+                                    <i class="fas fa-hashtag me-1"></i> ID: <span
+                                        style="color: #e2e8f0;">IACA13250500210525L</span>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="static/Certificate Alibaba Cloud Associate.png" target="_blank"
+                                        class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
                                 </div>
                             </div>
 
-                            <div class="edu-body">
-                                <p class="mb-4 text-secondary">Completed the rigorous Ontario curriculum with
-                                    distinction. Established strong analytical skills through advanced coursework in
-                                    Calculus and Computer Science.</p>
-
-                                <div class="edu-meta-grid">
-                                    <div class="edu-meta-item">
-                                        <span class="meta-label">Period</span>
-                                        <span class="meta-value">2020 - 2023</span>
+                            <!-- NVIDIA Conversational AI -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon nvidia"><img src="static/nvidia_logo.png" alt="NVIDIA Logo">
                                     </div>
-                                    <div class="edu-meta-item">
-                                        <span class="meta-label">Location</span>
-                                        <span class="meta-value">Hong Kong</span>
-                                    </div>
-                                    <div class="edu-meta-item highlight">
-                                        <span class="meta-label">Score</span>
-                                        <span class="meta-value">86 <small>/ 100</small></span>
+                                    <div class="cert-title-group">
+                                        <h3>Conversational AI</h3>
+                                        <p>NVIDIA DLI • <span class="text-white-50">Aug 2025</span></p>
                                     </div>
                                 </div>
+                                <div class="cert-id mb-3"
+                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
+                                    <i class="fas fa-hashtag me-1"></i> ID: <span
+                                        style="color: #e2e8f0;">A8pk1W-QRpSHkTQesn8nSQ</span>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="https://learn.nvidia.com/certificates?id=A8pk1W-QRpSHkTQesn8nSQ#"
+                                        target="_blank" class="btn-cert-mini text-green"><i
+                                            class="fas fa-shield-alt me-1"></i>
+                                        Verify</a>
+                                </div>
                             </div>
+
+                            <!-- Samsung Innovation Campus -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon" style="background: #1428a0;">
+                                        <img src="static/samsung_logo.png" alt="Samsung Logo">
+                                    </div>
+                                    <div class="cert-title-group">
+                                        <h3>Samsung Innovation Campus</h3>
+                                        <p>Samsung • <span class="text-white-50">Sep 2024</span></p>
+                                    </div>
+                                </div>
+                                <div class="cert-id mb-3"
+                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
+                                    <i class="fas fa-hashtag me-1"></i> ID: <span
+                                        style="color: #e2e8f0;">SKILVUL/CERT/SIC5/2024.IX/2488</span>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="static/Samsung Innovation Campus.pdf" target="_blank"
+                                        class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
+                                </div>
+                            </div>
+
+                            <!-- Harvard CS50 Python -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon" style="background: #A51C30;">
+                                        <img src="static/harvard_logo.svg" alt="Harvard Logo">
+                                    </div>
+                                    <div class="cert-title-group">
+                                        <h3>CS50's Python Programming</h3>
+                                        <p>Harvard • <span class="text-white-50">Sep 2024</span></p>
+                                    </div>
+                                </div>
+                                <div class="cert-id mb-3"
+                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
+                                    <i class="fas fa-hashtag me-1"></i> ID: <span
+                                        style="color: #e2e8f0;">a641def1-b538-4318-a477-9156e8f09941</span>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="https://certificates.cs50.io/a641def1-b538-4318-a477-9156e8f09941.png?size=letter"
+                                        target="_blank" class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
+                                </div>
+                            </div>
+
+                            <!-- AWS Educate Compute -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon aws"><img src="static/aws_logo.png" alt="AWS Logo"></div>
+                                    <div class="cert-title-group">
+                                        <h3>Getting Started with Compute</h3>
+                                        <p>AWS Educate • <span class="text-white-50">Oct 2024</span></p>
+                                    </div>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="https://www.credly.com/badges/232c5769-a7ae-4a49-8e97-5506670c13bb/public_url"
+                                        target="_blank" class="btn-cert-mini"><i class="fas fa-check-circle me-1"></i>
+                                        Credly</a>
+                                </div>
+                            </div>
+
+                            <!-- AWS Educate Cloud 101 -->
+                            <div class="cert-bento-card">
+                                <div class="cert-header">
+                                    <div class="cert-icon aws"><img src="static/aws_logo.png" alt="AWS Logo"></div>
+                                    <div class="cert-title-group">
+                                        <h3>Introduction to Cloud 101</h3>
+                                        <p>AWS Educate • <span class="text-white-50">Oct 2024</span></p>
+                                    </div>
+                                </div>
+                                <div class="cert-footer">
+                                    <a href="https://www.credly.com/badges/96353992-c460-4423-b68f-d23a7003ab72/public_url"
+                                        target="_blank" class="btn-cert-mini"><i class="fas fa-check-circle me-1"></i>
+                                        Credly</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -489,40 +856,71 @@
             </div>
         </section>
 
-        <section id="contact" class="py-5 contact-section">
+        <section id="contact" class="py-5 contact-section editorial-contact">
             <div class="container py-5">
-                <div class="row">
-                    <div class="col-lg-6 contact-info">
-                        <h3>Available for select freelance opportunities</h3>
-                        <p>Have an exciting project you need help with? Send me an email or contact me via instant
-                            message!</p>
-                        <a href="mailto:anang.ayman@gmail.com" class="contact-email">anang.ayman@gmail.com</a>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" class="social-link"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/AnangAyman" class="social-link"><i
-                                    class="fab fa-github"></i></a>
-                            <a href="https://www.instagram.com/anang.ayman/" class="social-link"><i
-                                    class="fab fa-instagram"></i></a>
+                <div class="row align-items-center">
+
+                    <!-- Left Side: Editorial Typography -->
+                    <div class="col-lg-5 mb-5 mb-lg-0 pr-lg-5" data-aos="fade-right">
+                        <h2 class="editorial-title">Let's build<br>something<br><span
+                                class="text-gradient">extraordinary.</span></h2>
+                        <p class="editorial-subtitle mt-4 mb-5">Available for select freelance opportunities,
+                            collaborations, or just a friendly chat about tech.</p>
+
+                        <div class="editorial-contact-info">
+                            <a href="mailto:anang.ayman@gmail.com" class="editorial-email">anang.ayman@gmail.com <i
+                                    class="fas fa-arrow-right ms-2 email-arrow"></i></a>
+
+                            <div class="editorial-socials mt-5">
+                                <a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana"
+                                    class="editorial-social-link linkedin">LinkedIn</a>
+                                <span class="separator">•</span>
+                                <a href="https://github.com/AnangAyman" class="editorial-social-link github">GitHub</a>
+                                <span class="separator">•</span>
+                                <a href="https://www.instagram.com/anang.ayman/"
+                                    class="editorial-social-link instagram">Instagram</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
+
+                    <!-- Right Side: Borderless Form -->
+                    <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-delay="100">
+                        <form class="editorial-form">
+                            <div class="row gx-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group borderless">
+                                        <input type="text" id="name" required placeholder=" ">
+                                        <label for="name">Your Name</label>
+                                        <div class="input-line"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group borderless">
+                                        <input type="email" id="email" required placeholder=" ">
+                                        <label for="email">Email Address</label>
+                                        <div class="input-line"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
+
+                            <div class="form-group borderless mb-4">
+                                <input type="text" id="subject" placeholder=" ">
+                                <label for="subject">Subject (Optional)</label>
+                                <div class="input-line"></div>
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subject">
+
+                            <div class="form-group borderless mb-5">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message">Tell me about your project...</label>
+                                <div class="input-line"></div>
                             </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+
+                            <button type="submit" class="btn-editorial-submit">
+                                Send Message <span class="circle-arrow"><i class="fas fa-arrow-up"></i></span>
+                            </button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>

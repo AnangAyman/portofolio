@@ -96,3 +96,67 @@
     font-size: 1rem;
     font-weight: 300;
 }
+
+/* Base Tech Pill specific to Expertise section */
+.bento-card .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.bento-card .tech-pill {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid;
+}
+
+/* Frontend Pill Variant - Green */
+.pill-frontend {
+    color: #4ade80;
+    /* text-green-400 */
+    background: rgba(20, 83, 45, 0.4);
+    /* bg-green-900 with opacity */
+    border-color: rgba(74, 222, 128, 0.2);
+}
+
+.pill-frontend:hover {
+    background: rgba(20, 83, 45, 0.8);
+    border-color: rgba(74, 222, 128, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+/* Backend Pill Variant - Purple/Blue */
+.pill-backend {
+    color: #a78bfa;
+    /* text-purple-400 */
+    background: rgba(76, 29, 149, 0.4);
+    /* bg-purple-900 with opacity */
+    border-color: rgba(167, 139, 250, 0.2);
+}
+
+.pill-backend:hover {
+    background: rgba(76, 29, 149, 0.8);
+    border-color: rgba(167, 139, 250, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
+}
+
+/* AI Pill Variant - Orange */
+.pill-ai {
+    color: #fb923c;
+    /* text-orange-400 */
+    background: rgba(124, 45, 18, 0.4);
+    /* bg-orange-900 with opacity */
+    border-color: rgba(251, 146, 60, 0.2);
+}
+
+.pill-ai:hover {
+    background: rgba(124, 45, 18, 0.8);
+    border-color: rgba(251, 146, 60, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}

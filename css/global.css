@@ -277,3 +277,102 @@ footer a {
         padding: 1rem 0.5rem;
     }
 }
+
+/* ========================================
+   GLASS DROPDOWN MENU
+   ======================================== */
+.glass-dropdown-menu {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    transform-origin: top center;
+}
+
+.glass-dropdown-menu .dropdown-item {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.glass-dropdown-menu .dropdown-item:hover,
+.glass-dropdown-menu .dropdown-item:focus {
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--primary-color);
+}
+
+.glass-dropdown-menu .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hoverable dropdown on desktop */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeUp 0.3s ease forwards;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    /* Invisible hover bridge to prevent menu from disappearing during mouse transit */
+    .navbar .dropdown::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        width: 100%;
+        height: 25px;
+        background: transparent;
+        z-index: 1000;
+    }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   GHOST GLOW BUTTON
+   ======================================== */
+.btn-ghost-glow {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-ghost-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: -1;
+}
+
+.btn-ghost-glow:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.2);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-ghost-glow:hover::before {
+    width: 250%;
+    height: 250%;
+}
