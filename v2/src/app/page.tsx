@@ -3,6 +3,8 @@ import { Experience } from "@/components/sections/Experience";
 import { VolunteeringMentorship } from "@/components/sections/VolunteeringMentorship";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { EducationCertifications } from "@/components/sections/EducationCertifications";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <VolunteeringMentorship />
       <FeaturedProjects />
       <EducationCertifications />
+      <Contact />
+      <Footer />
     </main>
   );
 }

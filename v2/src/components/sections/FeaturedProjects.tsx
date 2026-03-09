@@ -35,13 +35,26 @@ const PROJECTS = [
 export function FeaturedProjects() {
     return (
         <section id="work" className="relative max-w-7xl mx-auto px-4 py-32 z-10">
-            <div className="mb-24 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-                    Featured <span className="text-[#10b981]">Projects</span>
-                </h2>
-                <p className="text-white/60 text-lg max-w-2xl mx-auto font-light">
-                    Selected works spanning secure enterprise architecture, applied artificial intelligence, and full-stack web development.
-                </p>
+            <div className="mb-20 flex flex-col md:flex-row items-center md:items-end justify-between gap-6">
+                <div className="text-center md:text-left">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+                        Featured <span className="text-[#10b981]">Projects</span>
+                    </h2>
+                    <p className="text-white/60 text-lg max-w-2xl font-light">
+                        Selected works spanning secure enterprise architecture, applied artificial intelligence, and full-stack web development.
+                    </p>
+                </div>
+                <div className="shrink-0 pt-2 md:pt-0">
+                    <a
+                        href="#"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#10b981]/30 bg-[#10b981]/10 text-white font-semibold backdrop-blur-md hover:bg-[#10b981]/20 hover:border-[#10b981]/50 transition-all duration-300 group shadow-[0_4px_30px_rgba(16,185,129,0.1)] hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                    >
+                        View All Projects
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             <div className="flex flex-col gap-32">
@@ -149,17 +162,6 @@ export function FeaturedProjects() {
                 })}
             </div>
 
-            <div className="mt-32 text-center">
-                <a
-                    href="#"
-                    className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 bg-white/5 text-white font-semibold backdrop-blur-md hover:bg-white/10 hover:border-white/20 transition-all duration-300 group shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
-                >
-                    View All Projects
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </a>
-            </div>
         </section>
     );
 }

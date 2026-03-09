@@ -231,9 +231,9 @@
 
 /* Enhanced Grid Card */
 .grid-card {
-    background: rgba(17, 24, 39, 0.6);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
@@ -241,19 +241,21 @@
     height: 100%;
     position: relative;
     backdrop-filter: blur(20px);
+    z-index: 1;
 }
 
 .grid-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.2);
-    border-color: var(--primary-color);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ... rest of grid styles (adapted) ... */
 .grid-image {
-    height: 220px;
+    height: 192px;
     overflow: hidden;
     position: relative;
+    flex-shrink: 0;
 }
 
 .grid-image img {
@@ -264,32 +266,76 @@
 }
 
 .grid-card:hover .grid-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.grid-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Blend the bottom into the dark background (#060913 is the app bg) */
+    background: linear-gradient(to top, rgba(6, 9, 19, 1) 0%, rgba(6, 9, 19, 0.6) 40%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .grid-content {
-    padding: 1.5rem;
+    padding: 2rem;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    margin-top: -2rem;
+}
+
+.grid-icon-box {
+    padding: 0.75rem;
+    border-radius: 16px;
+    background: rgba(6, 9, 19, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: max-content;
 }
 
 .grid-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: white;
+    letter-spacing: -0.025em;
+}
+
+.grid-organization {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .grid-desc {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    /* text-sm/text-base */
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.625;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
     flex-grow: 1;
 }
 
-.grid-link {
-    color: var(--primary-color);
+.grid-period {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.75rem;
     font-weight: 600;
-    text-decoration: none;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
 }
