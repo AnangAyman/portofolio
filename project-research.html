@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid CNN-LSTM Research - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <a href="#" target="_blank" class="btn btn-sm btn-outline-light">
+                <i class="fas fa-file-pdf me-2"></i>Read Full Paper
+            </a>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(139, 92, 246, 0.1); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <i class="fas fa-book-open me-1"></i> Academic Research
+            </span>
+            <h1 data-aos="fade-up">Hybrid CNN-LSTM for Resource-Constrained Sign Language Recognition</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A highly optimized, lightweight neural network architecture designed for real-time inference on edge
+                devices.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Using research_thumbnail if available, else a placeholder gradient or relevant image -->
+                    <img src="static/research_thumbnail.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="Research Architecture" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Lead Researcher / Author</p>
+            </div>
+            <div class="meta-item">
+                <h5>Status</h5>
+                <p>In Review / Published [Update]</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>Computer Vision, Accessibility</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>TensorFlow, MediaPipe</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">Abstract</h2>
+            <p class="lead" data-aos="fade-up"
+                style="color: #c9d1d9; font-style: italic; border-left: 4px solid var(--primary-color); padding-left: 1.5rem; margin-bottom: 3rem;">
+                "Traditional Deep Learning models for continuous sign language recognition achieve high accuracy but are
+                computationally expensive, restricting their deployment to powerful cloud servers. In this research, we
+                propose a lightweight Hybrid CNN-LSTM architecture leveraging spatial landmarks to achieve 95.30%
+                validation accuracy while maintaining strict low-latency requirements for real-time browser inference on
+                consumer hardware."
+            </p>
+
+            <h2 data-aos="fade-up">The Problem Statement</h2>
+            <p data-aos="fade-up">
+                Sign language translation systems face a two-fold challenge: <strong>spatial complexity</strong>
+                (recognizing exact hand shapes and body posture) and <strong>temporal dependency</strong> (understanding
+                how these shapes change sequentially over time to form words).
+                <br><br>
+                While massive transformer models or full-frame 3D-CNNs can solve this, they require expensive GPUs. For
+                an educational tool aimed at the general public in developing nations, the key constraint is running
+                inference directly on older laptops or mobile devices without thermal throttling or perceived lag.
+            </p>
+
+            <h2 data-aos="fade-up">Methodology & Architecture</h2>
+            <p data-aos="fade-up">
+                To overcome these constraints, the methodology employed an experimental hybrid CNN-LSTM architecture
+                optimized for edge devices. A constrained dataset of low-resolution Indonesian Sign Language images was
+                manually labeled, resized, normalized, and augmented to simulate real-world variability.
+                <br><br>
+                The system deployed MobileNetV2 to efficiently extract spatial features, integrated with an LSTM network
+                to capture sequential gesture dynamics. The model was then rigorously compressed using L2 regularization
+                and post-training quantization—converting 32-bit weights into 8-bit integers—to drastically minimize the
+                memory footprint without sacrificing accuracy.
+            </p>
+            <p data-aos="fade-up">
+                Instead of processing raw RGB video frames, the proposed pipeline employs a sparse representation
+                approach:
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-image fs-2 text-success mb-3"></i>
+                        <h4 class="text-white">1. Dataset Prep</h4>
+                        <p class="text-secondary small">A constrained dataset of low-resolution Indonesian Sign Language
+                            images was manually labeled, resized, normalized, and augmented to simulate real-world
+                            variability.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-network-wired fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">2. Feature Extraction</h4>
+                        <p class="text-secondary small">MobileNetV2 efficiently extracts spatial features from the
+                            frames, which are then integrated with an LSTM network to capture sequential gesture
+                            dynamics over time.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-compress-arrows-alt fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">3. Compression</h4>
+                        <p class="text-secondary small">The model was rigorously compressed using L2 regularization and
+                            post-training quantization (32-bit to 8-bit integers) to minimize memory footprint without
+                            losing accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">Key Findings & Results</h2>
+            <p data-aos="fade-up">
+                The experimental results demonstrated that by constraining the model to coordinate-based inputs and
+                using a heavily pooled architecture, we were able to drastically compress the model foot-print.
+            </p>
+
+            <ul class="list-unstyled mt-4 mb-5">
+                <li
+                    class="mb-3 d-flex align-items-center bg-dark bg-opacity-50 p-3 rounded text-light border border-secondary border-opacity-25">
+                    <i class="fas fa-chart-line text-primary fs-4 me-3"></i>
+                    <div><strong>Accuracy:</strong> Reached an optimal validation accuracy of 95.30% with minimal
+                        overfitting using early stopping and dropout.</div>
+                </li>
+                <li
+                    class="mb-3 d-flex align-items-center bg-dark bg-opacity-50 p-3 rounded text-light border border-secondary border-opacity-25">
+                    <i class="fas fa-stopwatch text-warning fs-4 me-3"></i>
+                    <div><strong>Inference Speed:</strong> Processed continuous sequences at 40-50ms per batch on an
+                        average CPU.</div>
+                </li>
+                <li
+                    class="mb-3 d-flex align-items-center bg-dark bg-opacity-50 p-3 rounded text-light border border-secondary border-opacity-25">
+                    <i class="fas fa-hdd text-info fs-4 me-3"></i>
+                    <div><strong>Model Weight:</strong> Achieved a total disk size of less than 25MB, ideal for web
+                        transmission.</div>
+                </li>
+            </ul>
+
+            <h2 data-aos="fade-up">Tech Stack & Tools used</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Data & Processing</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-database"></i> NumPy</span>
+                        <span class="tech-badge"><i class="fas fa-hand-paper"></i> MediaPipe Holistic</span>
+                        <span class="tech-badge"><i class="fas fa-camera"></i> OpenCV</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Model Architecture</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-brain"></i> TensorFlow / Keras</span>
+                        <span class="tech-badge"><i class="fas fa-layer-group"></i> CONV1D</span>
+                        <span class="tech-badge"><i class="fas fa-memory"></i> LSTM</span>
+                        <span class="tech-badge"><i class="fas fa-chart-area"></i> Matplotlib</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <!-- Previous Link -->
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-signlingo.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> SignLingo AI
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <!-- Assuming the next might be OIDC or somewhere else, loop around -->
+                <a href="project-oidc.html" class="nav-link-soft">
+                    OIDC Provider <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
