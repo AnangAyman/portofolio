@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <nav class="navbar navbar-light border-bottom sticky-top">
@@ -26,134 +28,196 @@
                 <p class="text-secondary lead">A collection of my experiments, research, and applications.</p>
             </div>
 
+            <!-- Artificial Intelligence & Research -->
+            <div class="project-category-header container px-4">
+                <h2><i class="fas fa-brain text-info"></i> Artificial Intelligence & Research</h2>
+            </div>
+
             <div class="projects-grid">
-                
-                <div class="grid-card">
+
+                <div class="grid-card wide">
                     <div class="grid-image">
                         <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category">AI / Computer Vision</div>
+                        <div class="grid-category mt-3 text-info">AI / Computer Vision</div>
                         <h3 class="grid-title">SignLingo AI</h3>
-                        <p class="grid-desc">Real-time sign language recognition running in the browser using TensorFlow.js.</p>
-                        <div class="grid-footer">
+                        <p class="grid-desc">Real-time sign language recognition running in the browser using
+                            TensorFlow.js.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
                                 <span class="tech-pill">Python</span>
-                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">TensorFlow.js</span>
                             </div>
-                            <a href="#" class="grid-link">View <i class="fas fa-external-link-alt"></i></a>
+                            <a href="project-signlingo.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid-card">
                     <div class="grid-image">
-                        <img style="object-position: top;" src="static/research_thumbnail.png" alt="Research">
+                        <img style="object-position: top;" src="static/research_thumbnail.png"
+                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category">Research</div>
+                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
                         <h3 class="grid-title">Hybrid CNN-LSTM</h3>
-                        <p class="grid-desc">Lightweight model architecture for SLR on low-resource devices.</p>
-                        <div class="grid-footer">
+                        <p class="grid-desc">Lightweight model architecture for SLR on low-resource edge devices.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
                                 <span class="tech-pill">Paper</span>
                                 <span class="tech-pill">Deep Learning</span>
                             </div>
-                            <a href="#" class="grid-link">Read <i class="fas fa-file-pdf"></i></a>
+                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid-card">
                     <div class="grid-image">
-                        <img style="object-position: top;" src="static/cv_improver_thumbnail.png" alt="CV Improver">
+                        <img style="object-position: top;" src="static/cv_improver_thumbnail.png"
+                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="CV Improver">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category">Generative AI</div>
-                        <h3 class="grid-title">AI Resume Enhancer</h3>
-                        <p class="grid-desc">Uses LLMs to parse resumes and suggest ATS-friendly improvements.</p>
-                        <div class="grid-footer">
+                        <div class="grid-category mt-3 text-primary">Generative AI Tool</div>
+                        <h3 class="grid-title">DeepSeek AI CV Improver</h3>
+                        <p class="grid-desc">Uses DeepSeek R1 and LangChain to parse resumes and generate strict
+                            ATS-friendly improvements.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">OpenAI API</span>
-                                <span class="tech-pill">NLP</span>
+                                <span class="tech-pill">DeepSeek R1</span>
+                                <span class="tech-pill">Streamlit</span>
                             </div>
-                            <a href="#" class="grid-link">Try it <i class="fas fa-magic"></i></a>
+                            <a href="project-cvimprover.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
                 </div>
+
+                <div class="grid-card">
+                    <div class="grid-image">
+                        <img src="static/OpenID_Connect.png" onerror="this.src='static/gamified_dashboard.png'"
+                            alt="Discord Bot">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3 text-secondary" style="color: #5865F2 !important;">Bot /
+                            Automation</div>
+                        <h3 class="grid-title">Intelligent Discord Auto-Moderator</h3>
+                        <p class="grid-desc">A highly concurrent Python bot leveraging NLP to detect toxicity and spam
+                            24/7.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
+                            <div class="tech-stack mb-0">
+                                <span class="tech-pill">Discord.py</span>
+                                <span class="tech-pill">NLP</span>
+                            </div>
+                            <a href="project-discordmod.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Web Applications & Data -->
+            <div class="project-category-header container px-4 mt-5">
+                <h2><i class="fas fa-chart-line text-warning"></i> Web Applications & Data</h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="grid-card wide">
+                    <div class="grid-image">
+                        <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/gamified_dashboard.png'"
+                            alt="Flux">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3 text-success">Full-Stack FinTech</div>
+                        <h3 class="grid-title">Flux Personal Finance Tracker</h3>
+                        <p class="grid-desc">A modern, responsive budgeting application offering real-time expense
+                            tracking, dark mode aesthetics, and robust MERN stack architecture.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
+                            <div class="tech-stack mb-0">
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Node.js</span>
+                            </div>
+                            <a href="project-fluxbudget.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-card">
+                    <div class="grid-image">
+                        <img src="static/gamified_dashboard.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                            alt="F1 Undercut">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3 text-danger">Data Analytics</div>
+                        <h3 class="grid-title">F1 Undercut Predictor</h3>
+                        <p class="grid-desc">A high-performance motorsport tool visualizing real-time telemetry and
+                            strategy viability using FastF1 and Next.js.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
+                            <div class="tech-stack mb-0">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">Next.js</span>
+                            </div>
+                            <a href="project-f1undercut.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cloud & Infrastructure -->
+            <div class="project-category-header container px-4 mt-5">
+                <h2><i class="fas fa-cloud text-success" style="color: #22c55e !important;"></i> Cloud & Infrastructure
+                </h2>
+            </div>
+
+            <div class="projects-grid">
 
                 <div class="grid-card">
                     <div class="grid-image">
                         <img src="static/OpenID_Connect.png" alt="OIDC">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category">Backend Security</div>
+                        <div class="grid-category mt-3 text-warning">Backend Security</div>
                         <h3 class="grid-title">Custom OIDC Provider</h3>
-                        <p class="grid-desc">Secure identity provider implementation using Flask and Authlib.</p>
-                        <div class="grid-footer">
+                        <p class="grid-desc">Secure, containerized identity provider implementation using Flask,
+                            Authlib, and MySQL.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
                                 <span class="tech-pill">Flask</span>
                                 <span class="tech-pill">Docker</span>
                             </div>
-                            <a href="#" class="grid-link">Code <i class="fab fa-github"></i></a>
+                            <a href="project-oidc.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid-card">
+                <div class="grid-card wide">
                     <div class="grid-image">
                         <img src="static/Nusacrop_thumbnail.png" alt="NusaCrop">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category">UI/UX Design</div>
-                        <h3 class="grid-title">NusaCrop Marketplace</h3>
-                        <p class="grid-desc">A digital marketplace connecting local farmers directly with buyers.</p>
-                        <div class="grid-footer">
+                        <div class="grid-category mt-3 text-success">Agritech / Cloud Architecture</div>
+                        <h3 class="grid-title">NusaCrop Cloud Infrastructure</h3>
+                        <p class="grid-desc">A scalable, highly available Google Cloud architecture designed to power AI
+                            driven agricultural disease detection across Indonesia.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">Django</span>
-                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">GCP Cloud Run</span>
+                                <span class="tech-pill">Docker</span>
                             </div>
-                            <a href="#" class="grid-link">View <i class="fas fa-external-link-alt"></i></a>
+                            <a href="project-nusacrop.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- -- Pet Projects Fill this is later on    -- -->
-                <!-- <div class="grid-card">
-                    <div class="grid-image">
-                        <img src="static/Signlingo_thumbnail.png" alt="Flux">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category">Pet Project</div>
-                        <h3 class="grid-title">Discord toxic comment detector</h3>
-                        <p class="grid-desc">Real-time sign language recognition running in the browser using TensorFlow.js.</p>
-                        <div class="grid-footer">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">React</span>
-                            </div>
-                            <a href="#" class="grid-link">View <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid-card">
-                    <div class="grid-image">
-                        <img src="static/Signlingo_thumbnail.png" alt="F1 Undercut">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category">Pet Project</div>
-                        <h3 class="grid-title">F1 Undercut Predictor</h3>
-                        <p class="grid-desc">Real-time sign language recognition running in the browser using TensorFlow.js.</p>
-                        <div class="grid-footer">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">React</span>
-                            </div>
-                            <a href="#" class="grid-link">View <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div> -->
 
             </div>
         </div>
@@ -164,4 +228,5 @@
     </footer>
 
 </body>
+
 </html>
