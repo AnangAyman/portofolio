@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CV Improver - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/cv-improver" target="_blank"
+                    class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2);">
+                <i class="fas fa-robot me-1"></i> Generative AI Tool
+            </span>
+            <h1 data-aos="fade-up">DeepSeek AI CV Improver</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                An intelligent resume optimization engine leveraging DeepSeek R1 and LangChain to reconstruct
+                unformatted text into ATS-friendly, high-impact bullet points.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Using cv_improver_thumbnail if available -->
+                    <img src="static/cv_improver_thumbnail.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="CV Improver Architecture" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Solo Developer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Personal Project</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>LLMs, NLP, Web App</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Streamlit, LangChain, DeepSeek</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                Job seekers often struggle to quantify their achievements and format their experience in a way that
+                passes Applicant Tracking Systems (ATS). While many AI resume builders exist, they frequently generate
+                overly repetitive, detectable "AI-speak" or require expensive subscriptions. I wanted to build a free,
+                lightweight tool that specifically targets the most difficult part of resume writing: crafting impactful
+                bullet points using the XYZ / STAR method.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I developed a web application using Streamlit that acts as a targeted resume restructuring engine. Under
+                the hood, it utilizes <strong>DeepSeek R1</strong>—chosen for its rigorous reasoning capabilities and
+                cost efficiency—orchestrated via <strong>LangChain</strong>.
+                <br><br>
+                Instead of simply generating text from scratch, the system takes the user's raw, unformatted job
+                descriptions and explicitly reconstructs them. The prompt pipeline forces the LLM to identify the
+                implied <em>Action</em>, <em>Context</em>, and <em>Result</em>, outputting strictly formatted,
+                quantifiable bullet points free of generic fluff.
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-brain fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">DeepSeek R1</h4>
+                        <p class="text-secondary small">Utilized DeepSeek API for advanced NLP reasoning, instructing
+                            the model to strictly follow action-verb led, metric-driven formatting rules.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-link fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">LangChain</h4>
+                        <p class="text-secondary small">Implemented LangChain for prompt templating and structured
+                            output parsing to ensure the LLM consistently returns actionable bullet points rather than
+                            paragraphs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-window-maximize fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">Streamlit UI</h4>
+                        <p class="text-secondary small">Built a rapid, interactive Python web front-end allowing users
+                            to paste raw experience or upload PDFs for instant restructuring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                The application successfully transforms scattered thoughts into professional, recruiter-ready bullet
+                points in seconds. By chaining specific prompt engineering techniques, the tool avoids the "AI
+                hallucination" trap, ensuring users maintain factual accuracy while massively improving the presentation
+                of their impact.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">AI & Orchestration</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> DeepSeek R1</span>
+                        <span class="tech-badge"><i class="fas fa-link"></i> LangChain</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Frontend & Backend</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-window-maximize"></i> Streamlit</span>
+                        <span class="tech-badge"><i class="fas fa-cogs"></i> Prompt Engineering</span>
+                        <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-research.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> CNN-LSTM Paper
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <a href="project-discordmod.html" class="nav-link-soft">
+                    Discord Bot <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
