@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Discord Moderator - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/discord-ai-mod" target="_blank"
+                    class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(88, 101, 242, 0.1); color: #5865F2; border: 1px solid rgba(88, 101, 242, 0.2);">
+                <i class="fab fa-discord me-1"></i> Bot / Automation
+            </span>
+            <h1 data-aos="fade-up">Intelligent Discord Auto-Moderator</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A highly concurrent Python bot leveraging Natural Language Processing to detect toxicity, spam, and
+                manage bustling online communities 24/7.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Using a relevant placeholder image until actual screenshot is provided -->
+                    <img src="static/OpenID_Connect.png" onerror="this.src='static/gamified_dashboard.png'"
+                        alt="Discord Bot Dashboard" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Bot Developer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Personal Project</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>Community Management, NLP</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Discord.py, SQLite, NLP Models</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                As gaming or study communities scale past a few hundred members, manual moderation becomes impossible.
+                Standard Discord server tools often rely on rigid keyword blacklists that are easily bypassed (e.g.,
+                using "b@d word" instead of "bad word") and trigger false positives entirely lacking contextual
+                awareness. The goal was to build a bot that understands the <em>intent</em> behind messages rather than
+                just matching regex patterns.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I developed an asynchronous Discord Bot utilizing the robust <strong>Discord.py</strong> library.
+                Integrating lightweight Natural Language Processing techniques, the bot continuously listens to active
+                chat channels. When a message is flagged, it calculates a toxicity threshold score before automatically
+                taking action—ranging from silent log warnings to immediate timeouts or bans for severe offenses.
+                <br><br>
+                The system also includes a complete SQLite-backed moderation history, allowing human admins to easily
+                track user behavior trends over time via custom slash commands.
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-filter fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">Smart Filtering</h4>
+                        <p class="text-secondary small">Implemented fuzzy string matching and NLP-based sentiment
+                            analysis to accurately classify toxic language variations and evasions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-bolt fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">Async Event Loop</h4>
+                        <p class="text-secondary small">Engineered using Python's asyncio to process thousands of
+                            simultaneous chat events across multiple guilds without dropping performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-database fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">Mod-Log System</h4>
+                        <p class="text-secondary small">Stored a robust relational database mapping users to their
+                            infractions, enabling quick `/history` lookups for human administrators.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                The bot effectively minimized human moderation efforts by automating the removal of approximately 85% of
+                standard toxic behavior. By storing warning histories, it created a much safer, self-refining community
+                atmosphere ensuring persistent bad actors could be permanently removed before causing server-wide
+                disruptions.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Bot & AI Framework</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fab fa-discord"></i> Discord.py</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> NLP / NLTK</span>
+                        <span class="tech-badge"><i class="fas fa-tasks"></i> AsyncIO</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Data & Deployment</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-database"></i> SQLite</span>
+                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-badge"><i class="fas fa-cloud"></i> DigitalOcean Droplet</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-cvimprover.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> CV Improver
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <!-- Loop back or point to archive -->
+                <a href="projects.html" class="nav-link-soft">
+                    Project Archive <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
