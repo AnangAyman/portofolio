@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Undercut Predictor - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/f1-undercut" target="_blank"
+                    class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(220, 38, 38, 0.1); color: #ef4444; border: 1px solid rgba(220, 38, 38, 0.2);">
+                <i class="fas fa-flag-checkered me-1"></i> Data Analytics & Web Interface
+            </span>
+            <h1 data-aos="fade-up">F1 Undercut Predictor Dashboard</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A high-performance motorsport analytics tool visualizing real-time telemetry and undercut strategy
+                viability in Formula 1.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Replace with actual F1 Undercut Dashboard Thumbnail -->
+                    <img src="static/gamified_dashboard.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="F1 Undercut Interface" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Full Stack & Data Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Personal Project</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>Motorsport Analytics, API</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Python (FastF1), Next.js, Pandas</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                In Formula 1, the "undercut"—pitting before the car ahead to take advantage of fresh tires on an
+                out-lap—is arguably the most powerful strategic maneuver on the track. However, assessing the viability
+                of an undercut requires tracking multiple overlapping metrics: tire degradation curves, traffic in the
+                pit window, pit lane loss time, and out-lap pace diffs. For the average viewer, this data is
+                inaccessible or buried inside dense timing screens.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I engineered a full-stack web application designed to ingest, process, and beautifully visualize real
+                race data specifically centered around pit strategy. By hooking into the <strong>FastF1</strong> Python
+                library, I built a reliable data extraction pipeline that pulls Session timing, Lap timings, and Car
+                Telemetry.
+                <br><br>
+                Instead of returning raw JSON to the front-end, the backend processes the delta times and calculates the
+                precise "Undercut Threat Margin" between two selected drivers, serving this to a highly responsive
+                Next.js frontend equipped with dynamic Recharts graphs.
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-database fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">FastF1 Pipeline</h4>
+                        <p class="text-secondary small">Engineered a robust Python backend that leverages Pandas to
+                            aggressively filter and cache large multi-lap telemetry payloads directly from F1's live
+                            timing API systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-tachometer-alt fs-2 text-danger mb-3"></i>
+                        <h4 class="text-white">Delta Computations</h4>
+                        <p class="text-secondary small">Developed custom algorithms to normalize lap times, stripping
+                            out safety car anomalies and VSC phases to compute true racing pace and tire-degradation
+                            fall-off.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-chart-line fs-2 text-success mb-3"></i>
+                        <h4 class="text-white">Next.js Dashboard</h4>
+                        <p class="text-secondary small">Designed a sleek, dark-mode React interface utilizing Recharts
+                            to instantly plot sector-by-sector driver comparisons and project the required margin to
+                            successfully undercut.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                The resulting dashboard successfully translates thousands of overwhelming data points into an intuitive
+                visual story.
+                Users can select historic race sessions and immediately quantify why specific strategies succeeded or
+                failed, providing broadcast-level
+                strategic insights directly in their browser.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Data API & Backend</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="tech-badge"><i class="fas fa-server"></i> FastAPI / Flask</span>
+                        <span class="tech-badge"><i class="fas fa-cogs"></i> FastF1</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Frontend Visualization</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-react"></i> Next.js</span>
+                        <span class="tech-badge"><i class="fab fa-js"></i> TypeScript</span>
+                        <span class="tech-badge"><i class="fas fa-chart-bar"></i> Recharts</span>
+                        <span class="tech-badge"><i class="fab fa-css3"></i> Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-nusacrop.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> NusaCrop App
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <a href="projects.html" class="nav-link-soft">
+                    Project Archive <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
