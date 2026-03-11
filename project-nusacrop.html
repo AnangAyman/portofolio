@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaCrop - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/nusacrop" target="_blank" class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <i class="fas fa-leaf me-1"></i> Agritech / Cloud Architecture
+            </span>
+            <h1 data-aos="fade-up">NusaCrop Cloud Infrastructure</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A scalable, highly available Google Cloud architecture designed to power AI driven agricultural disease
+                detection across Indonesia.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Using Nusacrop_thumbnail.png from your static folder -->
+                    <img src="static/Nusacrop_thumbnail.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="NusaCrop Cloud Architecture" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Cloud Architect Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Team Capstone Project</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>GCP, Scalability, DevOps</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Docker, Cloud Run, Cloud SQL</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                NusaCrop is tackling a massive agricultural crisis in Indonesia, aiming to empower millions of
+                distributed local farmers with instant plant disease detection via mobile. However, delivering
+                real-time, compute-heavy image recognition inferences across a wildly fluctuating user base in remote
+                regions requires an ironclad backend architecture.
+                <br><br>
+                The primary engineering hurdle was avoiding a monolith structure that would crash under peak
+                harvest-season load, all while minimizing latency during tensor model execution originating from
+                unreliable mobile networks.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I engineered a fully decoupled microservices architecture deployed entirely on <strong>Google Cloud
+                    Platform (GCP)</strong>. By splitting the application into an API Gateway, an Authentication
+                Service, and an isolated Machine Learning Inference worker, the system guarantees that high-CPU image
+                processing does not throttle core application routing.
+                <br><br>
+                The entire stack is containerized using Docker, managed through a strictly automated CI/CD pipeline on
+                GitHub Actions, and deployed onto Cloud Run for seamless, zero-maintenance auto-scaling. Data
+                persistence is reliably handled through horizontally scaling Cloud SQL instances.
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-server fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">Cloud Run & Auto-Scaling</h4>
+                        <p class="text-secondary small">Leveraged fully managed GCP compute services allowing backend
+                            containers to automatically scale out from zero to hundreds of concurrent instances during
+                            peak traffic.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fab fa-docker fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">Containerization</h4>
+                        <p class="text-secondary small">Engineered highly optimized Docker images stripping away
+                            unnecessary dependencies to ensure the ML Inference microservice boots and responses with
+                            sub-second latency.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-exchange-alt fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">CI/CD Pipeline</h4>
+                        <p class="text-secondary small">Implemented rigorous GitHub Action workflows that automatically
+                            build, test, and push code changes directly to GCP Artifact Registry on every main branch
+                            merge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                The architecture effectively processed user uploads and generated reliable predictions within a 99.9%
+                uptime SLA. The decoupling ensured that developers could continuously update the CNN models without ever
+                risking downtime to the primary user authentication and data-fetching APIs.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack & Infrastructure</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Google Cloud Platform</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-cloud"></i> Cloud Run</span>
+                        <span class="tech-badge"><i class="fas fa-database"></i> Cloud SQL</span>
+                        <span class="tech-badge"><i class="fas fa-box"></i> Artifact Registry</span>
+                        <span class="tech-badge"><i class="fas fa-hdd"></i> Cloud Storage</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">DevOps & Backend</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-badge"><i class="fas fa-code-branch"></i> GitHub Actions</span>
+                        <span class="tech-badge"><i class="fab fa-node-js"></i> Express.js</span>
+                        <span class="tech-badge"><i class="fas fa-network-wired"></i> Microservices</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <!-- Could point back to OIDC or research depending on your order -->
+                <a href="project-oidc.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> OIDC Provider
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <a href="project-f1undercut.html" class="nav-link-soft">
+                    F1 Analytics Dashboard <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
