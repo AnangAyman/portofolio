@@ -12,7 +12,7 @@
 
 <body>
 
-    <nav class="navbar navbar-light border-bottom sticky-top">
+    <nav class="navbar navbar-light border-bottom sticky-top bg-white">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html#work">
                 <i class="fas fa-arrow-left me-2"></i> Back to Home
@@ -28,48 +28,30 @@
                 <p class="text-secondary lead">A collection of my experiments, research, and applications.</p>
             </div>
 
-            <!-- Artificial Intelligence & Research -->
+            <!-- Machine Learning & Artificial Intelligence -->
             <div class="project-category-header container px-4">
-                <h2><i class="fas fa-brain text-info"></i> Artificial Intelligence & Research</h2>
+                <h2><i class="fas fa-brain text-info"></i> Machine Learning & AI</h2>
             </div>
 
             <div class="projects-grid">
 
                 <div class="grid-card wide">
                     <div class="grid-image">
-                        <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
+                        <img src="static/OpenID_Connect.png" onerror="this.src='static/gamified_dashboard.png'"
+                            alt="Discord Bot">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category mt-3 text-info">AI / Computer Vision</div>
-                        <h3 class="grid-title">SignLingo AI</h3>
-                        <p class="grid-desc">Real-time sign language recognition running in the browser using
-                            TensorFlow.js.</p>
+                        <div class="grid-category mt-3 text-secondary" style="color: #5865F2 !important;">Bot /
+                            Automation</div>
+                        <h3 class="grid-title">Intelligent Discord Auto-Moderator</h3>
+                        <p class="grid-desc">A highly concurrent Python bot leveraging DistilBERT to detect toxicity and
+                            spam 24/7 with a 0.94 recall.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">TensorFlow.js</span>
+                                <span class="tech-pill">DistilBERT</span>
+                                <span class="tech-pill">Discord.py</span>
                             </div>
-                            <a href="project-signlingo.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid-card">
-                    <div class="grid-image">
-                        <img style="object-position: top;" src="static/research_thumbnail.png"
-                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
-                        <h3 class="grid-title">Hybrid CNN-LSTM</h3>
-                        <p class="grid-desc">Lightweight model architecture for SLR on low-resource edge devices.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Paper</span>
-                                <span class="tech-pill">Deep Learning</span>
-                            </div>
-                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
+                            <a href="project-discordmod.html" class="grid-link text-decoration-none text-light">View <i
                                     class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
@@ -98,21 +80,19 @@
 
                 <div class="grid-card">
                     <div class="grid-image">
-                        <img src="static/OpenID_Connect.png" onerror="this.src='static/gamified_dashboard.png'"
-                            alt="Discord Bot">
+                        <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category mt-3 text-secondary" style="color: #5865F2 !important;">Bot /
-                            Automation</div>
-                        <h3 class="grid-title">Intelligent Discord Auto-Moderator</h3>
-                        <p class="grid-desc">A highly concurrent Python bot leveraging NLP to detect toxicity and spam
-                            24/7.</p>
+                        <div class="grid-category mt-3 text-info">AI / Computer Vision</div>
+                        <h3 class="grid-title">SignLingo AI</h3>
+                        <p class="grid-desc">Real-time sign language recognition running in the browser using
+                            TensorFlow.js.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">Discord.py</span>
-                                <span class="tech-pill">DistilBERT</span>
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">TensorFlow.js</span>
                             </div>
-                            <a href="project-discordmod.html" class="grid-link text-decoration-none text-light">View <i
+                            <a href="project-signlingo.html" class="grid-link text-decoration-none text-light">View <i
                                     class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
@@ -120,29 +100,29 @@
 
             </div>
 
-            <!-- Web Applications & Data -->
+            <!-- Data Science & Academic Research -->
             <div class="project-category-header container px-4 mt-5">
-                <h2><i class="fas fa-chart-line text-warning"></i> Web Applications & Data</h2>
+                <h2><i class="fas fa-microscope text-warning"></i> Data Science & Academic Research</h2>
             </div>
 
             <div class="projects-grid">
 
                 <div class="grid-card wide">
                     <div class="grid-image">
-                        <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/gamified_dashboard.png'"
-                            alt="Flux">
+                        <img style="object-position: top;" src="static/research_thumbnail.png"
+                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category mt-3 text-success">Full-Stack FinTech</div>
-                        <h3 class="grid-title">Flux Personal Finance Tracker</h3>
-                        <p class="grid-desc">A modern, responsive budgeting application offering real-time expense
-                            tracking, dark mode aesthetics, and robust MERN stack architecture.</p>
+                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
+                        <h3 class="grid-title">Hybrid CNN-LSTM</h3>
+                        <p class="grid-desc">Lightweight model architecture for Sign Language Recognition on
+                            low-resource edge devices.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">React</span>
-                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">Paper</span>
+                                <span class="tech-pill">Deep Learning</span>
                             </div>
-                            <a href="project-fluxbudget.html" class="grid-link text-decoration-none text-light">View <i
+                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
                                     class="fas fa-arrow-right ms-2 text-primary"></i></a>
                         </div>
                     </div>
@@ -160,7 +140,7 @@
                             strategy viability using FastF1 and Next.js.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
-                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">Scikit-Learn</span>
                                 <span class="tech-pill">Next.js</span>
                             </div>
                             <a href="project-f1undercut.html" class="grid-link text-decoration-none text-light">View <i
@@ -171,13 +151,33 @@
 
             </div>
 
-            <!-- Cloud & Infrastructure -->
+            <!-- Software Engineering & Architecture -->
             <div class="project-category-header container px-4 mt-5">
-                <h2><i class="fas fa-cloud text-success" style="color: #22c55e !important;"></i> Cloud & Infrastructure
-                </h2>
+                <h2><i class="fas fa-server text-success"></i> Software Engineering & Architecture</h2>
             </div>
 
             <div class="projects-grid">
+
+                <div class="grid-card wide">
+                    <div class="grid-image">
+                        <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/gamified_dashboard.png'"
+                            alt="Flux">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3 text-success">Full-Stack FinTech</div>
+                        <h3 class="grid-title">Flux Personal Finance Dashboard</h3>
+                        <p class="grid-desc">A modern, responsive budgeting application offering real-time expense
+                            tracking, automated billing logic, and robust Laravel backend architecture.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
+                            <div class="tech-stack mb-0">
+                                <span class="tech-pill">Laravel</span>
+                                <span class="tech-pill">MySQL</span>
+                            </div>
+                            <a href="project-fluxbudget.html" class="grid-link text-decoration-none text-light">View <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="grid-card">
                     <div class="grid-image">
@@ -199,9 +199,10 @@
                     </div>
                 </div>
 
-                <div class="grid-card wide">
+                <div class="grid-card">
                     <div class="grid-image">
-                        <img src="static/Nusacrop_thumbnail.png" alt="NusaCrop">
+                        <img src="static/Nusacrop_thumbnail.png" alt="NusaCrop"
+                            onerror="this.src='static/Signlingo_thumbnail.png'">
                     </div>
                     <div class="grid-content">
                         <div class="grid-category mt-3 text-success">Agritech / UI Prototype</div>
