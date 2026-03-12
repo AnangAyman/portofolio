@@ -60,19 +60,19 @@
         <div class="meta-grid">
             <div class="meta-item">
                 <h5>Role</h5>
-                <p>Bot Developer</p>
+                <p>Lead ML Engineer & 1st Author</p>
             </div>
             <div class="meta-item">
                 <h5>Timeline</h5>
-                <p>Personal Project</p>
+                <p>Sep 2025 - Feb 2026</p>
             </div>
             <div class="meta-item">
                 <h5>Domain</h5>
-                <p>Community Management, NLP</p>
+                <p>Machine Learning, NLP, Moderation</p>
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>Discord.py, SQLite, NLP Models</p>
+                <p>DistilBERT, Scikit-learn, Discord.py</p>
             </div>
         </div>
 
@@ -80,79 +80,101 @@
 
             <h2 data-aos="fade-up">The Challenge</h2>
             <p data-aos="fade-up">
-                As gaming or study communities scale past a few hundred members, manual moderation becomes impossible.
-                Standard Discord server tools often rely on rigid keyword blacklists that are easily bypassed (e.g.,
-                using "b@d word" instead of "bad word") and trigger false positives entirely lacking contextual
-                awareness. The goal was to build a bot that understands the <em>intent</em> behind messages rather than
-                just matching regex patterns.
+                Standard Discord server moderation tools often rely on rigid keyword blacklists that are easily bypassed
+                and lack contextual awareness. When building a machine learning solution to intercept toxic content in
+                real-time using the Jigsaw Toxic Comment dataset, a critical "Accuracy Paradox" emerged: baseline models
+                achieved over 91% accuracy but failed to detect actual toxic comments due to dramatic class imbalance,
+                yielding an unacceptable recall of ~0.62.
             </p>
 
             <h2 data-aos="fade-up">The Solution</h2>
             <p data-aos="fade-up">
-                I developed an asynchronous Discord Bot utilizing the robust <strong>Discord.py</strong> library.
-                Integrating lightweight Natural Language Processing techniques, the bot continuously listens to active
-                chat channels. When a message is flagged, it calculates a toxicity threshold score before automatically
-                taking action—ranging from silent log warnings to immediate timeouts or bans for severe offenses.
+                I engineered a robust NLP preprocessing pipeline and executed strategic downsampling on the majority
+                class. By intentionally sacrificing superficial overall accuracy, I drastically boosted toxic detection
+                recall to 0.85, establishing a much safer baseline for automated community moderation.
                 <br><br>
-                The system also includes a complete SQLite-backed moderation history, allowing human admins to easily
-                track user behavior trends over time via custom slash commands.
+                After benchmarking computationally efficient classical models (Logistic Regression, Linear SVC) via
+                Scikit-learn and TF-IDF, I leveraged Hugging Face to fine-tune a <strong>DistilBERT</strong> transformer
+                architecture. Because DistilBERT understands semantic context, sarcasm, and complex sentence structures,
+                it achieved a 0.94 recall and 0.92 F1-score on the toxic class, successfully minimizing False Negatives.
+                I then led the end-to-end integration of this inference model directly into a functional asynchronous
+                <strong>discord.py</strong> bot framework.
             </p>
+
+            <!-- Feature Image Gallery -->
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-6">
+                    <img src="static/cv_improver_thumbnail.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="Imbalance Handling & Recall"
+                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
+                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
+                </div>
+                <div class="col-md-6">
+                    <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/research_thumbnail.png'"
+                        alt="DistilBERT Architecture"
+                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
+                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
+                </div>
+            </div>
 
             <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
                 <div class="col-md-4">
                     <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
                         style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-filter fs-2 text-primary mb-3"></i>
-                        <h4 class="text-white">Smart Filtering</h4>
-                        <p class="text-secondary small">Implemented fuzzy string matching and NLP-based sentiment
-                            analysis to accurately classify toxic language variations and evasions.</p>
+                        <i class="fas fa-balance-scale fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">Data Engineering</h4>
+                        <p class="text-secondary small">Engineered an NLP pipeline handling text normalization and
+                            executed strategic downsampling to resolve the Accuracy Paradox in highly imbalanced social
+                            media datasets.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
                         style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-bolt fs-2 text-warning mb-3"></i>
-                        <h4 class="text-white">Async Event Loop</h4>
-                        <p class="text-secondary small">Engineered using Python's asyncio to process thousands of
-                            simultaneous chat events across multiple guilds without dropping performance.</p>
+                        <i class="fas fa-brain fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">Transformer Fine-Tuning</h4>
+                        <p class="text-secondary small">Fine-tuned distilbert-base-uncased to parse semantic context
+                            beyond standard keyword-matching, achieving a 0.94 recall on the toxic class.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
                         style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-database fs-2 text-info mb-3"></i>
-                        <h4 class="text-white">Mod-Log System</h4>
-                        <p class="text-secondary small">Stored a robust relational database mapping users to their
-                            infractions, enabling quick `/history` lookups for human administrators.</p>
+                        <i class="fas fa-bolt fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">Real-Time Integration</h4>
+                        <p class="text-secondary small">Led the end-to-end integration of the deep learning inference
+                            model into a live discord.py framework, providing automated identification of harmful
+                            content.</p>
                     </div>
                 </div>
             </div>
 
             <h2 data-aos="fade-up">The Outcome</h2>
             <p data-aos="fade-up">
-                The bot effectively minimized human moderation efforts by automating the removal of approximately 85% of
-                standard toxic behavior. By storing warning histories, it created a much safer, self-refining community
-                atmosphere ensuring persistent bad actors could be permanently removed before causing server-wide
-                disruptions.
+                The deployed architecture successfully minimized False Negatives, demonstrating that advanced
+                transformer models can be optimized for real-time inference within highly active digital spaces. The bot
+                effectively intercepts toxic content dynamically, proving practical, real-world viability for ML-driven
+                community moderation.
             </p>
 
-            <h2 data-aos="fade-up" class="mt-5">Tech Stack</h2>
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack & Infrastructure</h2>
             <div class="row g-4 mb-5" data-aos="fade-up">
                 <div class="col-md-6">
-                    <h5 class="fw-bold mb-3">Bot & AI Framework</h5>
+                    <h5 class="fw-bold mb-3">Deep Learning & NLP</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
-                        <span class="tech-badge"><i class="fab fa-discord"></i> Discord.py</span>
-                        <span class="tech-badge"><i class="fas fa-brain"></i> NLP / NLTK</span>
-                        <span class="tech-badge"><i class="fas fa-tasks"></i> AsyncIO</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> Hugging Face</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> DistilBERT</span>
+                        <span class="tech-badge"><i class="fas fa-cubes"></i> AutoTokenizer</span>
+                        <span class="tech-badge"><i class="fas fa-cogs"></i> TF-IDF</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="fw-bold mb-3">Data & Deployment</h5>
+                    <h5 class="fw-bold mb-3">Data Tooling & Deployment</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i class="fas fa-database"></i> SQLite</span>
-                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
-                        <span class="tech-badge"><i class="fas fa-cloud"></i> DigitalOcean Droplet</span>
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fab fa-discord"></i> Discord.py</span>
+                        <span class="tech-badge"><i class="fas fa-chart-line"></i> Scikit-learn</span>
+                        <span class="tech-badge"><i class="fas fa-server"></i> Local Host Inferencing</span>
                     </div>
                 </div>
             </div>
