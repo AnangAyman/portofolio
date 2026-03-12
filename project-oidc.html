@@ -74,29 +74,37 @@
 
             <h2 data-aos="fade-up">The Challenge</h2>
             <p data-aos="fade-up">
-                The organization faced a critical security bottleneck: an aging user authentication system that relied
-                on outdated password hashing and lacked standardized authorization protocols. This legacy infrastructure
-                made integrating modern mobile and web applications risky and difficult.
+                The organization was bottlenecked by an aging PHP authentication monolith that lacked modern OAuth 2.0
+                capabilities, blocking the secure integration of new mobile and web clients. The mandate was to
+                architect a centralized OpenID Connect (OIDC) provider from scratch supporting a multi-grant
+                architecture. It needed to handle Implicit and Token flows for web integrations, while strictly
+                enforcing the Authorization Code Flow with PKCE to protect mobile apps.
                 <br><br>
-                The request was ambitious: <strong>replace the plane engine while flying.</strong> We needed to
-                transition to a centralized OpenID Connect (OIDC) provider without forcing a massive password reset for
-                thousands of users, all while ensuring zero downtime and compatibility with legacy database schemas.
+                The most formidable constraint
+                was executing this transition with absolute zero downtime. Since a mass password reset was an
+                unacceptable business disruption, the core challenge was engineering a seamless bridge to validate
+                legacy credentials and upgrade outdated cryptographic hashes on the fly without a single service
+                interruption.
             </p>
 
             <h2 data-aos="fade-up">The Solution</h2>
             <p data-aos="fade-up">
-                I engineered a robust, containerized <strong>OIDC Identity Provider</strong> that serves as the
-                organization's single source of truth for authentication. This wasn't just a wrapper; it was a complete
-                architectural overhaul.
+                To establish a single source of truth for authentication, I engineered a robust, containerized OpenID
+                Connect (OIDC) Identity Provider from the ground up. Rather than simply patching the old framework, this
+                required a fundamental shift in how the organization handled user identity and authorization across its
+                entire ecosystem.
                 <br><br>
-                To solve the migration nightmare, I designed a <strong>"Just-In-Time" Migration Strategy</strong>. A
-                custom login interceptor detects legacy accounts during sign-in, verifies credentials against the old
-                schema, and seamlessly upgrades them to modern cryptographic hashes (PBKDF2) on the fly. This
-                achieved a massive security upgrade without disrupting the user experience.
+                To navigate the strict zero-downtime constraint, I designed a <strong>Just-In-Time (JIT)</strong>
+                migration strategy to
+                bridge the gap between the legacy database and the new infrastructure. I built a custom login
+                interceptor that detects legacy accounts the exact moment a user signs in. Behind the scenes, it
+                verifies their credentials against the old schema and seamlessly upgrades them to modern
+                <strong>PBKDF2</strong>
+                cryptographic hashes on the fly. This approach effectively neutralized years of technical debt and
+                delivered a massive security upgrade, all while remaining completely invisible to the end user.
             </p>
 
             <div class="showcase-block" data-aos="fade-up">
-                <!-- Placeholder or relevant image if available, reusing OpenID image for now or remove if no other image -->
                 <img src="static/Oauth2_AuthorizationCodeFlow.png" alt="OIDC Flow Diagram">
                 <div class="caption">Example of OAuth 2.0 Authorization Code Flow with PKCE enforcement.</div>
             </div>
@@ -173,7 +181,14 @@
 
         </article>
 
-        <div class="project-navigation next-only">
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-nusacrop.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> NusaCrop App
+                </a>
+            </div>
+
             <div class="text-end">
                 <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
                 <a href="project-signlingo.html" class="nav-link-soft">

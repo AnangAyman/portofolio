@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Undercut Predictor - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/f1-undercut" target="_blank"
+                    class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(220, 38, 38, 0.1); color: #ef4444; border: 1px solid rgba(220, 38, 38, 0.2);">
+                <i class="fas fa-flag-checkered me-1"></i> Data Analytics & Web Interface
+            </span>
+            <h1 data-aos="fade-up">F1 Undercut Predictor Dashboard</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                A high-performance motorsport analytics tool visualizing undercut strategy viability in Formula 1.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Replace with actual F1 Undercut Dashboard Thumbnail -->
+                    <img src="static/F1-predictor-image-main.jpg" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="F1 Undercut Interface" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>ML Engineer & Data Analyst</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Personal Project</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>Machine Learning, Data Mining</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Scikit-learn, Pandas, FastF1, Flask</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                In Formula 1, the "undercut" is a split-second, highly complex strategic maneuver. The challenge was to
+                democratize this elite race strategy analysis by building a machine learning web application capable of
+                predicting the success probability of an undercut. This required processing raw telemetry data from the
+                modern "Ground Effect" era (2022-2024 seasons) and engineering features that accurately capture the
+                exact race state—and physics—at the moment of a pit decision.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                By hooking into the <strong>FastF1 API</strong>, I executed a digital race reconstruction. I engineered
+                seven core features including <code>Gap_To_Ahead</code>, <code>Rival_Tyre_Age</code>,
+                <code>Pace_Delta</code>, and an <code>Is_Traffic</code> binary variable to estimate track re-join risk
+                from aerodynamic turbulence. I strictly removed driver metadata during preprocessing to ensure the model
+                learned pure physics rather than driver biases.
+                <br><br>
+                For the Machine Learning architecture, I benchmarked six classification algorithms: Logistic Regression,
+                SVM, Gradient Boosting, KNN, Gaussian Naive Bayes, and Random Forest. <strong>Logistic
+                    Regression</strong> was selected for deployment on a Flask backend, achieving an 83% F1-Score and
+                83% Precision, perfectly balancing the trade-off between strategic opportunity and costly false alarms.
+            </p>
+
+            <!-- Feature Image Gallery -->
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-6">
+                    <img src="static/f1undercut-image-standings.png" alt="F1 Dashboard"
+                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
+                        style="object-fit: cover; height: 100%; width: 100%; min-height: 300px;">
+                </div>
+                <div class="col-md-6 d-flex flex-column gap-4">
+                    <img src="static/f1undercut-image-dashboard.png" alt="ML Metrics"
+                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
+                        style="object-fit: cover; height: 48%; width: 100%; min-height: 140px;">
+                    <img src="static/f1undercut-image-prediction.png" alt="Telemetry Graph"
+                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
+                        style="object-fit: cover; height: 48%; width: 100%; min-height: 140px;">
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-database fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">FastF1 Engineering</h4>
+                        <p class="text-secondary small">Engineered 7 core telemetry features and handled missing
+                            stationary pit durations using a baseline imputation, standardizing inputs with
+                            StandardScaler.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-brain fs-2 text-danger mb-3"></i>
+                        <h4 class="text-white">Algorithm Evaluation</h4>
+                        <p class="text-secondary small">Benchmarked 6 models, proving Gaussian Naive Bayes unsuitable
+                            due to its feature independence assumptions failing on highly correlated F1 variables.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-chart-line fs-2 text-success mb-3"></i>
+                        <h4 class="text-white">Flask ML Deployment</h4>
+                        <p class="text-secondary small">Deployed the winning Logistic Regression model seamlessly via a
+                            Flask web front-end, proving the physics-based linear nature of an undercut execution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                Completed as a comprehensive Data Mining project, the tool features a fully functional trained ML
+                pipeline and web front-end that translates hundreds of thousands of racing parameters into immediate,
+                predictive strategic insights.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Data Processing & ML</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> Scikit-learn</span>
+                        <span class="tech-badge"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="tech-badge"><i class="fas fa-cogs"></i> FastF1 API</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Backend & Visualization</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-server"></i> FastAPI / Flask</span>
+                        <span class="tech-badge"><i class="fas fa-chart-area"></i> Matplotlib</span>
+                        <span class="tech-badge"><i class="fas fa-chart-bar"></i> Seaborn</span>
+                        <span class="tech-badge"><i class="fab fa-html5"></i> Web UI</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-fluxbudget.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> Flux Budget App
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <a href="project-cvimprover.html" class="nav-link-soft">
+                    CV Improver <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>

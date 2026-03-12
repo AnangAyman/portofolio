@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CV Improver - Anang Ayman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html#work">
+                <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+            </a>
+            <div class="d-flex gap-2">
+                <a href="https://github.com/yourusername/cv-improver" target="_blank"
+                    class="btn btn-sm btn-outline-light">
+                    <i class="fab fa-github me-2"></i>View Code
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container">
+            <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background-color: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2);">
+                <i class="fas fa-robot me-1"></i> Generative AI Tool
+            </span>
+            <h1 data-aos="fade-up">AI CV Improver</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
+                An intelligent resume optimization engine leveraging Bloom-560m and DistilBERT to reconstruct
+                unformatted text into ATS-friendly, high-impact bullet points.
+            </p>
+
+            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
+                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
+                    <div class="p-3 bg-dark d-flex gap-2">
+                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <!-- Using cv_improver_thumbnail if available -->
+                    <img src="static/cv_improver_thumbnail.png" onerror="this.src='static/Signlingo_thumbnail.png'"
+                        alt="CV Improver Architecture" class="img-fluid w-100" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Solo Full-Stack Developer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Timeline</h5>
+                <p>Sep 2024 – Feb 2025</p>
+            </div>
+            <div class="meta-item">
+                <h5>Domain</h5>
+                <p>LLMs, NLP, Web App</p>
+            </div>
+            <div class="meta-item">
+                <h5>Core Tech</h5>
+                <p>Flask, PyTorch, Bloom-560m, DistilBERT</p>
+            </div>
+        </div>
+
+        <article class="project-body">
+
+            <h2 data-aos="fade-up">The Challenge</h2>
+            <p data-aos="fade-up">
+                Job seekers frequently struggle to articulate their professional experience in a way that is both
+                grammatically flawless and impactful enough to pass Applicant Tracking Systems (ATS). While large-scale
+                AI tools exist, they often generate generic "AI-speak" and require massive computational resources. The
+                goal was to build a lightweight, highly deterministic web application that could run efficiently on
+                limited local hardware while providing users with mathematically backed scoring on their CV
+                improvements.
+            </p>
+
+            <h2 data-aos="fade-up">The Solution</h2>
+            <p data-aos="fade-up">
+                I engineered a Flask-based web application integrating the <strong>bigscience/bloom-560m</strong>
+                language model via Hugging Face and PyTorch. To prevent hallucinatory or "fluffy" outputs, I configured
+                model inference using a strict 15-beam search strategy, early stopping, and a low temperature of 0.15.
+                <br><br>
+                To quantify the improvement, I built a custom Heuristic Scoring Engine. This algorithm evaluates text
+                quality by compiling grammar penalties (<code>language_tool_python</code>), Flesch reading ease
+                (<code>textstat</code>), sentiment analysis (<strong>DistilBERT</strong>), and a predefined CV keyword
+                density check. The frontend then visualizes this through animated dual-ring progress indicators,
+                showcasing the exact score delta between the original draft and the AI-refined version.
+            </p>
+
+            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-brain fs-2 text-info mb-3"></i>
+                        <h4 class="text-white">Bloom-560m Inference</h4>
+                        <p class="text-secondary small">Optimized a Hugging Face PyTorch pipeline with 15-beam search
+                            and low-temperature settings to guarantee professional, deterministic outputs on limited
+                            hardware.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-calculator fs-2 text-warning mb-3"></i>
+                        <h4 class="text-white">Heuristic Scoring</h4>
+                        <p class="text-secondary small">Engineered a multi-layered algorithm combining DistilBERT
+                            sentiment analysis, Flesch reading ease, and grammar checks to calculate a definitive CV
+                            quality score.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
+                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <i class="fas fa-laptop-code fs-2 text-primary mb-3"></i>
+                        <h4 class="text-white">Flask & Vanilla JS</h4>
+                        <p class="text-secondary small">Built a responsive web dashboard utilizing HTML, CSS, and
+                            Vanilla JS, featuring dual-ring animated SVG indicators to visually compare before-and-after
+                            scores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">The Outcome</h2>
+            <p data-aos="fade-up">
+                The application successfully transforms scattered drafts into professional bullet points while visibly
+                proving its value through heuristic scoring. Currently maintained as a local portfolio project, the
+                architecture is fully prepared for future cloud deployment via platforms like Vercel.
+            </p>
+
+            <h2 data-aos="fade-up" class="mt-5">Tech Stack & Infrastructure</h2>
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">AI & Machine Learning</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fas fa-brain"></i> Bloom-560m</span>
+                        <span class="tech-badge"><i class="fas fa-language"></i> DistilBERT</span>
+                        <span class="tech-badge"><i class="fas fa-cubes"></i> PyTorch</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> Transformers</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">Application Layer</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python / Flask</span>
+                        <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="tech-badge"><i class="fab fa-js"></i> Vanilla JS</span>
+                        <span class="tech-badge"><i class="fas fa-cloud-upload-alt"></i> Vercel (Ready)</span>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <div class="project-navigation">
+            <div class="text-start">
+                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <a href="project-f1undercut.html" class="nav-link-soft prev">
+                    <i class="fas fa-arrow-left"></i> F1 Analytics Dashboard
+                </a>
+            </div>
+
+            <div class="text-end">
+                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <a href="project-discordmod.html" class="nav-link-soft">
+                    Discord Bot <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center py-5 border-top" data-aos="zoom-in">
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-light border-top mt-5">
+        <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>
