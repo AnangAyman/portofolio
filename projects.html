@@ -28,16 +28,75 @@
                 <p class="text-secondary lead">A collection of my experiments, research, and applications.</p>
             </div>
 
-            <!-- Machine Learning & Artificial Intelligence -->
-            <div class="project-category-header container px-4">
+            <!-- 1. Featured Flagships -->
+            <div class="project-category-header container px-4 mb-4">
+                <h2><i class="fas fa-star text-warning"></i> Featured Work</h2>
+            </div>
+
+            <div class="projects-grid mt-4">
+
+                <!-- Featured: SignLingo 1-Column -->
+                <div class="grid-card"
+                    style="border-color: rgba(74,222,128,0.3); box-shadow: 0 10px 40px -10px rgba(74,222,128,0.15);">
+                    <div class="grid-image">
+                        <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3 text-success">Browser-Based AI / Computer Vision</div>
+                        <h3 class="grid-title mb-2">SignLingo AI</h3>
+                        <p class="grid-desc">A real-time, browser-based sign language recognition engine utilizing
+                            MediaPipe Holistic and CNN-LSTM Architecture</p>
+                        <div
+                            class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto pt-3 border-top border-secondary border-opacity-25">
+                            <div class="tech-stack mb-0 gap-2">
+                                <span class="tech-pill fw-bold"
+                                    style="background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3);">CNN-LSTM</span>
+                            </div>
+                            <a href="project-signlingo.html"
+                                class="btn btn-sm btn-outline-success px-3 rounded-pill">Explore <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured: OIDC Provider 1-Column -->
+                <div class="grid-card"
+                    style="border-color: rgba(99,102,241,0.3); box-shadow: 0 10px 40px -10px rgba(99,102,241,0.15);">
+                    <div class="grid-image">
+                        <img src="static/OpenID_Connect.png" alt="OIDC Provider"
+                            onerror="this.src='static/gamified_dashboard.png'">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3" style="color: #818cf8;">Backend Architecture / Security</div>
+                        <h3 class="grid-title mb-2">Custom OIDC Provider</h3>
+                        <p class="grid-desc">A secure, containerized OpenID Connect Identity Provider. Engineered
+                            from scratch using Flask and Authlib.</p>
+                        <div
+                            class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto pt-3 border-top border-secondary border-opacity-25">
+                            <div class="tech-stack mb-0 gap-2">
+                                <span class="tech-pill fw-bold"
+                                    style="background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.3);">Flask
+                                    / Authlib</span>
+                            </div>
+                            <a href="project-oidc.html" class="btn btn-sm btn-outline-primary px-3 rounded-pill"
+                                style="border-color: #818cf8; color: #818cf8;">Explore <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2. Machine Learning & AI -->
+            <div class="project-category-header container px-4 mt-5">
                 <h2><i class="fas fa-brain text-info"></i> Machine Learning & AI</h2>
             </div>
 
-            <div class="projects-grid">
+            <div class="projects-grid mt-4">
 
                 <div class="grid-card wide">
                     <div class="grid-image">
-                        <img src="static/OpenID_Connect.png" onerror="this.src='static/gamified_dashboard.png'"
+                        <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/gamified_dashboard.png'"
                             alt="Discord Bot">
                     </div>
                     <div class="grid-content">
@@ -80,64 +139,14 @@
 
                 <div class="grid-card">
                     <div class="grid-image">
-                        <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-info">AI / Computer Vision</div>
-                        <h3 class="grid-title">SignLingo AI</h3>
-                        <p class="grid-desc">Real-time sign language recognition running in the browser using
-                            TensorFlow.js.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">TensorFlow.js</span>
-                            </div>
-                            <a href="project-signlingo.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Data Science & Academic Research -->
-            <div class="project-category-header container px-4 mt-5">
-                <h2><i class="fas fa-microscope text-warning"></i> Data Science & Academic Research</h2>
-            </div>
-
-            <div class="projects-grid">
-
-                <div class="grid-card wide">
-                    <div class="grid-image">
-                        <img style="object-position: top;" src="static/research_thumbnail.png"
-                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
-                        <h3 class="grid-title">Hybrid CNN-LSTM</h3>
-                        <p class="grid-desc">Lightweight model architecture for Sign Language Recognition on
-                            low-resource edge devices.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Paper</span>
-                                <span class="tech-pill">Deep Learning</span>
-                            </div>
-                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid-card">
-                    <div class="grid-image">
                         <img src="static/gamified_dashboard.png" onerror="this.src='static/Signlingo_thumbnail.png'"
                             alt="F1 Undercut">
                     </div>
                     <div class="grid-content">
-                        <div class="grid-category mt-3 text-danger">Data Analytics</div>
+                        <div class="grid-category mt-3 text-danger">Data Analytics & ML</div>
                         <h3 class="grid-title">F1 Undercut Predictor</h3>
-                        <p class="grid-desc">A high-performance motorsport tool visualizing real-time telemetry and
-                            strategy viability using FastF1 and Next.js.</p>
+                        <p class="grid-desc">A high-performance motorsport tool predicting strategy viability via
+                            Scikit-Learn using FastF1 telemetry data.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
                                 <span class="tech-pill">Scikit-Learn</span>
@@ -149,16 +158,38 @@
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Software Engineering & Architecture -->
-            <div class="project-category-header container px-4 mt-5">
-                <h2><i class="fas fa-server text-success"></i> Software Engineering & Architecture</h2>
-            </div>
-
-            <div class="projects-grid">
-
                 <div class="grid-card wide">
+                    <div class="grid-image">
+                        <img style="object-position: top;" src="static/research_thumbnail.png"
+                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
+                    </div>
+                    <div class="grid-content">
+                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
+                        <h3 class="grid-title">Hybrid CNN-LSTM Signature</h3>
+                        <p class="grid-desc">A formal academic approach to designing a lightweight neural network
+                            architecture for Sign Language Recognition on extreme low-resource edge devices constraint
+                            by thermal throttling.</p>
+                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
+                            <div class="tech-stack mb-0">
+                                <span class="tech-pill">Paper</span>
+                                <span class="tech-pill">Deep Learning</span>
+                            </div>
+                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
+                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. Software Engineering -->
+            <div class="project-category-header container px-4 mt-5">
+                <h2><i class="fas fa-server text-success"></i> Software Engineering</h2>
+            </div>
+
+            <div class="projects-grid mt-4">
+
+                <div class="grid-card">
                     <div class="grid-image">
                         <img src="static/FluxBudget_thumbnail.png" onerror="this.src='static/gamified_dashboard.png'"
                             alt="Flux">
@@ -179,27 +210,7 @@
                     </div>
                 </div>
 
-                <div class="grid-card">
-                    <div class="grid-image">
-                        <img src="static/OpenID_Connect.png" alt="OIDC">
-                    </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-warning">Backend Security</div>
-                        <h3 class="grid-title">Custom OIDC Provider</h3>
-                        <p class="grid-desc">Secure, containerized identity provider implementation using Flask,
-                            Authlib, and MySQL.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Flask</span>
-                                <span class="tech-pill">Docker</span>
-                            </div>
-                            <a href="project-oidc.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid-card">
+                <div class="grid-card wide">
                     <div class="grid-image">
                         <img src="static/Nusacrop_thumbnail.png" alt="NusaCrop"
                             onerror="this.src='static/Signlingo_thumbnail.png'">
@@ -208,7 +219,7 @@
                         <div class="grid-category mt-3 text-success">Agritech / UI Prototype</div>
                         <h3 class="grid-title">NusaCrop</h3>
                         <p class="grid-desc">An interactive UI prototype and comprehensively planned IoT architecture
-                            for urban hydroponic farmers.</p>
+                            for urban hydroponic farmers seeking commercial supply chain integration.</p>
                         <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
                             <div class="tech-stack mb-0">
                                 <span class="tech-pill">Figma Prototyping</span>
