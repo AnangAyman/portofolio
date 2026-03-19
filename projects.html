@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,21 +24,21 @@
 
     <section class="projects-grid-section">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-5">
+            <div class="text-center max-w-2xl mx-auto mb-5" data-aos="fade-up">
                 <span class="badge-pill">The Archives</span>
                 <h1 class="display-4 fw-bold">Project Library</h1>
                 <p class="text-secondary lead">A collection of my experiments, research, and applications.</p>
             </div>
 
             <!-- 1. Featured Flagships -->
-            <div class="project-category-header container px-4 mb-4">
+            <div class="project-category-header container px-4 mb-4" data-aos="fade-up">
                 <h2><i class="fas fa-star text-warning"></i> Featured Work</h2>
             </div>
 
             <div class="projects-grid mt-4">
 
                 <!-- Featured: SignLingo 1-Column -->
-                <div class="grid-card"
+                <div class="grid-card" data-aos="fade-up"
                     style="border-color: rgba(74,222,128,0.3); box-shadow: 0 10px 40px -10px rgba(74,222,128,0.15);">
                     <div class="grid-image">
                         <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
@@ -61,7 +62,7 @@
                 </div>
 
                 <!-- Featured: OIDC Provider 1-Column -->
-                <div class="grid-card"
+                <div class="grid-card" data-aos="fade-up"
                     style="border-color: rgba(99,102,241,0.3); box-shadow: 0 10px 40px -10px rgba(99,102,241,0.15);">
                     <div class="grid-image">
                         <img src="static/OpenID_Connect.png" alt="OIDC Provider"
@@ -89,13 +90,13 @@
             </div>
 
             <!-- 2. Machine Learning & AI -->
-            <div class="project-category-header container px-4 mt-5">
+            <div class="project-category-header container px-4 mt-5" data-aos="fade-up">
                 <h2><i class="fas fa-brain text-info"></i> Machine Learning & AI</h2>
             </div>
 
             <div class="projects-grid mt-4">
 
-                <div class="grid-card wide">
+                <div class="grid-card wide" data-aos="fade-up">
                     <div class="grid-image">
                         <img src="static/F1-predictor-image-main.jpg"
                             onerror="this.src='static/Signlingo_thumbnail.png'" alt="F1 Undercut">
@@ -116,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="grid-card">
+                <div class="grid-card" data-aos="fade-up">
                     <div class="grid-image">
                         <img style="object-position: top;" src="static/cv_improver_thumbnail.png"
                             onerror="this.src='static/Signlingo_thumbnail.png'" alt="CV Improver">
@@ -137,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="grid-card">
+                <div class="grid-card" data-aos="fade-up">
                     <div class="grid-image">
                         <img src="static/discord-image-main.jpeg" onerror="this.src='static/gamified_dashboard.png'"
                             alt="Discord Bot">
@@ -159,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="grid-card wide">
+                <div class="grid-card wide" data-aos="fade-up">
                     <div class="grid-image">
                         <img style="object-position: top;" src="static/research_thumbnail.png"
                             onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
@@ -184,13 +185,13 @@
             </div>
 
             <!-- 3. Software Engineering -->
-            <div class="project-category-header container px-4 mt-5">
+            <div class="project-category-header container px-4 mt-5" data-aos="fade-up">
                 <h2><i class="fas fa-server text-success"></i> Software Engineering</h2>
             </div>
 
             <div class="projects-grid mt-4">
 
-                <div class="grid-card">
+                <div class="grid-card" data-aos="fade-up">
                     <div class="grid-image">
                         <img src="static/flux_budget_app.jpg" onerror="this.src='static/gamified_dashboard.png'"
                             alt="Flux">
@@ -211,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="grid-card wide">
+                <div class="grid-card wide" data-aos="fade-up">
                     <div class="grid-image">
                         <img src="static/Nusacrop_thumbnail.png" alt="NusaCrop"
                             onerror="this.src='static/Signlingo_thumbnail.png'">
@@ -240,6 +241,8 @@
         <p class="mb-0 text-secondary">© 2025 Anang Ayman</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 
 </html>

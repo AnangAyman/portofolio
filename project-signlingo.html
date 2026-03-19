@@ -85,40 +85,145 @@
                 browser.
             </p>
 
-            <div class="showcase-block" data-aos="fade-up">
-                <img src="static/game_and_ai.jpg" alt="Gamified Dashboard">
-                <div class="caption">Real-time hand landmark detection using MobileNetV2 and LSTM.</div>
-            </div>
-
-            <h3>Key Technical Implementation</h3>
-            <ul class="list-unstyled mt-4 mb-5">
-                <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success mt-1 me-3"></i>
-                    <div>
-                        <strong>Hybrid Model Architecture:</strong> We utilized MobileNetV2 for efficient spatial
-                        feature extraction combined with LSTM to capture the temporal dynamics of hand gestures.
-                    </div>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success mt-1 me-3"></i>
-                    <div>
-                        <strong>Optimized for Low-Resource:</strong> By applying L2 regularization and post-training
-                        quantization, we compressed the model to under 25MB, enabling offline operation on devices with
-                        as little as 4GB RAM.
-                    </div>
-                </li>
-            </ul>
-
-            <h2 data-aos="fade-up">Gamified Learning</h2>
-            <p>
-                To move away from boring, passive learning, we designed SignLingo to be entertaining. We added
-                "Duolingo-style" gamification elements—such as points, daily streaks, and vocabulary unlocks—to keep
-                users engaged while the AI provides the real-time feedback of a private tutor.
+            <h2 data-aos="fade-up">My Role & Leadership</h2>
+            <p data-aos="fade-up">
+                As the <strong>Team Leader and Lead Developer</strong>, my journey with SignLingo started from a simple
+                yet powerful idea: making sign language education accessible. Leading a team of 10 talented developers,
+                I navigated the challenges of coordinating our efforts from initial research to the final deployment. I
+                was responsible for guiding our architectural decisions, mentoring team members, and ensuring our vision
+                translated into a robust, working application. The collaborative spirit and shared passion of our team
+                were the driving forces behind turning SignLingo from a concept into reality.
             </p>
 
-            <div class="showcase-block" data-aos="fade-up">
-                <img src="static/gamified_dashboard.png" alt="Gamified Dashboard">
-                <div class="caption">User dashboard showing power-ups, health-points and daily streak.</div>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <img src="static/signlingo_team.png" alt="Me and the SignLingo Team"
+                    class="img-fluid rounded-3 shadow-lg border border-secondary border-opacity-25 w-100"
+                    style="max-height: 500px; object-fit: cover; object-position: center;">
+                <p class="text-secondary small mt-3">Me and the team behind SignLingo.</p>
+            </div>
+
+            <hr class="mb-5 border-secondary border-opacity-25" data-aos="fade-up">
+
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">The SignLingo Ecosystem</h2>
+                <p class="text-secondary mx-md-5 mt-3">
+                    A holistic, two-part platform designed to combine state-of-the-art AI inference with an engaging
+                    user experience.
+                </p>
+            </div>
+
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="static/game_and_ai.jpg" alt="Real-time Detection"
+                        class="img-fluid rounded-3 shadow border border-secondary border-opacity-25 w-100">
+                    <p class="text-center text-secondary small mt-3">Real-time inference and active predictions</p>
+                </div>
+                <div class="col-md-6 ps-md-4">
+                    <h3 class="mb-4">Real-Time Landmark Detection</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-bolt text-warning fs-5 mt-1 me-3"></i>
+                            <div><strong>Ultra-Low Latency:</strong> Inference times of 40–50ms for seamless sign
+                                language translation.</div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-camera text-success fs-5 mt-1 me-3"></i>
+                            <div><strong>Robust Tracking:</strong> Accurate landmark detection even in low-light and
+                                cluttered visual backgrounds.</div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-network-wired text-primary fs-5 mt-1 me-3"></i>
+                            <div><strong>Spatial-Temporal Logic:</strong> Combines spatial point coordinates extracted
+                                securely using MediaPipe with temporal dynamics.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-5" data-aos="fade-up">
+                <h3 class="mb-4">Key Technical Architecture</h3>
+
+                <p class="mb-5">
+                    To achieve high performance on constrained devices, we designed a lightweight hybrid
+                    architecture. We utilized spatial landmarks extracted and fed them into a sequential network
+                    structure. For an in-depth dive into the methodology, data processing, and evaluation metrics,
+                    you can read my connected research paper.
+                </p>
+
+                <div class="mb-5">
+                    <img src="static/model_architecture.jpeg" alt="Architecture"
+                        class="img-fluid rounded-3 shadow border border-secondary border-opacity-25 w-100">
+                    <p class="text-center text-secondary small mt-3">Hybrid CNN-LSTM Architecture overview</p>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success fs-5 mt-1 me-3"></i>
+                                <div>
+                                    <strong>Hybrid Model Approach:</strong> We utilized MobileNetV2 for efficient
+                                    spatial
+                                    feature extraction combined with LSTM to capture the temporal gestures dynamics over
+                                    time.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success fs-5 mt-1 me-3"></i>
+                                <div>
+                                    <strong>Optimized for Low-Resource:</strong> By applying L2 regularization and
+                                    post-training
+                                    quantization, we compressed the model to under 25MB, enabling operation on 4GB RAM
+                                    devices.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="project-research.html" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-file-alt me-2"></i> Read the Connected Research Paper
+                    </a>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">Gamified Learning</h2>
+            <p data-aos="fade-up" class="mb-5">
+                To move away from boring, passive learning, we designed SignLingo to be entertaining. We infused
+                interactive "Duolingo-style" mechanics to keep users engaged while our AI acts as a private tutor giving
+                instant feedback on their gestures.
+            </p>
+
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <img src="static/gamified_dashboard.png" alt="Gamified Dashboard"
+                        class="img-fluid rounded-3 shadow border border-secondary border-opacity-25">
+                    <p class="text-center text-secondary small mt-3">Personalized user dashboard</p>
+                </div>
+                <div class="col-md-7 ps-md-4">
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-fire text-danger fs-5 mt-1 me-3"></i>
+                            <div><strong>Daily Streaks & EXP:</strong> Keep motivation high by tracking continuous
+                                learning days and rewarding experience points.</div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-heart text-success fs-5 mt-1 me-3"></i>
+                            <div><strong>Health System:</strong> A forgiving yet challenging life system requiring
+                                active performance accuracy.</div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-trophy text-warning fs-5 mt-1 me-3"></i>
+                            <div><strong>Leaderboards:</strong> Compete with friends and the broader community for the
+                                top spot globally.</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <h2 data-aos="fade-up">The Outcome</h2>
@@ -126,6 +231,16 @@
                 The optimized model achieved <strong>95.30% validation accuracy</strong> on the BISINDO alphabet. With
                 an inference time of just 40–50 milliseconds, the project successfully proved that inclusive
                 communication technology can be made accessible to low-resource communities.
+            </p>
+
+            <h2 data-aos="fade-up">Future Works</h2>
+            <p data-aos="fade-up" class="mb-5">
+                The journey with SignLingo doesn't stop here. Currently, I am expanding the system to support
+                <strong>Korean Sign Language (KSL)</strong> during my exchange program at <strong>Sungkyunkwan
+                    University (SKKU)</strong>. Furthermore, for my undergraduate thesis, I am actively upgrading the
+                core model architecture from the current CNN-LSTM approach to a more efficient
+                <strong>MediaPipe-GRU</strong> hybrid, aiming to further decrease latency while retaining high
+                spatial-temporal accuracy.
             </p>
 
             <h2 data-aos="fade-up">Tech Stack</h2>

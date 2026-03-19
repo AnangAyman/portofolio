@@ -17,7 +17,7 @@
     <div class="main-content">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#home">
+                <a class="navbar-brand" href="#home" onclick="setTimeout(() => history.replaceState(null, null, window.location.pathname), 10);">
                     <span class="d-none d-lg-block">Anang Ayman</span>
                     <img src="static/profile_pic.png" alt="Profile" class="d-lg-none navbar-profile-pic" width="40"
                         height="40">
@@ -117,9 +117,9 @@
                                 <span class="status-badge">✓ Available for work</span>
                                 <div class="terminal-actions">
                                     <a href="#work" class="btn btn-terminal">View Projects</a>
-                                    <a href="static/Ayman CV Resume Final.pdf" download="Ayman CV Resume Final.pdf"
+                                    <a href="static/Ayman CV Resume Final.pdf" target="_blank"
                                         class="btn btn-terminal-outline">
-                                        <i class="fas fa-file-download me-2"></i>Download Resume
+                                        <i class="fas fa-file-pdf me-2"></i>View Resume
                                     </a>
                                 </div>
                             </div>
@@ -292,6 +292,29 @@
                                 <span class="file-badge">Docker</span>
                                 <span class="file-badge">MySQL</span>
                                 <span class="file-badge">Zero-Downtime</span>
+                            </div>
+
+                            <!-- PR Review / CEO Quote Section -->
+                            <div class="pr-review-section">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <span class="review-author">Okhi Oktanio, CEO Digital Agri Solutions</span>
+                                    <span class="review-badge">
+                                        <i class="fas fa-check-circle"></i> Approved
+                                    </span>
+                                </div>
+                                <div class="review-body">
+                                    <div class="review-quote">
+                                        Ayman made a strong technical contribution by designing and implementing an
+                                        OpenID Connect (OIDC) authentication... ensuring secure and reliable integration
+                                        so that users and services could authenticate consistently
+                                    </div>
+                                    <a href="static/recommendation_letter.pdf" class="btn-review-action" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Recommendation Letter
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -622,9 +645,9 @@
                         <h3 class="project-title" data-aos="fade-up" data-aos-delay="100">SignLingo AI</h3>
 
                         <p class="project-desc" data-aos="fade-up" data-aos-delay="200">
-                            An interactive sign language learning platform powered by computer vision.
-                            I led a 10-person team to build a hybrid CNN-LSTM model that recognizes hand gestures in
-                            real-time through the browser, making accessibility education scalable.
+                            Architected an interactive sign language education platform as the Lead Backend and Solo AI
+                            Developer. I engineered a custom hybrid CNN-LSTM pipeline from scratch, translating complex
+                            gesture data into a full technical research paper.
                         </p>
 
                         <div class="tech-stack" data-aos="fade-up" data-aos-delay="300">
