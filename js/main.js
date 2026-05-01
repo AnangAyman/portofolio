@@ -4,7 +4,14 @@ if (history.scrollRestoration) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize AOS (Animate On Scroll)
+
+    // ── Page Entrance Animation ─────────────────────────────────────────────
+    // Trigger the staggered reveal sequence
+    requestAnimationFrame(() => {
+        document.body.classList.add('page-loaded');
+    });
+
+    // ── Initialize AOS ──────────────────────────────────────────────────────
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -55,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Track which sections are currently intersecting and pick the topmost one
     const visibleSections = new Map();
 
-    const observer = new IntersectionObserver((entries) => {
+    const scrollSpyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 visibleSections.set(entry.target.id, entry.boundingClientRect.top);
@@ -82,8 +89,114 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 0
     });
 
-    sections.forEach(section => observer.observe(section));
-    // ─────────────────────────────────────────────────────────────────────────
+    sections.forEach(section => scrollSpyObserver.observe(section));
+
+    // ── Section Title Dash Animation ────────────────────────────────────────
+    // Animate the ::after underline width when section titles scroll into view
+    const sectionTitles = document.querySelectorAll('.section-title');
+
+    const titleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -15% 0px',
+        threshold: 0.1
+    });
+
+    sectionTitles.forEach(title => titleObserver.observe(title));
+
+    // ── Terminal Typing Animation ───────────────────────────────────────────
+    const typingEl = document.getElementById('typing-animation');
+    if (typingEl) {
+        const commands = [
+            'hire --me',
+            'make collaboration',
+            'echo "hello world"',
+            'git push origin future',
+            'npm run build-dreams',
+        ];
+        let cmdIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let pauseTimeout = null;
+
+        const TYPING_SPEED = 80;
+        const DELETING_SPEED = 40;
+        const PAUSE_AFTER_TYPE = 2200;
+        const PAUSE_AFTER_DELETE = 500;
+
+        function typeLoop() {
+            const currentCmd = commands[cmdIndex];
+
+            if (!isDeleting) {
+                // Typing
+                typingEl.textContent = currentCmd.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex >= currentCmd.length) {
+                    // Done typing — pause then start deleting
+                    isDeleting = true;
+                    pauseTimeout = setTimeout(typeLoop, PAUSE_AFTER_TYPE);
+                    return;
+                }
+                pauseTimeout = setTimeout(typeLoop, TYPING_SPEED + Math.random() * 40);
+            } else {
+                // Deleting
+                typingEl.textContent = currentCmd.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex <= 0) {
+                    // Done deleting — move to next command
+                    isDeleting = false;
+                    cmdIndex = (cmdIndex + 1) % commands.length;
+                    pauseTimeout = setTimeout(typeLoop, PAUSE_AFTER_DELETE);
+                    return;
+                }
+                pauseTimeout = setTimeout(typeLoop, DELETING_SPEED);
+            }
+        }
+
+        // Start typing after the page entrance animation completes
+        setTimeout(typeLoop, 1200);
+    }
+
+    // ── Magnetic Button Effect ──────────────────────────────────────────────
+    // Buttons with [data-magnetic] subtly follow the cursor on hover
+    const magneticBtns = document.querySelectorAll('[data-magnetic]');
+    const MAGNETIC_STRENGTH = 0.3; // Max 5px movement at strength 0.3
+
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * MAGNETIC_STRENGTH}px, ${y * MAGNETIC_STRENGTH}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
+
+    // ── Leadership & Volunteering Tab Switching ─────────────────────────────
+    const tabBtns = document.querySelectorAll('.leadership-tab-btn');
+    const panels = document.querySelectorAll('.leadership-panel');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all
+            tabBtns.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding panel
+            btn.classList.add('active');
+            const targetId = btn.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
 });
 
 // Smooth scrolling for navigation links (skip dropdown toggles)
@@ -120,23 +233,4 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
         navbar.classList.remove('shadow-sm');
     }
-});
-
-// Leadership & Volunteering Tab Switching
-document.addEventListener('DOMContentLoaded', () => {
-    const tabBtns = document.querySelectorAll('.leadership-tab-btn');
-    const panels = document.querySelectorAll('.leadership-panel');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all
-            tabBtns.forEach(t => t.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
-
-            // Add active class to clicked tab and corresponding panel
-            btn.classList.add('active');
-            const targetId = btn.getAttribute('data-target');
-            document.getElementById(targetId).classList.add('active');
-        });
-    });
 });

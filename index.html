@@ -60,6 +60,12 @@
 
         <section id="home" class="hero">
             <div class="container">
+                <!-- Mobile-only profile photo -->
+                <div class="hero-mobile-profile">
+                    <img src="static/profile_pic.jpeg" alt="Anang Ayman" class="hero-mobile-avatar">
+                    <p class="hero-mobile-name">Anang Ayman</p>
+                </div>
+
                 <div class="terminal-hero">
                     <!-- Terminal Window -->
                     <div class="terminal-window">
@@ -117,9 +123,9 @@
                             <div class="terminal-output action-output">
                                 <span class="status-badge">✓ Available for work</span>
                                 <div class="terminal-actions">
-                                    <a href="#work" class="btn btn-terminal">View Projects</a>
+                                    <a href="#work" class="btn btn-terminal" data-magnetic>View Projects</a>
                                     <a href="static/Ayman CV Resume Final.pdf" target="_blank"
-                                        class="btn btn-terminal-outline">
+                                        class="btn btn-terminal-outline" data-magnetic>
                                         <i class="fas fa-file-pdf me-2"></i>View Resume
                                     </a>
                                 </div>
@@ -127,7 +133,7 @@
 
                             <div class="terminal-line cursor-line">
                                 <span class="prompt">~/anang $</span>
-                                <span class="cursor">▌</span>
+                                <span class="typing-text" id="typing-animation"></span>
                             </div>
                         </div>
                     </div>
@@ -218,6 +224,12 @@
                 </div>
             </div>
         </section> -->
+
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <span class="divider-number">01</span>
+        </div>
 
         <section id="experience" class="experience-section">
             <div class="container">
@@ -416,6 +428,12 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <span class="divider-number">02</span>
+        </div>
+
         <!-- Leadership & Volunteering Split View -->
         <section id="leadership" class="leadership-section">
             <div class="container">
@@ -582,6 +600,12 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <span class="divider-number">03</span>
+        </div>
+
         <section id="work" class="feature-section">
             <div class="container">
                 <div class="section-header mb-5 text-center">
@@ -613,10 +637,10 @@
                         </p>
 
                         <div class="tech-stack">
-                            <span class="tech-pill">Flask</span>
-                            <span class="tech-pill">Authlib</span>
-                            <span class="tech-pill">Docker</span>
-                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill" data-category="backend">Flask</span>
+                            <span class="tech-pill" data-category="backend">Authlib</span>
+                            <span class="tech-pill" data-category="infra">Docker</span>
+                            <span class="tech-pill" data-category="backend">MySQL</span>
                         </div>
 
                         <div class="confidentiality-note"
@@ -625,7 +649,7 @@
                             compliance.
                         </div>
 
-                        <a href="project-oidc.html" class="btn btn-primary">View System Architecture</a>
+                        <a href="project-oidc.html" class="btn btn-primary" data-magnetic>View System Architecture</a>
                     </div>
                 </div>
 
@@ -653,13 +677,13 @@
                         </p>
 
                         <div class="tech-stack" data-aos="fade-up" data-aos-delay="300">
-                            <span class="tech-pill">Python</span>
-                            <span class="tech-pill">TensorFlow</span>
-                            <span class="tech-pill">Computer Vision</span>
-                            <span class="tech-pill">CNN-LSTM Architecture</span>
+                            <span class="tech-pill" data-category="ai">Python</span>
+                            <span class="tech-pill" data-category="ai">TensorFlow</span>
+                            <span class="tech-pill" data-category="ai">Computer Vision</span>
+                            <span class="tech-pill" data-category="ai">CNN-LSTM Architecture</span>
                         </div>
 
-                        <a href="project-signlingo.html" class="btn btn-primary" data-aos="fade-up"
+                        <a href="project-signlingo.html" class="btn btn-primary" data-magnetic data-aos="fade-up"
                             data-aos-delay="400">Read more</a>
                     </div>
                 </div>
@@ -699,7 +723,7 @@
                 </div> -->
 
                 <div class="text-center mt-5" data-aos="zoom-in">
-                    <a href="projects.html" class="btn btn-ghost-glow btn-lg" style="padding: 1rem 3rem;">
+                    <a href="projects.html" class="btn btn-ghost-glow btn-lg" data-magnetic style="padding: 1rem 3rem;">
                         View All Projects <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -707,7 +731,11 @@
             </div>
         </section>
 
-
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <span class="divider-number">04</span>
+        </div>
 
         <!-- Academic & Credentials Section (Bento Box) -->
         <section id="credentials" class="credentials-section py-5">
@@ -789,7 +817,7 @@
                     <div class="bento-column-certs" data-aos="fade-left" data-aos-delay="200">
                         <div class="certifications-masonry">
                             <!-- Alibaba Cloud -->
-                            <div class="cert-bento-card">
+                            <div class="cert-bento-card cert-tier-1" data-brand-color="#FF6A00">
                                 <div class="cert-header">
                                     <div class="cert-icon alibaba"><img src="static/alibaba_logo.jpg"
                                             alt="Alibaba Cloud Logo"></div>
@@ -810,7 +838,7 @@
                             </div>
 
                             <!-- NVIDIA Conversational AI -->
-                            <div class="cert-bento-card">
+                            <div class="cert-bento-card cert-tier-1" data-brand-color="#76B900">
                                 <div class="cert-header">
                                     <div class="cert-icon nvidia"><img src="static/nvidia_logo.png" alt="NVIDIA Logo">
                                     </div>
@@ -833,7 +861,7 @@
                             </div>
 
                             <!-- Samsung Innovation Campus -->
-                            <div class="cert-bento-card">
+                            <div class="cert-bento-card cert-tier-1" data-brand-color="#1428a0">
                                 <div class="cert-header">
                                     <div class="cert-icon" style="background: #1428a0;">
                                         <img src="static/samsung_logo.png" alt="Samsung Logo">
@@ -915,6 +943,12 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <span class="divider-number">05</span>
+        </div>
+
         <section id="contact" class="py-5 contact-section editorial-contact">
             <div class="container py-5">
                 <div class="row align-items-center">
@@ -986,9 +1020,52 @@
     </div>
 
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>© 2025. <a href="#">Anang Ayman</a>. All rights reserved.</p>
+            <!-- Back to Top -->
+            <div class="footer-top">
+                <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Column 1: Brand + Tagline -->
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Anang Ayman</h3>
+                    <p class="footer-tagline">Software Engineer crafting backend systems & AI solutions.</p>
+                    <p class="footer-location">
+                        <i class="fas fa-map-marker-alt me-2"></i>Built with ☕ and curiosity in Suwon, KR
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Navigate</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#work">Projects</a></li>
+                        <li><a href="#credentials">Credentials</a></li>
+                        <li><a href="journey.html">My Journey</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Socials -->
+                <div class="footer-socials">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" target="_blank"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+                        <li><a href="https://github.com/AnangAyman" target="_blank"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                        <li><a href="https://www.instagram.com/anang.ayman/" target="_blank"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+                        <li><a href="mailto:anang.ayman@gmail.com"><i class="fas fa-envelope me-2"></i>Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 <a href="#home">Anang Ayman</a>. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

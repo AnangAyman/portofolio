@@ -8,32 +8,32 @@
     align-items: center;
 }
 
-/* Aurora blobs */
+/* Aurora blobs — enhanced for drama */
 .hero::before,
 .hero::after {
     content: '';
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     z-index: -1;
     animation: auroraFloat 12s infinite alternate;
 }
 
 .hero::before {
     background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    width: 40vw;
-    height: 40vw;
-    top: -15%;
-    left: -10%;
-    opacity: 0.1;
+    width: 50vw;
+    height: 50vw;
+    top: -20%;
+    left: -15%;
+    opacity: 0.12;
 }
 
 .hero::after {
-    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
-    width: 35vw;
-    height: 35vw;
-    bottom: -15%;
-    right: -5%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.6) 0%, transparent 70%);
+    width: 40vw;
+    height: 40vw;
+    bottom: -20%;
+    right: -10%;
     opacity: 0.08;
     animation-delay: -6s;
 }
@@ -42,9 +42,8 @@
     0% {
         transform: translate(0, 0) scale(1);
     }
-
     100% {
-        transform: translate(30px, 50px) scale(1.1);
+        transform: translate(40px, 60px) scale(1.15);
     }
 }
 
@@ -53,11 +52,42 @@
    ======================================== */
 .terminal-hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1100px;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
     align-items: center;
+    position: relative;
+}
+
+/* ========================================
+   MOBILE PROFILE PHOTO (visible < 992px)
+   ======================================== */
+.hero-mobile-profile {
+    display: none;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-mobile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+        var(--gradient-primary) border-box;
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
+    animation: floatAvatar 4s ease-in-out infinite;
+}
+
+.hero-mobile-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 0.75rem;
+    margin-bottom: 0;
 }
 
 /* === Terminal Window === */
@@ -429,14 +459,33 @@
 }
 
 @keyframes blink {
-
     0%,
     100% {
         opacity: 1;
     }
-
     50% {
         opacity: 0;
+    }
+}
+
+/* ========================================
+   TERMINAL TYPING ANIMATION
+   ======================================== */
+.typing-text {
+    color: #c9d1d9;
+    display: inline;
+    border-right: 2px solid var(--primary-color);
+    animation: typingBlink 0.8s step-end infinite;
+    padding-right: 2px;
+    min-width: 1ch;
+}
+
+@keyframes typingBlink {
+    0%, 100% {
+        border-color: var(--primary-color);
+    }
+    50% {
+        border-color: transparent;
     }
 }
 
@@ -451,6 +500,9 @@
     align-items: center;
     justify-content: center;
     perspective: 1000px;
+    /* Overlap the terminal — pull left */
+    margin-left: -3rem;
+    z-index: 5;
 }
 
 /* Background glow */
@@ -662,7 +714,14 @@
         gap: 1.5rem;
     }
 
-    /* Hide main photo styling on mobile */
+    /* Show mobile profile photo */
+    .hero-mobile-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Hide bento grid on mobile */
     .bento-hero-wrapper {
         display: none;
     }
@@ -699,5 +758,10 @@
     .btn-terminal-outline {
         width: 100%;
         text-align: center;
+    }
+
+    .hero-mobile-avatar {
+        width: 80px;
+        height: 80px;
     }
 }

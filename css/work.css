@@ -143,10 +143,39 @@
 
 .tech-pill:hover {
     background: rgba(74, 222, 128, 0.15);
-    color: #a5b4fc;
+    color: var(--primary-color);
     border-color: rgba(74, 222, 128, 0.4);
     box-shadow: 0 0 15px rgba(74, 222, 128, 0.25);
     transform: translateY(-2px);
+}
+
+/* Category-specific pill colors on hover */
+.tech-pill[data-category="ai"]:hover {
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.4);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+}
+
+.tech-pill[data-category="backend"]:hover {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+}
+
+.tech-pill[data-category="infra"]:hover {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+.tech-pill[data-category="frontend"]:hover {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
 }
 
 /* 3. The Blob Background */
