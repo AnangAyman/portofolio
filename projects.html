@@ -23,224 +23,203 @@
         </div>
     </nav>
 
-    <section class="projects-grid-section">
+    <section class="archive-section pt-5">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-5" data-aos="fade-up">
+            <div class="archive-header text-center max-w-2xl mx-auto" data-aos="fade-up">
                 <span class="badge-pill">The Archives</span>
-                <h1 class="display-4 fw-bold">Project Library</h1>
+                <h1 class="display-4 fw-bold mt-3 mb-3">Project Library</h1>
                 <p class="text-secondary lead">A collection of my experiments, research, and applications.</p>
             </div>
 
             <!-- 1. Featured Flagships -->
-            <div class="project-category-header container px-4 mb-4" data-aos="fade-up">
-                <h2><i class="fas fa-star text-warning"></i> Featured Work</h2>
+            <div class="typographic-header" data-aos="fade-up">
+                <span class="header-number">01</span>
+                <span class="header-divider">—</span>
+                Featured Work
             </div>
 
-            <div class="projects-grid mt-4">
-
-                <!-- Featured: SignLingo 1-Column -->
-                <div class="grid-card" data-aos="fade-up"
-                    style="border-color: rgba(74,222,128,0.3); box-shadow: 0 10px 40px -10px rgba(74,222,128,0.15);">
-                    <div class="grid-image">
+            <div class="archive-list" data-aos="fade-up">
+                <!-- SignLingo -->
+                <a href="project-signlingo.html" class="archive-list-item">
+                    <div class="archive-list-image">
                         <img src="static/Signlingo_thumbnail.png" alt="Signlingo">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-success">Browser-Based AI / Computer Vision</div>
-                        <h3 class="grid-title mb-2">SignLingo AI</h3>
-                        <p class="grid-desc">A real-time, browser-based sign language recognition engine utilizing
-                            MediaPipe Holistic and CNN-LSTM Architecture</p>
-                        <div
-                            class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto pt-3 border-top border-secondary border-opacity-25">
-                            <div class="tech-stack mb-0 gap-2">
-                                <span class="tech-pill fw-bold"
-                                    style="background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3);">CNN-LSTM</span>
-                            </div>
-                            <a href="project-signlingo.html"
-                                class="btn btn-sm btn-outline-success px-3 rounded-pill">Explore <i
-                                    class="fas fa-arrow-right ms-2"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Browser-Based AI / Computer Vision</div>
+                        <h3 class="archive-list-title">SignLingo AI <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A real-time, browser-based sign language recognition engine utilizing MediaPipe Holistic and CNN-LSTM Architecture.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">CNN-LSTM</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Featured: OIDC Provider 1-Column -->
-                <div class="grid-card" data-aos="fade-up"
-                    style="border-color: rgba(99,102,241,0.3); box-shadow: 0 10px 40px -10px rgba(99,102,241,0.15);">
-                    <div class="grid-image">
-                        <img src="static/OpenID_Connect.png" alt="OIDC Provider"
-                            onerror="this.src='static/gamified_dashboard.png'">
+                <!-- OIDC Provider -->
+                <a href="project-oidc.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/OpenID_Connect.png" alt="OIDC Provider" onerror="this.src='static/gamified_dashboard.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3" style="color: #818cf8;">Backend Architecture / Security</div>
-                        <h3 class="grid-title mb-2">Custom OIDC Provider</h3>
-                        <p class="grid-desc">A secure, containerized OpenID Connect Identity Provider. Engineered
-                            from scratch using Flask and Authlib.</p>
-                        <div
-                            class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto pt-3 border-top border-secondary border-opacity-25">
-                            <div class="tech-stack mb-0 gap-2">
-                                <span class="tech-pill fw-bold"
-                                    style="background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.3);">Flask
-                                    / Authlib</span>
-                            </div>
-                            <a href="project-oidc.html" class="btn btn-sm btn-outline-primary px-3 rounded-pill"
-                                style="border-color: #818cf8; color: #818cf8;">Explore <i
-                                    class="fas fa-arrow-right ms-2"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Backend Architecture / Security</div>
+                        <h3 class="archive-list-title">Custom OIDC Provider <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A secure, containerized OpenID Connect Identity Provider. Engineered from scratch using Flask and Authlib.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Flask / Authlib</span>
                         </div>
                     </div>
-                </div>
-
+                </a>
             </div>
 
             <!-- 2. Machine Learning & AI -->
-            <div class="project-category-header container px-4 mt-5" data-aos="fade-up">
-                <h2><i class="fas fa-brain text-info"></i> Machine Learning & AI</h2>
+            <div class="typographic-header" data-aos="fade-up">
+                <span class="header-number">02</span>
+                <span class="header-divider">—</span>
+                Machine Learning & AI
             </div>
 
-            <div class="projects-grid mt-4">
-
-                <div class="grid-card wide" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img src="static/F1-predictor-image-main.jpg"
-                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="F1 Undercut">
+            <div class="archive-list" data-aos="fade-up">
+                <!-- F1 Undercut -->
+                <a href="project-f1undercut.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/F1-predictor-image-main.jpg" alt="F1 Undercut" onerror="this.src='static/Signlingo_thumbnail.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-danger">Data Analytics & ML</div>
-                        <h3 class="grid-title">F1 Undercut Predictor</h3>
-                        <p class="grid-desc">A high-performance motorsport tool predicting strategy viability via
-                            Scikit-Learn using FastF1 telemetry data.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Scikit-Learn</span>
-                                <span class="tech-pill">Flask</span>
-                            </div>
-                            <a href="project-f1undercut.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Data Analytics & ML</div>
+                        <h3 class="archive-list-title">F1 Undercut Predictor <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A high-performance motorsport tool predicting strategy viability via Scikit-Learn using FastF1 telemetry data.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Scikit-Learn</span>
+                            <span class="archive-tech-pill">Flask</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="grid-card" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img style="object-position: top;" src="static/cv_improver_thumbnail.png"
-                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="CV Improver">
+                <!-- CV Improver -->
+                <a href="project-cvimprover.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/cv_improver_thumbnail.png" style="object-position: top;" alt="CV Improver" onerror="this.src='static/Signlingo_thumbnail.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-primary">Generative AI Tool</div>
-                        <h3 class="grid-title">AI CV Improver</h3>
-                        <p class="grid-desc">Uses Bloom-560m and DistilBERT to parse resumes and generate strict
-                            ATS-friendly improvements with heuristic scoring.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Bloom-560m</span>
-                                <span class="tech-pill">Flask</span>
-                            </div>
-                            <a href="project-cvimprover.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Generative AI Tool</div>
+                        <h3 class="archive-list-title">AI CV Improver <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">Uses Bloom-560m and DistilBERT to parse resumes and generate strict ATS-friendly improvements with heuristic scoring.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Bloom-560m</span>
+                            <span class="archive-tech-pill">Flask</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="grid-card" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img src="static/discord-image-main.jpeg" onerror="this.src='static/gamified_dashboard.png'"
-                            alt="Discord Bot">
+                <!-- Discord Bot -->
+                <a href="project-discordmod.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/discord-image-main.jpeg" alt="Discord Bot" onerror="this.src='static/gamified_dashboard.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-secondary" style="color: #5865F2 !important;">Automation/NLP
-                        </div>
-                        <h3 class="grid-title">Intelligent Discord Auto-Moderator</h3>
-                        <p class="grid-desc">A highly concurrent Python bot leveraging DistilBERT to detect toxicity and
-                            spam 24/7 with a 0.94 recall.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">DistilBERT</span>
-                                <span class="tech-pill">Discord.py</span>
-                            </div>
-                            <a href="project-discordmod.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Automation/NLP</div>
+                        <h3 class="archive-list-title">Intelligent Discord Auto-Moderator <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A highly concurrent Python bot leveraging DistilBERT to detect toxicity and spam 24/7 with a 0.94 recall.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">DistilBERT</span>
+                            <span class="archive-tech-pill">Discord.py</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="grid-card wide" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img style="object-position: top;" src="static/research_thumbnail.png"
-                            onerror="this.src='static/Signlingo_thumbnail.png'" alt="Research">
+                <!-- Research -->
+                <a href="project-research.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/research_thumbnail.png" style="object-position: top;" alt="Research" onerror="this.src='static/Signlingo_thumbnail.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3" style="color: #c4b5fd;">Academic Research</div>
-                        <h3 class="grid-title">Hybrid CNN-LSTM Signature</h3>
-                        <p class="grid-desc">A formal academic approach to designing a lightweight neural network
-                            architecture for Sign Language Recognition on extreme low-resource edge devices constraint
-                            by thermal throttling.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Paper</span>
-                                <span class="tech-pill">Deep Learning</span>
-                            </div>
-                            <a href="project-research.html" class="grid-link text-decoration-none text-light">Read <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Academic Research</div>
+                        <h3 class="archive-list-title">Hybrid CNN-LSTM Signature <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A formal academic approach to designing a lightweight neural network architecture for Sign Language Recognition on extreme low-resource edge devices constraint by thermal throttling.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Paper</span>
+                            <span class="archive-tech-pill">Deep Learning</span>
                         </div>
                     </div>
-                </div>
-
+                </a>
             </div>
 
             <!-- 3. Software Engineering -->
-            <div class="project-category-header container px-4 mt-5" data-aos="fade-up">
-                <h2><i class="fas fa-server text-success"></i> Software Engineering</h2>
+            <div class="typographic-header" data-aos="fade-up">
+                <span class="header-number">03</span>
+                <span class="header-divider">—</span>
+                Software Engineering
             </div>
 
-            <div class="projects-grid mt-4">
-
-                <div class="grid-card" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img src="static/flux_budget_app.jpg" onerror="this.src='static/gamified_dashboard.jpeg'"
-                            alt="Flux">
+            <div class="archive-list" data-aos="fade-up">
+                <!-- Flux Budget -->
+                <a href="project-fluxbudget.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/flux_budget_app.jpg" alt="Flux" onerror="this.src='static/gamified_dashboard.jpeg'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-success">Full-Stack FinTech</div>
-                        <h3 class="grid-title">Flux Personal Finance Dashboard</h3>
-                        <p class="grid-desc">A modern, responsive budgeting application offering real-time expense
-                            tracking, automated billing logic, and robust Laravel backend architecture.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Laravel</span>
-                                <span class="tech-pill">MySQL</span>
-                            </div>
-                            <a href="project-fluxbudget.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Full-Stack FinTech</div>
+                        <h3 class="archive-list-title">Flux Personal Finance Dashboard <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">A modern, responsive budgeting application offering real-time expense tracking, automated billing logic, and robust Laravel backend architecture.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Laravel</span>
+                            <span class="archive-tech-pill">MySQL</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="grid-card wide" data-aos="fade-up">
-                    <div class="grid-image">
-                        <img src="static/Nusacrop_thumbnail.jpeg" alt="NusaCrop"
-                            onerror="this.src='static/Signlingo_thumbnail.png'">
+                <!-- NusaCrop -->
+                <a href="project-nusacrop.html" class="archive-list-item">
+                    <div class="archive-list-image">
+                        <img src="static/Nusacrop_thumbnail.jpeg" alt="NusaCrop" onerror="this.src='static/Signlingo_thumbnail.png'">
                     </div>
-                    <div class="grid-content">
-                        <div class="grid-category mt-3 text-success">Agritech / UI Prototype</div>
-                        <h3 class="grid-title">NusaCrop</h3>
-                        <p class="grid-desc">An interactive UI prototype and comprehensively planned IoT architecture
-                            for urban hydroponic farmers seeking commercial supply chain integration.</p>
-                        <div class="grid-footer d-flex justify-content-between align-items-center w-100 mt-auto">
-                            <div class="tech-stack mb-0">
-                                <span class="tech-pill">Figma Prototyping</span>
-                                <span class="tech-pill">System Arch</span>
-                            </div>
-                            <a href="project-nusacrop.html" class="grid-link text-decoration-none text-light">View <i
-                                    class="fas fa-arrow-right ms-2 text-primary"></i></a>
+                    <div class="archive-list-content">
+                        <div class="archive-list-category">Agritech / UI Prototype</div>
+                        <h3 class="archive-list-title">NusaCrop <i class="fas fa-arrow-right archive-link-icon"></i></h3>
+                        <p class="archive-list-desc">An interactive UI prototype and comprehensively planned IoT architecture for urban hydroponic farmers seeking commercial supply chain integration.</p>
+                        <div class="archive-tech-stack">
+                            <span class="archive-tech-pill">Figma Prototyping</span>
+                            <span class="archive-tech-pill">System Arch</span>
                         </div>
                     </div>
-                </div>
-
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Modern Hero Footer -->
+    <footer class="hero-footer">
         <div class="container">
-            <p>© 2025. <a href="index.html">Anang Ayman</a>. All rights reserved.</p>
+            <div class="footer-grid">
+                <!-- Column 1: Brand & Contact -->
+                <div class="footer-col brand-col">
+                    <h2 class="footer-name">Anang Ayman</h2>
+                    <a href="mailto:anang.ayman@gmail.com" class="footer-email">anang.ayman@gmail.com</a>
+                    <p class="footer-copyright">&copy; 2026 Anang Ayman. All rights reserved.</p>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="footer-col nav-col">
+                    <h3 class="footer-heading">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#work">Featured Projects</a></li>
+                        <li><a href="index.html#credentials">Education</a></li>
+                        <li><a href="journey.html">My Journey</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Socials -->
+                <div class="footer-col social-col">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/AnangAyman" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" target="_blank">LinkedIn <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                        <li><a href="https://www.instagram.com/anang.ayman/" target="_blank">Instagram <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                        <li><a href="static/Ayman CV Resume Final.pdf" target="_blank">Résumé <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
