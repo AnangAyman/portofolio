@@ -24,8 +24,8 @@
 /* Profile Picture Frame */
 .hero-image-wrapper {
     flex-shrink: 0;
-    width: 320px;
-    height: 320px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--border-subtle);
