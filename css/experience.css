@@ -66,10 +66,60 @@
     color: var(--accent);
 }
 
-.experience-location {
-    font-size: 0.8rem;
-    color: var(--text-tertiary);
+
+
+/* --- Featured Entry Highlight --- */
+.experience-entry.featured-entry {
+    border-color: rgba(226, 149, 106, 0.2);
+    background: rgba(226, 149, 106, 0.03);
+    position: relative;
+}
+
+.experience-entry.featured-entry:hover {
+    background: rgba(226, 149, 106, 0.06);
+    border-color: rgba(226, 149, 106, 0.4);
+}
+
+/* --- Professional Label --- */
+.professional-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: var(--accent-muted);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
     margin-bottom: 0.75rem;
+    border: 1px solid rgba(226, 149, 106, 0.2);
+}
+
+/* --- Monospace Metadata Style --- */
+.experience-location-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-weight: 500;
+}
+
+.experience-location-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.location-sep {
+    opacity: 0.2;
+    color: var(--text-tertiary);
+    font-weight: 400;
 }
 
 .experience-header {
