@@ -1,767 +1,179 @@
+/* ========================================
+   HERO — Clean, Full-Width Typography
+   ======================================== */
 .hero {
     position: relative;
-    padding: 6rem 0;
-    overflow: hidden;
-    z-index: 1;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 8rem 0 6rem;
 }
 
-/* Aurora blobs — enhanced for drama */
-.hero::before,
-.hero::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: -1;
-    animation: auroraFloat 12s infinite alternate;
-}
-
-.hero::before {
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    width: 50vw;
-    height: 50vw;
-    top: -20%;
-    left: -15%;
-    opacity: 0.12;
-}
-
-.hero::after {
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.6) 0%, transparent 70%);
-    width: 40vw;
-    height: 40vw;
-    bottom: -20%;
-    right: -10%;
-    opacity: 0.08;
-    animation-delay: -6s;
-}
-
-@keyframes auroraFloat {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    100% {
-        transform: translate(40px, 60px) scale(1.15);
-    }
-}
-
-/* ========================================
-   TERMINAL HERO LAYOUT
-   ======================================== */
-.terminal-hero {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-    position: relative;
-}
-
-/* ========================================
-   MOBILE PROFILE PHOTO (visible < 992px)
-   ======================================== */
-.hero-mobile-profile {
-    display: none;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.hero-mobile-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid transparent;
-    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
-        var(--gradient-primary) border-box;
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
-    animation: floatAvatar 4s ease-in-out infinite;
-}
-
-.hero-mobile-name {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-top: 0.75rem;
-    margin-bottom: 0;
-}
-
-/* === Terminal Window === */
-.terminal-window {
-    background: #0d1117;
-    /* GitHub dark bg */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
-    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
-}
-
-.terminal-header {
-    background: #161b22;
-    padding: 12px 16px;
+.hero-container {
     display: flex;
     align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    justify-content: space-between;
+    gap: 4rem;
 }
 
-.terminal-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.terminal-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.terminal-btn.close {
-    background: #ff5f57;
-}
-
-.terminal-btn.minimize {
-    background: #ffbd2e;
-}
-
-.terminal-btn.maximize {
-    background: #28c840;
-}
-
-.terminal-title {
-    font-size: 0.75rem;
-    color: #8b949e;
+.hero-content {
     flex: 1;
-    text-align: center;
+    max-width: 650px;
 }
 
-/* === Avatar Output (Photo inside terminal) === */
-.avatar-output {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.terminal-avatar-frame {
+/* Profile Picture Frame */
+.hero-image-wrapper {
     flex-shrink: 0;
-    width: 140px;
-    height: 140px;
-    border-radius: 12px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
     overflow: hidden;
-    position: relative;
-    /* Animated glow border */
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-    background-size: 200% 200%;
-    animation: glowShift 3s ease-in-out infinite, floatAvatar 4s ease-in-out infinite;
-    padding: 3px;
-    box-shadow:
-        0 0 20px rgba(74, 222, 128, 0.3),
-        0 0 40px rgba(74, 222, 128, 0.1);
+    border: 2px solid var(--border-subtle);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3), 0 0 80px var(--accent-muted);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
-@keyframes glowShift {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
+.hero-image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 100px var(--accent-muted);
+    border-color: var(--border-hover);
 }
 
-@keyframes floatAvatar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-.terminal-avatar {
+.hero-profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.4s ease, filter 0.3s ease;
-    position: relative;
+    object-position: center;
 }
 
-/* Scanline overlay effect */
-.terminal-avatar-frame::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.1) 2px,
-            rgba(0, 0, 0, 0.1) 4px);
-    pointer-events: none;
-    z-index: 2;
-    border-radius: 10px;
-    opacity: 0.5;
-}
-
-/* Glowing scan beam */
-.terminal-avatar-frame::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    background: linear-gradient(to bottom,
-            rgba(74, 222, 128, 0.15),
-            transparent);
-    animation: scanBeam 2s ease-in-out infinite;
-    z-index: 3;
-    pointer-events: none;
-}
-
-@keyframes scanBeam {
-
-    0%,
-    100% {
-        top: -30%;
-        opacity: 0;
-    }
-
-    50% {
-        top: 100%;
-        opacity: 1;
-    }
-}
-
-/* Hover: zoom + glow burst */
-.terminal-avatar-frame:hover {
-    animation-play-state: paused;
-    box-shadow:
-        0 0 30px rgba(74, 222, 128, 0.5),
-        0 0 60px rgba(74, 222, 128, 0.3),
-        0 0 90px rgba(74, 222, 128, 0.1);
-}
-
-.terminal-avatar-frame:hover .terminal-avatar {
-    transform: scale(1.1);
-    filter: brightness(1.1) contrast(1.05);
-}
-
-.avatar-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.meta-name {
-    font-size: 1.75rem;
-    font-weight: 700;
-    font-family: 'Outfit', sans-serif;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.meta-role {
-    font-size: 1rem;
-    color: #8b949e;
-}
-
-.meta-stats {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.meta-stats .stat {
-    font-size: 0.85rem;
-    color: #8b949e;
-}
-
-.meta-stats .stat strong {
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.terminal-body {
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    line-height: 1.7;
-}
-
-/* Terminal Lines */
-.terminal-line {
-    margin-bottom: 0.5rem;
-}
-
-.prompt {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-right: 0.75rem;
-}
-
-.command {
-    color: #c9d1d9;
-}
-
-/* Terminal Outputs */
-.terminal-output {
+/* Subtle ~$ whoami nod */
+.hero-prompt {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--accent);
     margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.05);
+    letter-spacing: 0.02em;
+    opacity: 0.8;
 }
 
-.name-output {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+.hero-name {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
 }
 
-.output-text {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #ffffff;
-    font-family: 'Outfit', sans-serif;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.output-role {
-    font-size: 1rem;
-    color: #8b949e;
-}
-
-.footprint-output {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
-}
-
-.footprint-line {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-}
-
-.footprint-icon {
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
-.footprint-text {
-    color: #c9d1d9;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-.code-output pre {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1rem;
-    border-radius: 8px;
-    color: #7ee787;
-    /* Green for JSON */
-    font-size: 0.85rem;
-    overflow-x: auto;
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.action-output {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.status-badge {
-    color: var(--primary-color);
+.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
     font-weight: 600;
-    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
 }
 
-.terminal-actions {
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+.hero-description a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+}
+
+.hero-description a:hover {
+    color: var(--accent);
+}
+
+/* Social links */
+.hero-socials {
     display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero-socials a {
+    color: var(--text-tertiary);
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.hero-socials a:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* CTA row */
+.hero-actions {
+    display: flex;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.btn-terminal {
-    background: var(--primary-color);
-    color: #0d1117;
-    font-weight: 700;
-    padding: 0.65rem 1.25rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.btn-terminal:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(74, 222, 128, 0.3);
-}
-
-.btn-terminal-outline {
-    background: transparent;
-    color: #c9d1d9;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.65rem 1.25rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* Download Icon Animation */
-.btn-terminal-outline i {
-    transition: transform 0.3s ease;
-}
-
-.btn-terminal-outline:hover i {
-    transform: translateY(2px);
-}
-
-.btn-terminal-outline:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
-}
-
-/* Blinking Cursor */
-.cursor-line {
-    margin-top: 1rem;
-}
-
-.cursor {
-    color: var(--primary-color);
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    0%,
-    100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
-
-/* ========================================
-   TERMINAL TYPING ANIMATION
-   ======================================== */
-.typing-text {
-    color: #c9d1d9;
-    display: inline;
-    border-right: 2px solid var(--primary-color);
-    animation: typingBlink 0.8s step-end infinite;
-    padding-right: 2px;
-    min-width: 1ch;
-}
-
-@keyframes typingBlink {
-    0%, 100% {
-        border-color: var(--primary-color);
-    }
-    50% {
-        border-color: transparent;
-    }
-}
-
-/* ========================================
-   FLOATING GLASS BENTO (HERO RIGHT SIDE)
-   ======================================== */
-.bento-hero-wrapper {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1000px;
-    /* Overlap the terminal — pull left */
-    margin-left: -3rem;
-    z-index: 5;
-}
-
-/* Background glow */
-.bento-hero-wrapper::before {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(56, 189, 248, 0.3));
-    filter: blur(60px);
-    border-radius: 50%;
-    z-index: 0;
-    animation: morphGlow 8s ease-in-out infinite alternate;
-}
-
-.bento-glass-card {
-    background: rgba(20, 25, 30, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
-}
-
-.bento-glass-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(74, 222, 128, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.bento-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.bento-glass-card:hover .bento-image {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-/* Positioning the items */
-.bento-item-main {
-    position: absolute;
-    width: 280px;
-    height: 340px;
-    z-index: 3;
-    animation: float1 6s ease-in-out infinite;
-}
-
-.bento-item-tl {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    top: 20px;
-    left: -20px;
-    z-index: 2;
-    animation: float2 7s ease-in-out infinite alternate-reverse;
-}
-
-.bento-item-br {
-    position: absolute;
-    width: 220px;
-    bottom: 20px;
-    right: -20px;
-    z-index: 4;
-    animation: float3 8s ease-in-out infinite;
-}
-
-/* Animations for floating */
-@keyframes float1 {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(-2deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(0deg);
-    }
-}
-
-@keyframes float2 {
-    0% {
-        transform: translateY(0) rotate(3deg);
-    }
-
-    100% {
-        transform: translateY(-15px) rotate(1deg);
-    }
-}
-
-@keyframes float3 {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(-3deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(-1deg);
-    }
-}
-
-/* Main Profile Pic Tuning */
-.main-card {
-    border-radius: 32px;
-}
-
-/* Mini Widget Details */
-.widget-card {
-    padding: 1.25rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    background: rgba(13, 17, 23, 0.85);
-}
-
-.mini-widget {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.widget-header {
-    display: flex;
-    gap: 0.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.widget-header .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.widget-header .dot.red {
-    background: #ff5f57;
-}
-
-.widget-header .dot.yellow {
-    background: #ffbd2e;
-}
-
-.widget-header .dot.green {
-    background: #28c840;
-}
-
-.status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #7ee787;
-    font-weight: 600;
-}
-
-.pulse {
-    width: 8px;
-    height: 8px;
-    background: #7ee787;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(126, 231, 135, 0.7);
-    animation: pulseGlow 2s infinite;
-}
-
-@keyframes pulseGlow {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(126, 231, 135, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(126, 231, 135, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(126, 231, 135, 0);
-    }
-}
-
-.metric {
-    display: flex;
-    justify-content: space-between;
-    color: #c9d1d9;
-    padding-top: 0.5rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
-}
-
-.metric-value {
-    color: var(--primary-color);
-    font-weight: 600;
 }
 
 /* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 991px) {
-    .hero {
-        padding: 5rem 0 3rem;
-        min-height: auto;
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
     }
 
-    .terminal-hero {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    /* Show mobile profile photo */
-    .hero-mobile-profile {
+    .hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Hide bento grid on mobile */
-    .bento-hero-wrapper {
-        display: none;
-    }
-
-    .terminal-body {
-        padding: 1rem;
-        font-size: 0.8rem;
-    }
-
-    .output-text {
-        font-size: 1.5rem;
-    }
-
-    .code-output pre {
-        font-size: 0.75rem;
-        padding: 0.75rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .ascii-frame {
-        max-width: 150px;
-    }
-
-    .output-text {
-        font-size: 1.25rem;
-    }
-
-    .terminal-actions {
-        flex-direction: column;
-    }
-
-    .btn-terminal,
-    .btn-terminal-outline {
-        width: 100%;
+    .hero-description {
         text-align: center;
     }
 
-    .hero-mobile-avatar {
-        width: 80px;
-        height: 80px;
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 7rem 0 4rem;
+        min-height: auto;
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image-wrapper {
+        width: 200px;
+        height: 200px;
     }
 }
