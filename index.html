@@ -11,9 +11,10 @@
 
         gtag('config', 'G-T8M3LLL7K6');
     </script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="static/portfolio-image-logo.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="icon" href="static/favicon_final.png?v=2">
     <title>Anang Ayman - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100" tabindex="0">
+<body>
 
     <div class="main-content">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -54,116 +55,50 @@
                                             class="fas fa-archive me-2 text-secondary"></i> Project Archive</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#credentials">Credentials</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#credentials">Education</a></li>
 
-                        <li class="nav-item nav-item-separator">
+
+                        <!-- <li class="nav-item nav-item-separator">
                             <a class="nav-link nav-link-artsy" href="journey.html">
                                 <i class="fas fa-compass"></i> My Journey
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </nav>
 
         <section id="home" class="hero">
-            <div class="container">
-                <div class="terminal-hero">
-                    <!-- Terminal Window -->
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-btn close"></span>
-                                <span class="terminal-btn minimize"></span>
-                                <span class="terminal-btn maximize"></span>
-                            </div>
-                            <span class="terminal-title">anang@portfolio ~ zsh</span>
-                        </div>
-                        <div class="terminal-body">
-                            <div class="terminal-line">
-                                <span class="prompt">~/anang $</span>
-                                <span class="command">whoami</span>
-                            </div>
-                            <div class="terminal-output name-output">
-                                <span class="output-text">Anang Ayman</span>
-                                <span class="output-role">Backend Engineer & AI/ML Enthusiast</span>
-                            </div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <p class="hero-prompt">~$ whoami</p>
+                    <h1 class="hero-name">Anang Ayman</h1>
+                    <h2 class="hero-subtitle">I build backend systems & AI solutions.</h2>
+                    <p class="hero-description">
+                        I'm a Software Engineer specializing in backend infrastructure and machine learning,
+                        currently studying Computer Science at
+                        <a href="https://www.skku.edu/eng/" target="_blank">Sungkyunkwan University</a> in Seoul.
+                        Previously, I engineered OIDC / OAuth 2.0 infrastructure at
+                        <a href="#experience">Digital Agri Solutions</a>.
+                    </p>
 
-                            <div class="terminal-line">
-                                <span class="prompt">~/anang $</span>
-                                <span class="command">cat footprint.txt</span>
-                            </div>
-                            <div class="terminal-output footprint-output">
-                                <div class="footprint-line">
-                                    <span class="footprint-icon">🌏</span>
-                                    <span class="footprint-text">Global Experience: Indonesia 🇮🇩 | Australia 🇦🇺 |
-                                        Hong Kong 🇭🇰 | South Korea 🇰🇷</span>
-                                </div>
-                                <div class="footprint-line">
-                                    <span class="footprint-icon">📍</span>
-                                    <span class="footprint-text">Currently stationed in: Suwon, South Korea
-                                        (SKKU)</span>
-                                </div>
-                            </div>
-
-                            <div class="terminal-line">
-                                <span class="prompt">~/anang $</span>
-                                <span class="command">cat skills.json</span>
-                            </div>
-                            <div class="terminal-output code-output">
-                                <pre>{
-"core": ["Python", "TensorFlow", "Flask", "Laravel"],
-"AI_ML": ["Computer Vision", "CNN-LSTM", "MediaPipe", "PyTorch"],
-"Infrastructure": ["OIDC/OAuth2", "Docker", "Zero-Downtime CI/CD"]
-}</pre>
-                            </div>
-
-                            <div class="terminal-line">
-                                <span class="prompt">~/anang $</span>
-                                <span class="command">./start_collaboration.sh</span>
-                            </div>
-                            <div class="terminal-output action-output">
-                                <span class="status-badge">✓ Available for work</span>
-                                <div class="terminal-actions">
-                                    <a href="#work" class="btn btn-terminal">View Projects</a>
-                                    <a href="static/Ayman_Ramadhana_Resume_Data_Science.pdf" target="_blank"
-                                        class="btn btn-terminal-outline">
-                                        <i class="fas fa-file-pdf me-2"></i>View Resume
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="terminal-line cursor-line">
-                                <span class="prompt">~/anang $</span>
-                                <span class="cursor">▌</span>
-                            </div>
-                        </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/AnangAyman" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/anang.ayman/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:anang.ayman@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
 
-                    <!-- Photo - Floating Glass Bento -->
-                    <div class="bento-hero-wrapper">
-                        <!-- Top Left: Action Shot -->
-                        <div class="bento-item-tl">
-                            <div class="bento-glass-card">
-                                <img src="static/Graduation.jpeg" alt="Speaking Event" class="bento-image">
-                            </div>
-                        </div>
-
-                        <!-- Main Center: Profile Pic -->
-                        <div class="bento-item-main">
-                            <div class="bento-glass-card main-card">
-                                <img src="static/profile_pic.jpeg" alt="Anang Ayman" class="bento-image main-image">
-                            </div>
-                        </div>
-
-                        <!-- Bottom Right: Code snippet / Mini Widget -->
-                        <div class="bento-item-br">
-                            <div class="bento-glass-card">
-                                <img src="static/talkshow_himti_light.jpg" alt="Speaking Event" class="bento-image">
-                            </div>
-                        </div>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn btn-primary">View Projects</a>
+                        <a href="static/resume final.pdf" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-file-pdf me-2"></i>Resume
+                        </a>
                     </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+                    <img src="static/profile_picture_v2.jpeg" alt="Anang Ayman" class="hero-profile-pic">
                 </div>
             </div>
         </section>
@@ -228,203 +163,73 @@
             </div>
         </section> -->
 
+        <!-- Section Divider -->
         <section id="experience" class="experience-section">
             <div class="container">
                 <div class="section-header mb-5 text-start">
-                    <h2 class="section-title" data-aos="fade-down">Professional Experience</h2>
-                    <p class="text-secondary" data-aos="fade-up" data-aos-delay="100">
-                        <span class="git-prompt">~/career $</span> <span class="git-command">git log --oneline</span>
-                    </p>
+                    <h2 class="section-title" data-aos="fade-up">Experience</h2>
                 </div>
 
-                <div class="git-log-container">
-                    <!-- Commit 1: Backend Intern - FEATURED -->
-                    <div class="git-commit featured-commit" data-aos="fade-up" data-aos-delay="0">
-                        <div class="featured-banner">
-                            <span class="featured-icon">📌</span>
-                            <span class="featured-text">FEATURED PROFESSIONAL EXPERIENCE</span>
-                        </div>
-                        <div class="commit-header">
-                            <span class="commit-hash">a3f8c21</span>
-                            <span class="commit-branch">(HEAD -> career)</span>
-                            <span class="commit-tag completed">✅ merged</span>
-                        </div>
-                        <div class="commit-meta">
-                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
-                            <span class="commit-date">Date: Oct 2024 – Nov 2025</span>
-                        </div>
-                        <div class="commit-message">
-                            <p class="commit-title">Back-end Engineer Intern @ Digital Agri Solutions</p>
-                            <p class="commit-location">📍 Melbourne, Australia (Remote)</p>
-
-                            <!-- Impact Stats -->
-                            <div class="impact-stats">
-                                <div class="impact-stat">
-                                    <span class="impact-value">1000+</span>
-                                    <span class="impact-label">LEGACY DATA MIGRATED</span>
-                                </div>
-                                <div class="impact-stat">
-                                    <span class="impact-value">OAuth2</span>
-                                    <span class="impact-label">PKCE ENFORCED</span>
-                                </div>
-                                <div class="impact-stat">
-                                    <span class="impact-value">🇦🇺 ↔ 🇮🇩</span>
-                                    <span class="impact-label">CROSS-BORDER REMOTE</span>
-                                </div>
-                            </div>
-
-                            <div class="commit-body">
-                                <p>
-                                    Engineered enterprise-grade OAuth 2.0 infrastructure from the ground up.
-                                    Transitioned legacy authentication systems to modern microservices by deploying
-                                    <strong>"Zero-Downtime"</strong> password migrations and advanced
-                                    <strong>PKCE</strong> cryptographic protocols.
+                <div class="experience-list">
+                    <div class="experience-entry" data-aos="fade-up">
+                        <span class="experience-date">Oct 2024 — Sept 2025</span>
+                        <div class="experience-body">
+                            <!-- Visible Header -->
+                            <div class="experience-header">
+                                <p class="experience-role">
+                                    Backend Engineer Intern · <span class="experience-company">Digital Agri Solutions Pty Ltd.</span>
                                 </p>
-                                <ul class="commit-changes">
-                                    <li><span class="diff-add">+</span> Configured <strong>Multi-Grant OIDC
-                                            Server</strong>
-                                        (PKCE) with
-                                        advanced <strong>Token Lifecycle</strong> & revocation endpoints</li>
-                                    <li><span class="diff-add">+</span> Built <strong>Auto-Upgrade Flow</strong> that
-                                        intercepts
-                                        legacy logins to modernize hashes on-the-fly</li>
-                                    <li><span class="diff-add">+</span> Developed batch ETL scripts (SQLAlchemy) to
-                                        transform
-                                        100% of records with <strong>rollback safety</strong></li>
-                                    <li><span class="diff-add">+</span> Secured API routes with <strong>Scope-Based
-                                            Access Control</strong> (<code>@require_oauth</code>)</li>
-                                </ul>
-                            </div>
-                            <div class="commit-files">
-                                <span class="file-badge">Python 3.11</span>
-                                <span class="file-badge">Flask</span>
-                                <span class="file-badge">OIDC</span>
-                                <span class="file-badge">Docker</span>
-                                <span class="file-badge">MySQL</span>
-                                <span class="file-badge">Zero-Downtime</span>
+                                <p class="experience-location">Melbourne, Australia | Remote</p>
+                                <p class="experience-summary">
+                                    Engineered and deployed a containerized OIDC Identity Provider to Google Cloud Platform (GCP) using Flask and Docker, transitioning a legacy system to modern OAuth 2.0 standards within an Agile Scrum team.
+                                </p>
+                                <button class="btn-expand" aria-expanded="false">
+                                    <span class="expand-text">View Impact</span>
+                                    <i class="fas fa-chevron-down ms-2"></i>
+                                </button>
                             </div>
 
-                            <!-- PR Review / CEO Quote Section -->
-                            <div class="pr-review-section">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <i class="fas fa-user-tie"></i>
+                            <!-- Expandable Details -->
+                            <div class="experience-details" aria-hidden="true">
+                                <div class="experience-details-inner">
+                                    <ul class="experience-bullets">
+                                        <li>Engineered and deployed a containerized OIDC Identity Provider to Google Cloud Platform (GCP) using Flask and Docker, transitioning a legacy system to modern OAuth 2.0 standards within an Agile Scrum team.</li>
+                                        <li>Configured "zero-downtime" dynamic login routes that automatically migrated 1,000+ legacy SHA256 passwords to Werkzeug hashes, eliminating manual resets during large-scale data migrations.</li>
+                                        <li>Enforced defense-in-depth security across distributed systems by implementing strict scope-based API access controls, automated brute-force lockouts, and PKCE token revocation endpoints.</li>
+                                        <li>Established comprehensive quality assurance practices by authoring PyTest unit tests and conducting extensive API debugging with Postman to validate complex authentication flows.</li>
+                                    </ul>
+
+                                    <div class="experience-tech">
+                                        <span>Flask</span>
+                                        <span>Docker</span>
+                                        <span>GCP</span>
+                                        <span>PyTest</span>
+                                        <span>OIDC</span>
                                     </div>
-                                    <span class="review-author">Okhi Oktanio, CEO Digital Agri Solutions</span>
-                                    <span class="review-badge">
-                                        <i class="fas fa-check-circle"></i> Approved
-                                    </span>
-                                </div>
-                                <div class="review-body">
-                                    <div class="review-quote">
-                                        Ayman made a strong technical contribution by designing and implementing an
-                                        OpenID Connect (OIDC) authentication... ensuring secure and reliable integration
-                                        so that users and services could authenticate consistently
+
+                                    <div class="experience-review">
+                                        <p class="experience-review-text">
+                                            "Ayman made a strong technical contribution by designing and implementing an
+                                            OpenID Connect authentication... ensuring secure and reliable integration."
+                                        </p>
+                                        <p class="experience-review-author">— Okhi Oktanio, CEO Digital Agri Solutions</p>
+                                        <a href="static/recommendation_letter.pdf" target="_blank" class="experience-review-link">
+                                            <i class="fas fa-arrow-up-right-from-square"></i> View Recommendation Letter
+                                        </a>
                                     </div>
-                                    <a href="static/recommendation_letter.pdf" class="btn-review-action"
-                                        target="_blank">
-                                        <i class="fas fa-file-pdf"></i> View Recommendation Letter
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Commit 2: Manager of Academic Events -->
-                    <!-- <div class="git-commit" data-aos="fade-up" data-aos-delay="200">
-                        <div class="commit-header">
-                            <span class="commit-hash">b7e2d94</span>
-                            <span class="commit-branch">(origin/leadership)</span>
-                            <span class="commit-tag current">in-progress</span>
-                        </div>
-                        <div class="commit-meta">
-                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
-                            <span class="commit-date">Date: Mar 2025 – Dec 2025</span>
-                        </div>
-                        <div class="commit-message">
-                            <p class="commit-title">Manager of Academic Events @ HIMTI Binus</p>
-                            <p class="commit-location">📍 Jakarta, Indonesia</p>
-                            <div class="commit-body">
-                                <p>Spearheaded cross-campus operations and strategic corporate partnerships for Greater
-                                    Jakarta's premier academic tech initiatives.
-                                    Directed a massive, distributed <strong>60+ person</strong> cross-functional team
-                                    across
-                                    <strong>3 university campuses</strong> to bridge the gap between student talent and
-                                    Tier-1 enterprise sectors.
-                                </p>
-                                <ul class="commit-changes">
-                                    <li><span class="diff-add">+</span> <strong>Executive Leadership
-                                        </strong>: Appointed Project Leads for 5 major
-                                        events, providing high-level strategic guidance and serving as the final
-                                        authority on critical project decisions.</li>
-                                    <li><span class="diff-add">+</span> <strong>Corporate Engagements</strong>:
-                                        Coordinated industry partnerships and student webinars with
-                                        <strong>Deloitte, BCA, CIMB Niaga, and Bank Mandiri</strong>.
-                                    </li>
-
-                                    <li><span class="diff-add">+</span> <strong>Industry Representation</strong>: Acted
-                                        as an organizational representative to
-                                        bridge the gap between organization and corporate stakeholders.</li>
-                                </ul>
-                            </div>
-                            <div class="commit-files">
-                                <span class="file-badge">Project Management</span>
-                                <span class="file-badge">B2B Relations</span>
-                                <span class="file-badge">Logistics</span>
-                                <span class="file-badge">Leadership</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Commit 3: Computer Teacher -->
-                    <!-- <div class="git-commit" data-aos="fade-up" data-aos-delay="400">
-                        <div class="commit-header">
-                            <span class="commit-hash">c4a1b08</span>
-                            <span class="commit-branch">(origin/impact)</span>
-                            <span class="commit-tag completed">merged</span>
-                        </div>
-                        <div class="commit-meta">
-                            <span class="commit-author">Author: Anang Ayman &lt;anang@portfolio.dev&gt;</span>
-                            <span class="commit-date">Date: Jun 2022 – Oct 2022</span>
-                        </div>
-                        <div class="commit-message">
-                            <p class="commit-title">Computer Teacher @ Dompet Dhuafa</p>
-                            <p class="commit-location">📍 Hong Kong</p>
-                            <div class="commit-body">
-                                <p>Guided <strong>15 Indonesian domestic helpers</strong> through a <strong>4-month
-                                        intensive digital literacy
-                                        program</strong> in Hong Kong.
-                                    Developed a custom curriculum to bridge the digital divide, moving students from
-                                    basic computer operation to entrepreneurial tool proficiency</p>
-                                <ul class="commit-changes">
-                                    <li><span class="diff-add">+</span> <strong>Certification Success</strong>:
-                                        Delivered training in <strong>MS
-                                            Office, Email, and Internet Safety</strong>, leading to 100% of the cohort
-                                        earning
-                                        official Certificates of Completion.</li>
-                                    <li><span class="diff-add">+</span> <strong>Entrepreneurial Output</strong>: Taught
-                                        Canva for
-                                        marketing and design; directly enabled a graduate to create a custom banner for
-                                        her business upon returning to Indonesia.</li>
-                                    <li><span class="diff-add">+</span> <strong>Practical Translation</strong>:
-                                        Conducted all lectures in
-                                        Bahasa Indonesia, using simplified analogies to make technical jargon accessible
-                                        for adult learners.</li>
-                                </ul>
-                            </div>
-                            <div class="commit-files">
-                                <span class="file-badge">Digital Literacy</span>
-                                <span class="file-badge">Community Teaching</span>
-                                <span class="file-badge">MS Office</span>
-                                <span class="file-badge">Canva</span>
-                                <span class="file-badge">Bahasa Indonesia</span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
+
+                <a href="static/resume final.pdf" target="_blank" class="resume-link" data-aos="fade-up">
+                    View Full Résumé <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
+        <!-- Section Divider -->
         <!-- Leadership & Volunteering Split View -->
         <section id="leadership" class="leadership-section">
             <div class="container">
@@ -479,14 +284,14 @@
                                     <span class="panel-tag">Leadership</span>
                                 </div>
 
-                                <div class="panel-gallery">
-                                    <div class="gallery-item">
+                                <div class="panel-photo-grid">
+                                    <div class="photo-card">
                                         <img src="static/talkshow_himti_light.jpg" alt="HIMTI Talkshow">
                                     </div>
-                                    <div class="gallery-item">
+                                    <div class="photo-card">
                                         <img src="static/talkshow_himti.JPG" alt="HIMTI Talkshow">
                                     </div>
-                                    <div class="gallery-item">
+                                    <div class="photo-card">
                                         <img src="static/Himti_ITB.jpeg" alt="HIMTI Stuban">
                                     </div>
                                 </div>
@@ -572,14 +377,14 @@
                                     <span class="panel-tag">Event Planning</span>
                                     <span class="panel-tag">Youth Mentorship</span>
                                 </div>
-                                <div class="panel-gallery">
-                                    <div class="gallery-item">
+                                <div class="panel-photo-grid">
+                                    <div class="photo-card">
                                         <img src="static/teachforindonesia.jpeg" alt="Teach for Indonesia">
                                     </div>
-                                    <div class="gallery-item">
+                                    <div class="photo-card">
                                         <img src="static/TFI_sem1_1.jpeg" alt="Teach for Indonesia">
                                     </div>
-                                    <div class="gallery-item">
+                                    <div class="photo-card">
                                         <img src="static/TFI_sem1_2.jpeg" alt="Teach for Indonesia">
                                     </div>
                                 </div>
@@ -591,6 +396,7 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
         <section id="work" class="feature-section">
             <div class="container">
                 <div class="section-header mb-5 text-center">
@@ -600,18 +406,11 @@
 
                 <div class="project-row">
                     <div class="project-visual" data-aos="fade-up">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <img src="static/OpenID_Connect.png" alt="Internship work">
-                        </div>
+                        <img src="static/OpenID_Connect.png" alt="Internship work">
                     </div>
 
                     <div class="project-content">
-                        <span class="project-label" style="color: #d97706;">Professional Experience</span>
+                        <span class="project-label">Professional Experience</span>
 
                         <h3>Custom OIDC Identity Provider</h3>
 
@@ -628,11 +427,10 @@
                             <span class="tech-pill">MySQL</span>
                         </div>
 
-                        <div class="confidentiality-note"
-                            style="font-size: 0.8rem; color: #888; margin-top: 10px; font-style: italic;">
+                        <p class="confidentiality-note">
                             *Source code is proprietary. Case study focuses on system architecture and standards
                             compliance.
-                        </div>
+                        </p>
 
                         <a href="project-oidc.html" class="btn btn-primary">View System Architecture</a>
                     </div>
@@ -640,14 +438,7 @@
 
                 <div class="project-row">
                     <div class="project-visual" data-aos="fade-up">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <img src="static/Signlingo_thumbnail.png" alt="SignLingo App Interface">
-                        </div>
+                        <img src="static/Signlingo_thumbnail.png" alt="SignLingo App Interface">
                     </div>
 
                     <div class="project-content">
@@ -675,14 +466,7 @@
 
                 <!-- <div class="project-row">
                     <div class="project-visual" data-aos="fade-up">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <img src="static/flux_budget_app.jpg" alt="Flux budget App">
-                        </div>
+                        <img src="static/flux_budget_app.jpg" alt="Flux budget App">
                     </div>
 
                     <div class="project-content">
@@ -708,7 +492,7 @@
                 </div> -->
 
                 <div class="text-center mt-5" data-aos="zoom-in">
-                    <a href="projects.html" class="btn btn-ghost-glow btn-lg" style="padding: 1rem 3rem;">
+                    <a href="projects.html" class="btn btn-ghost-glow btn-lg">
                         View All Projects <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -716,222 +500,204 @@
             </div>
         </section>
 
-
-
-        <!-- Academic & Credentials Section (Bento Box) -->
-        <section id="credentials" class="credentials-section py-5">
-            <div class="container py-5">
+        <!-- Education Section -->
+        <section id="credentials" class="education-section">
+            <div class="container">
                 <div class="section-header mb-5 text-start" data-aos="fade-up">
-                    <h2 class="section-title">Academic & Credentials</h2>
-                    <p class="text-secondary">Formal education and industry-standard technical certifications.</p>
+                    <h2 class="section-title">Education</h2>
                 </div>
 
-                <div class="credentials-bento">
-
-                    <!-- Left Side: Formal Education Timeline -->
-                    <div class="bento-column-education" data-aos="fade-right" data-aos-delay="100">
-                        <div class="bento-glass-card education-dashboard">
-                            <h3 class="dashboard-title"><i class="fas fa-university me-2"></i> Education</h3>
-
-                            <div class="edu-timeline">
-                                <div class="edu-timeline-item">
-                                    <div class="edu-timeline-dot"></div>
-                                    <div class="edu-timeline-content">
-                                        <h4>BINUS University</h4>
-                                        <span class="edu-degree">Bachelor of Computer Science</span>
-                                        <p class="text-secondary mt-2 mb-3">Specializing in AI & Web Development with a
-                                            strong foundation in scalable software engineering principles.</p>
-                                        <div class="edu-meta-grid">
-                                            <div class="edu-meta-item">
-                                                <span class="meta-label">Period</span>
-                                                <span class="meta-value">2023 - 2027</span>
-                                            </div>
-                                            <div class="edu-meta-item highlight">
-                                                <span class="meta-label">GPA</span>
-                                                <span class="meta-value">3.88<small>/4.00</small></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="edu-timeline-item">
-                                    <div class="edu-timeline-dot"></div>
-                                    <div class="edu-timeline-content">
-                                        <h4>Sungkyunkwan University</h4>
-                                        <span class="edu-degree">Exchange Student Program</span>
-                                        <p class="text-secondary mt-2 mb-3">Immersive academic exchange focusing on
-                                            advanced computing electives including Mobile App Programming, Computer
-                                            Security, and a comprehensive Capstone Design Project.</p>
-                                        <div class="edu-meta-grid">
-                                            <div class="edu-meta-item">
-                                                <span class="meta-label">Period</span>
-                                                <span class="meta-value">2025</span>
-                                            </div>
-                                            <div class="edu-meta-item">
-                                                <span class="meta-label">Location</span>
-                                                <span class="meta-value">Seoul, KR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="edu-timeline-item">
-                                    <div class="edu-timeline-dot"></div>
-                                    <div class="edu-timeline-content">
-                                        <h4>Delia School of Canada</h4>
-                                        <span class="edu-degree">High School Diploma</span>
-                                        <p class="text-secondary mt-2 mb-3">Ontario curriculum with distinction,
-                                            focusing on Calculus and Computer Science.</p>
-                                        <div class="edu-meta-grid">
-                                            <div class="edu-meta-item">
-                                                <span class="meta-label">Period</span>
-                                                <span class="meta-value">2020 - 2023</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Education Entries — same grid as Experience -->
+                <div class="education-list">
+                    <div class="education-entry" data-aos="fade-up">
+                        <span class="education-date">2023 — 2027</span>
+                        <div class="education-body">
+                            <p class="education-school">
+                                BINUS University
+                                <span class="education-gpa">3.88<small>/4.00</small></span>
+                            </p>
+                            <span class="education-degree">Bachelor of Computer Science</span>
+                            <p class="education-desc">
+                                Specializing in AI & Web Development with a strong foundation in
+                                scalable software engineering principles.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Right Side: Certifications Grid -->
-                    <div class="bento-column-certs" data-aos="fade-left" data-aos-delay="200">
-                        <div class="certifications-masonry">
-                            <!-- Alibaba Cloud -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon alibaba"><img src="static/alibaba_logo.jpg"
-                                            alt="Alibaba Cloud Logo"></div>
-                                    <div class="cert-title-group">
-                                        <h3>Alibaba Cloud Associate</h3>
-                                        <p>Cloud Engineer • <span class="text-white-50">May 2025</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-id mb-3"
-                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
-                                    <i class="fas fa-hashtag me-1"></i> ID: <span
-                                        style="color: #e2e8f0;">IACA13250500210525L</span>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="static/Certificate Alibaba Cloud Associate.jpeg" target="_blank"
-                                        class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
-                                </div>
-                            </div>
-
-                            <!-- NVIDIA Conversational AI -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon nvidia"><img src="static/nvidia_logo.png" alt="NVIDIA Logo">
-                                    </div>
-                                    <div class="cert-title-group">
-                                        <h3>Conversational AI</h3>
-                                        <p>NVIDIA DLI • <span class="text-white-50">Aug 2025</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-id mb-3"
-                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
-                                    <i class="fas fa-hashtag me-1"></i> ID: <span
-                                        style="color: #e2e8f0;">A8pk1W-QRpSHkTQesn8nSQ</span>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="https://learn.nvidia.com/certificates?id=A8pk1W-QRpSHkTQesn8nSQ#"
-                                        target="_blank" class="btn-cert-mini text-green"><i
-                                            class="fas fa-shield-alt me-1"></i>
-                                        Verify</a>
-                                </div>
-                            </div>
-
-                            <!-- Samsung Innovation Campus -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon" style="background: #1428a0;">
-                                        <img src="static/samsung_logo.png" alt="Samsung Logo">
-                                    </div>
-                                    <div class="cert-title-group">
-                                        <h3>Samsung Innovation Campus</h3>
-                                        <p>Samsung • <span class="text-white-50">Sep 2024</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-id mb-3"
-                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
-                                    <i class="fas fa-hashtag me-1"></i> ID: <span
-                                        style="color: #e2e8f0;">SKILVUL/CERT/SIC5/2024.IX/2488</span>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="static/Samsung Innovation Campus.pdf" target="_blank"
-                                        class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
-                                </div>
-                            </div>
-
-                            <!-- Harvard CS50 Python -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon" style="background: #A51C30;">
-                                        <img src="static/harvard_logo.svg" alt="Harvard Logo">
-                                    </div>
-                                    <div class="cert-title-group">
-                                        <h3>CS50's Python Programming</h3>
-                                        <p>Harvard • <span class="text-white-50">Sep 2024</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-id mb-3"
-                                    style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;">
-                                    <i class="fas fa-hashtag me-1"></i> ID: <span
-                                        style="color: #e2e8f0;">a641def1-b538-4318-a477-9156e8f09941</span>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="https://certificates.cs50.io/a641def1-b538-4318-a477-9156e8f09941.png?size=letter"
-                                        target="_blank" class="btn-cert-mini"><i class="fas fa-link me-1"></i> View</a>
-                                </div>
-                            </div>
-
-                            <!-- AWS Educate Compute -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon aws"><img src="static/aws_logo.png" alt="AWS Logo"></div>
-                                    <div class="cert-title-group">
-                                        <h3>Getting Started with Compute</h3>
-                                        <p>AWS Educate • <span class="text-white-50">Oct 2024</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="https://www.credly.com/badges/232c5769-a7ae-4a49-8e97-5506670c13bb/public_url"
-                                        target="_blank" class="btn-cert-mini"><i class="fas fa-check-circle me-1"></i>
-                                        Credly</a>
-                                </div>
-                            </div>
-
-                            <!-- AWS Educate Cloud 101 -->
-                            <div class="cert-bento-card">
-                                <div class="cert-header">
-                                    <div class="cert-icon aws"><img src="static/aws_logo.png" alt="AWS Logo"></div>
-                                    <div class="cert-title-group">
-                                        <h3>Introduction to Cloud 101</h3>
-                                        <p>AWS Educate • <span class="text-white-50">Oct 2024</span></p>
-                                    </div>
-                                </div>
-                                <div class="cert-footer">
-                                    <a href="https://www.credly.com/badges/96353992-c460-4423-b68f-d23a7003ab72/public_url"
-                                        target="_blank" class="btn-cert-mini"><i class="fas fa-check-circle me-1"></i>
-                                        Credly</a>
-                                </div>
-                            </div>
-
+                    <div class="education-entry" data-aos="fade-up">
+                        <span class="education-date">2025</span>
+                        <div class="education-body">
+                            <p class="education-school">Sungkyunkwan University</p>
+                            <span class="education-degree">Exchange Student Program</span>
+                            <p class="education-location">Seoul, South Korea</p>
+                            <p class="education-desc">
+                                Immersive exchange focusing on advanced computing electives
+                                including Mobile App Programming, Computer Security, and a
+                                comprehensive Capstone Design Project.
+                            </p>
                         </div>
                     </div>
 
+                    <div class="education-entry" data-aos="fade-up">
+                        <span class="education-date">2020 — 2023</span>
+                        <div class="education-body">
+                            <p class="education-school">Delia School of Canada</p>
+                            <span class="education-degree">High School Diploma</span>
+                            <p class="education-desc">
+                                Ontario curriculum with distinction, focusing on Calculus and
+                                Computer Science.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications — compact row grid -->
+                <div data-aos="fade-up">
+                    <p class="certifications-label">Certifications</p>
+                    <div class="certifications-grid">
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #FFFFFF;">
+                                <img src="static/google_logo.png" alt="Google">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Machine Learning Operations (MLOps) for Generative AI</p>
+                                <span class="cert-row-issuer">Google · April 2026</span>
+                            </div>
+                            <a href="https://www.skills.google/public_profiles/c1b9e25b-2589-49c3-b5ef-9cb24eb2891d/badges/23719939" target="_blank"
+                                class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                            <span class="cert-row-id"># 23719939</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #76B900;">
+                                <img src="static/nvidia_logo.png" alt="NVIDIA">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Conversational AI</p>
+                                <span class="cert-row-issuer">NVIDIA DLI · Aug 2025</span>
+                            </div>
+                            <a href="https://learn.nvidia.com/certificates?id=A8pk1W-QRpSHkTQesn8nSQ#" target="_blank"
+                                class="cert-row-action"><i class="fas fa-shield-alt"></i> Verify</a>
+                            <span class="cert-row-id"># A8pk1W-QRpSHkTQesn8nSQ</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #FF6A00;">
+                                <img src="static/alibaba_logo.jpg" alt="Alibaba Cloud">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Alibaba Cloud Associate</p>
+                                <span class="cert-row-issuer">Alibaba Cloud · May 2025</span>
+                            </div>
+                            <a href="static/Certificate Alibaba Cloud Associate.jpeg" target="_blank"
+                                class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                            <span class="cert-row-id"># IACA13250500210525L</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #FFFFFF;">
+                                <img src="static/ielts_logo.png" alt="IELTS">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">IELTS Band 8</p>
+                                <span class="cert-row-issuer">IELTS · June 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #1428a0;">
+                                <img src="static/samsung_logo.png" alt="Samsung">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Samsung Innovation Campus</p>
+                                <span class="cert-row-issuer">Samsung · Sep 2024</span>
+                            </div>
+                            <a href="static/Samsung Innovation Campus.pdf" target="_blank"
+                                class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                            <span class="cert-row-id"># SKILVUL/CERT/SIC5/2024.IX/2488</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #A51C30;">
+                                <img src="static/harvard_logo.svg" alt="Harvard">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">CS50's Python Programming</p>
+                                <span class="cert-row-issuer">Harvard · Sep 2024</span>
+                            </div>
+                            <a href="https://certificates.cs50.io/a641def1-b538-4318-a477-9156e8f09941.png?size=letter"
+                                target="_blank" class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                            <span class="cert-row-id"># a641def1-b538-4318-a477-9156e8f09941</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #232F3E;">
+                                <img src="static/aws_logo.png" alt="AWS">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Getting Started with Compute</p>
+                                <span class="cert-row-issuer">AWS Educate · Oct 2024</span>
+                            </div>
+                            <a href="https://www.credly.com/badges/232c5769-a7ae-4a49-8e97-5506670c13bb/public_url"
+                                target="_blank"
+                                class="cert-row-action"><i class="fas fa-check-circle"></i> Credly</a>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #232F3E;">
+                                <img src="static/aws_logo.png" alt="AWS">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Introduction to Cloud 101</p>
+                                <span class="cert-row-issuer">AWS Educate · Oct 2024</span>
+                            </div>
+                            <a href="https://www.credly.com/badges/96353992-c460-4423-b68f-d23a7003ab72/public_url"
+                                target="_blank"
+                                class="cert-row-action"><i class="fas fa-check-circle"></i> Credly</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
 
-    </div>
+        <!-- Modern Hero Footer -->
+        <footer class="hero-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Column 1: Brand & Contact -->
+                    <div class="footer-col brand-col">
+                        <h2 class="footer-name">Anang Ayman</h2>
+                        <a href="mailto:anang.ayman@gmail.com" class="footer-email">anang.ayman@gmail.com</a>
+                        <p class="footer-copyright">&copy; 2026 Anang Ayman. All rights reserved.</p>
+                    </div>
 
+                    <!-- Column 2: Navigation -->
+                    <div class="footer-col nav-col">
+                        <h3 class="footer-heading">Navigation</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#work">Featured Projects</a></li>
+                            <li><a href="#credentials">Education</a></li>
+                            <li><a href="journey.html">My Journey</a></li>
+                        </ul>
+                    </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2025. <a href="#">Anang Ayman</a>. All rights reserved.</p>
-        </div>
-    </footer>
+                    <!-- Column 3: Socials -->
+                    <div class="footer-col social-col">
+                        <h3 class="footer-heading">Connect</h3>
+                        <ul class="footer-links">
+                            <li><a href="https://github.com/AnangAyman" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" target="_blank">LinkedIn <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                            <li><a href="https://www.instagram.com/anang.ayman/" target="_blank">Instagram <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                            <li><a href="static/resume final.pdf" target="_blank">Résumé <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

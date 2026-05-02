@@ -1,448 +1,252 @@
-/* --- GIT LOG EXPERIENCE SECTION --- */
-
+/* ========================================
+   EXPERIENCE — Clean Timeline
+   ======================================== */
 .experience-section {
-    padding: 6rem 0;
-    position: relative;
-    overflow: hidden;
-    background: transparent;
+    padding: var(--section-gap) 0;
 }
 
-/* Header styling */
-.git-prompt {
-    color: var(--primary-color);
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
+.experience-section .section-header {
+    margin-bottom: 3rem;
 }
 
-.git-command {
-    color: var(--text-primary);
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* Git Log Container */
-.git-log-container {
+.experience-list {
     max-width: 900px;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    line-height: 1.6;
 }
 
-/* Individual Commit */
-.git-commit {
-    background: #0d1117;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Staggered fade-in animation handled by AOS */
-    /* opacity: 0; */
-    /* transform: translateY(20px); */
-    /* animation: fadeSlideIn 0.6s ease-out forwards; */
-}
-
-/* 
-@keyframes fadeSlideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} 
-*/
-
-.git-commit:hover {
-    border-color: rgba(74, 222, 128, 0.3);
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.12);
-    transform: translateY(-4px);
-}
-
-/* ========== FEATURED COMMIT ========== */
-.featured-commit {
-    border: 2px solid #f0883e;
-    background: linear-gradient(135deg, rgba(240, 136, 62, 0.05) 0%, #0d1117 100%);
-    box-shadow:
-        0 0 25px rgba(240, 136, 62, 0.15),
-        0 10px 40px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    animation: featuredPulse 3s ease-in-out infinite 1s;
-}
-
-@keyframes featuredPulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 25px rgba(240, 136, 62, 0.15), 0 10px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    50% {
-        box-shadow: 0 0 35px rgba(240, 136, 62, 0.25), 0 10px 40px rgba(0, 0, 0, 0.3);
-    }
-}
-
-.featured-commit:hover {
-    border-color: #f0883e;
-    box-shadow:
-        0 0 40px rgba(240, 136, 62, 0.3),
-        0 15px 50px rgba(0, 0, 0, 0.4);
-    animation-play-state: paused;
-}
-
-.featured-banner {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-    background: linear-gradient(90deg, rgba(240, 136, 62, 0.2) 0%, transparent 100%);
-    border-bottom: 1px solid rgba(240, 136, 62, 0.3);
-}
-
-.featured-icon {
-    font-size: 1rem;
-    animation: pinBounce 2s ease-in-out infinite;
-}
-
-@keyframes pinBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-.featured-text {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #f0883e;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-/* Impact Stats */
-.impact-stats {
+/* Single experience entry */
+.experience-entry {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 1rem 0;
-    padding: 1rem;
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s var(--ease-out);
+    margin-bottom: 0.5rem;
+}
+
+.experience-entry:hover {
     background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-color: var(--border-subtle);
+    box-shadow: var(--shadow-sm);
 }
 
-.impact-stat {
-    text-align: center;
-    padding: 0.5rem;
-}
-
-.impact-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: 'Outfit', sans-serif;
-}
-
-.impact-label {
-    font-size: 0.7rem;
+.experience-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    padding-top: 0.25rem;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
 }
 
-/* Commit Header */
-.commit-header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.commit-hash {
-    color: #f0883e;
+.experience-role {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
     font-weight: 600;
-    transition: all 0.2s ease;
-    cursor: default;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.commit-hash:hover {
-    color: #ffa657;
-    text-shadow: 0 0 8px rgba(240, 136, 62, 0.4);
-}
-
-.commit-branch {
-    color: #58a6ff;
+.experience-role a {
+    color: var(--text-primary);
     transition: color 0.2s ease;
 }
 
-.commit-tag {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+.experience-role a:hover {
+    color: var(--accent);
 }
 
-.commit-tag.completed {
-    background: rgba(74, 222, 128, 0.15);
-    color: var(--primary-color);
+.experience-company {
+    color: var(--accent);
 }
 
-.commit-tag.current {
-    background: rgba(251, 191, 36, 0.15);
-    color: #fbbf24;
-}
-
-/* Commit Meta */
-.commit-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
-}
-
-.commit-author {
-    color: var(--text-secondary);
+.experience-location {
     font-size: 0.8rem;
-}
-
-.commit-date {
     color: var(--text-tertiary);
-    font-size: 0.8rem;
-}
-
-/* Commit Message */
-.commit-message {
-    padding-left: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.05);
-}
-
-.commit-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 0.5rem 0;
-    font-family: 'Outfit', sans-serif;
-}
-
-.commit-location {
-    font-size: 0.85rem;
-    color: var(--text-tertiary);
-    margin: 0 0 1rem 0;
-}
-
-.commit-body p {
-    color: var(--text-secondary);
-    margin: 0 0 1rem 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-}
-
-/* Diff-style changes */
-.commit-changes {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
-}
-
-.commit-changes li {
-    padding: 0.4rem 0;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-.diff-add {
-    color: #7ee787;
-    /* Green for additions */
-    font-weight: 700;
-    margin-right: 0.5rem;
-}
-
-/* File badges (tech stack) */
-.commit-files {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.file-badge {
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    background: rgba(74, 222, 128, 0.1);
-    color: var(--secondary-color);
-    border-radius: 4px;
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    transition: all 0.2s ease;
-    cursor: default;
-}
-
-.file-badge:hover {
-    background: rgba(74, 222, 128, 0.2);
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
-}
-
-/* PR Review Section for Quote & Letter */
-.pr-review-section {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.06);
-}
-
-.review-header {
-    display: flex;
-    align-items: center;
     margin-bottom: 0.75rem;
 }
 
-.review-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #1f2428;
-    margin-right: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-tertiary);
-    font-size: 1rem;
-}
-
-.review-author {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.9rem;
-}
-
-.review-badge {
-    background: rgba(74, 222, 128, 0.15);
-    color: #4ade80;
-    font-size: 0.7rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    margin-left: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.review-body {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    padding: 1.25rem;
+.experience-header {
     position: relative;
 }
 
-/* Chat bubble tail */
-.review-body::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 16px;
-    width: 10px;
-    height: 10px;
-    background: #0d1117;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    transform: rotate(45deg);
-}
-
-.review-quote {
-    font-style: italic;
-    color: var(--text-secondary);
+.experience-summary {
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    color: var(--text-secondary);
     line-height: 1.6;
-    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
 }
 
-.review-quote::before {
-    content: '"';
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 1.2em;
-    font-family: Georgia, serif;
-    margin-right: 2px;
+/* Expand Button */
+.btn-expand {
+    background: transparent;
+    border: none;
+    color: var(--text-tertiary);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    transition: color 0.2s ease;
 }
 
-.review-quote::after {
-    content: '"';
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 1.2em;
-    font-family: Georgia, serif;
-    margin-left: 2px;
+.btn-expand:hover {
+    color: var(--accent);
 }
 
-.btn-review-action {
+.btn-expand i {
+    transition: transform 0.3s var(--ease-out);
+}
+
+.btn-expand[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+/* Details Panel */
+.experience-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.4s var(--ease-out), opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.experience-details-inner {
+    overflow: hidden;
+}
+
+.experience-details.open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+/* Bullets */
+.experience-bullets {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.25rem;
+}
+
+.experience-bullets li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+}
+
+.experience-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.experience-bullets strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Tech pills — monochrome */
+.experience-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.experience-tech span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: var(--accent-muted);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+/* Testimonial / Review */
+.experience-review {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--border-subtle);
+    border-radius: 0 6px 6px 0;
+}
+
+.experience-review-text {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.experience-review-author {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.experience-review-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-top: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.experience-review-link:hover {
+    color: var(--accent);
+}
+
+/* View resume link */
+.resume-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(88, 166, 255, 0.1);
-    border: 1px solid rgba(88, 166, 255, 0.3);
-    color: #58a6ff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
     transition: all 0.2s ease;
-    text-decoration: none;
 }
 
-.btn-review-action:hover {
-    background: rgba(88, 166, 255, 0.15);
-    border-color: #58a6ff;
-    color: #79c0ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+.resume-link:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.resume-link i {
+    transition: transform 0.2s ease;
+}
+
+.resume-link:hover i {
+    transform: translateX(4px);
 }
 
 /* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
-    .git-log-container {
-        font-size: 0.8rem;
-    }
-
-    .git-commit {
-        padding: 1rem;
-    }
-
-    .commit-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .commit-title {
-        font-size: 1rem;
-    }
-
-    /* Scale down stats to keep them on one line */
-    .impact-stats {
+    .experience-entry {
+        grid-template-columns: 1fr;
         gap: 0.25rem;
-        padding: 0.75rem 0.5rem;
     }
 
-    .impact-value {
-        font-size: 1rem;
-    }
-
-    .impact-label {
-        font-size: 0.6rem;
+    .experience-date {
+        font-size: 0.75rem;
     }
 }

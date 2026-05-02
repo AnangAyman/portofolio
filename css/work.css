@@ -1,372 +1,126 @@
+/* ========================================
+   FEATURED PROJECTS — Clean Cards
+   ======================================== */
 .feature-section {
-    padding: 8rem 0;
-    overflow: hidden;
-    background: transparent;
-    /* Rely on global body background */
-    position: relative;
-    z-index: 10;
+    padding: var(--section-gap) 0;
 }
 
+.feature-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.feature-section .section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Project rows */
 .project-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
-    gap: 5rem;
-    margin-bottom: 10rem;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 6rem;
 }
 
 .project-row:nth-child(even) {
-    flex-direction: row-reverse;
+    direction: rtl;
 }
 
-/* 1. Browser Window - "Levitating Glass" */
-.project-visual {
-    flex: 1;
-    position: relative;
-    z-index: 10;
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    perspective: 1000px;
+.project-row:nth-child(even) > * {
+    direction: ltr;
 }
 
-.project-row:hover .project-visual {
-    transform: translateY(-20px) scale(1.02);
+.project-row:last-child {
+    margin-bottom: 0;
 }
 
-.browser-mockup {
-    border-radius: 12px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 50px -10px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    background: rgba(17, 24, 39, 0.8);
-    backdrop-filter: blur(10px);
-    transition: all 0.5s ease;
-}
-
-.project-row:hover .browser-mockup {
-    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.3), 0 30px 60px -15px rgba(74, 222, 128, 0.2);
-}
-
-.browser-header {
-    height: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    gap: 8px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.dot.red {
-    background: #ef4444;
-}
-
-.dot.yellow {
-    background: #f59e0b;
-}
-
-.dot.green {
-    background: #22c55e;
-}
-
-.browser-mockup img {
-    display: block;
+/* Project image */
+.project-visual img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
 }
 
-.project-row:hover .browser-mockup img {
-    opacity: 1;
+.project-row:hover .project-visual img {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
 }
 
-/* 2. Content */
-.project-content {
-    flex: 0.9;
-    position: relative;
-    z-index: 10;
-}
-
+/* Project content */
 .project-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
     text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
     display: block;
-    text-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
 }
 
-.project-title {
-    font-size: 2.75rem;
+.project-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1.25rem;
-    line-height: 1.1;
     color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
-.project-desc {
-    font-size: 1.1rem;
+.project-content p {
     color: var(--text-secondary);
+    font-size: 0.95rem;
     line-height: 1.7;
-    margin-bottom: 2rem;
-    font-weight: 300;
+    margin-bottom: 1.25rem;
 }
 
+/* Tech pills */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 2.5rem;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
 }
 
 .tech-pill {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: var(--accent-muted);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .tech-pill:hover {
-    background: rgba(74, 222, 128, 0.15);
-    color: #a5b4fc;
-    border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.25);
-    transform: translateY(-2px);
+    background: rgba(226, 149, 106, 0.25);
+    color: var(--accent-light);
 }
 
-/* 3. The Blob Background */
-.project-row::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.15;
-    transform: scale(0.8);
-    transition: all 0.5s ease;
-    filter: blur(60px);
+/* Confidentiality note */
+.confidentiality-note {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    margin-bottom: 1.25rem;
 }
 
-.project-row:nth-child(odd)::before {
-    left: -100px;
-    top: 50%;
-    transform: translateY(-50%) scale(0.8);
+/* View All Projects */
+.feature-section .text-center {
+    margin-top: 3rem;
 }
 
-.project-row:nth-child(even)::before {
-    right: -100px;
-    top: 50%;
-    transform: translateY(-50%) scale(0.8);
-    left: auto;
-}
-
-.project-row:hover::before {
-    opacity: 0.3;
-    transform: translateY(-50%) scale(1.1);
-    animation: blobPulse 4s infinite ease-in-out;
-}
-
-@keyframes blobPulse {
-
-    0%,
-    100% {
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    50% {
-        transform: translateY(-50%) scale(1.2);
-    }
-}
-
-@media (max-width: 992px) {
-
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
     .project-row,
     .project-row:nth-child(even) {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .project-visual {
-        width: 100%;
-    }
-
-    .project-content {
-        width: 100%;
-        text-align: left;
-    }
-
-    .project-title {
-        font-size: 2rem;
-    }
-}
-
-/* --- 2. PROJECTS GRID (For Projects.html) --- */
-.projects-grid-section {
-    padding: 4rem 0 8rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-/* Enhanced Grid Card */
-.grid-card {
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    backdrop-filter: blur(20px);
-    z-index: 1;
-}
-
-.grid-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.grid-image {
-    height: 192px;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.grid-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.7s ease;
-}
-
-.grid-card:hover .grid-image img {
-    transform: scale(1.05);
-}
-
-.grid-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Blend the bottom into the dark background (#060913 is the app bg) */
-    background: linear-gradient(to top, rgba(6, 9, 19, 1) 0%, rgba(6, 9, 19, 0.6) 40%, transparent 100%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.grid-content {
-    padding: 2rem;
-    padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    position: relative;
-    z-index: 2;
-    margin-top: -2rem;
-}
-
-.grid-icon-box {
-    padding: 0.75rem;
-    border-radius: 16px;
-    background: rgba(6, 9, 19, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: max-content;
-}
-
-.grid-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: white;
-    letter-spacing: -0.025em;
-}
-
-.grid-organization {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.grid-desc {
-    font-size: 0.875rem;
-    /* text-sm/text-base */
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.625;
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
-    flex-grow: 1;
-}
-
-.grid-period {
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-}
-
-/* Category Headers for Archive */
-.project-category-header {
-    position: sticky;
-    top: 70px;
-    background: rgba(10, 15, 10, 0.9);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 1.5rem 0;
-    margin: 4rem 0 2rem;
-    z-index: 90;
-    border-bottom: 1px solid rgba(74, 222, 128, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.project-category-header h2 {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Modifier for Asymmetric Bento Grid */
-@media (min-width: 768px) {
-    .grid-card.wide {
-        grid-column: span 2;
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 2rem;
     }
 }

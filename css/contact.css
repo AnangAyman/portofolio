@@ -1,247 +1,106 @@
-/* css/contact.css - Borderless Editorial Redesign */
-.editorial-contact {
+/* ========================================
+   FOOTER — Clean Modern 3-Column
+   ======================================== */
+.hero-footer {
     position: relative;
-    overflow: hidden;
-    padding: 8rem 0 6rem 0;
-    z-index: 10;
+    padding: 6rem 0 4rem;
+    background: var(--bg-body);
+    border-top: 1px solid var(--border-subtle);
 }
 
-/* Base glowing blob behind the section to give it an ethereal feel */
-.editorial-contact::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -10%;
-    transform: translateY(-50%);
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(74, 222, 128, 0.05) 0%, transparent 60%);
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
 }
 
-/* =========================================
-   Left Side: Editorial Typography
-   ========================================= */
-.editorial-title {
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    color: #f8fafc;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-}
-
-.text-gradient {
-    background: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.editorial-subtitle {
-    font-size: 1.1rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    max-width: 90%;
-    font-weight: 300;
-}
-
-.editorial-email {
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 4px;
-}
-
-.editorial-email:hover {
-    color: var(--primary-color, #4ade80);
-    border-bottom-color: var(--primary-color, #4ade80);
-}
-
-.email-arrow {
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
-    font-size: 0.9em;
-}
-
-.editorial-email:hover .email-arrow {
-    transform: rotate(0deg) translateX(4px);
-}
-
-.editorial-socials {
+.footer-col {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.editorial-social-link {
-    color: #64748b;
+.footer-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-email {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.footer-email:hover {
+    color: var(--accent);
+}
+
+.footer-copyright {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.editorial-social-link.linkedin:hover {
-    color: #0077b5;
-    text-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
-}
-
-.editorial-social-link.github:hover {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-.editorial-social-link.instagram:hover {
-    color: #E1306C;
-    text-shadow: 0 0 15px rgba(225, 48, 108, 0.5);
-}
-
-.separator {
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 0.8rem;
-}
-
-
-/* =========================================
-   Right Side: Borderless Form
-   ========================================= */
-.editorial-form {
-    background: transparent;
-}
-
-.form-group.borderless {
-    position: relative;
-    padding-top: 1.5rem;
-    /* Room for floating label */
-}
-
-/* The actual input fields */
-.form-group.borderless input,
-.form-group.borderless textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.form-group.borderless input:focus,
-.form-group.borderless textarea:focus {
-    outline: none;
-    border-bottom-color: transparent;
-    /* Handled by the animated line */
-}
-
-.form-group.borderless textarea {
-    resize: none;
-}
-
-/* Floating Labels */
-.form-group.borderless label {
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    color: #64748b;
-    font-size: 1rem;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 1;
-}
-
-/* When input is focused OR has value (using placeholder-shown hack) */
-.form-group.borderless input:focus~label,
-.form-group.borderless textarea:focus~label,
-.form-group.borderless input:not(:placeholder-shown)~label,
-.form-group.borderless textarea:not(:placeholder-shown)~label {
-    top: -0.5rem;
-    font-size: 0.75rem;
-    color: var(--primary-color, #4ade80);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Animated Bottom Line */
-.input-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color, #4ade80);
-    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 3;
-}
-
-.form-group.borderless input:focus~.input-line,
-.form-group.borderless textarea:focus~.input-line {
-    width: 100%;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
-}
-
-/* Editorial Submit Button */
-.btn-editorial-submit {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 500;
-    padding: 0;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
+    gap: 0.5rem;
 }
 
-.circle-arrow {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+.footer-links a:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
 }
 
-.circle-arrow i {
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
+.small-icon {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
 }
 
-.btn-editorial-submit:hover {
-    color: var(--primary-color, #4ade80);
+.footer-links a:hover .small-icon {
+    opacity: 1;
 }
 
-.btn-editorial-submit:hover .circle-arrow {
-    background: var(--primary-color, #4ade80);
-    color: #022c22;
-    transform: translateX(5px);
-    border-color: transparent;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
-}
-
-.btn-editorial-submit:hover .circle-arrow i {
-    transform: rotate(45deg) translate(-2px, 2px);
-    /* visual tweak to keep it aligned */
+@media (max-width: 991px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-email {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-copyright {
+        margin-top: 2rem;
+    }
 }

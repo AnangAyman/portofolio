@@ -1,411 +1,257 @@
-/* Import Google Fonts: Outfit (Headings), Inter (Body), JetBrains Mono (Terminal) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap');
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-html {
-    overflow-x: hidden;
-    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-primary);
-    background-color: var(--bg-body);
-    /* Subtle noise texture overlay for premium feel */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    line-height: 1.6;
+    background: var(--bg-body);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    max-width: 100%;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Overhaul */
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: 'Outfit', sans-serif;
-    /* Switch to Geometric Sans */
+::selection {
+    background: var(--accent-muted);
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
-/* Gradient Text Utility */
-.text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Massive Section Headers */
-.section-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-    color: var(--text-primary);
-}
-
-/* Decorative Dash under titles */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--gradient-primary);
-    margin-top: 0.5rem;
-    border-radius: 2px;
-}
-
-.text-center .section-title::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* ========================================
+   NAVBAR — Clean, minimal
+   ======================================== */
 .navbar {
-    background-color: rgba(3, 7, 18, 0.6);
-    /* High transparency dark */
+    background: rgba(15, 17, 23, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid transparent;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .navbar.scrolled {
-    background-color: rgba(10, 15, 10, 0.9);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(74, 222, 128, 0.2);
-    /* Subtle sage tint on scroll */
+    border-bottom-color: var(--border-subtle);
 }
 
 .navbar-brand {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
+    font-size: 1.15rem;
     color: var(--text-primary) !important;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.2rem !important;
-
 }
 
 .navbar-profile-pic {
-    width: 42px;
-    height: 42px;
     border-radius: 50%;
     object-fit: cover;
-    /* Natural look: Gradient border + soft shadow */
-    border: 2px solid transparent;
-    /* Prepare for gradient border */
-    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
-        var(--gradient-primary) border-box;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar-profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+    border: 2px solid var(--border-subtle);
 }
 
 .nav-link {
-    color: var(--text-secondary) !important;
+    color: var(--text-tertiary) !important;
     font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+    padding: 0.5rem 1rem !important;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: var(--text-primary) !important;
+}
+
 .nav-link.active {
     color: var(--text-primary) !important;
-    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
-    /* Glowing text */
 }
 
-/* Buttons */
+/* Dropdown */
+.glass-dropdown-menu {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-item {
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background: var(--accent-muted);
+    color: var(--text-primary);
+}
+
+.dropdown-divider {
+    border-color: var(--border-subtle);
+}
+
+/* "My Journey" nav link */
+.nav-item-separator {
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-subtle);
+}
+
+.nav-link-artsy {
+    font-size: 0.85rem !important;
+    color: var(--text-tertiary) !important;
+}
+
+.nav-link-artsy:hover {
+    color: var(--accent) !important;
+}
+
+/* ========================================
+   BUTTONS — Clean, professional
+   ======================================== */
 .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
     font-weight: 600;
-    font-family: 'Outfit', sans-serif;
-    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    font-family: var(--font-heading);
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: var(--accent);
     border: none;
-    color: #0a0f0a;
-    /* Dark text for contrast on bright green */
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Softened gradient: Removed the very light #86efac to reduce eye-strain */
-    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease;
+    color: #0f1117;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    /* Reduced shadow opacity from 0.5 to 0.35 for softer glow */
-    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.35);
-}
-
-.btn-primary:hover::before {
-    opacity: 1;
+    background: var(--accent-light);
+    color: #0f1117;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-outline {
     background: transparent;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-hover);
     color: var(--text-primary);
 }
 
 .btn-outline:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* View All Projects button */
+.btn-ghost-glow {
+    background: transparent;
+    border: 1px solid var(--border-hover);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.btn-ghost-glow:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
     background: rgba(74, 222, 128, 0.1);
-    color: var(--primary-color);
-}
-
-/* Badge Pill */
-.badge-pill {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(74, 222, 128, 0.15);
-    color: var(--secondary-color);
-    /* Light Sage */
+    color: #4ade80;
     border-radius: 9999px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    backdrop-filter: blur(4px);
+    border: 1px solid rgba(74, 222, 128, 0.2);
 }
 
-/* Footer */
-footer {
-    background: var(--bg-surface);
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-light);
+/* ========================================
+   SECTION SPACING
+   ======================================== */
+section {
+    padding: var(--section-gap) 0;
+}
+
+/* ========================================
+   FOOTER — Clean single-line
+   ======================================== */
+.site-footer {
+    border-top: 1px solid var(--border-subtle);
     padding: 3rem 0;
     text-align: center;
 }
 
-footer a {
-    color: var(--text-primary);
-    text-decoration: none;
+.site-footer p {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin: 0;
 }
 
-/* "My Journey" Ghost Button in Nav */
-.nav-item-separator {
-    border-left: 1px solid var(--border-light);
-    margin-left: 1rem;
-    padding-left: 1rem;
-    display: flex;
-    align-items: center;
-    height: 24px;
-}
-
-.nav-link-artsy {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 0.85rem !important;
-    color: var(--text-secondary) !important;
-    border: 1px solid var(--border-light);
-    border-radius: 50px;
-    padding: 6px 16px !important;
-    background: rgba(255, 255, 255, 0.03);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.nav-link-artsy:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color) !important;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
-    text-shadow: none;
-}
-
-@media (max-width: 991px) {
-    .nav-item-separator {
-        border-left: none;
-        border-top: 1px solid var(--border-light);
-        margin: 0.5rem 0;
-        padding: 1rem 0 0 0;
-        height: auto;
-        display: block;
-    }
-}
-
-/* ========================================
-   MOBILE SPACING POLISH
-   ======================================== */
-@media (max-width: 768px) {
-
-    /* More breathing room on sides */
-    .container {
-        padding-left: 24px !important;
-        padding-right: 24px !important;
-    }
-
-    /* Vertical spacing */
-    section {
-        padding-top: 5rem !important;
-        padding-bottom: 5rem !important;
-    }
-
-    /* Navbar specific spacing */
-    .navbar {
-        padding: 1rem 0.5rem;
-    }
-}
-
-/* ========================================
-   NAVBAR TOGGLER (Mobile Hamburger)
-   ======================================== */
-.navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    padding: 6px 10px;
-    background: rgba(255, 255, 255, 0.06);
-    transition: all 0.2s ease;
-}
-
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
-    outline: none;
-}
-
-.navbar-toggler:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(74, 222, 128, 0.5);
-}
-
-/* Override Bootstrap's dark SVG icon with a bright white one */
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    width: 22px;
-    height: 22px;
-}
-
-/* ========================================
-   GLASS DROPDOWN MENU
-   ======================================== */
-.glass-dropdown-menu {
-    background: rgba(17, 24, 39, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    padding: 0.5rem 0;
-    margin-top: 1rem;
-    transform-origin: top center;
-}
-
-.glass-dropdown-menu .dropdown-item {
+.site-footer a {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    padding: 0.5rem 1.5rem;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease;
 }
 
-.glass-dropdown-menu .dropdown-item:hover,
-.glass-dropdown-menu .dropdown-item:focus {
-    background: rgba(74, 222, 128, 0.1);
-    color: var(--primary-color);
-}
-
-.glass-dropdown-menu .dropdown-divider {
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-/* Hoverable dropdown on desktop */
-@media (min-width: 992px) {
-    .navbar .dropdown:hover .dropdown-menu {
-        display: block;
-        animation: fadeUp 0.3s ease forwards;
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    /* Invisible hover bridge to prevent menu from disappearing during mouse transit */
-    .navbar .dropdown::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -20px;
-        width: 100%;
-        height: 25px;
-        background: transparent;
-        z-index: 1000;
-    }
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.site-footer a:hover {
+    color: var(--accent);
 }
 
 /* ========================================
-   GHOST GLOW BUTTON
+   RESPONSIVE
    ======================================== */
-.btn-ghost-glow {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+@media (max-width: 991px) {
+    :root {
+        --section-gap: 5rem;
+    }
 
-.btn-ghost-glow::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    transition: width 0.4s ease, height 0.4s ease;
-    z-index: -1;
-}
+    .navbar-collapse {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
 
-.btn-ghost-glow:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.2);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.btn-ghost-glow:hover::before {
-    width: 250%;
-    height: 250%;
+    .nav-item-separator {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 0.5rem;
+        margin-top: 0.5rem;
+    }
 }
