@@ -1,224 +1,431 @@
-/* ========================================
-   LEADERSHIP — Clean Tab Layout
-   ======================================== */
+/* Leadership & Volunteering Carousel Section */
+
 .leadership-section {
-    padding: var(--section-gap) 0;
-    position: relative;
+    padding: 100px 0;
 }
 
-.split-view-container {
+.leadership-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.leadership-carousel-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 540px;
+}
+
+/* Cards */
+.leadership-card {
+    position: absolute;
+    width: 70vw;
+    max-width: 800px;
+    height: 500px;
+    background: #141414;
+    /* soft dark */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-@media (min-width: 992px) {
-    .split-view-container {
-        flex-direction: row;
-        gap: 3rem;
-        min-height: 500px;
-    }
-}
-
-/* Tab list */
-.leadership-tabs {
-    flex: 0 0 100%;
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 0.5rem;
-    padding-bottom: 1rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.leadership-tabs::-webkit-scrollbar {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .leadership-tabs {
-        flex: 0 0 35%;
-        flex-direction: column;
-        overflow-y: visible;
-        padding-bottom: 0;
-        border-right: 1px solid var(--border-subtle);
-        padding-right: 1rem;
-    }
-}
-
-.leadership-tab-btn {
-    background: transparent;
-    border: none;
-    border-left: 2px solid transparent;
-    padding: 0.75rem 1.25rem;
-    text-align: left;
-    color: var(--text-tertiary);
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    border-radius: 0;
+    will-change: transform, opacity;
 }
 
-.leadership-tab-btn:hover {
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.02);
+.leadership-card.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 10;
+    pointer-events: auto;
 }
 
-.leadership-tab-btn.active {
-    color: var(--text-primary);
-    border-left-color: var(--accent);
-    background: var(--accent-muted);
+.leadership-card.active:hover {
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Content panels */
-.leadership-panel {
-    display: none;
-    flex: 1;
+.leadership-card.prev {
+    opacity: 0.3;
+    transform: translateX(-70%) scale(0.85);
+    z-index: 5;
+    pointer-events: auto;
 }
 
-.leadership-panel.active {
-    display: block;
+.leadership-card.next {
+    opacity: 0.3;
+    transform: translateX(70%) scale(0.85);
+    z-index: 5;
+    pointer-events: auto;
 }
 
-.panel-role {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
+.leadership-card.hidden-left {
+    opacity: 0;
+    transform: translateX(-120%) scale(0.7);
 }
 
-.panel-role .org-highlight {
-    color: var(--accent);
+.leadership-card.hidden-right {
+    opacity: 0;
+    transform: translateX(120%) scale(0.7);
 }
 
-.panel-meta {
-    font-size: 0.85rem;
-    color: var(--text-tertiary);
-    margin-bottom: 0.25rem;
-}
-
-.panel-date {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
-}
-
-.panel-body {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
-.panel-body strong {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.panel-body ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.panel-body ul li {
-    padding: 0.4rem 0;
-    padding-left: 1.25rem;
+/* Card Content */
+.card-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
     position: relative;
 }
 
-.panel-body ul li::before {
-    content: '▸';
+.card-hero-overlay {
     position: absolute;
-    left: 0;
-    color: var(--accent);
+    inset: 0;
+    background: linear-gradient(to top, #141414, transparent);
 }
 
-/* Photo grid */
+.abstract-bg-1 {
+    background: linear-gradient(135deg, #1c2636, #0d131a);
+}
+
+.abstract-bg-2 {
+    background: linear-gradient(135deg, #2a201b, #150f0c);
+}
+
+.card-hero-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--accent-color, #e2956a);
+    /* Warm amber */
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin: 0;
+}
+
+.card-teaser {
+    padding: 20px;
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-teaser p {
+    margin-bottom: 8px;
+}
+
+.read-more-hint {
+    font-size: 0.85rem;
+    color: var(--accent-color, #e2956a);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.leadership-card.active:hover .read-more-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.carousel-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    width: 24px;
+    background: var(--accent-color, #e2956a);
+}
+
+/* Modal */
+.leadership-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.leadership-modal.open {
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.leadership-modal.open .modal-backdrop {
+    opacity: 1;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 800px;
+    height: 85vh;
+    background: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform-origin: center center;
+}
+
+.leadership-modal.open .modal-content-wrapper {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    z-index: 20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.modal-scroll-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    scroll-behavior: smooth;
+}
+
+.modal-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.modal-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #0f0f0f 0%, rgba(15, 15, 15, 0.5) 50%, transparent 100%);
+}
+
+.modal-hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 40px;
+    z-index: 2;
+}
+
+.modal-body-container {
+    padding: 0 40px 60px 40px;
+    color: #bbb;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.expanded-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.lead-text {
+    font-size: 1.15rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.panel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.panel-tag {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ddd;
+}
+
+.panel-list {
+    padding-left: 20px;
+}
+
+.panel-list li {
+    margin-bottom: 16px;
+}
+
+.panel-list strong {
+    color: #fff;
+}
+
 .panel-photo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
 }
 
 .photo-card {
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--border-subtle);
-    transition: border-color 0.2s ease;
-}
-
-.photo-card:hover {
-    border-color: var(--border-hover);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .photo-card img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 160px;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
 }
 
-.photo-card-caption {
-    padding: 0.75rem 1rem;
-    background: var(--bg-card);
+.photo-card:hover img {
+    transform: scale(1.05);
 }
 
-.photo-card-caption h4 {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.15rem;
-}
-
-.photo-card-caption p {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.5;
-}
-
-/* Timeline badge */
-.timeline-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-    padding: 0.6rem 1.25rem;
-    background: var(--accent-muted);
-    border: 1px solid rgba(226, 149, 106, 0.2);
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    color: var(--text-primary);
-}
-
-@media (max-width: 576px) {
-    .panel-photo-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .leadership-carousel-track {
+        height: 500px;
     }
 
-    .photo-card {
-        border-radius: 8px;
-        overflow: hidden;
-        border: 0px solid var(--border-subtle);
-        transition: border-color 0.2s ease;
+    .leadership-card {
+        width: 85vw;
+        height: 460px;
     }
 
-    .photo-card img {
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-        object-fit: cover;
-        display: block;
+    .card-hero {
+        height: 280px;
+    }
+
+    .leadership-card.prev {
+        transform: translateX(-50%) scale(0.85);
+    }
+
+    .leadership-card.next {
+        transform: translateX(50%) scale(0.85);
+    }
+
+    .modal-content-wrapper {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-hero {
+        height: 260px;
+    }
+
+    .modal-hero-content {
+        left: 20px;
+        right: 20px;
+    }
+
+    .modal-body-container {
+        padding: 0 20px 40px 20px;
     }
 }
