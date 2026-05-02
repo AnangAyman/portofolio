@@ -9,6 +9,7 @@
     padding: 0;
 }
 
+html,
 body {
     background: var(--bg-body);
     color: var(--text-secondary);
@@ -17,6 +18,15 @@ body {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 80%;
+        /* Achieves the 'refined' look without breaking the viewport */
+    }
 }
 
 ::selection {

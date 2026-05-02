@@ -176,7 +176,8 @@
 
 /* 6. CARDS (Artsy Polaroid & Note) - REVERTED TO WHITE */
 .artsy-card {
-    width: 360px !important;
+    width: 100%;
+    max-width: 360px;
     position: relative;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
@@ -243,7 +244,8 @@
 
 /* Yellow Sticky Note */
 .note-card {
-    width: 320px !important;
+    width: 100%;
+    max-width: 320px;
     background: #fef08a;
     padding: 2rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
