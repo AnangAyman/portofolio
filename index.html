@@ -46,7 +46,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#credentials">Education</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        
 
                         <li class="nav-item nav-item-separator">
                             <a class="nav-link nav-link-artsy" href="journey.html">
@@ -68,7 +68,7 @@
                         I'm a Software Engineer specializing in backend infrastructure and machine learning,
                         currently studying Computer Science at
                         <a href="https://www.skku.edu/eng/" target="_blank">Sungkyunkwan University</a> in Seoul.
-                        Previously, I engineered OAuth 2.0 infrastructure at
+                        Previously, I engineered OIDC / OAuth 2.0 infrastructure at
                         <a href="#experience">Digital Agri Solutions</a>.
                     </p>
 
@@ -81,7 +81,7 @@
 
                     <div class="hero-actions">
                         <a href="#work" class="btn btn-primary">View Projects</a>
-                        <a href="static/Ayman CV Resume Final.pdf" target="_blank" class="btn btn-outline">
+                        <a href="static/resume final.pdf" target="_blank" class="btn btn-outline">
                             <i class="fas fa-file-pdf me-2"></i>Resume
                         </a>
                     </div>
@@ -162,16 +162,16 @@
 
                 <div class="experience-list">
                     <div class="experience-entry" data-aos="fade-up">
-                        <span class="experience-date">2024 — 2025</span>
+                        <span class="experience-date">Oct 2024 — Sept 2025</span>
                         <div class="experience-body">
                             <!-- Visible Header -->
                             <div class="experience-header">
                                 <p class="experience-role">
-                                    Back-end Engineer Intern · <span class="experience-company">Digital Agri Solutions</span>
+                                    Backend Engineer Intern · <span class="experience-company">Digital Agri Solutions Pty Ltd.</span>
                                 </p>
-                                <p class="experience-location">Melbourne, Australia (Remote)</p>
+                                <p class="experience-location">Melbourne, Australia | Remote</p>
                                 <p class="experience-summary">
-                                    Engineered enterprise-grade OAuth 2.0 infrastructure from scratch to enable Single Sign-On.
+                                    Engineered and deployed a containerized OIDC Identity Provider to Google Cloud Platform (GCP) using Flask and Docker, transitioning a legacy system to modern OAuth 2.0 standards within an Agile Scrum team.
                                 </p>
                                 <button class="btn-expand" aria-expanded="false">
                                     <span class="expand-text">View Impact</span>
@@ -183,18 +183,18 @@
                             <div class="experience-details" aria-hidden="true">
                                 <div class="experience-details-inner">
                                     <ul class="experience-bullets">
-                                        <li>Built a Multi-Grant <strong>OIDC Server</strong> with PKCE, enabling secure SSO across internal tools.</li>
-                                        <li>Designed an <strong>Auto-Upgrade Flow</strong> for zero-downtime legacy password migrations.</li>
-                                        <li>Secured API routes with robust scope-based access control.</li>
-                                        <li>Developed batch ETL scripts using SQLAlchemy to transform 1000+ legacy records with rollback safety.</li>
+                                        <li>Engineered and deployed a containerized OIDC Identity Provider to Google Cloud Platform (GCP) using Flask and Docker, transitioning a legacy system to modern OAuth 2.0 standards within an Agile Scrum team.</li>
+                                        <li>Configured "zero-downtime" dynamic login routes that automatically migrated 1,000+ legacy SHA256 passwords to Werkzeug hashes, eliminating manual resets during large-scale data migrations.</li>
+                                        <li>Enforced defense-in-depth security across distributed systems by implementing strict scope-based API access controls, automated brute-force lockouts, and PKCE token revocation endpoints.</li>
+                                        <li>Established comprehensive quality assurance practices by authoring PyTest unit tests and conducting extensive API debugging with Postman to validate complex authentication flows.</li>
                                     </ul>
 
                                     <div class="experience-tech">
-                                        <span>Python</span>
                                         <span>Flask</span>
-                                        <span>OIDC</span>
                                         <span>Docker</span>
-                                        <span>MySQL</span>
+                                        <span>GCP</span>
+                                        <span>PyTest</span>
+                                        <span>OIDC</span>
                                     </div>
 
                                     <div class="experience-review">
@@ -213,7 +213,7 @@
                     </div>
                 </div>
 
-                <a href="static/Ayman CV Resume Final.pdf" target="_blank" class="resume-link" data-aos="fade-up">
+                <a href="static/resume final.pdf" target="_blank" class="resume-link" data-aos="fade-up">
                     View Full Résumé <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -546,21 +546,19 @@
                     <p class="certifications-label">Certifications</p>
                     <div class="certifications-grid">
 
-                        <!-- Alibaba Cloud -->
                         <div class="cert-row">
-                            <div class="cert-row-logo" style="background: #FF6A00;">
-                                <img src="static/alibaba_logo.jpg" alt="Alibaba Cloud">
+                            <div class="cert-row-logo" style="background: #FFFFFF;">
+                                <img src="static/google_logo.png" alt="Google">
                             </div>
                             <div class="cert-row-info">
-                                <p class="cert-row-title">Alibaba Cloud Associate</p>
-                                <span class="cert-row-issuer">Cloud Engineer · May 2025</span>
+                                <p class="cert-row-title">Machine Learning Operations (MLOps) for Generative AI</p>
+                                <span class="cert-row-issuer">Google · April 2026</span>
                             </div>
-                            <a href="static/Certificate Alibaba Cloud Associate.jpeg" target="_blank"
+                            <a href="https://www.skills.google/public_profiles/c1b9e25b-2589-49c3-b5ef-9cb24eb2891d/badges/23719939" target="_blank"
                                 class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
-                            <span class="cert-row-id"># IACA13250500210525L</span>
+                            <span class="cert-row-id"># 23719939</span>
                         </div>
 
-                        <!-- NVIDIA -->
                         <div class="cert-row">
                             <div class="cert-row-logo" style="background: #76B900;">
                                 <img src="static/nvidia_logo.png" alt="NVIDIA">
@@ -574,7 +572,29 @@
                             <span class="cert-row-id"># A8pk1W-QRpSHkTQesn8nSQ</span>
                         </div>
 
-                        <!-- Samsung -->
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #FF6A00;">
+                                <img src="static/alibaba_logo.jpg" alt="Alibaba Cloud">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">Alibaba Cloud Associate</p>
+                                <span class="cert-row-issuer">Cloud Engineer · May 2025</span>
+                            </div>
+                            <a href="static/Certificate Alibaba Cloud Associate.jpeg" target="_blank"
+                                class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                            <span class="cert-row-id"># IACA13250500210525L</span>
+                        </div>
+
+                        <div class="cert-row">
+                            <div class="cert-row-logo" style="background: #FFFFFF;">
+                                <img src="static/ielts_logo.png" alt="IELTS">
+                            </div>
+                            <div class="cert-row-info">
+                                <p class="cert-row-title">IELTS Band 8</p>
+                                <span class="cert-row-issuer">IELTS · June 2025</span>
+                            </div>
+                        </div>
+
                         <div class="cert-row">
                             <div class="cert-row-logo" style="background: #1428a0;">
                                 <img src="static/samsung_logo.png" alt="Samsung">
@@ -588,7 +608,6 @@
                             <span class="cert-row-id"># SKILVUL/CERT/SIC5/2024.IX/2488</span>
                         </div>
 
-                        <!-- Harvard CS50 -->
                         <div class="cert-row">
                             <div class="cert-row-logo" style="background: #A51C30;">
                                 <img src="static/harvard_logo.svg" alt="Harvard">
@@ -598,12 +617,10 @@
                                 <span class="cert-row-issuer">Harvard · Sep 2024</span>
                             </div>
                             <a href="https://certificates.cs50.io/a641def1-b538-4318-a477-9156e8f09941.png?size=letter"
-                                target="_blank"
-                                class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+                                target="_blank" class="cert-row-action"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
                             <span class="cert-row-id"># a641def1-b538-4318-a477-9156e8f09941</span>
                         </div>
 
-                        <!-- AWS Compute -->
                         <div class="cert-row">
                             <div class="cert-row-logo" style="background: #232F3E;">
                                 <img src="static/aws_logo.png" alt="AWS">
@@ -617,7 +634,6 @@
                                 class="cert-row-action"><i class="fas fa-check-circle"></i> Credly</a>
                         </div>
 
-                        <!-- AWS Cloud 101 -->
                         <div class="cert-row">
                             <div class="cert-row-logo" style="background: #232F3E;">
                                 <img src="static/aws_logo.png" alt="AWS">
@@ -666,7 +682,7 @@
                             <li><a href="https://github.com/AnangAyman" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/muhammad-anang-ayman-ramadhana" target="_blank">LinkedIn <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
                             <li><a href="https://www.instagram.com/anang.ayman/" target="_blank">Instagram <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
-                            <li><a href="static/Ayman CV Resume Final.pdf" target="_blank">Résumé <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
+                            <li><a href="static/resume final.pdf" target="_blank">Résumé <i class="fas fa-arrow-up-right-from-square small-icon"></i></a></li>
                         </ul>
                     </div>
                 </div>
