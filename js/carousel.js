@@ -88,6 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // List Expansion Logic
+    const listItems = Array.from(document.querySelectorAll('.leadership-list-item'));
+    listItems.forEach(item => {
+        item.addEventListener('click', () => {
+            openModal(item);
+        });
+    });
+
+
     function openModal(card) {
         // 1. Populate Content
         const heroContent = card.querySelector('.card-hero-content').innerHTML;
