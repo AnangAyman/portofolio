@@ -70,14 +70,14 @@
 
 /* --- Featured Entry Highlight --- */
 .experience-entry.featured-entry {
-    border-color: rgba(226, 149, 106, 0.2);
-    background: rgba(226, 149, 106, 0.03);
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.025);
     position: relative;
 }
 
 .experience-entry.featured-entry:hover {
-    background: rgba(226, 149, 106, 0.06);
-    border-color: rgba(226, 149, 106, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 /* --- Professional Label --- */
@@ -230,26 +230,30 @@
     font-weight: 500;
 }
 
-/* Testimonial / Review */
+/* Testimonial / Review — Distinct Quote Card */
 .experience-review {
-    margin-top: 1.25rem;
-    padding: 1rem 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
-    border-left: 2px solid var(--border-subtle);
-    border-radius: 0 6px 6px 0;
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-right: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .experience-review-text {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+    font-size: 0.9rem;
+    color: var(--text-primary);
     font-style: italic;
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
+    line-height: 1.75;
+    margin-bottom: 0.6rem;
+    opacity: 0.85;
 }
 
 .experience-review-author {
     font-size: 0.8rem;
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -257,24 +261,25 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    color: var(--accent);
+    color: #000;
     margin-top: 1rem;
-    padding: 0.5rem 0.9rem;
-    background: var(--accent-muted);
-    border: 1px solid rgba(226, 149, 106, 0.15);
-    border-radius: 6px;
+    padding: 0.55rem 1.1rem;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
     transition: all 0.3s var(--ease-out);
     text-decoration: none;
+    letter-spacing: 0.01em;
 }
 
 .experience-review-link:hover {
-    background: var(--accent);
+    background: var(--accent-light);
     color: #000;
-    border-color: var(--accent);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(226, 149, 106, 0.15);
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(226, 149, 106, 0.25);
 }
 
 /* View resume link */
