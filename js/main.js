@@ -161,7 +161,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 10) {
+    const hero = document.querySelector('.hero');
+    const threshold = hero ? hero.offsetHeight * 0.6 : 10;
+    if (window.scrollY > threshold) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
