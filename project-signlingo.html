@@ -17,7 +17,7 @@
     <link rel="icon" href="static/favicon_final.png?v=2">
     <title>SignLingo - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -32,19 +32,18 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="projects.html">
-                <i class="fas fa-arrow-left me-2"></i> Back to Library
+            <a class="navbar-brand fw-bold" href="projects.html" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Back to Library
             </a>
-            <a href="https://github.com/yourusername/signlingo" target="_blank" class="btn btn-sm btn-outline-light">
-                <i class="fab fa-github me-2"></i>View Code
+            <a href="https://github.com/anangayman/signlingo" target="_blank" class="btn btn-sm btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="github" style="width:15px;height:15px;"></i>View Code
             </a>
         </div>
     </nav>
 
     <header class="project-hero">
         <div class="container">
-            <span class="badge rounded-pill bg-success bg-opacity-10 text-success mb-3 px-3 py-2">Flagship
-                Project</span>
+            <span class="proj-badge mb-3">Flagship Project</span>
             <h1 data-aos="fade-up">SignLingo AI</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
                 Democratizing sign language education with a lightweight, accessible AI tutor that runs on any device.
@@ -137,19 +136,19 @@
                 </div>
                 <div class="col-md-6 ps-md-4">
                     <h3 class="mb-4">Real-Time Landmark Detection</h3>
-                    <ul class="list-unstyled">
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-bolt text-warning fs-5 mt-1 me-3"></i>
+                    <ul class="list-unstyled feat-list">
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="zap" style="width:18px;height:18px;"></i></span>
                             <div><strong>Ultra-Low Latency:</strong> Inference times of 40–50ms for seamless sign
                                 language translation.</div>
                         </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-camera text-success fs-5 mt-1 me-3"></i>
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="scan-face" style="width:18px;height:18px;"></i></span>
                             <div><strong>Robust Tracking:</strong> Accurate landmark detection even in low-light and
                                 cluttered visual backgrounds.</div>
                         </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-network-wired text-primary fs-5 mt-1 me-3"></i>
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="git-branch" style="width:18px;height:18px;"></i></span>
                             <div><strong>Spatial-Temporal Logic:</strong> Combines spatial point coordinates extracted
                                 securely using MediaPipe with temporal dynamics.</div>
                         </li>
@@ -175,26 +174,24 @@
 
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success fs-5 mt-1 me-3"></i>
+                        <ul class="list-unstyled feat-list">
+                            <li class="feat-item">
+                                <span class="feat-icon"><i data-lucide="circle-check" style="width:18px;height:18px;"></i></span>
                                 <div>
                                     <strong>Hybrid Model Approach:</strong> We utilized MobileNetV2 for efficient
-                                    spatial
-                                    feature extraction combined with LSTM to capture the temporal gestures dynamics over
+                                    spatial feature extraction combined with LSTM to capture the temporal gestures dynamics over
                                     time.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success fs-5 mt-1 me-3"></i>
+                        <ul class="list-unstyled feat-list">
+                            <li class="feat-item">
+                                <span class="feat-icon"><i data-lucide="circle-check" style="width:18px;height:18px;"></i></span>
                                 <div>
                                     <strong>Optimized for Low-Resource:</strong> By applying L2 regularization and
-                                    post-training
-                                    quantization, we compressed the model to under 25MB, enabling operation on 4GB RAM
+                                    post-training quantization, we compressed the model to under 25MB, enabling operation on 4GB RAM
                                     devices.
                                 </div>
                             </li>
@@ -203,8 +200,8 @@
                 </div>
 
                 <div>
-                    <a href="project-research.html" class="btn btn-outline-light btn-sm">
-                        <i class="fas fa-file-alt me-2"></i> Read the Connected Research Paper
+                    <a href="project-research.html" class="btn btn-outline btn-sm" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                        <i data-lucide="file-text" style="width:15px;height:15px;"></i> Read the Connected Research Paper
                     </a>
                 </div>
             </div>
@@ -223,19 +220,19 @@
                     <p class="text-center text-secondary small mt-3">Personalized user dashboard</p>
                 </div>
                 <div class="col-md-7 ps-md-4">
-                    <ul class="list-unstyled">
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-fire text-danger fs-5 mt-1 me-3"></i>
+                    <ul class="list-unstyled feat-list">
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="flame" style="width:18px;height:18px;"></i></span>
                             <div><strong>Daily Streaks & EXP:</strong> Keep motivation high by tracking continuous
                                 learning days and rewarding experience points.</div>
                         </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-heart text-success fs-5 mt-1 me-3"></i>
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="heart" style="width:18px;height:18px;"></i></span>
                             <div><strong>Health System:</strong> A forgiving yet challenging life system requiring
                                 active performance accuracy.</div>
                         </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="fas fa-trophy text-warning fs-5 mt-1 me-3"></i>
+                        <li class="feat-item">
+                            <span class="feat-icon"><i data-lucide="trophy" style="width:18px;height:18px;"></i></span>
                             <div><strong>Leaderboards:</strong> Compete with friends and the broader community for the
                                 top spot globally.</div>
                         </li>
@@ -265,19 +262,19 @@
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">AI & Computer Vision</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
-                        <span class="tech-badge"><i class="fas fa-brain"></i> TensorFlow</span>
-                        <span class="tech-badge"><i class="fas fa-network-wired"></i> CNN-LSTM</span>
-                        <span class="tech-badge"><i class="fas fa-eye"></i> OpenCV</span>
+                        <span class="tech-badge"><i data-lucide="code-2" style="width:14px;height:14px;"></i> Python</span>
+                        <span class="tech-badge"><i data-lucide="cpu" style="width:14px;height:14px;"></i> TensorFlow</span>
+                        <span class="tech-badge"><i data-lucide="workflow" style="width:14px;height:14px;"></i> CNN-LSTM</span>
+                        <span class="tech-badge"><i data-lucide="camera" style="width:14px;height:14px;"></i> OpenCV</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">Backend & Deployment</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i class="fas fa-flask"></i> Flask</span>
-                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
-                        <span class="tech-badge"><i class="fas fa-cogs"></i> REST API</span>
-                        <span class="tech-badge"><i class="fas fa-server"></i> Web Services</span>
+                        <span class="tech-badge"><i data-lucide="server" style="width:14px;height:14px;"></i> Flask</span>
+                        <span class="tech-badge"><i data-lucide="box" style="width:14px;height:14px;"></i> Docker</span>
+                        <span class="tech-badge"><i data-lucide="plug" style="width:14px;height:14px;"></i> REST API</span>
+                        <span class="tech-badge"><i data-lucide="globe" style="width:14px;height:14px;"></i> Web Services</span>
                     </div>
                 </div>
             </div>
@@ -289,7 +286,7 @@
             <div class="text-start">
                 <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
                 <a href="project-oidc.html" class="nav-link-soft prev">
-                    <i class="fas fa-arrow-left"></i> OIDC Provider
+                    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> OIDC Provider
                 </a>
             </div>
 
@@ -297,14 +294,14 @@
             <div class="text-end">
                 <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
                 <a href="project-research.html" class="nav-link-soft">
-                    Hybrid CNN-LSTM <i class="fas fa-arrow-right"></i>
+                    Hybrid CNN-LSTM <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center py-5 border-top" data-aos="zoom-in">
-            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
-                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem; display:inline-flex; align-items:center; gap:0.6rem;">
+                View All Projects <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </a>
         </div>
 
@@ -318,6 +315,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
