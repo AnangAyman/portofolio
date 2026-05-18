@@ -8,16 +8,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-T8M3LLL7K6');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NusaCrop Agritech Platform — IoT-driven agricultural supply chain architecture. Built by Anang Ayman.">
     <link rel="icon" href="static/favicon_final.png?v=2">
     <title>NusaCrop - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -32,40 +33,42 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="projects.html">
-                <i class="fas fa-arrow-left me-2"></i> Back to Library
+            <a class="navbar-brand fw-bold" href="projects.html" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Back to Library
             </a>
-            <div class="d-flex gap-2">
-                <a href="https://github.com/yourusername/nusacrop" target="_blank" class="btn btn-sm btn-outline-light">
-                    <i class="fab fa-github me-2"></i>View Code
-                </a>
-            </div>
+            <a href="https://github.com/yourusername/nusacrop" target="_blank" class="btn btn-sm btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="github" style="width:15px;height:15px;"></i>View Code
+            </a>
         </div>
     </nav>
 
     <header class="project-hero">
         <div class="container">
-            <span class="badge rounded-pill mb-3 px-3 py-2"
-                style="background-color: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2);">
-                <i class="fas fa-leaf me-1"></i> Agritech / Cloud Architecture
-            </span>
+            <span class="proj-badge mb-3">Agritech / Cloud Architecture</span>
             <h1 data-aos="fade-up">NusaCrop Agritech Platform</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
-                A comprehensive UI/UX prototype and scalable architecture design for an IoT-driven agricultural supply
-                chain.
+                A comprehensive UI/UX prototype and scalable architecture design for an IoT-driven agricultural supply chain.
             </p>
 
-            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
-                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
-                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
-                    <div class="p-3 bg-dark d-flex gap-2">
-                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
-                    </div>
-                    <!-- Using Nusacrop_thumbnail.png from your static folder -->
-                    <img src="static/nusacrop-image-dashboard.png" alt="NusaCrop Cloud Architecture"
-                        class="img-fluid w-100" style="object-fit: cover;">
+            <!-- Hero Metric Pills -->
+            <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
+                <span class="hero-metric-pill">
+                    <i data-lucide="leaf" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Hydroponic</span> Supply Chain
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="wifi" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">IoT</span> Telemetry
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="cloud" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">GCP</span> Architecture
+                </span>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <div class="hero-image-wrap">
+                    <img src="static/nusacrop-image-dashboard.png" onerror="this.src='static/Signlingo_thumbnail.png'" alt="NusaCrop Cloud Architecture">
                 </div>
             </div>
         </div>
@@ -80,21 +83,24 @@
             </div>
             <div class="meta-item">
                 <h5>Timeline</h5>
-                <p>Capstone Prototype Phase</p>
+                <p>Capstone Phase</p>
             </div>
             <div class="meta-item">
                 <h5>Domain</h5>
-                <p>Agritech, UI/UX, IoT Architecture</p>
+                <p>Agritech, IoT Architecture</p>
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>Figma, HTML/CSS, Planned: Laravel/GCP</p>
+                <p>Figma, Laravel, GCP</p>
             </div>
         </div>
 
         <article class="project-body">
 
-            <h2 data-aos="fade-up">The Challenge</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">01 · Problem</span>
+                The Challenge
+            </h2>
             <p data-aos="fade-up">
                 Independent urban hydroponic hobbyists frequently face unsold harvests, while commercial buyers
                 constantly struggle with inconsistent local supplies. The challenge was to transform these fragmented
@@ -102,81 +108,71 @@
                 harvest waste and guarantee consistency across distributed cultivation sites.
             </p>
 
-            <h2 data-aos="fade-up">The Solution</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">02 · Solution</span>
+                The Approach
+            </h2>
             <p data-aos="fade-up">
-                As Product Owner and Lead Backend Developer, I orchestrated the transition from a manual concierge
-                offering
+                As Product Owner and Lead Backend Developer, I orchestrated the transition from a manual concierge offering
                 to a fully interactive digital prototype. While the high-fidelity UI demonstrates the intended
-                <strong>Panen Pintar Dashboard</strong>,
-                I simultaneously architected the future high-performance <strong>Laravel</strong> backend and IoT
-                infrastructure.
-                <br><br>
+                <strong>Panen Pintar Dashboard</strong>, I simultaneously architected the future high-performance <strong>Laravel</strong> backend and IoT infrastructure.
+            </p>
+            <p data-aos="fade-up">
                 Once fully implemented and deployed to GCP, this planned architecture will seamlessly ingest real-time
-                environmental telemetry
-                from dispersed hydroponic sensors. The design specifies using <strong>Python</strong> data mining
-                scripts to generate
-                predictive harvest timelines, integrated via RESTful APIs to provide automated standard operating
-                procedures
-                directly matching our commercial market absorption objectives.
+                environmental telemetry from dispersed hydroponic sensors. The design specifies using <strong>Python</strong> data mining
+                scripts to generate predictive harvest timelines, integrated via RESTful APIs to provide automated standard operating
+                procedures directly matching our commercial market absorption objectives.
             </p>
 
-            <!-- Feature Image Gallery -->
-            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
-                <div class="col-md-6">
-                    <img src="static/nusacrop-image-riwayatkontrak.png" alt="Panen Pintar Dashboard"
-                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
-                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
+            <div class="gallery-grid two-col" data-aos="fade-up">
+                <div>
+                    <img src="static/nusacrop-image-riwayatkontrak.png" alt="Panen Pintar Dashboard" style="min-height:220px;">
+                    <p class="img-caption">Panen Pintar Dashboard prototype</p>
                 </div>
-                <div class="col-md-6">
-                    <img src="static/nusacrop-image-daftarkontrak.png" alt="IoT Telemetry Tracking"
-                        class="img-fluid rounded-4 shadow-sm border border-secondary border-opacity-25"
-                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
+                <div>
+                    <img src="static/nusacrop-image-daftarkontrak.png" alt="IoT Telemetry Tracking" style="min-height:220px;">
+                    <p class="img-caption">IoT Telemetry Tracking</p>
                 </div>
             </div>
 
-            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-server fs-2 text-primary mb-3"></i>
-                        <h4 class="text-white">Laravel IoT Backend</h4>
-                        <p class="text-secondary small">Engineered a robust Laravel API acting as the central ingestion
-                            point for high-frequency environmental telemetry originating from distributed urban
-                            hydroponic sensors.</p>
-                    </div>
+            <h2 data-aos="fade-up">
+                <span class="section-num">03 · Architecture</span>
+                System Blueprint
+            </h2>
+
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="server" style="width:18px;height:18px;"></i></div>
+                    <h4>Laravel IoT Backend</h4>
+                    <p>Engineered a robust Laravel API acting as the central ingestion point for high-frequency environmental telemetry originating from distributed sensors.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-chart-line fs-2 text-info mb-3"></i>
-                        <h4 class="text-white">Python Data Mining</h4>
-                        <p class="text-secondary small">Developed specialized Python scripts that process real-time
-                            sensor streams to calculate accurate predictive harvest timelines and expected commercial
-                            yields.</p>
-                    </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="bar-chart-3" style="width:18px;height:18px;"></i></div>
+                    <h4>Python Data Mining</h4>
+                    <p>Developed specialized Python scripts that process real-time sensor streams to calculate accurate predictive harvest timelines and expected commercial yields.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-seedling fs-2 text-warning mb-3"></i>
-                        <h4 class="text-white">Unified Ecosystem</h4>
-                        <p class="text-secondary small">Supported the core ecosystem pillars: centralized planting
-                            schedules driven by market demand, standardized crop inputs, and guaranteed commercial
-                            absorption.</p>
-                    </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="leaf" style="width:18px;height:18px;"></i></div>
+                    <h4>Unified Ecosystem</h4>
+                    <p>Supported the core ecosystem pillars: centralized planting schedules driven by market demand, standardized crop inputs, and guaranteed commercial absorption.</p>
                 </div>
             </div>
 
-            <h2 data-aos="fade-up">The Outcome</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">04 · Results</span>
+                The Outcome
+            </h2>
             <p data-aos="fade-up">
-                The high-fidelity UI prototype successfully secured stakeholder buy-in by visually proving the
-                platform's
+                The high-fidelity UI prototype successfully secured stakeholder buy-in by visually proving the platform's
                 commercial viability. Meanwhile, the comprehensively documented system architecture ensures a clear,
                 scalable roadmap for the future integration of IoT hardware, the Laravel backend, and eventual Google
                 Cloud Platform deployment.
             </p>
 
-            <h2 data-aos="fade-up" class="mt-5">Project Execution & Architecture</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">05 · Stack</span>
+                Execution & Architecture
+            </h2>
             <div class="row g-4 mb-5" data-aos="fade-up">
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">Current Frontend MVP</h5>
@@ -200,29 +196,28 @@
 
         <div class="project-navigation">
             <div class="text-start">
-                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-left:0.5rem;">Previous Project</span>
                 <a href="project-discordmod.html" class="nav-link-soft prev">
-                    <i class="fas fa-arrow-left"></i> Discord Bot
+                    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Discord Bot
                 </a>
             </div>
-
             <div class="text-end">
-                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-right:0.5rem;">Next Project</span>
                 <a href="project-oidc.html" class="nav-link-soft">
-                    OIDC Provider <i class="fas fa-arrow-right"></i>
+                    OIDC Provider <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center py-5 border-top" data-aos="zoom-in">
-            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
-                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding:1rem 3rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                View All Projects <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </a>
         </div>
 
     </div>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <p>© 2025. <a href="index.html">Anang Ayman</a>. All rights reserved.</p>
         </div>
@@ -230,6 +225,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
+    <script>lucide.createIcons();</script>
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
 </body>
 
 </html>

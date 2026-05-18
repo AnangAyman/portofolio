@@ -8,16 +8,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-T8M3LLL7K6');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flux Personal Finance Tracker — A bilingual Laravel budgeting app. Built by Anang Ayman.">
     <link rel="icon" href="static/favicon_final.png?v=2">
     <title>Flux Budget App - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -32,41 +33,43 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="projects.html">
-                <i class="fas fa-arrow-left me-2"></i> Back to Library
+            <a class="navbar-brand fw-bold" href="projects.html" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Back to Library
             </a>
-            <div class="d-flex gap-2">
-                <a href="https://github.com/yourusername/flux-budget" target="_blank"
-                    class="btn btn-sm btn-outline-light">
-                    <i class="fab fa-github me-2"></i>View Code
-                </a>
-            </div>
+            <a href="https://github.com/yourusername/flux-budget" target="_blank" class="btn btn-sm btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="github" style="width:15px;height:15px;"></i>View Code
+            </a>
         </div>
     </nav>
 
     <header class="project-hero">
         <div class="container">
-            <span class="badge rounded-pill mb-3 px-3 py-2"
-                style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">
-                <i class="fas fa-wallet me-1"></i> Full-Stack FinTech
-            </span>
+            <span class="proj-badge mb-3">Full-Stack FinTech</span>
             <h1 data-aos="fade-up">Flux Personal Finance Tracker</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
                 A modern, responsive budgeting application offering real-time expense tracking, dark mode aesthetics,
                 and robust data visualizations.
             </p>
 
-            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
-                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
-                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
-                    <div class="p-3 bg-dark d-flex gap-2">
-                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
-                    </div>
-                    <!-- Replace with actual Flux Budget Dashboard Thumbnail -->
-                    <img src="static/flux_budget_app.jpg" onerror="this.src='static/gamified_dashboard.png'"
-                        alt="Flux Budget Dashboard" class="img-fluid w-100" style="object-fit: cover;">
+            <!-- Hero Metric Pills -->
+            <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
+                <span class="hero-metric-pill">
+                    <i data-lucide="globe-2" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Bilingual</span> Support
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="repeat" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Automated</span> Bills
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="layout-dashboard" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">MVC</span> Architecture
+                </span>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <div class="hero-image-wrap">
+                    <img src="static/flux_budget_app.jpg" onerror="this.src='static/gamified_dashboard.png'" alt="Flux Budget Dashboard">
                 </div>
             </div>
         </div>
@@ -89,13 +92,16 @@
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>Laravel, MySQL, Blade, Vite</p>
+                <p>Laravel, MySQL, Vite</p>
             </div>
         </div>
 
         <article class="project-body">
 
-            <h2 data-aos="fade-up">The Challenge</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">01 · Problem</span>
+                The Challenge
+            </h2>
             <p data-aos="fade-up">
                 Many modern budgeting applications are either overly complex, requiring users to link bank accounts
                 immediately, or too simplistic, lacking the granular categorization needed to actually understand
@@ -105,62 +111,61 @@
                 hierarchies, and a premium aesthetic that encourages users to log their daily expenses.
             </p>
 
-            <h2 data-aos="fade-up">The Solution</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">02 · Solution</span>
+                The Approach
+            </h2>
             <p data-aos="fade-up">
                 I engineered Flux, a bilingual personal finance dashboard built on a robust MVC architecture utilizing
                 the <strong>Laravel</strong> framework and a relational <strong>MySQL</strong> database. Working closely
                 with a frontend partner, we crafted an intuitive, responsive UI using Blade templating, custom CSS, and
                 vanilla JavaScript bundled via Vite.
-                <br><br>
+            </p>
+            <p data-aos="fade-up">
                 For the backend, I designed the database schema to manage interconnected entities like Users,
                 Transactions, Budgets, and Recurring Bills. I also developed custom Laravel Artisan console commands to
                 automatically detect and process recurring expenses on a scheduled basis, alongside custom middleware
                 for localization and currency conversion.
             </p>
 
-            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-layer-group fs-2 text-success mb-3"></i>
-                        <h4 class="text-white">MVC Laravel Backend</h4>
-                        <p class="text-secondary small">Engineered complex financial logic, role-based controls, and
-                            custom Artisan commands to process recurring user expenses automatically on a scheduled
-                            basis.</p>
-                    </div>
+            <h2 data-aos="fade-up">
+                <span class="section-num">03 · Engineering</span>
+                Technical Highlights
+            </h2>
+
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="layers" style="width:18px;height:18px;"></i></div>
+                    <h4>MVC Laravel Backend</h4>
+                    <p>Engineered complex financial logic, role-based controls, and custom Artisan commands to process recurring user expenses automatically on a scheduled basis.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-globe fs-2 text-warning mb-3"></i>
-                        <h4 class="text-white">Localization & Currency</h4>
-                        <p class="text-secondary small">Built custom middleware and a dedicated currency converter
-                            service to seamlessly serve the app in both English and Indonesian, dynamically adjusting
-                            financial displays.</p>
-                    </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="globe" style="width:18px;height:18px;"></i></div>
+                    <h4>Localization & Currency</h4>
+                    <p>Built custom middleware and a dedicated currency converter service to seamlessly serve the app in both English and Indonesian, dynamically adjusting financial displays.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-desktop fs-2 text-info mb-3"></i>
-                        <h4 class="text-white">Bilingual Frontend</h4>
-                        <p class="text-secondary small">Integrated backend localization dictionaries directly into the
-                            Blade views, pairing with custom CSS and JS to deliver a localized user journey for diverse
-                            audiences.</p>
-                    </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="monitor" style="width:18px;height:18px;"></i></div>
+                    <h4>Bilingual Frontend</h4>
+                    <p>Integrated backend localization dictionaries directly into the Blade views, pairing with custom CSS and JS to deliver a localized user journey.</p>
                 </div>
             </div>
 
-            <h2 data-aos="fade-up">The Outcome</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">04 · Results</span>
+                The Outcome
+            </h2>
             <p data-aos="fade-up">
                 Flux provides a seamless, distraction-free environment for users to take control of their finances. The
                 responsive design ensures that the application is functional from logging daily receipts on mobile
-                devices
-                to viewing comprehensive financial charts on desktop monitors during end-of-month reflections.
+                devices to viewing comprehensive financial charts on desktop monitors during end-of-month reflections.
             </p>
 
-            <h2 data-aos="fade-up" class="mt-5">Tech Stack & Infrastructure</h2>
-            <div class="row g-4 mb-5" data-aos="fade-up">
+            <h2 data-aos="fade-up">
+                <span class="section-num">05 · Stack</span>
+                Tech Stack & Infrastructure
+            </h2>
+            <div class="row g-4 mb-5">
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">Backend & Database</h5>
                     <div class="d-flex flex-wrap gap-2">
@@ -182,31 +187,31 @@
             </div>
 
         </article>
+
         <div class="project-navigation">
             <div class="text-start">
-                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-left:0.5rem;">Previous Project</span>
                 <a href="project-research.html" class="nav-link-soft prev">
-                    <i class="fas fa-arrow-left"></i> CNN-LSTM Paper
+                    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> CNN-LSTM Paper
                 </a>
             </div>
-
             <div class="text-end">
-                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-right:0.5rem;">Next Project</span>
                 <a href="project-f1undercut.html" class="nav-link-soft">
-                    F1 Analytics Dashboard <i class="fas fa-arrow-right"></i>
+                    F1 Analytics Dashboard <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center py-5 border-top" data-aos="zoom-in">
-            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
-                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding:1rem 3rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                View All Projects <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </a>
         </div>
 
     </div>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <p>© 2025. <a href="index.html">Anang Ayman</a>. All rights reserved.</p>
         </div>
@@ -214,6 +219,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
+    <script>lucide.createIcons();</script>
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
 </body>
 
 </html>

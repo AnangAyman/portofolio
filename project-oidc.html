@@ -8,16 +8,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-T8M3LLL7K6');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OIDC Identity Provider — A centralized authentication system. Built by Anang Ayman.">
     <link rel="icon" href="static/favicon_final.png?v=2">
     <title>OIDC Identity Provider - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -32,26 +33,40 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="projects.html">
-                <i class="fas fa-arrow-left me-2"></i> Back to Library
+            <a class="navbar-brand fw-bold" href="projects.html" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Back to Library
             </a>
         </div>
     </nav>
 
     <header class="project-hero">
         <div class="container">
-            <span class="badge rounded-pill mb-3 px-3 py-2"
-                style="background-color: rgba(217, 119, 6, 0.1); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.2);">Internal
-                Infrastructure Project</span>
+            <span class="proj-badge mb-3">Internal Infrastructure Project</span>
             <h1 data-aos="fade-up">OIDC Identity Provider</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
                 A centralized, containerized authentication system engineered for security and scalability.
             </p>
 
-            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
-                <img src="static/OpenID_Connect.png" alt="OIDC Architecture"
-                    class="img-fluid rounded-3 shadow-lg border-opacity-10 border-white"
-                    style="border: 1px solid rgba(255,255,255,0.1); max-height: 400px; object-fit: cover;">
+            <!-- Hero Metric Pills -->
+            <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
+                <span class="hero-metric-pill">
+                    <i data-lucide="shield-check" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">OAuth 2.0</span> / OIDC
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="zap" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Zero</span> Downtime
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="key" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">PBKDF2</span> Hashes
+                </span>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <div class="hero-image-wrap">
+                    <img src="static/OpenID_Connect.png" onerror="this.src='static/Signlingo_thumbnail.png'" alt="OIDC Architecture">
+                </div>
             </div>
         </div>
     </header>
@@ -79,9 +94,8 @@
 
         <article class="project-body">
 
-            <div class="alert alert-warning d-flex align-items-center mb-5" role="alert"
-                style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); color: #eab308;">
-                <i class="fas fa-lock me-3" style="font-size: 1.5rem;"></i>
+            <div class="confidential-notice" data-aos="fade-up">
+                <i data-lucide="lock" class="notice-icon"></i>
                 <div>
                     <strong>Proprietary Project:</strong> To maintain corporate confidentiality and protect internal
                     intellectual property, the source code, specific metrics, and internal documentation for this
@@ -89,36 +103,41 @@
                 </div>
             </div>
 
-            <h2 data-aos="fade-up">The Challenge</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">01 · Problem</span>
+                The Challenge
+            </h2>
             <p data-aos="fade-up">
                 The organization was bottlenecked by an aging PHP authentication monolith that lacked modern OAuth 2.0
                 capabilities, blocking the secure integration of new mobile and web clients. The mandate was to
                 architect a centralized OpenID Connect (OIDC) provider from scratch supporting a multi-grant
                 architecture. It needed to handle Implicit and Token flows for web integrations, while strictly
                 enforcing the Authorization Code Flow with PKCE to protect mobile apps.
-                <br><br>
-                The most formidable constraint
-                was executing this transition with absolute zero downtime. Since a mass password reset was an
-                unacceptable business disruption, the core challenge was engineering a seamless bridge to validate
-                legacy credentials and upgrade outdated cryptographic hashes on the fly without a single service
-                interruption.
+            </p>
+            <p data-aos="fade-up">
+                The most formidable constraint was executing this transition with absolute zero downtime. Since a mass
+                password reset was an unacceptable business disruption, the core challenge was engineering a seamless
+                bridge to validate legacy credentials and upgrade outdated cryptographic hashes on the fly without a
+                single service interruption.
             </p>
 
-            <h2 data-aos="fade-up">The Solution</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">02 · Solution</span>
+                The Approach
+            </h2>
             <p data-aos="fade-up">
                 To establish a single source of truth for authentication, I engineered a robust, containerized OpenID
                 Connect (OIDC) Identity Provider from the ground up. Rather than simply patching the old framework, this
                 required a fundamental shift in how the organization handled user identity and authorization across its
                 entire ecosystem.
-                <br><br>
+            </p>
+            <p data-aos="fade-up">
                 To navigate the strict zero-downtime constraint, I designed a <strong>Just-In-Time (JIT)</strong>
-                migration strategy to
-                bridge the gap between the legacy database and the new infrastructure. I built a custom login
-                interceptor that detects legacy accounts the exact moment a user signs in. Behind the scenes, it
-                verifies their credentials against the old schema and seamlessly upgrades them to modern
-                <strong>PBKDF2</strong>
-                cryptographic hashes on the fly. This approach effectively neutralized years of technical debt and
-                delivered a massive security upgrade, all while remaining completely invisible to the end user.
+                migration strategy to bridge the gap between the legacy database and the new infrastructure. I built a
+                custom login interceptor that detects legacy accounts the exact moment a user signs in. Behind the scenes,
+                it verifies their credentials against the old schema and seamlessly upgrades them to modern
+                <strong>PBKDF2</strong> cryptographic hashes on the fly. This approach effectively neutralized years of
+                technical debt and delivered a massive security upgrade, all while remaining completely invisible to the end user.
             </p>
 
             <div class="showcase-block" data-aos="fade-up">
@@ -126,55 +145,38 @@
                 <div class="caption">Example of OAuth 2.0 Authorization Code Flow with PKCE enforcement.</div>
             </div>
 
-            <h3>Key Technical Highlights</h3>
-            <ul class="list-unstyled mt-4 mb-5">
-                <li class="mb-4 d-flex align-items-start">
-                    <i class="fas fa-shield-alt text-primary mt-1 me-3"></i>
-                    <div>
-                        <strong class="text-highlight">Secure OAuth 2.0 Architecture & Token Lifecycle:</strong>
-                        Configured a robust OIDC server supporting multiple grants with strict <strong
-                            class="text-highlight" style="color: var(--text-secondary);">PKCE enforcement</strong>
-                        against interception attacks. Designed a full token lifecycle system, including custom
-                        expiration
-                        policies and a dedicated <strong>revocation endpoint</strong> for secure session management.
-                    </div>
-                </li>
-                <li class="mb-4 d-flex align-items-start">
-                    <i class="fas fa-lock text-primary mt-1 me-3"></i>
-                    <div>
-                        <strong class="text-highlight">Auto-Upgrading Security & Brute-Force Protection:</strong>
-                        Designed a custom login route that intercepts legacy authentication attempts, safely upgrading
-                        successful logins to modern cryptographic hashes dynamically. I also engineered a strict,
-                        time-based account lockout mechanism to mitigate brute-force attacks.
-                    </div>
-                </li>
-                <li class="mb-4 d-flex align-items-start">
-                    <i class="fas fa-user-shield text-primary mt-1 me-3"></i>
-                    <div>
-                        <strong class="text-highlight">Scope-Based Resource Protection:</strong> Implemented strict
-                        access controls on API endpoints, ensuring client applications can only access user data for
-                        which they have explicitly been granted scope.
-                    </div>
-                </li>
-                <li class="mb-4 d-flex align-items-start">
-                    <i class="fas fa-random text-primary mt-1 me-3"></i>
-                    <div>
-                        <strong class="text-highlight">Optimized Internal Client Flow:</strong> Created specialized
-                        internal client logic that allows trusted first-party applications to safely bypass manual
-                        user-consent screens, streamlining the user experience.
-                    </div>
-                </li>
-                <li class="mb-4 d-flex align-items-start">
-                    <i class="fas fa-database text-primary mt-1 me-3"></i>
-                    <div>
-                        <strong class="text-highlight">Automated ETL Scripting:</strong> Built a custom data migration
-                        script using SQLAlchemy that safely processed legacy user data in memory-efficient batches,
-                        ensuring high performance and proper error rollback during the database transition.
-                    </div>
-                </li>
-            </ul>
+            <h2 data-aos="fade-up">
+                <span class="section-num">03 · Engineering</span>
+                Key Technical Highlights
+            </h2>
 
-            <h2 data-aos="fade-up">Tech Stack</h2>
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="shield" style="width:18px;height:18px;"></i></div>
+                    <h4>OAuth 2.0 Architecture</h4>
+                    <p>Configured a robust OIDC server supporting multiple grants with strict PKCE enforcement against interception attacks. Designed a full token lifecycle system.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="lock-keyhole" style="width:18px;height:18px;"></i></div>
+                    <h4>Auto-Upgrading Security</h4>
+                    <p>Designed a custom login route that intercepts legacy auth attempts, safely upgrading successful logins to modern cryptographic hashes dynamically.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="user-check" style="width:18px;height:18px;"></i></div>
+                    <h4>Scope-Based Access</h4>
+                    <p>Implemented strict access controls on API endpoints, ensuring clients can only access data for which they have explicitly been granted scope.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="database" style="width:18px;height:18px;"></i></div>
+                    <h4>Automated ETL Scripting</h4>
+                    <p>Built a custom data migration script using SQLAlchemy that processed legacy user data in memory-efficient batches with proper error rollbacks.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">
+                <span class="section-num">04 · Stack</span>
+                Tech Stack
+            </h2>
             <div class="row g-4 mb-5">
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">Backend & Security</h5>
@@ -200,29 +202,28 @@
 
         <div class="project-navigation">
             <div class="text-start">
-                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-left:0.5rem;">Previous Project</span>
                 <a href="project-nusacrop.html" class="nav-link-soft prev">
-                    <i class="fas fa-arrow-left"></i> NusaCrop App
+                    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> NusaCrop App
                 </a>
             </div>
-
             <div class="text-end">
-                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-right:0.5rem;">Next Project</span>
                 <a href="project-signlingo.html" class="nav-link-soft">
-                    SignLingo AI <i class="fas fa-arrow-right"></i>
+                    SignLingo AI <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center py-5 border-top" data-aos="zoom-in">
-            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
-                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding:1rem 3rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                View All Projects <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </a>
         </div>
 
     </div>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <p>© 2025. <a href="index.html">Anang Ayman</a>. All rights reserved.</p>
         </div>
@@ -230,5 +231,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
+    <script>lucide.createIcons();</script>
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
 </body>
+
 </html>

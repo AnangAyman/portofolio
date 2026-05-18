@@ -8,16 +8,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-T8M3LLL7K6');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intelligent Discord Auto-Moderator — An NLP bot for spam and toxicity detection. Built by Anang Ayman.">
     <link rel="icon" href="static/favicon_final.png?v=2">
     <title>AI Discord Moderator - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -32,41 +33,42 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="projects.html">
-                <i class="fas fa-arrow-left me-2"></i> Back to Library
+            <a class="navbar-brand fw-bold" href="projects.html" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Back to Library
             </a>
-            <div class="d-flex gap-2">
-                <a href="https://github.com/yourusername/discord-ai-mod" target="_blank"
-                    class="btn btn-sm btn-outline-light">
-                    <i class="fab fa-github me-2"></i>View Code
-                </a>
-            </div>
+            <a href="https://github.com/yourusername/discord-ai-mod" target="_blank" class="btn btn-sm btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <i data-lucide="github" style="width:15px;height:15px;"></i>View Code
+            </a>
         </div>
     </nav>
 
     <header class="project-hero">
         <div class="container">
-            <span class="badge rounded-pill mb-3 px-3 py-2"
-                style="background-color: rgba(88, 101, 242, 0.1); color: #5865F2; border: 1px solid rgba(88, 101, 242, 0.2);">
-                <i class="fab fa-discord me-1"></i> Bot / Automation
-            </span>
+            <span class="proj-badge mb-3">Bot / Automation</span>
             <h1 data-aos="fade-up">Intelligent Discord Auto-Moderator</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
-                A highly concurrent Python bot leveraging Natural Language Processing to detect toxicity, spam, and
-                manage bustling online communities 24/7.
+                A highly concurrent Python bot leveraging Natural Language Processing to detect toxicity, spam, and manage bustling online communities 24/7.
             </p>
 
-            <div class="mt-5" data-aos="zoom-in" data-aos-delay="200">
-                <div class="browser-mockup border border-secondary border-opacity-25 shadow-lg rounded-3"
-                    style="max-width: 900px; margin: 0 auto; overflow: hidden; background: #0d1117;">
-                    <div class="p-3 bg-dark d-flex gap-2">
-                        <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
-                        <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
-                    </div>
-                    <!-- Using a relevant placeholder image until actual screenshot is provided -->
-                    <img src="static/discord-image-main.jpeg" alt="Discord Bot Dashboard" class="img-fluid w-100"
-                        style="object-fit: cover;">
+            <!-- Hero Metric Pills -->
+            <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
+                <span class="hero-metric-pill">
+                    <i data-lucide="shield-alert" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">0.94</span> Toxic Recall
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="message-square" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">DistilBERT</span> NLP
+                </span>
+                <span class="hero-metric-pill">
+                    <i data-lucide="activity" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Real-time</span> Inference
+                </span>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <div class="hero-image-wrap">
+                    <img src="static/discord-image-main.jpeg" onerror="this.src='static/Signlingo_thumbnail.png'" alt="Discord Bot Dashboard">
                 </div>
             </div>
         </div>
@@ -85,17 +87,20 @@
             </div>
             <div class="meta-item">
                 <h5>Domain</h5>
-                <p>Machine Learning, NLP, Moderation</p>
+                <p>Machine Learning, NLP</p>
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>DistilBERT, Scikit-learn, Discord.py</p>
+                <p>DistilBERT, Scikit-learn</p>
             </div>
         </div>
 
         <article class="project-body">
 
-            <h2 data-aos="fade-up">The Challenge</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">01 · Problem</span>
+                The Challenge
+            </h2>
             <p data-aos="fade-up">
                 Standard Discord server moderation tools often rely on rigid keyword blacklists that are easily bypassed
                 and lack contextual awareness. When building a machine learning solution to intercept toxic content in
@@ -104,12 +109,16 @@
                 yielding an unacceptable recall of ~0.62.
             </p>
 
-            <h2 data-aos="fade-up">The Solution</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">02 · Solution</span>
+                The Approach
+            </h2>
             <p data-aos="fade-up">
                 I engineered a robust NLP preprocessing pipeline and executed strategic downsampling on the majority
                 class. By intentionally sacrificing superficial overall accuracy, I drastically boosted toxic detection
                 recall to 0.85, establishing a much safer baseline for automated community moderation.
-                <br><br>
+            </p>
+            <p data-aos="fade-up">
                 After benchmarking computationally efficient classical models (Logistic Regression, Linear SVC) via
                 Scikit-learn and TF-IDF, I leveraged Hugging Face to fine-tune a <strong>DistilBERT</strong> transformer
                 architecture. Because DistilBERT understands semantic context, sarcasm, and complex sentence structures,
@@ -118,51 +127,44 @@
                 <strong>discord.py</strong> bot framework.
             </p>
 
-            <!-- Feature Image Gallery -->
-            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
-                <div class="col-md-6">
-                    <img src="static/discordbot-image-distilBERT.webp" alt="Imbalance Handling & Recall"
-                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
+            <div class="gallery-grid two-col" data-aos="fade-up">
+                <div>
+                    <img src="static/discordbot-image-distilBERT.webp" alt="Imbalance Handling & Recall" style="min-height:220px;">
+                    <p class="img-caption">Imbalance Handling & Recall optimization</p>
                 </div>
-                <div class="col-md-6">
-                    <img src="static/discordbot-image-confusionmatrix.png"
-                        style="object-fit: cover; height: 100%; width: 100%; min-height: 250px;">
-                </div>
-            </div>
-
-            <div class="row mt-5 mb-5 g-4" data-aos="fade-up">
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-balance-scale fs-2 text-primary mb-3"></i>
-                        <h4 class="text-white">Data Engineering</h4>
-                        <p class="text-secondary small">Engineered an NLP pipeline handling text normalization and
-                            executed strategic downsampling to resolve the Accuracy Paradox in highly imbalanced social
-                            media datasets.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-brain fs-2 text-warning mb-3"></i>
-                        <h4 class="text-white">Transformer Fine-Tuning</h4>
-                        <p class="text-secondary small">Fine-tuned distilbert-base-uncased to parse semantic context
-                            beyond standard keyword-matching, achieving a 0.94 recall on the toxic class.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-transparent border-secondary border-opacity-25 h-100 p-4 rounded-4"
-                        style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <i class="fas fa-bolt fs-2 text-info mb-3"></i>
-                        <h4 class="text-white">Real-Time Integration</h4>
-                        <p class="text-secondary small">Led the end-to-end integration of the deep learning inference
-                            model into a live discord.py framework, providing automated identification of harmful
-                            content.</p>
-                    </div>
+                <div>
+                    <img src="static/discordbot-image-confusionmatrix.png" alt="Confusion Matrix" style="min-height:220px;">
+                    <p class="img-caption">Model Confusion Matrix evaluation</p>
                 </div>
             </div>
 
-            <h2 data-aos="fade-up">The Outcome</h2>
+            <h2 data-aos="fade-up">
+                <span class="section-num">03 · Engineering</span>
+                Technical Highlights
+            </h2>
+
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="scale" style="width:18px;height:18px;"></i></div>
+                    <h4>Data Engineering</h4>
+                    <p>Engineered an NLP pipeline handling text normalization and executed strategic downsampling to resolve the Accuracy Paradox in highly imbalanced datasets.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="brain" style="width:18px;height:18px;"></i></div>
+                    <h4>Transformer Fine-Tuning</h4>
+                    <p>Fine-tuned distilbert-base-uncased to parse semantic context beyond standard keyword-matching, achieving a 0.94 recall on the toxic class.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="zap" style="width:18px;height:18px;"></i></div>
+                    <h4>Real-Time Integration</h4>
+                    <p>Led the end-to-end integration of the deep learning inference model into a live discord.py framework, providing automated identification of harmful content.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">
+                <span class="section-num">04 · Results</span>
+                The Outcome
+            </h2>
             <p data-aos="fade-up">
                 The deployed architecture successfully minimized False Negatives, demonstrating that advanced
                 transformer models can be optimized for real-time inference within highly active digital spaces. The bot
@@ -170,8 +172,29 @@
                 community moderation.
             </p>
 
-            <h2 data-aos="fade-up" class="mt-5">Tech Stack & Infrastructure</h2>
-            <div class="row g-4 mb-5" data-aos="fade-up">
+            <div class="stat-grid" data-aos="fade-up">
+                <div class="stat-card">
+                    <div class="stat-value">0.94</div>
+                    <div class="stat-label">Recall Rate</div>
+                    <div class="stat-sub">On the toxic class</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0.92</div>
+                    <div class="stat-label">F1-Score</div>
+                    <div class="stat-sub">DistilBERT model</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Availability</div>
+                    <div class="stat-sub">Automated moderation</div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">
+                <span class="section-num">05 · Stack</span>
+                Tech Stack
+            </h2>
+            <div class="row g-4 mb-5">
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">Deep Learning & NLP</h5>
                     <div class="d-flex flex-wrap gap-2">
@@ -187,7 +210,7 @@
                         <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
                         <span class="tech-badge"><i class="fab fa-discord"></i> Discord.py</span>
                         <span class="tech-badge"><i class="fas fa-chart-line"></i> Scikit-learn</span>
-                        <span class="tech-badge"><i class="fas fa-server"></i> Local Host Inferencing</span>
+                        <span class="tech-badge"><i class="fas fa-server"></i> Local Host</span>
                     </div>
                 </div>
             </div>
@@ -196,29 +219,28 @@
 
         <div class="project-navigation">
             <div class="text-start">
-                <span class="d-block text-secondary small mb-1" style="margin-left: 0.5rem;">Previous Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-left:0.5rem;">Previous Project</span>
                 <a href="project-cvimprover.html" class="nav-link-soft prev">
-                    <i class="fas fa-arrow-left"></i> CV Improver
+                    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> CV Improver
                 </a>
             </div>
-
             <div class="text-end">
-                <span class="d-block text-secondary small mb-1" style="margin-right: 0.5rem;">Next Project</span>
+                <span class="d-block text-secondary small mb-1" style="margin-right:0.5rem;">Next Project</span>
                 <a href="project-nusacrop.html" class="nav-link-soft">
-                    NusaCrop App <i class="fas fa-arrow-right"></i>
+                    NusaCrop App <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center py-5 border-top" data-aos="zoom-in">
-            <a href="projects.html" class="btn btn-outline btn-lg" style="padding: 1rem 3rem;">
-                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="padding:1rem 3rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                View All Projects <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </a>
         </div>
 
     </div>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <p>© 2025. <a href="index.html">Anang Ayman</a>. All rights reserved.</p>
         </div>
@@ -226,6 +248,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
+    <script>lucide.createIcons();</script>
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
 </body>
 
 </html>
