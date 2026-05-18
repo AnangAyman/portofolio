@@ -13,9 +13,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI CV Improver — An intelligent resume optimization engine using Bloom-560m and DistilBERT. Built by Anang Ayman.">
+    <meta name="description" content="AI CV Optimizer — A full-stack, local-first web application designed to evaluate and rewrite resume bullet points using a custom fine-tuned Qwen2.5-1.5B model. Built by Anang Ayman.">
     <link rel="icon" href="static/favicon_final.png?v=2">
-    <title>AI CV Improver - Anang Ayman</title>
+    <title>AI CV Optimizer - Anang Ayman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -45,29 +45,28 @@
     <header class="project-hero">
         <div class="container">
             <span class="proj-badge mb-3">Generative AI Tool</span>
-            <h1 data-aos="fade-up">AI CV Improver</h1>
+            <h1 data-aos="fade-up">AI CV Optimizer</h1>
             <p class="project-tagline" data-aos="fade-up" data-aos-delay="100">
-                An intelligent resume optimization engine leveraging Bloom-560m and DistilBERT to reconstruct
-                unformatted text into ATS-friendly, high-impact bullet points.
+                A full-stack, local-first web application designed to evaluate and rewrite resume bullet points into highly professional, metric-driven statements using a custom fine-tuned Qwen2.5-1.5B model.
             </p>
 
             <!-- Hero Metric Pills -->
             <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
                 <span class="hero-metric-pill">
                     <i data-lucide="cpu" style="width:14px;height:14px;"></i>
-                    <span class="pill-value">560M</span> Param Model
+                    <span class="pill-value">1.5B</span> Param Model
                 </span>
                 <span class="hero-metric-pill">
-                    <i data-lucide="search" style="width:14px;height:14px;"></i>
-                    <span class="pill-value">15-beam</span> Search
+                    <i data-lucide="zap" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">Mac GPU</span> Accelerated
                 </span>
                 <span class="hero-metric-pill">
                     <i data-lucide="layers" style="width:14px;height:14px;"></i>
-                    <span class="pill-value">4-layer</span> Scoring Engine
+                    <span class="pill-value">100-pt</span> Heuristic Engine
                 </span>
                 <span class="hero-metric-pill">
-                    <i data-lucide="thermometer" style="width:14px;height:14px;"></i>
-                    <span class="pill-value">0.15</span> Temperature
+                    <i data-lucide="timer" style="width:14px;height:14px;"></i>
+                    <span class="pill-value">&lt; 20s</span> Latency
                 </span>
             </div>
 
@@ -96,7 +95,7 @@
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>Flask, PyTorch, Bloom-560m</p>
+                <p>Flask, PyTorch, Qwen2.5-1.5B, LoRA</p>
             </div>
         </div>
 
@@ -107,28 +106,18 @@
                 The Challenge
             </h2>
             <p data-aos="fade-up">
-                Job seekers frequently struggle to articulate their professional experience in a way that is both
-                grammatically flawless and impactful enough to pass Applicant Tracking Systems (ATS). While large-scale
-                AI tools exist, they often generate generic "AI-speak" and require massive computational resources. The
-                goal was to build a lightweight, highly deterministic web application that could run efficiently on
-                limited local hardware while providing users with mathematically backed scoring on their CV improvements.
+                Job seekers frequently struggle to articulate their professional experience in a way that is impactful enough to pass Applicant Tracking Systems (ATS). While cloud-based AI tools exist, they often generate generic "AI-speak" and require sending personal data over the internet. The goal was to build a local-first, highly specialized application that could run entirely on a Mac's unified memory, transforming amateur text into metric-driven statements suitable for tech recruiting, while mathematically proving the improvement.
             </p>
 
             <h2 data-aos="fade-up">
                 <span class="section-num">02 · Solution</span>
-                The Approach
+                System Architecture
             </h2>
             <p data-aos="fade-up">
-                I engineered a Flask-based web application integrating the <strong>bigscience/bloom-560m</strong>
-                language model via Hugging Face and PyTorch. To prevent hallucinatory or "fluffy" outputs, I configured
-                model inference using a strict 15-beam search strategy, early stopping, and a low temperature of 0.15.
+                I engineered a Flask-based web application with a specialized <strong>Qwen/Qwen2.5-1.5B-Instruct</strong> model at its core. Instead of relying on generic base model capabilities, I injected a custom Parameter-Efficient Fine-Tuning (PEFT) LoRA adapter, fine-tuned on a proprietary synthetic dataset of tech resumes. To ensure speed, the weights are permanently fused upon boot, eliminating abstraction layers and utilizing PyTorch's Metal Performance Shaders (MPS) for Mac GPU acceleration.
             </p>
             <p data-aos="fade-up">
-                To quantify the improvement, I built a custom Heuristic Scoring Engine. This algorithm evaluates text
-                quality by compiling grammar penalties (<code>language_tool_python</code>), Flesch reading ease
-                (<code>textstat</code>), sentiment analysis (<strong>DistilBERT</strong>), and a predefined CV keyword
-                density check. The frontend then visualizes this through animated dual-ring progress indicators,
-                showcasing the exact score delta between the original draft and the AI-refined version.
+                To quantify the text transformation, I developed a rigid 100-point Heuristic Scoring Engine. This algorithm evaluates Flesch Reading Ease (penalizing overly complex or conversational text), enforces strict grammar rules via a local Java-based <code>LanguageTool</code> server, analyzes sentiment confidence using a HuggingFace pipeline, and measures action verb density against a proprietary keyword list.
             </p>
 
             <h2 data-aos="fade-up">
@@ -139,18 +128,18 @@
             <div class="feat-cards-grid" data-aos="fade-up">
                 <div class="feat-card">
                     <div class="feat-card-icon"><i data-lucide="cpu" style="width:18px;height:18px;"></i></div>
-                    <h4>Bloom-560m Inference</h4>
-                    <p>Optimized a Hugging Face PyTorch pipeline with 15-beam search and low-temperature settings to guarantee professional, deterministic outputs on limited hardware.</p>
+                    <h4>LoRA Fine-Tuning</h4>
+                    <p>Locally trained a custom LoRA adapter (r=16, alpha=32) targeting attention layers to transform the massive 1.5B parameter model into an "Expert Tech Recruiter" persona.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="zap" style="width:18px;height:18px;"></i></div>
+                    <h4>Hardware Optimization</h4>
+                    <p>Leveraged Apple Silicon unified memory by offloading tensor computations to the GPU via MPS, and reduced inference latency to under 20 seconds using early-stopping tokens.</p>
                 </div>
                 <div class="feat-card">
                     <div class="feat-card-icon"><i data-lucide="calculator" style="width:18px;height:18px;"></i></div>
-                    <h4>Heuristic Scoring</h4>
-                    <p>Engineered a multi-layered algorithm combining DistilBERT sentiment analysis, Flesch reading ease, and grammar checks to calculate a definitive CV quality score.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-card-icon"><i data-lucide="monitor" style="width:18px;height:18px;"></i></div>
-                    <h4>Flask & Vanilla JS</h4>
-                    <p>Built a responsive web dashboard with dual-ring animated SVG indicators to visually compare before-and-after scores in real time.</p>
+                    <h4>100-Point Scoring</h4>
+                    <p>Engineered a multi-layered NLP scoring algorithm combining readability metrics, strict grammar checks, and proprietary keyword matching to evaluate CV quality.</p>
                 </div>
             </div>
 
@@ -159,31 +148,29 @@
                 The Outcome
             </h2>
             <p data-aos="fade-up">
-                The application successfully transforms scattered drafts into professional bullet points while visibly
-                proving its value through heuristic scoring. Currently maintained as a local portfolio project, the
-                architecture is fully prepared for future cloud deployment via platforms like Vercel.
+                The AI CV Optimizer successfully rewrites amateur resume bullet points into highly professional statements. By running entirely locally with customized fine-tuning and hardware acceleration, it provides a fast, private, and mathematically proven tool for job seekers aiming for tech roles.
             </p>
 
             <div class="stat-grid" data-aos="fade-up">
                 <div class="stat-card">
-                    <div class="stat-value">560M</div>
+                    <div class="stat-value">1.5B</div>
                     <div class="stat-label">Model Parameters</div>
-                    <div class="stat-sub">Bloom-560m</div>
+                    <div class="stat-sub">Qwen2.5-1.5B-Instruct</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">15</div>
-                    <div class="stat-label">Beam Width</div>
-                    <div class="stat-sub">Deterministic output</div>
+                    <div class="stat-value">&lt; 20s</div>
+                    <div class="stat-label">Inference Latency</div>
+                    <div class="stat-sub">Early-stopping tokens</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0.15</div>
-                    <div class="stat-label">Temperature</div>
-                    <div class="stat-sub">Minimal hallucination</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-label">Point Scoring</div>
+                    <div class="stat-sub">Rigid heuristic system</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">Scoring Layers</div>
-                    <div class="stat-sub">Grammar, ease, NLP, keywords</div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Local Execution</div>
+                    <div class="stat-sub">Mac GPU acceleration (MPS)</div>
                 </div>
             </div>
 
@@ -195,19 +182,19 @@
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-3">AI & Machine Learning</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i class="fas fa-brain"></i> Bloom-560m</span>
-                        <span class="tech-badge"><i class="fas fa-language"></i> DistilBERT</span>
-                        <span class="tech-badge"><i class="fas fa-cubes"></i> PyTorch</span>
-                        <span class="tech-badge"><i class="fas fa-robot"></i> Transformers</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> Qwen2.5-1.5B</span>
+                        <span class="tech-badge"><i class="fas fa-layer-group"></i> LoRA / PEFT</span>
+                        <span class="tech-badge"><i class="fas fa-cubes"></i> PyTorch (MPS)</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> TRL</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="fw-bold mb-3">Application Layer</h5>
+                    <h5 class="fw-bold mb-3">Application & Scoring</h5>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="tech-badge"><i class="fab fa-python"></i> Python / Flask</span>
-                        <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="tech-badge"><i class="fas fa-spell-check"></i> LanguageTool</span>
+                        <span class="tech-badge"><i class="fas fa-book"></i> textstat</span>
                         <span class="tech-badge"><i class="fab fa-js"></i> Vanilla JS</span>
-                        <span class="tech-badge"><i class="fas fa-cloud-upload-alt"></i> Vercel Ready</span>
                     </div>
                 </div>
             </div>
