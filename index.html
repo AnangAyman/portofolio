@@ -133,65 +133,108 @@
             </div>
         </section>
 
-        <!-- <section id="skills" class="skills-section py-5">
+        <!-- Technical Skills Section -->
+        <section id="skills" class="skills-section" data-aos="fade-up">
             <div class="container">
-                <div class="section-header mb-4 text-start">
-                    <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+
+                    <!-- AI & Machine Learning -->
+                    <div class="skill-group">
+                        <span class="skill-group-label">
+                            <i class="fas fa-brain"></i>
+                            AI &amp; Machine Learning
+                        </span>
+                        <div class="skill-pills">
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">TensorFlow</span>
+                            <span class="tech-pill">Scikit-learn</span>
+                            <span class="tech-pill">MediaPipe</span>
+                            <span class="tech-pill">NLTK</span>
+                            <span class="tech-pill">Pandas</span>
+                            <span class="tech-pill">NumPy</span>
+                            <span class="tech-pill">BERT</span>
+                            <span class="tech-pill">Computer Vision</span>
+                            <span class="tech-pill">NLP</span>
+                            <span class="tech-pill">LLM</span>
+                            <span class="tech-pill">GenAI</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-group">
+                        <span class="skill-group-label">
+                            <i class="fas fa-server"></i>
+                            Backend
+                        </span>
+                        <div class="skill-pills">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">R</span>
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">C</span>
+                            <span class="tech-pill">SQL</span>
+                            <span class="tech-pill">Django</span>
+                            <span class="tech-pill">Flask</span>
+                            <span class="tech-pill">Laravel</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">SQLAlchemy</span>
+                            <span class="tech-pill">Authlib</span>
+                            <span class="tech-pill">OIDC</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Web -->
+                    <div class="skill-group">
+                        <span class="skill-group-label">
+                            <i class="fas fa-code"></i>
+                            DevOps &amp; Web
+                        </span>
+                        <div class="skill-pills">
+                            <span class="tech-pill">GCP</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Gunicorn</span>
+                            <span class="tech-pill">Git</span>
+                            <span class="tech-pill">PyTest</span>
+                            <span class="tech-pill">OAuth 2.0</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">HTML / CSS</span>
+                            <span class="tech-pill">Kotlin</span>
+                            <span class="tech-pill">Android Studio</span>
+                        </div>
+                    </div>
+
+                    <!-- Methods & Architecture -->
+                    <div class="skill-group">
+                        <span class="skill-group-label">
+                            <i class="fas fa-sitemap"></i>
+                            Methods &amp; Architecture
+                        </span>
+                        <div class="skill-pills">
+                            <span class="tech-pill">Microservices</span>
+                            <span class="tech-pill">REST APIs</span>
+                            <span class="tech-pill">Data Modeling</span>
+                            <span class="tech-pill">SDLC</span>
+                            <span class="tech-pill">Agile / Scrum</span>
+                            <span class="tech-pill">QA</span>
+                            <span class="tech-pill">Postman</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="bento-grid">
-                    <div class="bento-card">
-                        <h3>Frontend Development</h3>
-                        <div class="tech-stack mb-4">
-                            <span class="tech-pill pill-frontend">React.js</span>
-                            <span class="tech-pill pill-frontend">Next.js</span>
-                            <span class="tech-pill pill-frontend">Tailwind CSS</span>
-                            <span class="tech-pill pill-frontend">Bootstrap</span>
-                            <span class="tech-pill pill-frontend">jQuery</span>
-                            <span class="tech-pill pill-frontend">HTML5</span>
-                            <span class="tech-pill pill-frontend">CSS3</span>
-                        </div>
-                        <p>Specializing in building modern, responsive web interfaces and high-performance landing
-                            pages. Focus on creating seamless user experiences using the latest frontend frameworks.</p>
-                    </div>
-
-                    <div class="bento-card">
-                        <h3>Backend Development</h3>
-                        <div class="tech-stack mb-4">
-                            <span class="tech-pill pill-backend">ASP.NET</span>
-                            <span class="tech-pill pill-backend">Laravel</span>
-                            <span class="tech-pill pill-backend">Flask</span>
-                            <span class="tech-pill pill-backend">Node.js</span>
-                            <span class="tech-pill pill-backend">C#</span>
-                            <span class="tech-pill pill-backend">PHP</span>
-                            <span class="tech-pill pill-backend">SQL Server</span>
-                            <span class="tech-pill pill-backend">REST APIs</span>
-                        </div>
-                        <p>Specializing in robust API architectures using C#. Experienced in architecting complex
-                            Warehouse Management Systems (WMS), inventory, and tracking systems. Have also built
-                            scalable API services using Flask and Laravel.</p>
-                    </div>
-
-                    <div class="bento-card">
-                        <h3>Artificial Intelligence</h3>
-                        <div class="tech-stack mb-4">
-                            <span class="tech-pill pill-ai">TensorFlow</span>
-                            <span class="tech-pill pill-ai">Keras</span>
-                            <span class="tech-pill pill-ai">OpenCV</span>
-                            <span class="tech-pill pill-ai">Scikit-learn</span>
-                            <span class="tech-pill pill-ai">LangChain</span>
-                            <span class="tech-pill pill-ai">FAISS</span>
-                            <span class="tech-pill pill-ai">HuggingFace</span>
-                            <span class="tech-pill pill-ai">SHAP</span>
-                        </div>
-                        <p>Engineering intelligent systems including RAG pipelines for document retrieval, real-time
-                            Computer Vision for sign language recognition, and predictive modeling for sports analytics.
-                            Published researcher in Explainable AI, applying predictive modeling to healthcare
-                            diagnostics with a focus on model interpretability.</p>
-                    </div>
+                <!-- Language strip -->
+                <div class="skills-languages">
+                    <span class="skills-languages-label">
+                        <i class="fas fa-globe"></i>&nbsp; Languages
+                    </span>
+                    <ul class="skills-languages-list">
+                        <li>English <span style="color: var(--text-tertiary); font-size: 0.75rem;">(Native · IELTS 8.0)</span></li>
+                        <li>Indonesian <span style="color: var(--text-tertiary); font-size: 0.75rem;">(Native)</span></li>
+                        <li>Korean <span style="color: var(--text-tertiary); font-size: 0.75rem;">(Conversational)</span></li>
+                    </ul>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!-- Section Divider -->
         <section id="experience" class="experience-section">

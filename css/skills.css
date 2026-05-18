@@ -1,0 +1,146 @@
+/* ========================================
+   TECHNICAL SKILLS — Quiet Grouping
+   No glows, no proficiency bars, no noise.
+   Content-first, typography-led.
+   ======================================== */
+
+.skills-section {
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* No section header — group labels are self-describing */
+
+/* ----------------------------------------
+   Grid of skill groups — 4 columns
+   ---------------------------------------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ----------------------------------------
+   Individual group
+   ---------------------------------------- */
+.skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.skill-group-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.skill-group-label i {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* ----------------------------------------
+   Pill cluster
+   ---------------------------------------- */
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+/* Quieter than project section pills — neutral tone, no amber fill */
+.skill-pills .tech-pill {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-pills .tech-pill:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    background: transparent;
+}
+
+/* ----------------------------------------
+   Languages strip — below the grid
+   ---------------------------------------- */
+.skills-languages {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.skills-languages-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.skills-languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skills-languages-list li {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Bullet separator — attached to current item so it wraps correctly */
+.skills-languages-list li::after {
+    content: ' ·';
+    margin-left: 0.5rem;
+    color: var(--text-tertiary);
+}
+
+.skills-languages-list li:last-child::after {
+    content: '';
+    margin-left: 0;
+}
+
+/* ----------------------------------------
+   Responsive
+   ---------------------------------------- */
+@media (max-width: 575px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .skills-languages {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+}
