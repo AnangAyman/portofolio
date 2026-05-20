@@ -124,3 +124,200 @@
         gap: 2rem;
     }
 }
+
+/* ========================================
+   MORE PROJECTS — Mini Card Grid
+   ======================================== */
+.more-projects-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.more-projects-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+.more-projects-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--border-subtle);
+}
+
+.mini-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.mini-project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.mini-project-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.mini-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg-surface);
+}
+
+.mini-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mini-project-card:hover .mini-card-image img {
+    transform: scale(1.06);
+}
+
+.mini-card-body {
+    padding: 1rem 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.mini-card-category {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.mini-card-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mini-arrow {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.mini-project-card:hover .mini-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--accent);
+}
+
+.mini-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+    flex-grow: 1;
+}
+
+.mini-card-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: auto;
+}
+
+.mini-card-pills span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+}
+
+@media (max-width: 991px) {
+    .mini-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Mobile: horizontal scroll carousel ── */
+@media (max-width: 576px) {
+    .mini-projects-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        /* pull to edge so first card aligns with page margin */
+        margin-left: calc(-1 * var(--bs-gutter-x, 1rem));
+        margin-right: calc(-1 * var(--bs-gutter-x, 1rem));
+        padding-left: var(--bs-gutter-x, 1rem);
+        padding-right: var(--bs-gutter-x, 1rem);
+        /* hide scrollbar visually but keep it functional */
+        scrollbar-width: none;
+    }
+
+    .mini-projects-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mini-project-card {
+        flex: 0 0 78vw;
+        max-width: 78vw;
+        scroll-snap-align: start;
+    }
+
+    /* subtle swipe hint label below the grid */
+    .mini-projects-grid::after {
+        content: '';
+        flex: 0 0 var(--bs-gutter-x, 1rem);
+    }
+
+    .mini-carousel-hint {
+        display: flex !important;
+    }
+}
+
+/* Swipe hint — hidden on desktop, shown on mobile via above rule */
+.mini-carousel-hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+}
