@@ -145,6 +145,13 @@
     transform: translateY(-2px);
 }
 
+.social-separator {
+    width: 1px;
+    height: 18px;
+    background-color: var(--border-subtle, rgba(255, 255, 255, 0.2));
+    margin: 0 0.5rem;
+}
+
 /* CTA row */
 .hero-actions {
     display: flex;
