@@ -10,8 +10,8 @@
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
 }
 
 .footer-col {
@@ -63,6 +63,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-subtle, rgba(255, 255, 255, 0.1));
+    margin: 0.25rem 0;
+    width: 2rem;
 }
 
 .footer-links a {
