@@ -83,7 +83,7 @@
             <div class="hero-metrics" data-aos="fade-up" data-aos-delay="150">
                 <span class="hero-metric-pill">
                     <i data-lucide="trending-up" style="width:14px;height:14px;"></i>
-                    <span class="pill-value">95.3%</span> Accuracy
+                    <span class="pill-value">99.8%</span> Accuracy
                 </span>
                 <span class="hero-metric-pill">
                     <i data-lucide="zap" style="width:14px;height:14px;"></i>
@@ -101,7 +101,7 @@
 
             <div data-aos="zoom-in" data-aos-delay="200">
                 <div class="hero-image-wrap">
-                    <img src="static/Signlingo_thumbnail.png" alt="SignLingo Dashboard">
+                    <img src="static/signlingo_landing.png" alt="SignLingo Landing Page">
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="meta-item">
                 <h5>Core Tech</h5>
-                <p>CNN-LSTM, Docker, Flask</p>
+                <p>CNN-LSTM / GRU, Docker, Django</p>
             </div>
         </div>
 
@@ -151,10 +151,11 @@
             </h2>
             <p data-aos="fade-up">
                 We built <strong>SignLingo</strong> to make learning accessible to everyone, everywhere. Since it is
-                web-based, anyone can access it easily. To solve the hardware constraint, I researched and implemented a
-                specialized lightweight Hybrid CNN-LSTM architecture. This ensures high accuracy without the need for
-                expensive GPUs, allowing the AI to act as a personal tutor that gives instant feedback directly in the
-                browser.
+                web-based, anyone can access it easily. To solve the hardware constraint, I researched and implemented
+                a dual-model system: a <strong>Hybrid CNN-LSTM</strong> for static alphabet recognition and a
+                <strong>MediaPipe-GRU</strong> pipeline for dynamic gesture recognition. Both architectures ensure
+                high accuracy without requiring expensive GPUs, allowing the AI to act as a personal tutor that gives
+                instant feedback directly in the browser.
             </p>
 
             <h2 data-aos="fade-up">
@@ -162,9 +163,7 @@
                 My Role
             </h2>
             <p data-aos="fade-up">
-                <p>
-  SignLingo started with a simple goal: making sign language education accessible. As <strong>Product Owner, Scrum Master, Lead Developer, and Researcher</strong>, I managed a 10-person team across our business, research, and engineering tracks. While I guided our agile sprints and product strategy, my impact was heavily technical. I personally spearheaded the AI development, building the temporal feature extraction models using <strong>MediaPipe, LSTM, and GRU architectures</strong>. Alongside the machine learning, I engineered the entire <strong>backend architecture</strong> from the ground up. By bridging deep technical execution with our business roadmap, I ensured our vision translated into a robust, working application.
-</p>
+                SignLingo started with a simple goal: making sign language education accessible. As <strong>Product Owner, Scrum Master, Lead Developer, and Researcher</strong>, I managed a 10-person team across our business, research, and engineering tracks. While I guided our agile sprints and product strategy, my impact was heavily technical. I personally spearheaded the AI development, building the temporal feature extraction models using <strong>MediaPipe, LSTM, and GRU architectures</strong>. Alongside the machine learning, I engineered the entire <strong>backend architecture</strong> from the ground up. By bridging deep technical execution with our business roadmap, I ensured our vision translated into a robust, working application.
             </p>
 
             <!-- Full-bleed team photo strip -->
@@ -178,30 +177,57 @@
                 The SignLingo Ecosystem
             </h2>
             <p data-aos="fade-up">
-                A holistic, two-part platform designed to combine state-of-the-art AI inference with an engaging
-                user experience — real-time detection paired with gamified learning mechanics.
+                A holistic platform designed to combine state-of-the-art AI inference with an engaging
+                user experience. SignLingo features three core modes — each powered by real-time gesture recognition
+                and designed to make learning interactive, not passive.
             </p>
 
-            <!-- Two-col gallery: detection demo -->
-            <div class="gallery-grid two-col" data-aos="fade-up">
-                <div>
-                    <img src="static/game_and_ai.jpg" alt="Real-time Detection" style="min-height:260px;">
-                    <p class="img-caption">Real-time inference and active predictions</p>
-                </div>
-                <div>
-                    <img src="static/gamified_dashboard.jpeg" alt="Gamified Dashboard" style="min-height:260px;">
-                    <p class="img-caption">Personalized user dashboard</p>
-                </div>
+            <!-- Feature Showcase: Camera Practice -->
+            <h3 data-aos="fade-up">📷 Camera Practice</h3>
+            <p data-aos="fade-up">
+                The Camera Practice mode turns your webcam into a personal sign language tutor. The AI prompts users
+                with a target BISINDO letter, then captures and classifies their gesture in real-time using our
+                CNN-LSTM model. A countdown timer, progress tracker (0/10), and instant "Get Ready" cues create a
+                structured, quiz-like experience — bringing the feedback loop of a private tutor to anyone with a browser.
+            </p>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/signlingo_ai_practice.png" alt="Camera Practice — AI-powered sign recognition with live camera feed">
+                <div class="caption">Camera Practice mode with live AI inference and target sign prompts</div>
             </div>
 
+            <!-- Feature Showcase: Magic Touch Game -->
+            <h3 data-aos="fade-up">✨ Magic Touch Game</h3>
+            <p data-aos="fade-up">
+                Inspired by gamified learning apps, the Magic Touch Game combines real-time sign recognition with an
+                arcade-style falling-letters mechanic. Letters descend from the top of the screen, and the user must
+                perform the correct sign in front of their camera before the letter reaches the bottom. The AI displays
+                its current prediction and confidence level, while a lives system and score tracker keep the challenge
+                engaging. It transforms sign language practice from repetitive drills into an addictive game.
+            </p>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/signlingo_magic_touch.png" alt="Magic Touch Game — arcade-style sign language practice with falling letters">
+                <div class="caption">Magic Touch Game with real-time prediction, score tracking, and lives system</div>
+            </div>
+
+            <!-- Feature cards: Real-Time Landmark Detection -->
             <h3 data-aos="fade-up">Real-Time Landmark Detection</h3>
+            <p data-aos="fade-up">
+                At the core of every mode is our landmark detection engine. MediaPipe extracts spatial keypoints from
+                face, hands, and upper body — capturing the full gesture context needed for accurate sign recognition.
+            </p>
+            <div class="gallery-grid" data-aos="fade-up" style="max-width: 382px; margin: 2rem auto 3rem;">
+                <div>
+                    <img src="static/signlingo_dynamic.png" alt="Dynamic landmark detection across 4 frames showing MediaPipe keypoint tracking" style="object-fit:contain;height:auto;">
+                    <p class="img-caption">MediaPipe keypoints across a gesture sequence</p>
+                </div>
+            </div>
             <div class="feat-cards-grid" data-aos="fade-up">
                 <div class="feat-card">
                     <div class="feat-card-icon">
                         <i data-lucide="zap" style="width:18px;height:18px;"></i>
                     </div>
                     <h4>Ultra-Low Latency</h4>
-                    <p>Inference times of 40–50ms for seamless, real-time sign language translation in the browser.</p>
+                    <p>Inference times of 40–50ms for seamless, real-time sign language recognition in the browser.</p>
                 </div>
                 <div class="feat-card">
                     <div class="feat-card-icon">
@@ -219,50 +245,25 @@
                 </div>
             </div>
 
-            <h2 data-aos="fade-up">
-                <span class="section-num">05 · Architecture</span>
-                Key Technical Architecture
-            </h2>
-            <p data-aos="fade-up">
-                To achieve high performance on constrained devices, we designed a lightweight hybrid architecture.
-                Spatial landmarks extracted via MediaPipe are fed into a sequential CNN-LSTM network. For an in-depth
-                dive into the methodology, data processing, and evaluation metrics, you can read the connected research paper.
-            </p>
-
-            <div class="showcase-block" data-aos="fade-up">
-                <img src="static/model_architecture.jpeg" alt="Hybrid CNN-LSTM Architecture">
-                <div class="caption">Hybrid CNN-LSTM Architecture overview</div>
-            </div>
-
-            <div class="feat-cards-grid" data-aos="fade-up">
-                <div class="feat-card">
-                    <div class="feat-card-icon">
-                        <i data-lucide="circle-check" style="width:18px;height:18px;"></i>
-                    </div>
-                    <h4>Hybrid Model</h4>
-                    <p>MobileNetV2 for efficient spatial feature extraction combined with LSTM for temporal gesture dynamics.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-card-icon">
-                        <i data-lucide="cpu" style="width:18px;height:18px;"></i>
-                    </div>
-                    <h4>Optimized for Low-Resource</h4>
-                    <p>L2 regularization and post-training quantization compressed the model to under 25MB — runs on 4GB RAM devices.</p>
-                </div>
-            </div>
-
-            <div data-aos="fade-up">
-                <a href="project-research.html" class="btn btn-outline btn-sm" style="display:inline-flex;align-items:center;gap:0.5rem;">
-                    <i data-lucide="file-text" style="width:15px;height:15px;"></i> Read the Connected Research Paper
-                </a>
-            </div>
-
             <h3 data-aos="fade-up">Gamified Learning</h3>
             <p data-aos="fade-up">
                 To move away from boring, passive learning, we designed SignLingo to be entertaining. We infused
                 interactive "Duolingo-style" mechanics to keep users engaged while our AI acts as a private tutor giving
                 instant feedback on their gestures.
             </p>
+
+            <!-- Dashboard & Achievements gallery -->
+            <div class="gallery-grid two-col" data-aos="fade-up">
+                <div>
+                    <img src="static/signlingo_dashboard.png" alt="SignLingo Dashboard — League rankings, daily goals, and quick actions" style="min-height:260px;">
+                    <p class="img-caption">Personalized dashboard with league rankings and daily goals</p>
+                </div>
+                <div>
+                    <img src="static/signlingo_achievement.png" alt="SignLingo Achievements — Badges, rewards shop, and daily quests" style="min-height:260px;">
+                    <p class="img-caption">Achievement system with badges, quests, and a rewards shop</p>
+                </div>
+            </div>
+
             <div class="feat-cards-grid" data-aos="fade-up">
                 <div class="feat-card">
                     <div class="feat-card-icon"><i data-lucide="flame" style="width:18px;height:18px;"></i></div>
@@ -282,7 +283,118 @@
             </div>
 
             <h2 data-aos="fade-up">
-                <span class="section-num">06 · Results</span>
+                <span class="section-num">05 · Architecture</span>
+                Key Technical Architecture
+            </h2>
+            <p data-aos="fade-up">
+                SignLingo employs a dual-model system tailored to the nature of each sign type.
+                Static alphabet signs are classified using a <strong>Hybrid CNN-LSTM</strong> network, while
+                dynamic gesture signs — which require temporal understanding — are powered by a
+                <strong>MediaPipe-GRU</strong> pipeline I developed for my undergraduate thesis.
+            </p>
+
+            <!-- V1: CNN-LSTM -->
+            <h3 data-aos="fade-up">V1 — Hybrid CNN-LSTM (Static Signs)</h3>
+            <p data-aos="fade-up">
+                The original model combines MobileNetV2 for efficient spatial feature extraction with LSTM
+                layers for sequential pattern recognition. Optimized with L2 regularization and post-training
+                quantization, it achieves <strong>95.3% accuracy</strong> on BISINDO static alphabet recognition
+                while staying under 25MB — small enough to run on 4GB RAM devices.
+            </p>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/model_architecture.jpeg" alt="Hybrid CNN-LSTM Architecture">
+                <div class="caption">V1: Hybrid CNN-LSTM Architecture for static sign classification</div>
+            </div>
+
+            <!-- V2: MediaPipe-GRU -->
+            <h3 data-aos="fade-up">V2 — MediaPipe-GRU (Dynamic Signs)</h3>
+            <p data-aos="fade-up">
+                For my undergraduate thesis, I designed a next-generation architecture that eliminates the CNN
+                bottleneck entirely. Raw video frames are processed through MediaPipe to extract 149 spatial
+                landmarks, which are shoulder-normalized for scale invariance. A stacked two-layer GRU network
+                then captures temporal gesture dynamics across 30-frame sequences, achieving
+                <strong>99.8% validation accuracy</strong> on dynamic sign recognition — a significant leap
+                from the original model.
+            </p>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/signlingo_full_gru_architecture.png" alt="MediaPipe-GRU Architecture Pipeline">
+                <div class="caption">V2: End-to-end MediaPipe-GRU pipeline for dynamic gesture recognition</div>
+            </div>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/signlingo_gru_training.png" alt="GRU Model Training History — Loss and Accuracy curves">
+                <div class="caption">GRU training history: converging at 99.8% validation accuracy (best epoch 38)</div>
+            </div>
+
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon">
+                        <i data-lucide="circle-check" style="width:18px;height:18px;"></i>
+                    </div>
+                    <h4>Dual-Model System</h4>
+                    <p>CNN-LSTM handles static alphabet signs while MediaPipe-GRU captures temporal dynamics for motion-based gestures.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon">
+                        <i data-lucide="cpu" style="width:18px;height:18px;"></i>
+                    </div>
+                    <h4>No CNN Bottleneck</h4>
+                    <p>The GRU model bypasses expensive CNN inference by using MediaPipe landmarks directly — higher accuracy with lower compute.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon">
+                        <i data-lucide="trending-up" style="width:18px;height:18px;"></i>
+                    </div>
+                    <h4>95.3% → 99.8%</h4>
+                    <p>The architectural evolution delivered a 4.5 percentage point accuracy improvement on dynamic sign recognition.</p>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <a href="project-research.html" class="btn btn-outline btn-sm" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                    <i data-lucide="file-text" style="width:15px;height:15px;"></i> Read the Connected Research Paper
+                </a>
+            </div>
+
+            <h2 data-aos="fade-up">
+                <span class="section-num">06 · Translation</span>
+                Korean Sign Language Expansion
+            </h2>
+            <p data-aos="fade-up">
+                During my exchange program at <strong>Sungkyunkwan University (SKKU)</strong> in South Korea, I expanded
+                SignLingo beyond BISINDO to support <strong>Korean Sign Language (KSL)</strong>. This wasn't just adding
+                a new language — it required retraining models on entirely new gesture datasets, adapting the architecture
+                for KSL's distinct spatial patterns, and building a full <strong>real-time sign-to-text translation</strong> pipeline.
+            </p>
+            <p data-aos="fade-up">
+                The Translation feature allows users to perform signs in front of their webcam, which are recognized
+                word-by-word and assembled into natural sentences. Recognized signs are displayed as interactive word chips,
+                and with a single click, the system translates the full sentence between Indonesian and Korean using AI-powered
+                natural language processing — complete with audio playback support.
+            </p>
+            <div class="showcase-block" data-aos="fade-up">
+                <img src="static/signlingo_translation.png" alt="Real-time Sign Language Translation — sign-to-text with Korean and Indonesian support">
+                <div class="caption">Real-time sign-to-text translation with multi-language sentence construction</div>
+            </div>
+            <div class="feat-cards-grid" data-aos="fade-up">
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="languages" style="width:18px;height:18px;"></i></div>
+                    <h4>Multi-Language Support</h4>
+                    <p>Supports both BISINDO (Indonesian) and KSL (Korean) sign language recognition with language-specific models.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="message-square" style="width:18px;height:18px;"></i></div>
+                    <h4>Sign-to-Sentence</h4>
+                    <p>Recognized signs are assembled into natural sentences and translated across languages with AI-powered NLP.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card-icon"><i data-lucide="volume-2" style="width:18px;height:18px;"></i></div>
+                    <h4>Audio Playback</h4>
+                    <p>Translated sentences can be played back as audio, bridging the gap between visual and spoken communication.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">
+                <span class="section-num">07 · Results</span>
                 The Outcome
             </h2>
             <p data-aos="fade-up">
@@ -294,18 +406,18 @@
             <div class="stat-grid" data-aos="fade-up">
                 <div class="stat-card">
                     <div class="stat-value">95.3%</div>
-                    <div class="stat-label">Validation Accuracy</div>
-                    <div class="stat-sub">BISINDO alphabet</div>
+                    <div class="stat-label">Static Model Accuracy</div>
+                    <div class="stat-sub">CNN-LSTM · BISINDO alphabet</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">99.8%</div>
+                    <div class="stat-label">Dynamic Model Accuracy</div>
+                    <div class="stat-sub">MediaPipe-GRU · Dynamic signs</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">45ms</div>
                     <div class="stat-label">Avg Inference Time</div>
                     <div class="stat-sub">40–50ms range</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">&lt;25MB</div>
-                    <div class="stat-label">Model Size</div>
-                    <div class="stat-sub">Post-quantization</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">4GB</div>
@@ -315,39 +427,47 @@
             </div>
 
             <h2 data-aos="fade-up">
-                <span class="section-num">07 · Roadmap</span>
+                <span class="section-num">08 · Roadmap</span>
                 Future Works
             </h2>
             <p data-aos="fade-up">
-                The journey with SignLingo doesn't stop here. Currently, I am expanding the system to support
-                <strong>Korean Sign Language (KSL)</strong> during my exchange program at <strong>Sungkyunkwan
-                    University (SKKU)</strong>. For my undergraduate thesis, I am actively upgrading the
-                core model architecture from the current CNN-LSTM approach to a more efficient
-                <strong>MediaPipe-GRU</strong> hybrid, aiming to further decrease latency while retaining high
-                spatial-temporal accuracy.
+                With the MediaPipe-GRU model complete, SignLingo's next chapter focuses on scale and depth.
+                I am currently preparing my <strong>undergraduate thesis defense</strong> around the GRU
+                architecture's design and evaluation. In parallel, I am working on
+                <strong>expanding the vocabulary</strong> — the dynamic model currently recognizes 40 words,
+                and the goal is to grow this substantially to cover a wider range of everyday signs
+                and conversational phrases.
             </p>
 
             <h2 data-aos="fade-up">
-                <span class="section-num">08 · Stack</span>
+                <span class="section-num">09 · Stack</span>
                 Tech Stack
             </h2>
             <div class="row g-4 mb-5">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5 class="fw-bold mb-3">AI & Computer Vision</h5>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="tech-badge"><i data-lucide="code-2" style="width:14px;height:14px;"></i> Python</span>
                         <span class="tech-badge"><i data-lucide="cpu" style="width:14px;height:14px;"></i> TensorFlow</span>
-                        <span class="tech-badge"><i data-lucide="workflow" style="width:14px;height:14px;"></i> CNN-LSTM</span>
+                        <span class="tech-badge"><i data-lucide="workflow" style="width:14px;height:14px;"></i> CNN-LSTM / GRU</span>
                         <span class="tech-badge"><i data-lucide="camera" style="width:14px;height:14px;"></i> OpenCV</span>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Backend & Deployment</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge"><i data-lucide="server" style="width:14px;height:14px;"></i> Flask</span>
+                        <span class="tech-badge"><i data-lucide="server" style="width:14px;height:14px;"></i> Django</span>
                         <span class="tech-badge"><i data-lucide="box" style="width:14px;height:14px;"></i> Docker</span>
                         <span class="tech-badge"><i data-lucide="plug" style="width:14px;height:14px;"></i> REST API</span>
                         <span class="tech-badge"><i data-lucide="globe" style="width:14px;height:14px;"></i> MediaPipe</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Frontend</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-badge"><i data-lucide="layout" style="width:14px;height:14px;"></i> Next.js</span>
+                        <span class="tech-badge"><i data-lucide="palette" style="width:14px;height:14px;"></i> Tailwind CSS</span>
+                        <span class="tech-badge"><i data-lucide="type" style="width:14px;height:14px;"></i> TypeScript</span>
                     </div>
                 </div>
             </div>

@@ -319,6 +319,42 @@
     margin: 0;
 }
 
+/* ============================================================
+   LANDMARK SPLIT — cards left, image right
+   ============================================================ */
+.landmark-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin: 2.5rem 0;
+}
+
+.landmark-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.landmark-visual {
+    position: sticky;
+    top: 6rem;
+}
+
+.landmark-visual img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    display: block;
+}
+
+.landmark-visual .img-caption {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
 /* Legacy feat-list (kept for backward compat) */
 .feat-list {
     display: flex;
@@ -638,6 +674,14 @@
 
     .feat-cards-grid {
         grid-template-columns: 1fr;
+    }
+
+    .landmark-split {
+        grid-template-columns: 1fr;
+    }
+
+    .landmark-visual {
+        position: static;
     }
 
     .image-strip {
